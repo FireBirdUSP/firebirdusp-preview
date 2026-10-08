@@ -1,0 +1,1025 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>FireBirdUSP｜精準行銷亮點打造</title><meta name="description" content="FireBirdUSP 陪品牌找出客戶選你的理由，再決定錢花在哪。行銷亮點打造、商會一對一轉換器、引薦力打造、精準廣告投放。"><meta name="robots" content="noindex"><link rel="icon" href="assets/logo.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>FireBirdUSP 品牌官網</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* 版面概念：首屏是「衣轉人」光縫舞台（品牌桃紅牆＋頂端唯一極亮處）→ 白底「發牌」服務總覽 → 深色「亮點銀河」→ 「三步驟光束」→ 從這裡開始 → 關於 FireBirdUSP → 收尾光縫。
+   四項服務各有一個辨識色：亮點＝金、商會一對一＝酒紅（呼應商會紅白）、引薦＝藍、廣告＝青；品牌桃紅負責行動按鈕。
+   這是刻意單一外觀（品牌色固定），所以不做深色模式切換，但每個顏色都明確指定。 */
+:root{
+  --grad:linear-gradient(135deg,#B2489E,#D6336C 55%,#E3496F);
+  --purple:#B2489E; --rose:#D6336C; --coral:#E3496F; --accent:#FF3399;
+  --text:#5C4F58; --head:#3B2035; --note:#9C8F98;
+  --card:#FDF3F8; --line:#E7C8DC; --page:#FFFFFF; --blush:#FFF6FA;
+  --night:#140A12; --night-2:#1F121C; --night-line:#3A2434; --on-dark:#F7EEF4; --on-dark-muted:#C7B3C1;
+  /* 四項服務辨識色（亮色用在深底／光暈，深色用在白底文字） */
+  --y:#FFC83D; --y-d:#A36A00; --y-bg:#FFF6DC;
+  --g:#E5293F; --g-d:#A3162F; --g-bg:#FDE8EB;
+  --b:#4C93FF; --b-d:#1F5FCC; --b-bg:#E6F0FF;
+  --o:#17B6C8; --o-d:#0A7381; --o-bg:#E1F5F7;
+  --font:'Noto Sans TC','Microsoft JhengHei','微軟正黑體','PingFang TC',system-ui,sans-serif;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+  --slow:cubic-bezier(0.65,0,0.35,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--page);color:var(--text);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden;word-break:keep-all;line-break:strict;overflow-wrap:anywhere}
+button{font-family:var(--font)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+@media (min-width:768px){.wrap{padding-inline:32px}}
+.c-light{--c:var(--y);--cd:var(--y-d);--cb:var(--y-bg)}
+.c-meet{--c:var(--g);--cd:var(--g-d);--cb:var(--g-bg)}
+.c-refer{--c:var(--b);--cd:var(--b-d);--cb:var(--b-bg)}
+.c-ad{--c:var(--o);--cd:var(--o-d);--cb:var(--o-bg)}
+
+/* 服務色塊統一質感：白邊＋上方微白漸層（10-08 火鳥芸：色塊太硬、紅色被吃掉） */
+.ic,.tile.k .tile-in,.dots4 i,.gx-legend .dot{
+  background:linear-gradient(180deg,rgba(255,255,255,.5) 0%,rgba(255,255,255,.12) 45%,rgba(255,255,255,0) 70%),var(--c)!important;
+  border:2px solid rgba(255,255,255,.95)!important}
+.chip{display:inline-flex;align-items:center;gap:8px;background:rgba(84,16,66,.22)!important;border:1px solid rgba(255,255,255,.4)!important;color:#fff!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 1px 1px 0 rgba(255,255,255,.35)}
+.chip.k::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px #fff,0 0 10px var(--c);flex:none}
+.cell .dot{box-shadow:0 0 0 2px #fff,0 0 10px var(--c)!important}
+
+/* ───────── 頁首（固定） ───────── */
+.top{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:20px;
+  padding:calc(18px + env(safe-area-inset-top,0px)) 28px 18px;color:#fff;
+  transition:background 400ms var(--ease),padding 400ms var(--ease),box-shadow 400ms}
+.top.solid{background:linear-gradient(135deg,rgba(178,72,158,.9),rgba(214,51,108,.9) 55%,rgba(227,73,111,.9));-webkit-backdrop-filter:blur(14px) saturate(130%);backdrop-filter:blur(14px) saturate(130%);
+  padding-top:calc(12px + env(safe-area-inset-top,0px));padding-bottom:12px;box-shadow:0 8px 30px rgba(40,6,30,.25)}
+.brand{color:#fff;text-decoration:none;font-weight:900;font-size:21px;letter-spacing:.01em;white-space:nowrap;text-shadow:0 1px 8px rgba(90,15,70,.25)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:50px;width:auto;display:block;filter:drop-shadow(0 1px 6px rgba(90,15,70,.3))}
+.brand span{font-weight:500;opacity:.9;font-size:15px}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{color:#fff;text-decoration:none;font-size:15px;font-weight:500;letter-spacing:.04em;padding:8px 12px;border-radius:999px;opacity:.95;text-shadow:0 1px 3px rgba(110,35,99,.55),0 0 12px rgba(110,35,99,.45);transition:background 200ms,opacity 200ms}
+.nav a:hover{background:rgba(255,255,255,.12);opacity:1}
+.nav a i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:7px;vertical-align:2px;background:var(--c)}
+.top-cta{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 20px;border-radius:999px;flex:none;
+  border:1px solid rgba(255,255,255,.8);color:#fff;text-decoration:none;font-size:15px;font-weight:500;letter-spacing:.04em;
+  transition:background 300ms,border-color 300ms}
+.top-cta:hover{background:var(--accent);border-color:var(--accent)}
+.line-btn{background:#06C755!important;border-color:#06C755!important;color:#fff!important;box-shadow:0 8px 22px rgba(6,199,85,.35)!important;gap:8px}
+.line-btn:hover{background:#05B34C!important;border-color:#05B34C!important}
+.line-btn svg{width:20px;height:20px;fill:#fff;flex:none}
+.top .top-cta.line-btn{height:36px;padding:0 14px;font-size:14px;box-shadow:none!important;gap:6px}
+.top .top-cta.line-btn svg{width:16px;height:16px}
+@media (max-width:900px){.nav{display:none}.top-cta{margin-left:auto}.top{padding-inline:18px}.brand{font-size:18px}.brand span{display:none}.top-cta{height:36px;padding:0 14px;font-size:14px}}
+
+/* ───────── 首屏：衣轉人光縫 ───────── */
+.stage{position:relative;isolation:isolate;width:100%;min-height:100vh;min-height:100svh;overflow:hidden;background:var(--grad);color:#fff;--sc:#FFE6F2}
+.stage[data-scene="light"]{--sc:var(--y)}
+.stage[data-scene="meet"]{--sc:var(--g)}
+.stage[data-scene="refer"]{--sc:var(--b)}
+.stage[data-scene="ad"]{--sc:var(--o)}
+.light{position:absolute;inset:0;z-index:0;
+  background:radial-gradient(50% 26% at 50% 0%,#FFFFFF 0%,#FFE7F2 20%,rgba(255,170,206,.5) 46%,rgba(255,170,206,0) 78%),
+  linear-gradient(180deg,#E04A84 0%,#BE3478 55%,#A22E77 82%,#C2457F 100%)}
+.glow{position:absolute;left:50%;top:-24vh;width:52vh;height:52vh;margin-left:-26vh;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(255,230,242,.55) 32%,rgba(255,230,242,0) 70%);
+  transition:transform 1200ms var(--slow),opacity 1200ms var(--slow)}
+.stage[data-scene="ad"] .glow{transform:scale(.8)}
+.stage[data-scene="light"] .glow{transform:scale(1.36)}
+.stage[data-scene="refer"] .glow{transform:translateX(-9vw) scale(.98)}
+.stage[data-scene="meet"] .glow{transform:scale(.92)}
+.floor{position:absolute;left:0;right:0;bottom:0;height:22%;background:radial-gradient(40% 70% at 50% 100%,rgba(255,214,234,.35),rgba(255,214,234,0) 70%)}
+.walls{position:absolute;inset:0;z-index:1;filter:drop-shadow(0 0 28px rgba(255,196,226,.38))}
+.wall{position:absolute;inset:0;transition:clip-path 1150ms var(--slow)}
+.wall-l{background:linear-gradient(100deg,#9C3A8D 0%,#B2489E 55%,#C24690 100%);clip-path:polygon(0 0,34% 0,46% 86%,0 100%)}
+.wall-r{background:linear-gradient(260deg,#E3496F 0%,#D6336C 50%,#C8326F 100%);clip-path:polygon(66% 0,100% 0,100% 100%,54% 86%)}
+.stage[data-scene="ad"]    .wall-l{clip-path:polygon(0 0,44% 0,48.6% 86%,0 100%)}
+.stage[data-scene="ad"]    .wall-r{clip-path:polygon(56% 0,100% 0,100% 100%,51.4% 86%)}
+.stage[data-scene="light"] .wall-l{clip-path:polygon(0 0,17% 0,37% 86%,0 100%)}
+.stage[data-scene="light"] .wall-r{clip-path:polygon(83% 0,100% 0,100% 100%,63% 86%)}
+.stage[data-scene="refer"] .wall-l{clip-path:polygon(0 0,22% 0,38% 86%,0 100%)}
+.stage[data-scene="refer"] .wall-r{clip-path:polygon(54% 0,100% 0,100% 100%,57% 86%)}
+.stage[data-scene="meet"]  .wall-l{clip-path:polygon(0 0,30% 0,41% 86%,0 100%)}
+.stage[data-scene="meet"]  .wall-r{clip-path:polygon(70% 0,100% 0,100% 100%,59% 86%)}
+.stage.pre .wall-l{clip-path:polygon(0 0,50% 0,50% 86%,0 100%)}
+.stage.pre .wall-r{clip-path:polygon(50% 0,100% 0,100% 100%,50% 86%)}
+.stage.entering .wall{transition-duration:1700ms}
+.stage.pre .glow{opacity:0;transform:scale(.5)}
+.orn{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.orn g{opacity:0;transition:opacity 500ms var(--ease)}
+.orn .d{fill:none;stroke:rgba(255,255,255,.34);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1300ms var(--slow) 250ms}
+.stage[data-scene="ad"] .o-ad,.stage[data-scene="light"] .o-light,.stage[data-scene="refer"] .o-refer,.stage[data-scene="meet"] .o-meet{opacity:1}
+.stage[data-scene="ad"] .o-ad .d,.stage[data-scene="light"] .o-light .d,.stage[data-scene="refer"] .o-refer .d,.stage[data-scene="meet"] .o-meet .d{stroke-dashoffset:0}
+.motes{position:absolute;inset:0;z-index:3;pointer-events:none}
+.motes i{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:rgba(255,236,246,.75);animation:rise 14s linear infinite;opacity:0}
+.motes i:nth-child(1){left:47%}
+.motes i:nth-child(2){left:52%;animation-delay:3.5s;width:3px;height:3px;background:var(--y)}
+.motes i:nth-child(3){left:49.5%;animation-delay:7s}
+.motes i:nth-child(4){left:54%;animation-delay:10s;width:3px;height:3px;background:var(--b)}
+.motes i:nth-child(5){left:45.5%;animation-delay:12s;width:3px;height:3px;background:var(--g)}
+.motes i:nth-child(6){left:50.5%;animation-delay:5s;width:2px;height:2px;background:var(--o)}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.85}80%{opacity:.5}100%{transform:translateY(-95vh);opacity:0}}
+
+.hero{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;padding:clamp(128px,20vh,200px) 20px 72px}
+.eyebrow{font-size:14px;font-weight:500;letter-spacing:.24em;margin:0 0 18px;text-align:center;text-shadow:0 1px 3px rgba(110,35,99,.55),0 0 14px rgba(110,35,99,.5);transition:opacity 700ms var(--ease)}
+.hero h1{margin:0 0 14px;font-weight:900;font-size:clamp(40px,6.4vw,92px);line-height:1.1;letter-spacing:.02em;text-align:center;text-wrap:balance;text-shadow:0 2px 22px rgba(110,35,99,.42)}
+.hero h1 span{display:inline-block;transition:opacity 900ms var(--ease),filter 900ms var(--ease),transform 900ms var(--ease)}
+.hero h1 span:nth-child(2){transition-delay:90ms}
+.stage.title-hidden h1 span,.stage.pre h1 span{opacity:0;filter:blur(12px);transform:translateY(-10px)}
+.stage.title-hidden .eyebrow,.stage.title-hidden .sub{opacity:0}
+.stage.entering h1 span:nth-child(1){transition-delay:550ms}
+.stage.entering h1 span:nth-child(2){transition-delay:680ms}
+.stage.pre .eyebrow{opacity:0}
+.hero .sub{margin:0 0 clamp(28px,4vh,40px);max-width:30em;text-align:center;font-size:clamp(15px,1.4vw,18px);line-height:1.75;letter-spacing:.03em;text-shadow:0 1px 12px rgba(110,35,99,.5);transition:opacity 600ms var(--ease)}
+.stage.pre .sub{opacity:0}
+.stage.entering .sub{transition-delay:800ms}
+
+.controller{position:relative;z-index:20;width:min(900px,100%);height:72px;--glass-x:24%;--glass-y:8%;--cap-c:transparent;
+  transition:opacity 800ms var(--ease),transform 800ms var(--ease),height 980ms var(--slow)}
+.stage.pre .controller{opacity:0;transform:translateY(14px)}
+.stage.entering .controller{transition-delay:900ms,900ms,0ms}
+.glass{position:absolute;border-radius:999px;pointer-events:none}
+.glass::before,.glass::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none}
+.glass::before{background:radial-gradient(120% 150% at var(--glass-x) var(--glass-y),rgba(255,255,255,.25),rgba(255,255,255,0) 53%),linear-gradient(115deg,rgba(255,255,255,.10),rgba(255,255,255,0) 42%)}
+.glass::after{padding:1px;background:conic-gradient(from 225deg,#FFC2E0,rgba(255,255,255,.35),#FFFFFF,#FFD7E6,rgba(255,255,255,.35),#FFC2E0);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.track{top:4px;left:0;width:100%;height:64px;background:rgba(84,16,66,.30);border:1px solid rgba(255,255,255,.2);
+  -webkit-backdrop-filter:blur(9px) saturate(126%);backdrop-filter:blur(9px) saturate(126%);
+  box-shadow:0 14px 38px rgba(70,8,50,.18),inset 1px 1px 0 rgba(255,255,255,.48),inset -1px -1px 0 rgba(90,20,70,.16);
+  transition:left 980ms var(--slow),width 980ms var(--slow),top 980ms var(--slow),height 980ms var(--slow),border-radius 980ms var(--slow),opacity 400ms linear}
+.track::after{opacity:.27}
+.capsule{top:-1px;height:72px;left:var(--cap-left,-5px);width:var(--cap-width,calc(20% + 5px));
+  background:color-mix(in srgb,var(--cap-c) 30%,rgba(255,240,248,.22));border:1px solid rgba(255,255,255,.3);
+  -webkit-backdrop-filter:blur(13px) saturate(128%);backdrop-filter:blur(13px) saturate(128%);
+  box-shadow:0 11px 28px rgba(70,8,50,.2),0 0 30px -6px var(--cap-c),inset 1px 1px 0 rgba(255,255,255,.62),inset -1px -1px 0 rgba(90,20,70,.2);
+  transition:left 620ms var(--ease),width 620ms var(--ease),background 500ms var(--ease),box-shadow 500ms,top 980ms var(--slow),height 980ms var(--slow),opacity 300ms}
+.capsule::after{opacity:.3}
+.cells{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);align-items:center}
+.cell{display:flex;align-items:center;justify-content:center;gap:8px;height:100%;min-height:44px;padding:0 8px;color:#fff;font-size:17px;font-weight:500;line-height:1.2;letter-spacing:.02em;white-space:nowrap;
+  text-shadow:0 1px 8px rgba(90,15,70,.3);transition:opacity 420ms var(--ease),filter 420ms var(--ease),transform 980ms var(--slow)}
+.cell .dot{width:9px;height:9px;border-radius:50%;flex:none;background:var(--c);box-shadow:0 0 10px var(--c),0 0 0 2px rgba(255,255,255,.35)}
+.cell.c-meet .dot,.dots4 i.c-meet,.gx-legend .c-meet .dot{box-shadow:0 0 0 2px #fff,0 0 12px var(--c)}
+.lead{font-weight:400;opacity:.95}
+.controller.hl .lead{opacity:.5}
+button.cell{background:transparent;border:0;border-radius:999px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button.cell:disabled{cursor:default}
+.cell .rst{display:none}
+.controller.collapsed .capsule{left:calc(50% - 100px);width:200px}
+.controller.collapsed .track{left:calc(50% - 96px);width:192px}
+.controller.rear-out .track{opacity:0;transition:left 980ms var(--slow),width 980ms var(--slow),top 980ms var(--slow),height 980ms var(--slow),border-radius 980ms var(--slow),opacity 400ms linear 650ms}
+.controller.collapsed .cell:not(.chosen){opacity:0;filter:blur(10px);transform:scale(.94);pointer-events:none}
+.controller.collapsed .lead{opacity:0}
+.cell.chosen{transform:translate(var(--dx,0),var(--dy,0))}
+.cell.reset .lbl,.cell.reset .dot{display:none}
+.cell.reset .rst{display:inline;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;animation:reveal 520ms var(--ease) both}
+@keyframes reveal{from{opacity:0;filter:blur(10px)}to{opacity:1;filter:blur(0)}}
+.controller.reversing .cell:not(.chosen){transition:opacity 760ms var(--ease) 60ms,filter 760ms var(--ease) 60ms,transform 980ms var(--slow)}
+
+.slot{display:grid;width:min(680px,100%);margin-top:28px}
+.slot>*{grid-area:1/1}
+.hint{margin:0;justify-self:center;text-align:center;font-size:14px;letter-spacing:.06em;opacity:.85;text-shadow:0 1px 10px rgba(110,35,99,.5);transition:opacity 400ms}
+.stage.pre .hint{opacity:0}
+.stage.detail .hint{opacity:0;visibility:hidden}
+.panel{align-self:start;visibility:hidden;opacity:0;transform:translateY(16px);background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 32px 28px;color:var(--text);
+  box-shadow:0 24px 60px rgba(70,8,50,.28);position:relative;overflow:hidden;transition:opacity 300ms var(--ease),transform 300ms var(--ease),visibility 0s 300ms}
+.panel::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--c)}
+.panel.in{visibility:visible;opacity:1;transform:none;transition:opacity 560ms var(--ease) 80ms,transform 700ms var(--ease) 80ms,visibility 0s}
+.panel .tag{margin:0 0 8px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--cd);letter-spacing:.18em}
+.panel .tag b{font-weight:700;font-size:11px;letter-spacing:.08em;color:var(--head);background:var(--cb);border-radius:999px;padding:2px 9px}
+.panel h2{margin:0 0 12px;font-size:clamp(22px,2.2vw,28px);line-height:1.35;font-weight:900;color:var(--head);text-wrap:balance}
+.panel h2 em{font-style:normal;color:var(--cd)}
+.panel .body{margin:0 0 18px;font-size:16px;line-height:1.85}
+.panel ul{list-style:none;margin:0 0 24px;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:10px}
+.panel li{position:relative;padding-left:20px;font-size:15px;line-height:1.6}
+.panel li::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--c)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-size:17px;font-weight:700;letter-spacing:.06em;
+  box-shadow:0 8px 22px rgba(255,51,153,.32);transition:transform 220ms var(--ease),box-shadow 220ms var(--ease);border:0;cursor:pointer}
+.cta:hover{transform:translateY(-1px);box-shadow:0 12px 28px rgba(255,51,153,.42)}
+.cta svg{width:20px;height:20px;fill:#fff}
+.cta-row small{font-size:13px;color:var(--note);letter-spacing:.03em}
+.scroll-cue{position:absolute;left:50%;bottom:22px;z-index:12;transform:translateX(-50%);color:#fff;text-decoration:none;font-size:12px;letter-spacing:.2em;opacity:.8;display:flex;flex-direction:column;align-items:center;gap:6px}
+.scroll-cue i{width:1px;height:28px;background:linear-gradient(#fff,transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+.stage.detail .scroll-cue{opacity:0}
+
+@media (max-width:700px){
+  .hero{padding:108px 16px 72px}
+  .eyebrow{font-size:12px;letter-spacing:.18em;margin-bottom:12px}
+  .hero h1{font-size:clamp(36px,11vw,50px)}
+  .controller{height:156px}
+  .controller.collapsed{height:56px}
+  .track{top:0;height:156px;border-radius:28px}
+  .controller.collapsed .track{top:0;height:56px}
+  .capsule{opacity:0;pointer-events:none;top:0;height:56px;border-radius:28px}
+  .controller.collapsed .capsule{opacity:1;left:calc(50% - 100px);width:200px;top:0;height:56px}
+  .cells{inset:0 0 auto 0;height:156px;grid-template-columns:1fr 1fr;grid-template-rows:48px 54px 54px}
+  .lead{grid-column:1/-1;font-size:15px}
+  button.cell{border-radius:0;font-size:15px;border-top:1px solid rgba(255,255,255,.12)}
+  button.cell:nth-of-type(2),button.cell:nth-of-type(4){border-left:1px solid rgba(255,255,255,.12)}
+  .cell.chosen{border-color:transparent!important}
+  .panel{padding:24px 20px 22px;border-radius:18px}
+  .panel .body{font-size:15px}
+  .cta{width:100%}
+  .scroll-cue{display:none}
+}
+
+/* ───────── 區塊共用 ───────── */
+.sec{position:relative;padding-block:clamp(72px,10vw,128px)}
+.kick{display:inline-flex;align-items:center;gap:10px;margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--rose)}
+.kick::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--grad)}
+.sec h2.title{margin:0;font-size:clamp(30px,4.6vw,54px);line-height:1.22;font-weight:900;color:var(--head);letter-spacing:.01em;text-wrap:balance}
+.title .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec .lede{margin:16px 0 0;max-width:34em;font-size:clamp(15px,1.4vw,18px);line-height:1.85}
+
+/* ───────── 發牌：服務總覽 ───────── */
+.deal{overflow:hidden;isolation:isolate;background:var(--page);--k:1}
+.field{position:absolute;inset:0;z-index:0;pointer-events:none}
+.tile{position:absolute;left:var(--x);top:var(--y);width:calc(var(--sz)*var(--k));aspect-ratio:1;margin-left:calc(var(--sz)*var(--k)/-2);margin-top:calc(var(--sz)*var(--k)/-2);
+  transform:rotate(var(--r));opacity:var(--o);filter:blur(var(--bl))}
+.tile-in{width:100%;height:100%;border-radius:26%;background:var(--grad);display:grid;place-items:center;box-shadow:0 18px 40px -18px rgba(214,51,108,.55)}
+.tile.w .tile-in{background:#fff;border:1.5px solid var(--line);box-shadow:0 14px 30px -18px rgba(178,72,158,.45)}
+.tile.k .tile-in{background:var(--c);box-shadow:0 18px 40px -18px var(--c)}
+.tile-in svg{width:46%;height:46%;fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tile.w .tile-in svg{stroke:var(--rose)}
+.tile.c-light .tile-in svg{stroke:#5A3B00}
+.deal.play .tile{animation:burst 1.5s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d)}
+.deal.play .tile-in{animation:drift 9s ease-in-out infinite alternate;animation-delay:calc(var(--d) + 1.5s)}
+@keyframes burst{from{transform:translate(var(--dx),var(--dy)) scale(.15) rotate(0deg);opacity:0;filter:blur(0)}to{transform:translate(0,0) scale(1) rotate(var(--r));opacity:var(--o);filter:blur(var(--bl))}}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-12px)}}
+.deal::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 48% 54% at 50% 56%,#fff 50%,rgba(255,255,255,.85) 70%,rgba(255,255,255,0) 100%)}
+.deal .wrap{position:relative;z-index:2;text-align:center}
+.deal .kick{justify-content:center}
+.deal .lede{margin-inline:auto}
+.mark{width:68px;height:68px;margin:0 auto 24px;border-radius:20px;background:var(--grad);display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(214,51,108,.6)}
+.mark svg{width:34px;height:34px;fill:#fff}
+.svc-grid{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left}
+.svc{position:relative;min-width:0;display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 22px 22px;
+  box-shadow:0 18px 40px -30px rgba(178,72,158,.55);transition:transform 300ms var(--ease),box-shadow 300ms var(--ease),border-color 300ms}
+.svc:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 24px 48px -28px var(--c)}
+.svc.flash{animation:flash 1.6s var(--ease)}
+@keyframes flash{0%,100%{box-shadow:0 18px 40px -30px rgba(178,72,158,.55)}30%{box-shadow:0 0 0 4px var(--c),0 24px 48px -20px var(--c)}}
+.svc-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--c);display:grid;place-items:center;box-shadow:0 10px 22px -10px var(--c)}
+.ic svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.c-light .ic svg{stroke:#5A3B00}
+.badge{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--cd);background:var(--cb);border-radius:999px;padding:4px 10px}
+.svc h3{margin:0;font-size:20px;font-weight:900;color:var(--head);line-height:1.35}
+.svc .en{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--cd)}
+.svc p{margin:0;font-size:15px;line-height:1.75}
+.svc .fit{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;line-height:1.7;color:var(--note)}
+.svc .fit b{color:var(--cd);font-weight:700}
+.svc .more{align-self:flex-start;font:inherit;font-size:14px;font-weight:700;color:var(--cd);background:none;border:0;padding:4px 0;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+@media (max-width:1024px){.svc-grid{grid-template-columns:repeat(2,1fr)}.deal{--k:.8}}
+@media (max-width:600px){.svc-grid{grid-template-columns:1fr}.deal{--k:.55}.tile.sm-hide{display:none}.deal::after{background:radial-gradient(ellipse 90% 66% at 50% 56%,#fff 55%,rgba(255,255,255,.85) 74%,rgba(255,255,255,0) 100%)}}
+
+/* ───────── 從這裡開始 ───────── */
+.start{background:var(--blush)}
+.start-grid{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.entry{position:relative;min-width:0;display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 24px 24px}
+.entry.hot{border-color:var(--rose);box-shadow:0 22px 46px -30px rgba(214,51,108,.7)}
+.entry .step-no{font-size:12px;font-weight:700;letter-spacing:.2em;color:var(--note)}
+.entry .tagline-s{margin:0;font-size:13px;font-weight:700;color:var(--rose);letter-spacing:.08em}
+.entry h3{margin:0;font-size:22px;font-weight:900;color:var(--head)}
+.entry p{margin:0;font-size:15px;line-height:1.75}
+.entry .price{font-size:26px;font-weight:900;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.2}
+.more-s,.svc .more{margin-top:auto;align-self:flex-start;font-size:14px;font-weight:700;color:var(--rose);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;padding-top:6px}
+.svc .more{color:var(--cd)}
+@media (max-width:900px){.start-grid{grid-template-columns:1fr}}
+
+/* ───────── 亮點銀河 ───────── */
+.galaxy{background:radial-gradient(70% 50% at 50% 60%,#2A1024 0%,var(--night) 70%);color:var(--on-dark);overflow:hidden}
+.galaxy .kick{color:#FF8FC2}
+.galaxy h2.title{color:#fff}
+.galaxy .lede{color:var(--on-dark-muted)}
+.gx-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
+.gx-head>div{min-width:0;max-width:640px}
+.gx-legend{display:flex;flex-wrap:wrap;gap:8px}
+.gx-legend button{font:inherit;font-size:14px;color:var(--on-dark);background:var(--night-2);border:1px solid var(--night-line);border-radius:999px;padding:7px 14px 7px 11px;display:flex;align-items:center;gap:8px;cursor:pointer;white-space:nowrap;transition:border-color 200ms,background 200ms}
+.gx-legend button:hover{border-color:var(--c)}
+.gx-legend button[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 18%,var(--night-2))}
+.gx-legend .dot{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 10px var(--c)}
+.gx-stage{position:relative;margin-top:28px;height:clamp(460px,62vw,700px);border-radius:28px;overflow:hidden;border:1px solid var(--night-line);
+  background:radial-gradient(60% 50% at 50% 52%,rgba(214,51,108,.16),transparent 70%),#0E060C}
+.gx-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
+.gx-stage canvas.drag{cursor:grabbing}
+.gx-hint{position:absolute;right:16px;bottom:16px;font-size:12px;color:var(--on-dark-muted);background:rgba(31,18,28,.92);border:1px solid var(--night-line);border-radius:999px;padding:7px 14px;pointer-events:none}
+.tip{position:absolute;z-index:5;pointer-events:none;width:min(290px,calc(100% - 32px));background:var(--night-2);border:1px solid var(--night-line);border-radius:14px;overflow:hidden;
+  opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;box-shadow:0 12px 32px rgba(0,0,0,.5)}
+.tip.show{opacity:1;transform:none}
+.tip .bar{height:4px;background:var(--c,var(--accent))}
+.tip .in{padding:12px 15px 14px}
+.tip .grp{font-size:12px;color:var(--on-dark-muted);display:flex;align-items:center;gap:7px}
+.tip .grp i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.tip .name{font-size:17px;font-weight:700;margin:5px 0 6px;line-height:1.45;color:#fff}
+.tip .desc{font-size:13px;line-height:1.6;color:#E6D8E1}
+.tip .go{margin-top:8px;font-size:12px;font-weight:700;color:var(--c)}
+
+/* ───────── 三步驟光束 ───────── */
+.how{background:var(--blush)}
+.how-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:clamp(24px,3vw,40px)}
+.how-head>div{min-width:0;max-width:640px}
+.beam{position:relative;width:100%;height:clamp(360px,44vw,600px);border-radius:28px;overflow:hidden;
+  background:radial-gradient(60% 45% at 50% 78%,rgba(214,51,108,.22),transparent 70%),radial-gradient(80% 60% at 50% 20%,rgba(178,72,158,.10),transparent 70%),#160912}
+.beam canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.steps{position:relative;z-index:1;list-style:none;margin:-56px 0 0;padding:0 clamp(12px,2.4vw,32px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)}
+.step{min-width:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px 24px;opacity:.72;transform:translateY(8px);
+  transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),box-shadow .7s ease}
+.step.on{opacity:1;transform:none;box-shadow:0 18px 40px -28px rgba(178,72,158,.6)}
+.step-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.step .sdot{width:10px;height:10px;border-radius:50%;background:var(--line);transition:background .6s}
+.step.on .sdot{background:var(--grad);box-shadow:0 0 0 4px rgba(255,51,153,.12)}
+.num{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--note)}
+.step h3{margin:0 0 8px;font-size:clamp(20px,1.9vw,24px);font-weight:900;color:var(--head);line-height:1.35}
+.step p{margin:0;font-size:15px;line-height:1.8}
+@media (max-width:820px){.steps{grid-template-columns:1fr;margin-top:-36px}}
+
+/* ───────── 關於 ───────── */
+.about{background:var(--page)}
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,6vw,80px);align-items:start}
+.about-grid>*{min-width:0}
+.name-card{position:relative;border-radius:28px;padding:clamp(28px,4vw,44px);color:#fff;overflow:hidden;isolation:isolate;
+  background:radial-gradient(60% 40% at 50% 0%,rgba(255,255,255,.55),transparent 70%),var(--grad);box-shadow:0 30px 70px -36px rgba(178,72,158,.8)}
+.name-card::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(3px 3px at 18% 70%,var(--y),transparent),radial-gradient(2px 2px at 80% 30%,var(--b),transparent),
+  radial-gradient(3px 3px at 70% 82%,var(--g),transparent),radial-gradient(2px 2px at 32% 22%,var(--o),transparent),
+  radial-gradient(2px 2px at 88% 66%,#fff,transparent),radial-gradient(2px 2px at 10% 40%,#fff,transparent)}
+.name-card .role{margin:0;font-size:14px;font-weight:500;letter-spacing:.24em;opacity:.92}
+.name-card .nm{margin:10px 0 18px;font-size:clamp(46px,7vw,84px);font-weight:900;line-height:1;letter-spacing:.06em;text-shadow:0 4px 30px rgba(110,35,99,.4)}
+.name-card .nm-co{font-size:clamp(40px,5.6vw,68px);letter-spacing:.01em}
+.name-card .tagline em{display:inline-block}
+.name-card .tagline{text-wrap:balance;margin:0;font-size:clamp(17px,1.8vw,21px);font-weight:700;line-height:1.6}
+.name-card .tagline em{font-style:normal;background:#fff;color:var(--rose);border-radius:8px;padding:0 8px;margin:0 2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chip{font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);white-space:nowrap}
+.chip.k{background:var(--c);border-color:transparent;color:#2B1024}
+.about h3{margin:0 0 14px;font-size:clamp(22px,2.4vw,28px);font-weight:900;color:var(--head);line-height:1.4;text-wrap:balance}
+.about .p{margin:0 0 16px;font-size:16px;line-height:1.9}
+.cv{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.cv li{display:grid;grid-template-columns:12px 1fr;gap:12px;align-items:start;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);font-size:15px;line-height:1.65}
+.cv li::before{content:"";width:10px;height:10px;margin-top:.45em;border-radius:50%;background:var(--c,var(--rose))}
+.cv b{color:var(--head)}
+.rules{margin-top:clamp(40px,6vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rule{min-width:0;border-radius:20px;padding:22px 22px 24px;background:var(--cb);border:1px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.rule .q{display:block;font-size:12px;font-weight:700;letter-spacing:.18em;color:var(--cd);margin-bottom:8px}
+.rule h4{margin:0 0 8px;font-size:19px;font-weight:900;color:var(--head);line-height:1.4}
+.rule p{margin:0;font-size:14px;line-height:1.75}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}.rules{grid-template-columns:1fr}}
+
+/* ───────── 收尾：光縫 CTA ───────── */
+.end{position:relative;isolation:isolate;overflow:hidden;color:#fff;text-align:center;background:var(--grad);padding-block:clamp(96px,13vw,160px) clamp(72px,9vw,110px)}
+.end .light{z-index:-2}
+.end .walls{z-index:-1}
+.end .wall-l{clip-path:polygon(0 0,38% 0,44% 100%,0 100%)}
+.end .wall-r{clip-path:polygon(62% 0,100% 0,100% 100%,56% 100%)}
+.end h2{margin:0 auto;max-width:14em;font-size:clamp(32px,5vw,62px);font-weight:900;line-height:1.2;text-wrap:balance;text-shadow:0 2px 22px rgba(110,35,99,.45)}
+.end p{margin:18px auto 0;max-width:30em;font-size:clamp(15px,1.5vw,18px);line-height:1.8;text-shadow:0 1px 12px rgba(110,35,99,.5)}
+.end .cta{margin-top:34px;padding:0 38px;min-height:56px;font-size:18px;box-shadow:0 12px 34px -6px rgba(255,51,153,.65),0 0 0 7px rgba(255,255,255,.16)}
+.end small{display:block;margin-top:16px;font-size:13px;opacity:.85}
+.dots4{display:flex;justify-content:center;gap:10px;margin-bottom:22px}
+.dots4 i{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c)}
+footer{background:#2A0E22;color:var(--on-dark-muted);font-size:13px;padding-block:26px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer b{color:#fff;font-weight:900}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:1ms!important;transition-delay:0ms!important;animation-duration:1ms!important;animation-iteration-count:1!important}
+  .motes{display:none}
+  .hero h1 span,.cell,.cell.reset .rst{filter:none!important}
+  .step{opacity:1;transform:none}
+}
+</style>
+
+<!-- 圖示 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.5l2.3 6.6 6.7 2.4-6.7 2.4L12 20.5l-2.3-6.6L3 11.5l6.7-2.4z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.8"/><circle cx="18" cy="6" r="2.8"/><circle cx="18" cy="18" r="2.8"/><path d="M8.6 10.7l6.8-3.4M8.6 13.3l6.8 3.4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M3.5 5h10a2 2 0 0 1 2 2v4.5a2 2 0 0 1-2 2H8.5l-3.5 3v-3H3.5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M18.5 9h2a2 2 0 0 1 2 2v4.5a2 2 0 0 1-2 2H20v3l-3.5-3h-4a2 2 0 0 1-1.5-.7"/></symbol>
+  <symbol id="i-mega" viewBox="0 0 24 24"><path d="M3 10v4h4l7 5V5L7 10H3z"/><path d="M18 9a4 4 0 0 1 0 6"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M5 20V11M11 20V5M17 20v-7M2.5 20h19"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-line" viewBox="0 0 24 24"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5 1.1-.5 5.8-3.4 7.9-5.9C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></symbol>
+</svg>
+
+<header class="top" id="topbar">
+  <a class="brand" href="#top" aria-label="FireBirdUSP 精準行銷亮點打造，回到頂端"><img src="assets/logo_white_sm.png" alt="FireBirdUSP" width="100" height="50"></a>
+  <nav class="nav" aria-label="主要區塊">
+    <a href="#services">服務</a>
+    <a href="#start">從這裡開始</a>
+    <a href="#how">怎麼做</a>
+    <a href="about.html">關於 FireBirdUSP</a>
+  </nav>
+  <a class="top-cta line-btn js-line" href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-line"/></svg>加 LINE 聊聊</a>
+</header>
+
+<main>
+<!-- ═════════ 1. 首屏：衣轉人 ═════════ -->
+<section class="stage pre entering" id="top" aria-labelledby="hero-title">
+  <div class="light" aria-hidden="true"><div class="glow"></div><div class="floor"></div></div>
+  <div class="walls" aria-hidden="true"><div class="wall wall-l"></div><div class="wall wall-r"></div></div>
+  <svg class="orn" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="o-ad"><circle class="d" pathLength="1" cx="720" cy="200" r="70"/><circle class="d" pathLength="1" cx="720" cy="200" r="140"/><circle class="d" pathLength="1" cx="720" cy="200" r="215"/><path class="d" pathLength="1" d="M720 -20V60M720 340V420M500 200H580M860 200H940"/></g>
+    <g class="o-light"><path class="d" pathLength="1" d="M720 60L720 360M720 60L560 330M720 60L880 330M720 60L430 260M720 60L1010 260M720 60L370 160M720 60L1070 160"/></g>
+    <g class="o-refer"><path class="d" pathLength="1" d="M420 300L640 150L1000 250"/><circle class="d" pathLength="1" cx="420" cy="300" r="10"/><circle class="d" pathLength="1" cx="640" cy="150" r="14"/><circle class="d" pathLength="1" cx="1000" cy="250" r="10"/></g>
+    <g class="o-meet"><ellipse class="d" pathLength="1" cx="610" cy="815" rx="120" ry="22"/><ellipse class="d" pathLength="1" cx="830" cy="815" rx="120" ry="22"/><path class="d" pathLength="1" d="M640 760Q720 690 800 760"/></g>
+  </svg>
+  <div class="motes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="hero">
+    <p class="eyebrow">精準行銷亮點打造</p>
+    <h1 id="hero-title"><span>讓個人或品牌，</span><span>被看見。</span></h1>
+    <p class="sub">先找到客人選你的理由，再決定錢花在哪。</p>
+
+    <div class="controller" id="ctrl" role="group" aria-label="選擇一項服務">
+      <div class="glass track" aria-hidden="true"></div>
+      <div class="glass capsule" aria-hidden="true"></div>
+      <div class="cells">
+        <div class="cell lead">你想先突破哪裡 →</div>
+        <button class="cell c-light" type="button" aria-controls="p-light" aria-expanded="false"><i class="dot" aria-hidden="true"></i><span class="lbl">行銷亮點打造</span><span class="rst">← 看其他服務</span></button>
+        <button class="cell c-meet" type="button" aria-controls="p-meet" aria-expanded="false"><i class="dot" aria-hidden="true"></i><span class="lbl">商會一對一轉換器</span><span class="rst">← 看其他服務</span></button>
+        <button class="cell c-refer" type="button" aria-controls="p-refer" aria-expanded="false"><i class="dot" aria-hidden="true"></i><span class="lbl">引薦力打造</span><span class="rst">← 看其他服務</span></button>
+        <button class="cell c-ad" type="button" aria-controls="p-ad" aria-expanded="false"><i class="dot" aria-hidden="true"></i><span class="lbl">精準廣告投放</span><span class="rst">← 看其他服務</span></button>
+      </div>
+    </div>
+
+    <div class="slot">
+      <p class="hint">點一項服務，光會照到它身上</p>
+
+      <article class="panel c-light" id="p-light" aria-labelledby="t-light">
+        <p class="tag">行銷亮點打造 <b>主力服務</b></p>
+        <h2 id="t-light">你的料很好，值得<em>被放大</em></h2>
+        <p class="body">亮點不是你自己覺得棒的地方，而是客戶做選擇時，真正讓他選你的理由。我們從市場與客戶的角度替你分析，找出這個理由，再規劃它要怎麼被放大。</p>
+        <ul><li>專業分析你在市場上的位置與機會</li><li>整理成亮點建議書，方向清楚好執行</li><li>要找外部團隊執行時，附上亮點落地規範書</li></ul>
+        <div class="cta-row"><a class="cta" href="services/highlight.html">看完整介紹</a><small>聊聊你的品牌，看從哪裡開始</small></div>
+      </article>
+
+      <article class="panel c-meet" id="p-meet" aria-labelledby="t-meet">
+        <p class="tag">商會一對一轉換器 <b>主力服務</b></p>
+        <h2 id="t-meet">讓不同產業的人，<em>也聽得懂你的專業</em></h2>
+        <p class="body">商會裡大家來自不同產業，你介紹完，對方不一定聽得懂。我們根據你的資料先幫你準備好：怎麼介紹、見面要問什麼，讓每一場一對一都變成引薦機會。</p>
+        <ul><li>用對方聽得懂的話，說清楚你的專業</li><li>依你想被引薦的對象，設計見面時要問的問題</li><li>對應你的重點客戶與人脈圈，準備好引薦說法</li></ul>
+        <div class="cta-row"><a class="cta" href="services/converter.html">看完整介紹</a><small>方案與費用，歡迎在 LINE 上聊聊</small></div>
+      </article>
+
+      <article class="panel c-refer" id="p-refer" aria-labelledby="t-refer">
+        <p class="tag">引薦力打造</p>
+        <h2 id="t-refer">讓介紹你的人，<em>一句話</em>就講清楚</h2>
+        <p class="body">很多人願意引薦你，卻不知道怎麼開口。我們透過一對一諮詢，從你既有的經歷與成果中挖出亮點，整理成別人一聽就懂、也好轉述的說法。</p>
+        <ul><li>從你已經有的基礎，挖出亮點</li><li>整理成一句好轉述的話</li><li>準備好被引薦、自我介紹時用得上的說法</li></ul>
+        <div class="cta-row"><a class="cta" href="services/referral.html">看完整介紹</a><small>聊聊你最想被介紹給誰</small></div>
+      </article>
+
+      <article class="panel c-ad" id="p-ad" aria-labelledby="t-ad">
+        <p class="tag">精準廣告投放</p>
+        <h2 id="t-ad">廣告不只被看到，<em>要被你指定的族群看到</em></h2>
+        <p class="body">一般社群廣告大多只能用年齡、性別、地區或互動來圈人。我們能依你指定的行為輪廓鎖定受眾，讓廣告出現在他們常去的各類網站上；上線後再用數據分析與 A/B 測試，找出最有反應的說法。</p>
+        <ul><li>依指定行為鎖定受眾，不只看年齡、性別、地區</li><li>跨多種網站曝光，出現在目標族群眼前</li><li>上線後持續分析與 A/B 測試，調整方向</li></ul>
+        <div class="cta-row"><a class="cta" href="services/ads.html">看完整介紹</a><small>先說說你想讓誰看見</small></div>
+      </article>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#services">往下看<i></i></a>
+  <div class="sr" id="live" role="status" aria-live="polite"></div>
+</section>
+
+<!-- ═════════ 2. 發牌：服務總覽 ═════════ -->
+<section class="sec deal" id="services" aria-labelledby="svc-title">
+  <div class="field" id="field" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.4 2.5c.6 3.4 4.9 5.6 4.9 10.3A5.3 5.3 0 0 1 12 18.1a5.3 5.3 0 0 1-5.3-5.3c0-2.3 1.2-3.8 2.3-4.9.2 1.9 1.1 3 2.3 3 0-3.3-.4-5.9 1.1-8.4zM9.2 19.6h5.6c-.6 1.2-1.6 1.9-2.8 1.9s-2.2-.7-2.8-1.9z"/></svg></div>
+    <p class="kick">四項服務</p>
+    <h2 class="title" id="svc-title">你的料本來就夠好，<br>只是<span class="hl">被講小了</span></h2>
+    <p class="lede">我們從客戶做選擇的角度分析你的品牌，把差異說清楚，變成客戶選你的理由。四種顏色，對應四個你可能卡住的地方。</p>
+
+    <ul class="svc-grid">
+      <li class="svc c-light" id="svc-light">
+        <div class="svc-top"><span class="ic" aria-hidden="true"><svg><use href="#i-spark"/></svg></span><span class="badge">主力</span></div>
+        <span class="en">HIGHLIGHT</span>
+        <h3>行銷亮點打造</h3>
+        <p>站在客戶的角度看你，找出對方第一眼就記得的那個差異。</p>
+        <p class="fit"><b>適合</b>　明明有實力，卻說不出和別人哪裡不同</p>
+        <a class="more" href="services/highlight.html">看完整介紹 →</a>
+      </li>
+      <li class="svc c-meet" id="svc-meet">
+        <div class="svc-top"><span class="ic" aria-hidden="true"><svg><use href="#i-chat"/></svg></span><span class="badge">主力</span></div>
+        <span class="en">ONE-TO-ONE</span>
+        <h3>商會一對一轉換器</h3>
+        <p>讓不同產業的人也聽得懂你的專業，一對一之後知道要介紹誰給你。</p>
+        <p class="fit"><b>適合</b>　一對一聊得愉快，結束後卻沒有下文</p>
+        <a class="more" href="services/converter.html">看完整介紹 →</a>
+      </li>
+      <li class="svc c-refer" id="svc-refer">
+        <div class="svc-top"><span class="ic" aria-hidden="true"><svg><use href="#i-link"/></svg></span></div>
+        <span class="en">REFERRAL</span>
+        <h3>引薦力打造</h3>
+        <p>從你既有的基礎挖出亮點，讓夥伴開口推薦你時不卡詞。</p>
+        <p class="fit"><b>適合</b>　人脈不少，卻很少被主動引薦</p>
+        <a class="more" href="services/referral.html">看完整介紹 →</a>
+      </li>
+      <li class="svc c-ad" id="svc-ad">
+        <div class="svc-top"><span class="ic" aria-hidden="true"><svg><use href="#i-target"/></svg></span></div>
+        <span class="en">ADS</span>
+        <h3>精準廣告投放</h3>
+        <p>依指定行為鎖定受眾，讓廣告出現在目標族群眼前。</p>
+        <p class="fit"><b>適合</b>　廣告有曝光，卻總覺得沒打到目標族群</p>
+        <a class="more" href="services/ads.html">看完整介紹 →</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═════════ 2.5 從這裡開始 ═════════ -->
+<section class="sec start" id="start" aria-labelledby="start-title">
+  <div class="wrap">
+    <p class="kick">從這裡開始</p>
+    <h2 class="title" id="start-title">還不確定要做哪一項？<br><span class="hl">先看看你現在在哪</span></h2>
+    <p class="lede">不用一開始就決定服務。先做個測驗、拿一份診斷，或找我們聊聊，再決定下一步。</p>
+    <ol class="start-grid">
+      <li class="entry">
+        <span class="step-no">01</span>
+        <p class="tagline-s">先自己看看</p>
+        <h3>免費亮點測驗</h3>
+        <p>幾個問題，快速看出你的品牌現在最卡在哪一段。</p>
+        <a class="more-s" href="start/free-test.html">了解測驗 →</a>
+      </li>
+      <li class="entry hot">
+        <span class="step-no">02</span>
+        <p class="tagline-s">想要完整的答案</p>
+        <h3>品牌亮點診斷</h3>
+        <p class="price">NT$ 600</p>
+        <p>一份完整的診斷報告：你的亮點在哪、客人有沒有看見、跟對手比起來還有什麼空間。</p>
+        <a class="more-s" href="start/diagnosis.html">看報告內容 →</a>
+      </li>
+      <li class="entry">
+        <span class="step-no">03</span>
+        <p class="tagline-s">還在摸索方向</p>
+        <h3>線上陪跑</h3>
+        <p>每次 2 小時，線上陪你把想法聊清楚。聽你怎麼做、給你建議，方向由你決定。</p>
+        <a class="more-s" href="start/coaching.html">了解陪跑 →</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═════════ 3. 亮點銀河 ═════════ -->
+<section class="sec galaxy" id="galaxy" aria-labelledby="gx-title">
+  <div class="wrap">
+    <div class="gx-head">
+      <div>
+        <p class="kick">亮點銀河</p>
+        <h2 class="title" id="gx-title">你卡在哪一顆星？</h2>
+        <p class="lede">每一顆星，都是企業主常跟我們說的一句話。四條旋臂對應四項服務，找到最像你的那一顆，就知道從哪裡開始。</p>
+      </div>
+      <div class="gx-legend" id="gx-legend" role="group" aria-label="只看某一項服務"></div>
+    </div>
+    <div class="gx-stage" id="gx-stage">
+      <canvas id="gx" aria-label="亮點銀河：四項服務與常見卡關點的互動星圖" role="img"></canvas>
+      <div class="tip" id="gx-tip"><div class="bar"></div><div class="in"></div></div>
+      <div class="gx-hint">拖曳旋轉 ・ 滑過看說明 ・ 點星星看對應服務</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 4. 三步驟光束 ═════════ -->
+<section class="sec how" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="how-head">
+      <div>
+        <p class="kick">我們怎麼做</p>
+        <h2 class="title" id="how-title">三步，讓客人<span class="hl">看懂</span>你的價值</h2>
+        <p class="lede">不急著幫你創造新東西。先把你手上已經有的料找出來、說清楚，再陪你把它變成成果。</p>
+      </div>
+      <a class="cta line-btn js-line" href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-line"/></svg>加 LINE 聊聊</a>
+    </div>
+    <div class="beam" id="beam" aria-hidden="true"><canvas id="bc"></canvas></div>
+    <ol class="steps">
+      <li class="step" data-at="0.3"><div class="step-top"><span class="sdot"></span><span class="num">STEP 1</span></div><h3>看見亮點</h3><p>我們從市場與客戶做選擇的角度，替你分析品牌現況，找出客人選你的真正理由。</p></li>
+      <li class="step" data-at="1.9"><div class="step-top"><span class="sdot"></span><span class="num">STEP 2</span></div><h3>說出亮點</h3><p>把亮點翻成一句對方聽得懂的話。主詞放在客戶身上：他會得到什麼、為什麼是你。</p></li>
+      <li class="step" data-at="3.8"><div class="step-top"><span class="sdot"></span><span class="num">STEP 3</span></div><h3>被選擇</h3><p>把這句話帶進自我介紹、一對一、簡報與廣告，讓客人更快認出你、記住你。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═════════ 5. 關於 FireBirdUSP ═════════ -->
+<section class="sec about" id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="name-card">
+        <p class="role">精準行銷亮點打造</p>
+        <p class="nm nm-co">FireBirdUSP</p>
+        <p class="tagline">幫個人與品牌找到亮點、放大價值的<em>超級催化劑</em></p>
+        <div class="chips">
+          <span class="chip k c-light">亮點放大器</span>
+          <span class="chip k c-meet">人脈串聯</span>
+          <span class="chip k c-refer">資源整合</span>
+          <span class="chip k c-ad">行動力</span>
+          <span class="chip">差異化</span>
+          <span class="chip">獨特銷售主張</span>
+          <span class="chip">創意連結</span>
+        </div>
+      </div>
+      <div>
+        <p class="kick">關於 FireBirdUSP</p>
+        <h3 id="about-title">我們做的不是「認識自己」，是「看見別人怎麼想」</h3>
+        <p class="p">很多品牌有實力，卻不容易被看見。問題常常不在不夠好，而在用自己的角度介紹自己。我們陪你站到客戶、合作夥伴、引薦人的位置，看他們怎麼比較、怎麼記住，再把你的亮點放到他們看得見的地方。</p>
+        <ul class="cv">
+          <li class="c-light"><span>延伸自<b>速傑企業股份有限公司</b>，把 40 年系統開發的嚴謹，帶進行銷</span></li>
+          <li class="c-refer"><span>團隊具備 <b>20 年行銷實戰</b>，媒體端與品牌端都待過</span></li>
+          <li class="c-meet"><span>熟悉<b>商會與引薦經營</b>，把每一次見面變成被介紹的機會</span></li>
+        </ul>
+        <p class="p" style="margin-top:22px"><a class="more-s" href="about.html">認識 FireBirdUSP →</a></p>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rule c-light"><span class="q">方法一</span><h4>亮點要從客人的眼睛找</h4><p>不是你自己覺得棒的地方，而是客人做選擇時，真正打動他的那一點。</p></div>
+      <div class="rule c-meet"><span class="q">方法二</span><h4>先定亮點，再談執行</h4><p>文案、廣告、自我介紹都建立在亮點上。地基先打穩，後面做的每一件事才不會白費。</p></div>
+      <div class="rule c-refer"><span class="q">方法三</span><h4>先放大你已經有的</h4><p>你手上的料常常比想像中好。先把既有的東西講到它該有的大小，不急著創造新的。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 6. 收尾 ═════════ -->
+<section class="end" id="contact" aria-labelledby="end-title">
+  <div class="light" aria-hidden="true"></div>
+  <div class="walls" aria-hidden="true"><div class="wall wall-l"></div><div class="wall wall-r"></div></div>
+  <div class="wrap">
+    <div class="dots4" aria-hidden="true"><i class="c-light"></i><i class="c-meet"></i><i class="c-refer"></i><i class="c-ad"></i></div>
+    <h2 id="end-title">先聊聊你卡在哪，<br>再決定要不要一起走</h2>
+    <p>說說你的品牌、你的服務，或最近一次讓你覺得「明明很好，怎麼沒人懂」的時刻。我們從那裡開始。</p>
+    <a class="cta line-btn js-line" id="line-btn" href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-line"/></svg>加 LINE 聊聊</a>
+    <small>FireBirdUSP 官方 LINE</small>
+  </div>
+</section>
+</main>
+
+<!--#FOOTER#-->
+<style>/* 頁尾（全站共用） */
+.ft{background:#3A1430;color:var(--on-dark-muted);font-size:14px;line-height:1.8;padding-block:44px 28px}
+.ft a{color:#fff;text-decoration:none}
+.ft a:hover{text-decoration:underline}
+.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px}
+.ft-grid>*{min-width:0}
+.ft h4{margin:0 0 10px;color:#fff;font-size:15px;letter-spacing:.06em}
+.ft ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ft .brand-ft{color:#fff;font-size:22px;font-weight:900;margin:0 0 6px}
+.ft .co{margin:14px 0 0;font-size:13px}
+.ft-bottom{margin-top:32px;padding-top:18px;border-top:1px solid #4A2440;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;font-size:13px}
+@media (max-width:860px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ft-grid{grid-template-columns:1fr}}
+
+</style>
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <p class="brand-ft"><img src="assets/logo_white_sm.png" alt="FireBirdUSP" width="96" height="48" style="display:block"></p>
+        <p style="margin:0">精準行銷亮點打造<br>先找到客人選你的理由，再決定錢花在哪。</p>
+        <p class="co">FireBirdUSP 是速傑企業股份有限公司延伸的行銷品牌</p>
+      </div>
+      <div>
+        <h4>服務</h4>
+        <ul><li><a href="services/highlight.html">行銷亮點打造</a></li><li><a href="services/converter.html">商會一對一轉換器</a></li><li><a href="services/referral.html">引薦力打造</a></li><li><a href="services/ads.html">精準廣告投放</a></li></ul>
+      </div>
+      <div>
+        <h4>從這裡開始</h4>
+        <ul>
+          <li><a href="start/free-test.html">免費亮點測驗</a></li>
+          <li><a href="start/diagnosis.html">品牌亮點診斷</a></li>
+          <li><a href="start/coaching.html">線上陪跑</a></li>
+          <li><a href="about.html">關於 FireBirdUSP</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>公司資訊</h4>
+        <ul>
+          <li>速傑企業股份有限公司</li>
+          <li>統一編號　22294802</li>
+          <li>電話　<a href="tel:0223450080">02-2345-0080</a></li>
+          <li>傳真　02-3322-8785</li>
+          <li><a href="mailto:hello@firebirdusp.com">hello@firebirdusp.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>© 2026 FireBirdUSP｜速傑企業股份有限公司</span>
+      <span><a href="contact.html">加 LINE 聊聊</a></span>
+    </div>
+  </div>
+</footer>
+<!--/FOOTER-->
+
+<script>
+/* ── 官方 LINE 連結：填上網址後，全站「加 LINE 聊聊」都會連過去 ── */
+var LINE_URL = '';
+(function(){
+  if(LINE_URL){[].forEach.call(document.querySelectorAll('.js-line'),function(a){a.href=LINE_URL;a.target='_blank';a.rel='noopener';});}
+  var bar=document.getElementById('topbar');
+  function onScroll(){bar.classList.toggle('solid',window.scrollY>window.innerHeight*0.55);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+
+/* ═════════ 1. 衣轉人控制器 ═════════ */
+var openService;
+(function(){
+  var stage=document.getElementById('top'),ctrl=document.getElementById('ctrl'),live=document.getElementById('live');
+  var btns=[].slice.call(ctrl.querySelectorAll('button.cell'));
+  var KEYS=['light','meet','refer','ad'];
+  var NAMES=['行銷亮點打造','商會一對一轉換器','引薦力打造','精準廣告投放'];
+  var CAP=['transparent','#FFC83D','#E5293F','#4C93FF','#17B6C8'];
+  var panels=KEYS.map(function(k){return document.getElementById('p-'+k);});
+  var POS=[['-5px','calc(20% + 5px)'],['20%','20%'],['40%','20%'],['60%','20%'],['80%','calc(20% + 5px)']];
+  var mqMobile=matchMedia('(max-width:700px)'),mqReduce=matchMedia('(prefers-reduced-motion: reduce)');
+  var state='base',lock=false,token=0,active=-1;
+  function D(ms){return mqReduce.matches?30:ms;}
+  function say(t){live.textContent='';setTimeout(function(){live.textContent=t;},40);}
+  requestAnimationFrame(function(){requestAnimationFrame(function(){stage.classList.remove('pre');setTimeout(function(){stage.classList.remove('entering');},D(2200));});});
+  function setCap(i){ctrl.style.setProperty('--cap-left',POS[i][0]);ctrl.style.setProperty('--cap-width',POS[i][1]);ctrl.style.setProperty('--cap-c',CAP[i]);ctrl.classList.toggle('hl',i>0);}
+  function focusedIdx(){return btns.indexOf(document.activeElement);}
+  btns.forEach(function(b,i){
+    b.addEventListener('mouseenter',function(){if(state==='base'&&!lock)setCap(i+1);});
+    b.addEventListener('focus',function(){if(state==='base'&&!lock)setCap(i+1);});
+    b.addEventListener('blur',function(){setTimeout(function(){if(state==='base'&&focusedIdx()<0&&!ctrl.matches(':hover'))setCap(0);},0);});
+    b.addEventListener('click',function(){if(state==='base')select(i);else if(state==='selected'&&i===active)reset();});
+  });
+  ctrl.addEventListener('mouseleave',function(){if(state!=='base')return;var f=focusedIdx();setCap(f>=0&&document.activeElement.matches(':focus-visible')?f+1:0);});
+  ctrl.addEventListener('pointermove',function(e){var r=ctrl.getBoundingClientRect();ctrl.style.setProperty('--glass-x',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');ctrl.style.setProperty('--glass-y',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');});
+  function setOthers(i,off){btns.forEach(function(x,j){if(j===i)return;x.disabled=off;if(off){x.setAttribute('aria-hidden','true');x.setAttribute('tabindex','-1');}else{x.removeAttribute('aria-hidden');x.removeAttribute('tabindex');}});}
+  function select(i,cb){
+    if(state!=='base'||lock)return;
+    lock=true;var t=++token,b=btns[i],hadFocus=document.activeElement===b;
+    btns.forEach(function(x){x.disabled=true;});state='forward';active=i;
+    var cr=ctrl.getBoundingClientRect(),br=b.getBoundingClientRect();
+    b.style.setProperty('--dx',(cr.left+cr.width/2-(br.left+br.width/2)).toFixed(1)+'px');
+    b.style.setProperty('--dy',(cr.top+(mqMobile.matches?28:35)-(br.top+br.height/2)).toFixed(1)+'px');
+    ctrl.classList.remove('reversing','hl');ctrl.style.setProperty('--cap-c',CAP[i+1]);
+    b.classList.add('chosen');ctrl.classList.add('collapsed','rear-out');
+    stage.setAttribute('data-scene',KEYS[i]);stage.classList.add('detail');say('正在開啟：'+NAMES[i]);
+    setTimeout(function(){if(t===token)stage.classList.add('title-hidden');},D(140));
+    setTimeout(function(){
+      if(t!==token)return;state='selected';b.classList.add('reset');b.setAttribute('aria-expanded','true');b.setAttribute('aria-label','返回，看其他服務');
+      setOthers(i,true);b.disabled=false;panels[i].classList.add('in');if(hadFocus)b.focus({preventScroll:true});lock=false;
+      say(NAMES[i]+'：'+panels[i].querySelector('h2').textContent);if(cb)cb();
+    },D(1000));
+  }
+  function reset(cb){
+    if(state!=='selected'||lock)return;
+    lock=true;var t=++token,i=active,b=btns[i],hadFocus=document.activeElement===b;b.disabled=true;state='reverse';
+    panels[i].classList.remove('in');ctrl.classList.add('reversing');b.classList.remove('reset','chosen');b.setAttribute('aria-expanded','false');b.removeAttribute('aria-label');
+    ctrl.classList.remove('collapsed','rear-out');stage.removeAttribute('data-scene');stage.classList.remove('detail');setCap(0);say('回到四項服務');
+    setTimeout(function(){if(t!==token)return;state='base';active=-1;stage.classList.remove('title-hidden');ctrl.classList.remove('reversing');setOthers(i,false);b.disabled=false;
+      if(hadFocus){b.focus({preventScroll:true});setCap(i+1);}lock=false;if(cb)cb();},D(1050));
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&state==='selected')reset();});
+  addEventListener('resize',function(){
+    if(state!=='selected')return;var b=btns[active];b.style.transition='none';b.classList.remove('chosen');
+    var cr=ctrl.getBoundingClientRect(),br=b.getBoundingClientRect();
+    b.style.setProperty('--dx',(cr.left+cr.width/2-(br.left+br.width/2)).toFixed(1)+'px');
+    b.style.setProperty('--dy',(cr.top+(mqMobile.matches?28:35)-(br.top+br.height/2)).toFixed(1)+'px');
+    b.classList.add('chosen');void b.offsetWidth;b.style.transition='';
+  });
+  /* 從其他區塊打開某項服務：捲回首屏，光照到那一項 */
+  openService=function(i){
+    stage.scrollIntoView({behavior:mqReduce.matches?'auto':'smooth',block:'start'});
+    setTimeout(function(){
+      if(state==='selected'&&active===i)return;
+      if(state==='selected')reset(function(){select(i);});else if(state==='base')select(i);
+    },mqReduce.matches?0:650);
+  };
+  [].forEach.call(document.querySelectorAll('[data-open]'),function(b){b.addEventListener('click',function(){openService(+b.dataset.open);});});
+})();
+
+/* ═════════ 2. 發牌方塊 ═════════ */
+(function(){
+  // x%, y%, 尺寸, 旋轉, 模糊, 透明度, 圖示, 樣式(g漸層/w白/k服務色), 服務色 class, 手機隱藏
+  var T=[[7,14,104,-14,4,.55,'spark','k','c-light',0],[25,7,62,12,0,.85,'eye','w','',0],[50,4,54,-6,2,.5,'chat','k','c-meet',1],[74,10,78,16,0,.9,'link','k','c-refer',0],
+    [92,18,112,-10,5,.45,'target','k','c-ad',0],[4,52,82,18,1,.7,'chat','g','',1],[96,50,88,-16,2,.7,'spark','g','',1],[10,88,114,10,6,.42,'chart','k','c-meet',0],
+    [30,96,60,-12,1,.75,'mega','w','',1],[70,95,70,8,1,.8,'target','k','c-light',1],[91,87,102,-18,5,.45,'link','g','',0]];
+  var field=document.getElementById('field'),sec=document.getElementById('services');
+  T.forEach(function(t,i){var el=document.createElement('div');el.className='tile '+t[7]+' '+t[8]+(t[9]?' sm-hide':'');
+    el.style.cssText='--x:'+t[0]+'%;--y:'+t[1]+'%;--sz:'+t[2]+'px;--r:'+t[3]+'deg;--bl:'+t[4]+'px;--o:'+t[5]+';--d:'+(0.1+i*0.05).toFixed(2)+'s';
+    el.innerHTML='<div class="tile-in"><svg><use href="#i-'+t[6]+'"/></svg></div>';field.appendChild(el);});
+  function origins(){var w=sec.clientWidth,h=sec.clientHeight;[].forEach.call(field.children,function(el){
+    el.style.setProperty('--dx',(w/2-parseFloat(el.style.getPropertyValue('--x'))/100*w).toFixed(1)+'px');
+    el.style.setProperty('--dy',(h*.55-parseFloat(el.style.getPropertyValue('--y'))/100*h).toFixed(1)+'px');});}
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();origins();sec.classList.add('play');}},{threshold:.2});io.observe(sec);
+})();
+
+/* ═════════ 3. 亮點銀河（2D 畫布模擬 3D） ═════════ */
+(function(){
+  var SV=[
+    {key:'light',name:'行銷亮點打造',c:'#FFC83D',stars:[
+      {t:'明明有實力，卻不容易被看見',d:'不是你不夠好，是亮點被你自己的說法蓋住了。',hot:true},
+      {t:'說不出和別人哪裡不同',d:'差異要從客人做選擇的角度，才看得出來。'},
+      {t:'介紹完，對方記不住我',d:'少了一個讓人一聽就記得的點。'},
+      {t:'品牌沒有記憶點',d:'東西很多，卻沒有一個先被講出來。'},
+      {t:'不知道怎麼呈現自己的優勢',d:'料都在，只是還沒被整理成客戶看得懂的樣子。'}]},
+    {key:'meet',name:'商會一對一轉換器',c:'#E5293F',stars:[
+      {t:'一對一聊得開心，之後沒下文',d:'聊完之後，對方還不知道可以介紹誰給你。',hot:true},
+      {t:'不知道該問什麼，才聊得到合作點',d:'先準備好對方在意的問題，才聊得到合作點。'},
+      {t:'每次一對一都在輪流自我介紹',d:'時間花完了，卻還沒走到下一步。'},
+      {t:'想讓每次見面更有收穫',d:'見面前的準備，決定這一小時值不值得。'}]},
+    {key:'refer',name:'引薦力打造',c:'#4C93FF',stars:[
+      {t:'人脈不少，卻很少被主動引薦',d:'夥伴願意幫，只是不知道怎麼開口。',hot:true},
+      {t:'夥伴想幫我，卻不知道該介紹誰',d:'你還沒告訴他，你最想被介紹給誰。'},
+      {t:'每次被介紹，說法都不一樣',d:'少了一句好轉述、不會走樣的話。'},
+      {t:'缺少讓人快速理解的一句話',d:'對方得先聽懂，才轉述得出去。'}]},
+    {key:'ad',name:'精準廣告投放',c:'#17B6C8',stars:[
+      {t:'廣告有曝光，卻沒打到目標族群',d:'圈人的條件太粗，想找的族群反而沒看到。',hot:true},
+      {t:'粉專廣告只能圈年齡、性別、地區',d:'想鎖定特定行為的人，需要更細的受眾設定。'},
+      {t:'素材換了好幾版，還是沒感覺',d:'也許不是素材的問題，是亮點還沒抓到。'},
+      {t:'行銷內容沒有吸引力',d:'講的是規格，不是客戶在意的差別。'}]}
+  ];
+  var stage=document.getElementById('gx-stage'),cv=document.getElementById('gx'),ctx=cv.getContext('2d');
+  var tip=document.getElementById('gx-tip'),tipIn=tip.querySelector('.in'),legend=document.getElementById('gx-legend');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,dpr=1,scale=1,rotY=.6,tilt=-.42,focus=-1,hovered=null,pointer=null,visible=false,raf=0,last=0;
+  var dust=[],nodes=[],hubs=[],sprites={};
+  var seed=11;function rnd(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+  function gauss(){return (rnd()+rnd()+rnd()-1.5)/1.5;}
+  function hexRgb(h){var n=parseInt(h.slice(1),16);return[n>>16&255,n>>8&255,n&255];}
+  function sprite(hex){
+    if(sprites[hex])return sprites[hex];
+    var s=64,c=document.createElement('canvas');c.width=c.height=s;var g=c.getContext('2d'),rgb=hexRgb(hex);
+    var r=g.createRadialGradient(s/2,s/2,0,s/2,s/2,s/2);
+    r.addColorStop(0,'rgba(255,255,255,1)');r.addColorStop(.18,'rgba('+rgb+',.95)');r.addColorStop(.45,'rgba('+rgb+',.35)');r.addColorStop(1,'rgba('+rgb+',0)');
+    g.fillStyle=r;g.fillRect(0,0,s,s);return sprites[hex]=c;
+  }
+  var PINK=['#FF3399','#E3496F','#B2489E','#F7A8CB'];
+  /* 銀河本體：四條旋臂，每條帶一項服務的顏色，越往中心越偏品牌桃紅 */
+  var R=10;
+  for(var i=0;i<1900;i++){
+    var arm=i%4,rr=Math.pow(rnd(),.55)*R,a=arm*Math.PI/2+rr*.42+gauss()*.38*(1-rr/R*.4);
+    var useArm=rr>R*.22&&rnd()<.7;
+    dust.push({x:Math.cos(a)*rr+gauss()*.4,y:gauss()*.55*(1-rr/R)+gauss()*.08,z:Math.sin(a)*rr+gauss()*.4,
+      c:useArm?SV[arm].c:PINK[Math.floor(rnd()*4)],s:.6+rnd()*1.4,a:.25+rnd()*.6,ph:rnd()*6.28,arm:useArm?arm:-1});
+  }
+  /* 星點：每項服務一個星座中心，卡關點散在旁邊 */
+  SV.forEach(function(sv,k){
+    var ang=k*Math.PI/2+R*.62*.42,hr=R*.62;
+    var hub={x:Math.cos(ang)*hr,y:.2,z:Math.sin(ang)*hr,k:k,sv:sv};hubs.push(hub);
+    sv.stars.forEach(function(st,j){
+      var u=j/sv.stars.length*Math.PI*2+rnd(),rad=1.7+rnd()*1.3;
+      nodes.push({x:hub.x+Math.cos(u)*rad,y:hub.y+gauss()*1.6+(j%2?.8:-.6),z:hub.z+Math.sin(u)*rad,k:k,sv:sv,st:st,size:st.hot?1.35:1,ph:rnd()*6.28,sx:0,sy:0,f:1});
+    });
+  });
+  /* 圖例按鈕 */
+  legend.innerHTML=SV.map(function(sv,k){return '<button type="button" aria-pressed="false" data-k="'+k+'" style="--c:'+sv.c+'"><span class="dot"></span>'+sv.name+'</button>';}).join('');
+  var lbtns=[].slice.call(legend.querySelectorAll('button'));
+  lbtns.forEach(function(b){b.addEventListener('click',function(){var k=+b.dataset.k;focus=focus===k?-1:k;lbtns.forEach(function(x){x.setAttribute('aria-pressed',+x.dataset.k===focus);});kick();});});
+
+  function size(){var r=stage.getBoundingClientRect();W=r.width;H=r.height;dpr=Math.min(devicePixelRatio||1,2);cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    scale=Math.min(W,H*1.35)/(R*2.5);}
+  var cy0=0,cY=Math.cos(rotY),sY=Math.sin(rotY),cT=Math.cos(tilt),sT=Math.sin(tilt),CAM=R*2.6;
+  function proj(p,o){var x=p.x*cY-p.z*sY,z=p.x*sY+p.z*cY,y=p.y*cT-z*sT,z2=p.y*sT+z*cT,f=CAM/(CAM+z2);o.sx=W/2+x*f*scale;o.sy=H*.52+y*f*scale;o.f=f;o.z=z2;return o;}
+  function pill(x,y,text,col,bold){
+    ctx.font=(bold?'900 15px ':'700 13px ')+'"Noto Sans TC","Microsoft JhengHei",sans-serif';
+    var w=ctx.measureText(text).width+(bold?28:22),h=bold?30:26;x-=w/2;y-=h/2;
+    ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,w,h,h/2);else ctx.rect(x,y,w,h);
+    if(bold){var g=ctx.createLinearGradient(x,y,x+w,y+h);g.addColorStop(0,'#B2489E');g.addColorStop(.55,'#D6336C');g.addColorStop(1,'#E3496F');ctx.fillStyle=g;ctx.fill();}
+    else{ctx.fillStyle='rgba(31,18,28,.92)';ctx.fill();ctx.strokeStyle=col;ctx.lineWidth=1.2;ctx.stroke();}
+    ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(text,x+w/2,y+h/2+1);
+  }
+  var tmp={};
+  function draw(t){
+    cY=Math.cos(rotY);sY=Math.sin(rotY);cT=Math.cos(tilt);sT=Math.sin(tilt);
+    ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
+    /* 銀河塵 */
+    for(var i=0;i<dust.length;i++){var d=dust[i];proj(d,tmp);
+      var al=d.a*(.75+.25*Math.sin(t*1.2+d.ph));if(focus>=0&&d.arm!==focus)al*=.25;
+      ctx.globalAlpha=al;ctx.fillStyle=d.c;var s=d.s*tmp.f;ctx.fillRect(tmp.sx,tmp.sy,s,s);}
+    /* 中心光 */
+    var c={x:0,y:0,z:0};proj(c,tmp);var cx=tmp.sx,cyy=tmp.sy,cf=tmp.f;
+    ctx.globalAlpha=1;var cr=scale*2.2*cf;ctx.drawImage(sprite('#FF3399'),cx-cr,cyy-cr,cr*2,cr*2);
+    /* 連線 */
+    var hp=hubs.map(function(h){return proj(h,{});});
+    nodes.forEach(function(n){proj(n,n);});
+    ctx.lineWidth=1;
+    hubs.forEach(function(h,k){var on=focus<0||focus===k,p=hp[k];
+      ctx.globalAlpha=on?.5:.06;ctx.strokeStyle=h.sv.c;ctx.beginPath();ctx.moveTo(cx,cyy);ctx.lineTo(p.sx,p.sy);ctx.stroke();
+      nodes.forEach(function(n){if(n.k!==k)return;ctx.globalAlpha=on?(n===hovered?.9:.35):.04;ctx.beginPath();ctx.moveTo(p.sx,p.sy);ctx.lineTo(n.sx,n.sy);ctx.stroke();});
+    });
+    /* 星座中心 */
+    hubs.forEach(function(h,k){var on=focus<0||focus===k,p=hp[k],r=scale*.75*p.f;ctx.globalAlpha=on?.9:.15;ctx.drawImage(sprite(h.sv.c),p.sx-r,p.sy-r,r*2,r*2);});
+    /* 卡關星（遠的先畫） */
+    var order=nodes.slice().sort(function(a,b){return b.z-a.z;});
+    order.forEach(function(n){var on=focus<0||focus===n.k,br=reduce?1:1+Math.sin(t*1.4+n.ph)*.08;
+      var r=scale*.42*n.size*n.f*br*(n===hovered?1.6:1);ctx.globalAlpha=on?1:.12;
+      ctx.drawImage(sprite(n.st.hot?'#FFFFFF':n.sv.c),n.sx-r,n.sy-r,r*2,r*2);
+      if(n.st.hot){var r2=r*1.7;ctx.globalAlpha=on?.55:.06;ctx.drawImage(sprite(n.sv.c),n.sx-r2,n.sy-r2,r2*2,r2*2);}
+    });
+    /* 標籤 */
+    ctx.globalCompositeOperation='source-over';ctx.globalAlpha=1;
+    pill(cx,cyy-scale*.9*cf-6,'FireBirdUSP','#FF3399',true);
+    hubs.forEach(function(h,k){var p=hp[k];ctx.globalAlpha=focus<0||focus===k?1:.2;pill(p.sx,p.sy-scale*.75*p.f-4,h.sv.name,h.sv.c,false);});
+    ctx.globalAlpha=1;
+  }
+  function pick(){
+    if(!pointer)return null;var best=null,bd=1e9;
+    nodes.forEach(function(n){if(focus>=0&&n.k!==focus)return;var d=Math.hypot(n.sx-pointer.x,n.sy-pointer.y),thr=Math.max(14,scale*.5*n.size*n.f);if(d<thr&&d<bd){bd=d;best=n;}});
+    return best;
+  }
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function showTip(n){
+    tip.style.setProperty('--c',n.sv.c);
+    tipIn.innerHTML='<div class="grp"><i></i><span>'+esc(n.sv.name)+'</span></div><div class="name">「'+esc(n.st.t)+'」</div><div class="desc">'+esc(n.st.d)+'</div><div class="go">點一下，看「'+esc(n.sv.name)+'」→</div>';
+    tip.classList.add('show');
+  }
+  function placeTip(){var w=tip.offsetWidth,h=tip.offsetHeight,x=pointer.x+18,y=pointer.y+18;if(x+w>W-12)x=pointer.x-w-18;if(y+h>H-12)y=pointer.y-h-18;tip.style.left=Math.max(12,x)+'px';tip.style.top=Math.max(12,y)+'px';}
+  function updateHover(){var n=pick();if(n!==hovered){hovered=n;if(n)showTip(n);else tip.classList.remove('show');}if(hovered)placeTip();cv.style.cursor=hovered?'pointer':'';}
+  function loop(now){
+    var dt=last?Math.min(50,now-last):16;last=now;
+    if(!drag&&!hovered&&!reduce)rotY+=dt*.00011;
+    draw(now/1000);updateHover();
+    if(visible)raf=requestAnimationFrame(loop);else{raf=0;last=0;}
+  }
+  function kick(){if(!raf){if(visible)raf=requestAnimationFrame(loop);else draw(0);}}
+  /* 拖曳旋轉 */
+  var drag=null,moved=0;
+  function local(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};}
+  cv.addEventListener('pointerdown',function(e){pointer=local(e);drag={x:e.clientX,y:e.clientY,ry:rotY,t:tilt};moved=0;});
+  addEventListener('pointermove',function(e){
+    if(e.target===cv)pointer=local(e);
+    if(!drag)return;var dx=e.clientX-drag.x,dy=e.clientY-drag.y;moved=Math.max(moved,Math.abs(dx)+Math.abs(dy));
+    if(moved>4){cv.classList.add('drag');rotY=drag.ry+dx*.006;if(e.pointerType==='mouse')tilt=Math.max(-1.15,Math.min(-.08,drag.t+dy*.004));}
+    kick();
+  });
+  addEventListener('pointerup',function(e){
+    if(!drag)return;var wasTap=moved<6;drag=null;cv.classList.remove('drag');
+    if(wasTap&&e.target===cv){pointer=local(e);var n=pick();
+      if(n){if(e.pointerType!=='mouse'&&hovered!==n){hovered=n;showTip(n);placeTip();return;}
+        var card=document.getElementById('svc-'+n.sv.key);card.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});card.classList.remove('flash');void card.offsetWidth;card.classList.add('flash');}}
+  });
+  addEventListener('pointercancel',function(){drag=null;cv.classList.remove('drag');});
+  cv.addEventListener('pointerleave',function(e){if(e.pointerType==='mouse')pointer=null;});
+  size();draw(0);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){visible=es[0].isIntersecting;kick();}).observe(stage);else{visible=true;kick();}
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){size();kick();},120);});
+})();
+
+/* ═════════ 4. 三步驟光束 ═════════ */
+(function(){
+  var stage=document.getElementById('beam'),cv=document.getElementById('bc'),ctx=cv.getContext('2d');
+  var steps=[].slice.call(document.querySelectorAll('.step'));
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W=0,H=0,dpr=1,P=[],geo={},t0=null,started=false,visible=true,raf=0,lastAmb=0,END=6.4;
+  /* 品牌三色＋提亮色，另外撒一點四項服務的黃綠藍橘 */
+  var COLORS=['#B2489E','#D6336C','#E3496F','#F7A8CB','#FFC83D','#E5293F','#4C93FF','#17B6C8'];
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function gauss(){var u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)}
+  function clamp(x){return x<0?0:x>1?1:x}
+  function ease(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+  function pickC(type){var r=Math.random();if(type===0)return r<.35?3:r<.55?0:4+Math.floor(Math.random()*4);if(r<.12)return 4+Math.floor(Math.random()*4);if(r<.22)return 3;return Math.floor(Math.random()*3);}
+  function build(){
+    var r=stage.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    var ph=Math.min(H*.64,W*.72);geo={cx:W*.5,by:H*.68,ph:ph,ring:Math.min(W*.09,ph*.2)};
+    var n=W<600?2400:W<1000?3400:4600;P=[];
+    for(var i=0;i<n;i++){
+      var k=Math.random(),tx,ty,type,sx=rnd(0,W),sy=rnd(0,H*.96);
+      if(k<.16){type=0;tx=sx;ty=sy;}
+      else if(k<.46){type=1;var t=Math.pow(Math.random(),.8),w=ph*(.025+.2*t*t);tx=geo.cx+gauss()*w*.5+Math.sin(t*3.2)*ph*.025;ty=geo.by-t*ph*.64;}
+      else{type=2;var lobe=Math.random(),ox,oy,rx,ry,rot;
+        if(lobe<.34){ox=0;oy=-.8;rx=.16;ry=.22;rot=0}else if(lobe<.67){ox=-.2;oy=-.74;rx=.27;ry=.11;rot=.62}else{ox=.2;oy=-.74;rx=.27;ry=.11;rot=-.62}
+        var a=Math.random()*Math.PI*2,d=Math.pow(Math.random(),.65),ex=Math.cos(a)*rx*d,ey=Math.sin(a)*ry*d;
+        tx=geo.cx+(ox+ex*Math.cos(rot)-ey*Math.sin(rot))*ph;ty=geo.by+(oy+ex*Math.sin(rot)+ey*Math.cos(rot))*ph;}
+      var hN=clamp((geo.by-ty)/ph);
+      P.push({sx:sx,sy:sy,tx:tx,ty:ty,type:type,c:pickC(type),s:type===0?rnd(.6,1.3):rnd(.9,2.1),a:type===0?rnd(.15,.45):rnd(.45,.95),d:type===0?0:hN*.85+Math.random()*.25,ph:Math.random()*6.28});
+    }
+  }
+  function draw(t,amb){
+    var g=geo;ctx.globalCompositeOperation='source-over';ctx.clearRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
+    var ringA=clamp((t-3.9)/1.6);ctx.lineWidth=1;
+    for(var k=1;k<=5;k++){var rx=g.ring*k*1.15;ctx.strokeStyle='rgba(214,51,108,'+(0.16*ringA*(1-k*.13))+')';ctx.beginPath();ctx.ellipse(g.cx,g.by+4,rx,rx*.2,0,0,Math.PI*2);ctx.stroke();}
+    for(var i=0;i<3;i++){var p=(t-3.8-i*.38)/1.9;if(p>0&&p<1){var r=g.ring*(.3+p*5.6);ctx.lineWidth=1.6;ctx.strokeStyle='rgba(255,200,61,'+(.5*(1-p))+')';ctx.beginPath();ctx.ellipse(g.cx,g.by+4,r,r*.2,0,0,Math.PI*2);ctx.stroke();}}
+    var fade=clamp(t/1.1);
+    for(var c=0;c<COLORS.length;c++){ctx.fillStyle=COLORS[c];
+      for(var j=0;j<P.length;j++){var q=P[j];if(q.c!==c)continue;
+        var m=q.type===0?0:ease(clamp((t-1.2-q.d)/2.1)),dx=Math.sin(t*.7+q.ph)*4*(1-m),dy=Math.cos(t*.5+q.ph)*3*(1-m);
+        if(amb){dx+=Math.sin(amb*.4+q.ph)*.8;dy+=Math.cos(amb*.33+q.ph)*.6}
+        var al=q.a*fade*(q.type===0?1:(.55+.45*m));if(amb)al*=.78+.22*Math.sin(amb*1.3+q.ph*3);
+        ctx.globalAlpha=al;ctx.fillRect(q.sx+(q.tx-q.sx)*m+dx,q.sy+(q.ty-q.sy)*m+dy,q.s,q.s);}}
+    ctx.globalAlpha=1;
+    var ca=clamp((t-3.4)/.7);
+    if(ca>0){var pulse=1+.45*Math.sin(Math.PI*clamp((t-3.4)/1.4)),cy=g.by-2,hr=g.ph*.16*pulse,grd=ctx.createRadialGradient(g.cx,cy,0,g.cx,cy,hr);
+      grd.addColorStop(0,'rgba(255,51,153,'+(.65*ca)+')');grd.addColorStop(.35,'rgba(214,51,108,'+(.22*ca)+')');grd.addColorStop(1,'rgba(178,72,158,0)');
+      ctx.fillStyle=grd;ctx.beginPath();ctx.arc(g.cx,cy,hr,0,Math.PI*2);ctx.fill();ctx.globalCompositeOperation='source-over';
+      ctx.fillStyle='rgba(255,255,255,'+ca+')';ctx.beginPath();ctx.arc(g.cx,cy,4.2,0,Math.PI*2);ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,'+(.7*ca)+')';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(g.cx,cy,11,0,Math.PI*2);ctx.stroke();}
+  }
+  function setCards(t){steps.forEach(function(s){if(t>=parseFloat(s.dataset.at))s.classList.add('on')})}
+  function loop(now){if(t0===null)t0=now;var t=(now-t0)/1000;
+    if(t<END){draw(t,0);setCards(t);raf=requestAnimationFrame(loop);return}
+    setCards(99);if(!visible){raf=0;return}if(now-lastAmb>42){lastAmb=now;draw(END,t-END)}raf=requestAnimationFrame(loop);}
+  function start(){if(reduce){draw(END,0);setCards(99);return}started=true;t0=null;cancelAnimationFrame(raf);raf=requestAnimationFrame(loop);}
+  build();draw(END,0);
+  if(reduce){start()}
+  else if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting;
+    if(visible&&!started&&e.intersectionRatio>=.3)start();else if(visible&&started&&!raf)raf=requestAnimationFrame(loop);});},{threshold:[0,.3]}).observe(stage);}
+  else start();
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){build();if(reduce||!started)draw(END,0);},150);});
+})();
+</script>
+
+</body></html>
