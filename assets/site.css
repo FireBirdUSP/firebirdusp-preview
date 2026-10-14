@@ -143,3 +143,26 @@ h3.sub{margin:40px 0 0;font-size:clamp(20px,2.4vw,26px);font-weight:900;color:va
 .card.gray{border-top-color:#9A93A2}
 .card.gray .no{color:#8A8494}
 @media (max-width:860px){.two-big{grid-template-columns:1fr}}
+
+/* 重力膠囊（精準廣告頁 A 區塊）：沒有 JS 時是一般換行排列，有 JS 才變成掉落堆疊 */
+.gp-wrap{margin-top:28px}
+.gp-stage{position:relative;display:flex;flex-wrap:wrap;gap:10px;padding:22px;border:1px solid var(--line);border-radius:22px;background:#fff}
+.gp-shape{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;border-radius:999px;height:48px;padding:0 22px;font-size:16px;font-weight:700;color:var(--head);background:#fff;border:1px solid var(--line)}
+.gp-shape.gp-c{background:var(--card);border-color:var(--purple)}
+.gp-shape.gp-y{background:var(--y);border-color:var(--y);color:#5b3b00}
+.gp-shape.gp-x{border:1.5px dashed var(--g);color:var(--g-d)}
+.gp-shape.gp-g{background:var(--grad);border-color:transparent;color:#fff}
+.gp-shape.gp-dot{padding:0;width:var(--d,40px);height:var(--d,40px);background:var(--coral);border-color:transparent}
+.gp-shape.gp-dot.gp-dk{background:var(--head)}
+.gp-stage.gp-live{display:block;height:430px;padding:0;overflow:hidden;touch-action:pan-y}
+.gp-stage.gp-live .gp-shape{position:absolute;left:0;top:0;visibility:hidden;user-select:none;cursor:grab;will-change:transform}
+.gp-stage.gp-live[data-dragging] .gp-shape{cursor:grabbing}
+@media (pointer:fine){.gp-stage.gp-live .gp-shape{touch-action:none}}
+.gp-replay{position:absolute;left:14px;top:12px;z-index:2;border:1px solid var(--line);background:#fff;color:var(--purple);border-radius:999px;padding:4px 14px;font:inherit;font-size:13px;cursor:pointer}
+.gp-replay:hover{background:var(--card)}
+.gp-wrap{position:relative}
+.gp-replay{display:none}
+.gp-wrap:has(.gp-live) .gp-replay{display:block}
+.gp-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0 0;padding:0;list-style:none;font-size:13px;color:var(--note)}
+.gp-legend i{display:inline-block;width:14px;height:14px;border-radius:999px;vertical-align:-2px;margin-right:6px;border:1px solid var(--line);background:#fff}
+@media (max-width:640px){.gp-stage.gp-live{height:520px}.gp-shape{height:42px;padding:0 17px;font-size:15px}}
