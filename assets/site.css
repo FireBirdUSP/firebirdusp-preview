@@ -166,3 +166,30 @@ h3.sub{margin:40px 0 0;font-size:clamp(20px,2.4vw,26px);font-weight:900;color:va
 .gp-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 0 0;padding:0;list-style:none;font-size:13px;color:var(--note)}
 .gp-legend i{display:inline-block;width:14px;height:14px;border-radius:999px;vertical-align:-2px;margin-right:6px;border:1px solid var(--line);background:#fff}
 @media (max-width:640px){.gp-stage.gp-live{height:520px}.gp-shape{height:42px;padding:0 17px;font-size:15px}}
+
+/* 展開式聯絡按鈕（聯絡我們頁）：沒有 JS 時顯示一般的「加 LINE 聊聊」按鈕 */
+.xb{position:relative;display:inline-flex;vertical-align:middle}
+.xb .xtrig{position:relative;min-width:210px;height:52px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--head);font:inherit;font-size:17px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:opacity .2s var(--ease),transform .15s}
+.xb .xtrig:active{transform:scale(.97)}
+.xb .xtrig svg{width:18px;height:18px}
+.xb.open .xtrig{opacity:0}
+.xb .xrow{position:absolute;inset:0;display:grid;clip-path:inset(0 100% 0 0);transition:clip-path .15s var(--ease)}
+.xb.open .xrow{clip-path:inset(0 0 0 0);transition-duration:.2s}
+.xb:not(.open) .xrow{pointer-events:none}
+.xb .xit{display:flex;align-items:center;justify-content:center;border:0;border-right:1px solid #ffffff33;color:#fff;background:var(--head);cursor:pointer;opacity:0;transform:translateX(-20px);transition:opacity .15s var(--ease),transform .15s var(--ease),background .2s;text-decoration:none}
+.xb .xit:last-child{border-right:0;border-radius:0 14px 14px 0}
+.xb .xit:first-child{border-radius:14px 0 0 14px}
+.xb .xit:hover,.xb .xit:focus-visible{background:var(--rose)}
+.xb .xit.xline{background:#06C755}.xb .xit.xline:hover,.xb .xit.xline:focus-visible{background:#05a948}
+.xb .xit:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
+.xb .xit svg{width:20px;height:20px}
+.xb.open .xit{opacity:1;transform:none;transition-duration:.2s;transition-delay:calc(var(--i)*50ms)}
+.xcap{display:inline-block;min-width:11em;margin-left:14px;font-size:14px;font-weight:700;color:var(--purple);vertical-align:middle}
+.xtoast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--head);color:#fff;border-radius:99px;padding:8px 20px;font-size:14px;opacity:0;pointer-events:none;transition:.25s var(--ease);z-index:99}
+.xtoast.show{opacity:1;transform:translateX(-50%)}
+@media (prefers-reduced-motion:reduce){.xb *{transition-duration:0s!important;transition-delay:0s!important}}
+@media (max-width:520px){.xcap{display:block;margin:8px 0 0;min-height:1.6em}}
+
+/* 診斷頁：報告示範（用 iframe 放，樣式互不影響） */
+.rg-frame{margin-top:24px;border:1px solid var(--line);border-radius:22px;background:#fff;padding:14px;overflow:hidden}
+.rg-frame iframe{display:block;width:100%;height:900px;border:0}
