@@ -122,3 +122,24 @@ h2.title{margin:0 0 14px;font-size:clamp(26px,3.6vw,40px);line-height:1.3;font-w
 @media (max-width:520px){.ft-grid{grid-template-columns:1fr}}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
+/* 精準廣告投放頁：兩種廣告並列＋比較表 */
+.two-big{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
+.big{background:#fff;border:1px solid var(--line);border-top:6px solid var(--c,var(--rose));border-radius:22px;padding:28px 26px;display:flex;flex-direction:column}
+.big h3{margin:12px 0 8px;font-size:clamp(22px,2.4vw,28px);font-weight:900;color:var(--head);line-height:1.3}
+.big .what{margin:0 0 12px;font-size:16px;line-height:1.8}
+.big ul{margin:0 0 16px;padding-left:1.2em;display:grid;gap:8px;font-size:15px;line-height:1.7}
+.big .go{margin-top:auto;font-weight:700;color:var(--cd,var(--rose));text-decoration:none}
+.big .go:hover{text-decoration:underline}
+.pill{align-self:flex-start;display:inline-block;padding:4px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.08em;background:var(--cb,var(--card));color:var(--cd,var(--rose));border:1px solid var(--c,var(--rose))}
+.pill.new{background:var(--grad);color:#fff;border-color:transparent}
+.cmp-wrap{margin-top:24px;overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
+.cmp{width:100%;min-width:640px;border-collapse:collapse;font-size:15px;line-height:1.7}
+.cmp th,.cmp td{padding:14px 18px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+.cmp thead th{background:var(--grad);color:#fff;font-weight:900;border-bottom:0}
+.cmp tbody th{width:9em;background:var(--card);color:var(--head);font-weight:700}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+h3.sub{margin:40px 0 0;font-size:clamp(20px,2.4vw,26px);font-weight:900;color:var(--head)}
+.card.gray{border-top-color:#9A93A2}
+.card.gray .no{color:#8A8494}
+@media (max-width:860px){.two-big{grid-template-columns:1fr}}
