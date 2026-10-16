@@ -1,4 +1,4 @@
-/* FireBirdUSP v7 子頁共用樣式（首頁 index.html 自帶完整樣式，這裡只放子頁需要的部分，變數與首頁一致） */
+/* FireBirdUSP v8 子頁共用樣式（首頁 index.html 自帶完整樣式，這裡只放子頁需要的部分，變數與首頁一致） */
 :root{
   --grad:linear-gradient(135deg,#B2489E,#D6336C 55%,#E3496F);
   --purple:#B2489E; --rose:#D6336C; --coral:#E3496F; --accent:#FF3399;
@@ -22,9 +22,70 @@ a{color:inherit}
 @media (min-width:768px){.wrap{padding-inline:32px}}
 .c-light{--c:var(--y);--cd:var(--y-d);--cb:var(--y-bg)}
 .c-meet{--c:var(--g);--cd:var(--g-d);--cb:var(--g-bg)}
-.c-refer{--c:var(--b);--cd:var(--b-d);--cb:var(--b-bg)}
+.c-diag{--c:var(--b);--cd:var(--b-d);--cb:var(--b-bg)}   /* v8：① 品牌亮點診斷＝藍（原引薦力打造的藍，10-16 改給診斷） */
 .c-ad{--c:var(--o);--cd:var(--o-d);--cb:var(--o-bg)}
 .c-start{--c:var(--accent);--cd:var(--rose);--cb:var(--card)}
+
+
+/* v8｜右上「服務」下拉選單（桌機；900px 以下整條選單本來就收起） */
+.dd{position:relative;display:flex}
+.dd::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px}
+.dd-btn .car{display:inline-block;margin-left:4px;font-size:11px;transition:transform 200ms}
+.dd:hover .dd-btn .car,.dd:focus-within .dd-btn .car{transform:rotate(180deg)}
+.dd-menu{position:absolute;top:calc(100% + 10px);left:-8px;min-width:236px;margin:0;padding:8px;list-style:none;background:#fff;border-radius:18px;
+  box-shadow:0 18px 40px -12px rgba(90,15,70,.35);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 200ms,transform 200ms,visibility 200ms;z-index:60}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:none}
+.nav .dd-menu a{display:flex;align-items:center;gap:10px;color:#3B2035;text-shadow:none;opacity:1;padding:10px 12px;border-radius:12px;font-size:15px;white-space:nowrap}
+.nav .dd-menu a:hover{background:#FDF3F8}
+.nav .dd-menu a i{width:10px;height:10px;margin:0;vertical-align:0;flex:none;border-radius:50%}
+.dd-menu .sep{height:1px;background:#E7C8DC;margin:6px 8px}
+.nav .dd-menu a.free{color:#D6336C;font-weight:700}
+
+
+/* v8｜ChatGPT 廣告示意圖＋情境舉例 */
+.gpt-demo{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:32px;align-items:start;margin:28px 0 8px}
+.gpt-demo figure{margin:0}.gpt-demo img{width:100%;height:auto;display:block}
+.gpt-demo figcaption{font-size:13px;color:var(--note);text-align:center;margin-top:4px}
+.gpt-ask{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.gpt-ask li{background:#fff;border:1px solid var(--line);border-left-width:1px;border-top:4px solid var(--c,var(--o));border-radius:14px;padding:12px 16px;font-size:15.5px;line-height:1.6;color:var(--head)}
+.gpt-ask b{display:block;font-size:13px;letter-spacing:.12em;color:var(--cd,var(--o-d))}
+.gpt-ask span{display:block;font-size:14px;color:var(--text)}
+@media (max-width:760px){.gpt-demo{grid-template-columns:1fr}.gpt-demo figure{max-width:340px;margin:0 auto}}
+
+
+/* v8｜免費亮點測驗 */
+.qz{max-width:760px}
+.qz-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(22px,4vw,36px);box-shadow:0 24px 48px -32px rgba(178,72,158,.45)}
+.qz-kick{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--rose)}
+.qz-card h2{margin:0 0 12px;font-size:clamp(22px,3vw,30px);font-weight:900;color:var(--head);line-height:1.35}
+.qz-card h2:focus{outline:none}
+.qz-intro p{font-size:16px;line-height:1.8;margin:0 0 22px}
+.qz-bar{height:8px;border-radius:99px;background:var(--card);overflow:hidden;margin-bottom:14px}
+.qz-bar i{display:block;height:100%;background:var(--grad);border-radius:99px;transition:width .3s var(--ease)}
+.qz-step{margin:0 0 6px;font-size:13px;font-weight:700;color:var(--note)}
+.qz-opts{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.qz-opts button{width:100%;display:flex;gap:14px;align-items:flex-start;text-align:left;font:inherit;font-size:16px;line-height:1.6;color:var(--head);background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .2s,transform .1s}
+.qz-opts button:hover{border-color:var(--rose);background:var(--blush)}
+.qz-opts button:active{transform:scale(.99)}
+.qz-opts button.on{border-color:var(--rose);background:#FFF0F6}
+.qz-l{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:900;color:#fff;background:var(--grad)}
+.qz-back,.qz-redo{margin-top:16px;background:none;border:0;font:inherit;font-size:15px;font-weight:700;color:var(--purple);cursor:pointer;padding:6px 2px}
+.qz-res{border-top:6px solid var(--rc)}
+.qz-type{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.qz-emo{font-size:46px;line-height:1}
+.qz-type h2{margin:0}
+.qz-head{font-size:clamp(18px,2.2vw,21px);font-weight:700;line-height:1.6;color:var(--head);margin:6px 0 18px}
+.qz-dl{margin:0;display:grid;gap:12px}
+.qz-dl dt{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--rose)}
+.qz-dl dd{margin:2px 0 0;font-size:16px;line-height:1.75}
+.qz-dl a{color:var(--head);font-weight:700}
+.qz-act{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.qz-act .xcap{margin-left:0}
+/* 其他頁左下角：回到我的測驗結果 */
+.qz-backchip{position:fixed;left:16px;bottom:16px;z-index:70;display:inline-flex;align-items:center;gap:8px;max-width:calc(100vw - 32px);background:#fff;color:var(--head);text-decoration:none;font-size:14px;font-weight:700;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;box-shadow:0 12px 28px -12px rgba(90,15,70,.4)}
+.qz-backchip:hover{border-color:var(--rose)}
+.qz-backchip b{font-weight:900;color:var(--rose)}
+@media (max-width:520px){.qz-act .xb .xtrig{min-width:240px}}
 
 /* 頁首 */
 .top{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:20px;padding:12px 28px;color:#fff;
