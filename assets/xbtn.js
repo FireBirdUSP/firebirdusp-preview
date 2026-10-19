@@ -48,7 +48,7 @@ function mount(el,cap,given){
   el.addEventListener('focusout',function(e){if(!el.contains(e.relatedTarget)&&!el.matches(':hover'))set(false)});
   document.addEventListener('pointerdown',function(e){if(open&&!el.contains(e.target))set(false)});
 }
-/* v8：開放給其他頁用（免費亮點測驗的「分享我的結果」） */
+/* v8：開放給其他頁用（免費差異化測驗的「分享我的結果」） */
 window.XBTN={mount:mount,IC:IC,copy:copyText};
 document.querySelectorAll('[data-xbtn]').forEach(function(el){mount(el,el.parentNode.querySelector('.xcap'))});
 })();

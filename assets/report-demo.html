@@ -212,7 +212,7 @@ function makeWidgets(r,sc,id){
   const list=a=>Array.isArray(a)?a.filter(x=>x!=null&&x!==''):[];
   W.push({id:'hello',title:'給你的話',span:6,render:s=>`<div class="q1" style="font-size:${s==='s'?14:17}px">${esc(r.headline)}</div>${s==='s'?'':`<div style="margin-top:6px" class="clamp ${s==='l'?'c4':'c3'}">${esc(r.greeting)}</div>`}`});
   if(ov!==null){
-    W.push({id:'score',title:'亮點完成度',span:3,render:s=>`<div class="big">${ov}<small>/ 100</small></div>${bar(ov,ov<=25)}${s==='s'?'':`<div class="mut clamp ${s==='l'?'c4':'c2'}" style="margin-top:2px">${esc(r.scoreNote)}</div>`}`});
+    W.push({id:'score',title:'差異化完成度',span:3,render:s=>`<div class="big">${ov}<small>/ 100</small></div>${bar(ov,ov<=25)}${s==='s'?'':`<div class="mut clamp ${s==='l'?'c4':'c2'}" style="margin-top:2px">${esc(r.scoreNote)}</div>`}`});
     const dims=list(r.dimensions);
     W.push({id:'bars',title:'五個維度',span:3,render:s=>{
       if(s==='s')return `<div class="mut">${dims.map(d=>esc(d.name)).join('・')}</div>`;
@@ -283,7 +283,7 @@ function load(fileObjs,preMsgs){
   notes(msgs);
   reportId=id;CUR={r,sc,ov:overall(sc)};WIDGETS=makeWidgets(r,sc,id);
   if(document.documentElement.classList.contains('embed')){const keep=['hello','score','bars','d_seen','d_chosen','f0','fix','next'];WIDGETS=WIDGETS.filter(w=>keep.includes(w.id))}
-  $('#rtitle').textContent=(r.clientName?r.clientName+'的':'')+'亮點診斷報告';
+  $('#rtitle').textContent=(r.clientName?r.clientName+'的':'')+'差異化診斷報告';
   $('#rwho').textContent='報告編號 '+id+(client.o.createdAt?'　｜　'+client.o.createdAt:'');
   $('#report').hidden=false;
   build();
@@ -292,8 +292,8 @@ function load(fileObjs,preMsgs){
 /* ===== 示範資料（虛構店家，對外版格式） ===== */
 const SAMPLE_CLIENT={id:'sample-morninglight',createdAt:'示範資料',report:{clientName:'小明',headline:'你的麵包，陌生人第一次接觸時看得到多少？',greeting:'小明你好，謝謝你讓我們看你的資料。這份報告是站在「一個從沒見過你的陌生人」的角度，看你的名片與公開入口，整理第一次接觸時會看到什麼、會在哪裡停下來。讀不到的地方我們會直接標出來，不會硬寫。',scoreNote:'分數反映的是陌生人第一次接觸時「看得到多少」，不是你的手藝或專業程度；網站、地址與營業時間這次沒有資料，沒算進分數。',exposureNote:'從公開資料看，目前找得到的入口主要是名片與 IG，店面位置與線上曝光狀況這次沒有資料可看，想在見面時多了解。',
  dimensions:[
-  {key:'brand',name:'品牌亮點',status:'名片副標放了「手作天然酵母」與「每天早上七點出爐」兩個具體的料，一個講做法、一個講時間，很有畫面。這些料背後的來歷與堅持，還有空間可以說得更完整。'},
-  {key:'marketing',name:'行銷亮點',status:'目前只看到名片，產品、包裝、門市與 IG 內容都還沒看到，所以和同場景的麵包店放在一起比時，說法有沒有比得過的點，需要更多素材才能判斷。'},
+  {key:'brand',name:'品牌差異',status:'名片副標放了「手作天然酵母」與「每天早上七點出爐」兩個具體的料，一個講做法、一個講時間，很有畫面。這些料背後的來歷與堅持，還有空間可以說得更完整。'},
+  {key:'marketing',name:'行銷差異',status:'目前只看到名片，產品、包裝、門市與 IG 內容都還沒看到，所以和同場景的麵包店放在一起比時，說法有沒有比得過的點，需要更多素材才能判斷。'},
   {key:'seen',name:'被看見',status:'名片上列了 IG 帳號，但沒有看到地址、營業時間或網站。目標客人找不找得到這家店，需要實際網址資料才能判斷，這次先標為待確認。'},
   {key:'remembered',name:'被記得',status:'「每天早上七點出爐」是容易被轉述的一句話。目前只有一份檔案，還無法對照各處的自我介紹是否一致。'},
   {key:'chosen',name:'被選擇',status:'名片上的下一步是電話與 IG。案例、口碑數字、招牌品項這類讓人敢下決定的內容，在這份資料裡還沒看到，可能放在其他地方。'}],
@@ -480,12 +480,12 @@ function restoreLayout(){
 function shareText(){
   if(!CUR)return '';
   const {r,sc,ov}=CUR,L=[];
-  L.push((r.clientName?r.clientName+'的':'')+'亮點診斷報告');
-  if(ov!==null)L.push('亮點完成度 '+ov+' / 100');
+  L.push((r.clientName?r.clientName+'的':'')+'差異化診斷報告');
+  if(ov!==null)L.push('差異化完成度 '+ov+' / 100');
   for(const d of (r.dimensions||[])){const x=sc[d.key];if(x&&!x.insufficient&&typeof x.score==='number')L.push('・'+d.name+' '+x.score)}
   if(r.headline)L.push('',r.headline);
   if(r.nextStep&&r.nextStep.title)L.push('下一步：'+r.nextStep.title);
-  L.push('','— FireBirdUSP 亮點診斷');
+  L.push('','— FireBirdUSP 差異化診斷');
   return L.join('\n');
 }
 function shareLine(){
@@ -529,7 +529,7 @@ function mount(el,cap,label,icon,items){
 mount(document.getElementById('xshare'),document.getElementById('xcap'),'分享報告',IC.link,[
   {label:'傳到 LINE（摘要文字）',icon:IC.line,cls:'line',fn:shareLine},
   {label:'列印或存成 PDF',icon:IC.print,fn:()=>window.print()},
-  {label:'用 Email 寄給夥伴',icon:IC.mail,fn:()=>{location.href='mailto:?subject='+encodeURIComponent('我的亮點診斷報告')+'&body='+encodeURIComponent(shareText())}},
+  {label:'用 Email 寄給夥伴',icon:IC.mail,fn:()=>{location.href='mailto:?subject='+encodeURIComponent('我的差異化診斷報告')+'&body='+encodeURIComponent(shareText())}},
   {label:'複製這頁連結',icon:IC.link,fn:()=>{if(location.protocol==='file:')toast('這份報告目前只在你的電腦上，上線後才有可分享的連結');else copy()}}]);
 
 /* ---- 事件 ---- */
