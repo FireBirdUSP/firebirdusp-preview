@@ -115,6 +115,7 @@ a{color:inherit}
 .ph .tagrow{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:13px;font-weight:700;letter-spacing:.18em}
 .ph .tagrow i{width:12px;height:12px;border-radius:50%;background:var(--c,#fff);box-shadow:0 0 0 2px #fff,0 0 14px var(--c,#fff)}
 .ph h1{margin:0;font-size:clamp(32px,5.2vw,60px);font-weight:900;line-height:1.18;text-wrap:balance;text-shadow:0 2px 22px rgba(110,35,99,.4)}
+.ph .hero-sub{margin:14px 0 0;font-size:clamp(20px,2.8vw,32px);font-weight:800;line-height:1.35;text-wrap:balance;text-shadow:0 2px 18px rgba(110,35,99,.4)}
 .ph .lead{margin:16px 0 0;max-width:36em;font-size:clamp(16px,1.6vw,19px);line-height:1.8;text-shadow:0 1px 12px rgba(110,35,99,.45)}
 .ph .price{display:inline-block;margin-top:22px;font-size:clamp(26px,3vw,34px);font-weight:900;background:#fff;color:var(--rose);border-radius:14px;padding:4px 16px}
 .ph .price small{font-weight:500;font-size:14px;font-weight:700;color:var(--note);margin-left:6px}
