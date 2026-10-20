@@ -1,10 +1,10 @@
 1:"$Sreact.fragment"
 2:I[62810,["/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/228jknwg64noj.js"],"ClientPageRoot"]
-3:I[9740,["/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/228jknwg64noj.js","/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/3k54z387d1nhj.js"],"default"]
+3:I[9740,["/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/228jknwg64noj.js","/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/3gj9pbxh3smau.js"],"default"]
 6:I[76618,["/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/228jknwg64noj.js"],"OutletBoundary"]
 7:"$Sreact.suspense"
 :HL["/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/0rhwt7352qu16.css","style"]
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/0rhwt7352qu16.css","precedence":"next"}],["$","script","script-0",{"src":"/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/3k54z387d1nhj.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"0pZKKdIuw03IH8m-tSQtV"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/0rhwt7352qu16.css","precedence":"next"}],["$","script","script-0",{"src":"/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/3gj9pbxh3smau.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"CgvzC5q1VKA6xi0Q3cAVa"}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
