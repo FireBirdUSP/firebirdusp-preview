@@ -1,0 +1,5 @@
+:HL["/firebirdusp-preview/lab/spotlight-check-v15/_next/static/chunks/25q75921ktmqm.css","style"]
+:HL["/firebirdusp-preview/lab/spotlight-check-v15/_next/static/chunks/36srggc18vru3.css","style"]
+:HL["/firebirdusp-preview/lab/spotlight-check-v15/_next/static/media/fb4edce8a3cbfef3-s.p.3aqr1xxws37ij.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/firebirdusp-preview/lab/spotlight-check-v15/_next/static/chunks/043dzzi7bcsp8.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"bc3s3G8xhiAYPjMf0T0bu"}

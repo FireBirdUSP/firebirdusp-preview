@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[15435,["/firebirdusp-preview/lab/spotlight-check-v15/_next/static/chunks/2ozxc2junnycw.js"],"default"]
+3:I[58222,["/firebirdusp-preview/lab/spotlight-check-v15/_next/static/chunks/2ozxc2junnycw.js"],"default"]
+4:[]
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"bc3s3G8xhiAYPjMf0T0bu"}
