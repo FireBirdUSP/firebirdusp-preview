@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[76618,["/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/228jknwg64noj.js"],"ViewportBoundary"]
+3:I[76618,["/firebirdusp-preview/lab/spotlight-check-v16/_next/static/chunks/228jknwg64noj.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"品牌差異化診斷（含金量掃描）v16 示範｜FireBirdUSP"}],["$","meta","1",{"name":"robots","content":"noindex, nofollow"}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"0pZKKdIuw03IH8m-tSQtV"}
