@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>差異化環節優化報告｜FireBirdUSP</title>
+<meta name="description" content="差異化環節優化報告：你的素材哪個環節最該先改？逐環節診斷，直接告訴你改成什麼樣。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://firebirdusp.github.io/firebirdusp-preview/start/stage-report.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FireBirdUSP">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="差異化環節優化報告｜FireBirdUSP">
+<meta property="og:description" content="差異化環節優化報告：你的素材哪個環節最該先改？逐環節診斷，直接告訴你改成什麼樣。">
+<meta property="og:url" content="https://firebirdusp.github.io/firebirdusp-preview/start/stage-report.html">
+<meta property="og:image" content="https://firebirdusp.github.io/firebirdusp-preview/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/interactive.css">
+<style>
+.rp{background:#fff;border:1.5px solid #E7C8DC;border-radius:16px;padding:26px 28px;margin-top:18px}
+.rp h3{font-size:19px;margin:24px 0 8px;color:#3B2035}
+.rp h3:first-of-type{margin-top:6px}
+.rp table{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0 6px}
+.rp th,.rp td{border:1px solid #EBD5E4;padding:9px 11px;text-align:left;vertical-align:top;line-height:1.65}
+.rp th{background:#FDF3F8;color:#3B2035;white-space:nowrap}
+.rp .tag{display:inline-block;font-size:12.5px;font-weight:700;border-radius:999px;padding:2px 10px;background:#FFF3C9;color:#7A5200}
+.rp .tag.no{background:#FDE7EC;color:#B3203F}
+.rp .tag.yes{background:#E6F4EA;color:#256B3A}
+.rp .tag.keep{background:#F1EEF3;color:#6E6879}
+.rp .tri div{border-left:4px solid #FFC83D;background:#FFFBEA;padding:8px 14px;margin:8px 0;border-radius:0 10px 10px 0;line-height:1.7;font-size:14.5px}
+.rp .lab{font-weight:700;color:#A36A00}
+.rp .big{font-size:17px;font-weight:700;color:#3B2035;background:#FFF3F8;border-radius:10px;padding:12px 16px;margin:8px 0;line-height:1.7}
+.rp .small{font-size:13px;color:#7A6B76;margin-top:12px}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.vs>div{border-radius:14px;padding:18px 20px;line-height:1.75}
+.vs .old{background:#F4F1F5;color:#6E6879}
+.vs .new{background:#FFF6D8;border:2px solid #FFC83D;color:#3B2035}
+.vs b.k{display:block;font-size:12.5px;letter-spacing:.1em;margin-bottom:6px}
+.vs .new .q{font-size:19px;font-weight:800}
+.phones{display:flex;gap:18px;align-items:flex-start;justify-content:center;flex-wrap:wrap;margin:22px 0 6px}
+.phones figure{margin:0;width:238px;text-align:left}
+.phones.three figure{width:206px}
+.ph-svg{width:100%;height:auto;display:block;border-radius:26px;box-shadow:0 10px 26px rgba(178,72,158,.22)}
+.phones figcaption{font-size:13.5px;line-height:1.65;color:#5C4F58;margin-top:10px}
+.phones figcaption b{display:block;font-size:15px;color:#3B2035;margin-bottom:2px}
+.phones .arrow{align-self:center;font-size:34px;color:#D6336C;font-weight:800}
+.chk td:nth-child(3){font-weight:700}
+@media(max-width:700px){.vs{grid-template-columns:1fr}.rp{padding:18px 14px}.rp th{white-space:normal}.phones .arrow{transform:rotate(90deg)}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../index.html"><img src="../assets/logo_white_sm.png" alt="FireBirdUSP 精準差異化行銷" width="92" height="46"></a>
+  <button type="button" class="menu-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="site-nav"><span></span></button>
+  <nav class="nav" id="site-nav" aria-label="主選單">
+    <div class="dd"><a class="dd-btn" href="../index.html#services" aria-haspopup="true">服務<span class="car" aria-hidden="true">▾</span></a><ul class="dd-menu" aria-label="服務"><li><a href="../start/diagnosis.html"><i style="background:#4C93FF"></i>品牌差異化診斷</a></li><li><a href="../services/converter.html"><i style="background:#E5293F"></i>商會引薦力打造</a></li><li><a href="../services/highlight.html"><i style="background:#FFC83D"></i>差異化策略打造</a></li><li><a href="../services/ads.html"><i style="background:#17B6C8"></i>精準廣告投放</a></li><li class="sep" aria-hidden="true"></li><li><a class="free" href="../start/free-test.html"><i style="background:linear-gradient(135deg,#B2489E,#E3496F)"></i>免費差異化測驗</a></li></ul></div>
+    <a href="../index.html#start">從這裡開始</a>
+    <a href="../about.html">關於 FireBirdUSP</a>
+    <a href="../contact.html">聯絡我們</a>
+  </nav>
+</header>
+<main>
+<section class="ph c-light"><div class="wrap">
+  <p class="crumb"><a href="../services/highlight.html">差異化策略打造</a>　/　差異化環節優化報告</p>
+  <p class="tagrow"><i></i>差異化策略打造的每月內容</p>
+  <h1>差異化環節優化報告</h1>
+  <p class="lead">你的素材，哪一個環節最該先改？我們逐環節看，<b>直接告訴你改成什麼樣</b>，不是留給你一句「建議加強品牌感」。</p>
+</div></section>
+
+<section class="sec c-light"><div class="wrap">
+  <p class="kick">差在哪</p>
+  <h2 class="title">一般的建議，和這份報告</h2>
+  <div class="vs">
+    <div class="old"><b class="k">一般的優化建議</b>「建議強化品牌辨識度，優化開場的吸引力，讓內容更貼近受眾。」<br>看完以後，你還是不知道前 3 秒要放什麼。</div>
+    <div class="new"><b class="k">差異化環節優化報告</b><span class="q">前 3 秒改成：「這間酒吧沒有酒單，只問你一句：今天怎麼了？」</span><br>連畫面、字放哪裡、第二版第三版都一起給你。</div>
+  </div>
+</div></section>
+
+<section class="sec c-light"><div class="wrap">
+  <p class="kick">報告內容</p>
+  <h2 class="title">報告告訴你四件事</h2>
+  <ol class="cards two">
+    <li class="card"><span class="no">01</span><h3>先診斷</h3><p>現況：我們看到什麼。問題：哪裡不對。影響：會讓你的目標落空在哪。還會做「同業測試」：把你的名字換成同行，這句話還成立嗎？</p></li>
+    <li class="card"><span class="no">02</span><h3>具體調整指示</h3><p>引言與標題 3 版，可直接做 A/B；視覺、價格、活動、敘事怎麼配合。也可依你想要的方向調整。</p></li>
+    <li class="card"><span class="no">03</span><h3>受眾設定建議</h3><p>收窄、放寬，或維持，以及怎麼調、為什麼。</p></li>
+    <li class="card"><span class="no">04</span><h3>下一版怎麼驗證</h3><p>下一版要驗證的一件事，和上一版的結果紀錄。需要你提供成效資料。</p></li>
+  </ol>
+</div></section>
+
+<section class="sec alt c-light"><div class="wrap">
+  <p class="kick">示意圖</p>
+  <h2 class="title">客人前 3 秒看到的：原本，和調整後</h2>
+  <p class="p">同樣的素材、同樣的店，只動一個環節。拖曳滑桿比較，點圓點看改了什麼。環節優化報告不限廣告素材，簡報封面、自我介紹也能做。<span class="ix-demo-tag">示範資料・虛構</span></p>
+  <div class="ix-tabs">
+    <div class="ix-tablist" role="tablist" aria-label="切換範例">
+      <button type="button" class="ix-tab" role="tab" id="t-r" aria-controls="p-r">餐酒館 Reels</button>
+      <button type="button" class="ix-tab" role="tab" id="t-d" aria-controls="p-d">簡報封面</button>
+      <button type="button" class="ix-tab" role="tab" id="t-i" aria-controls="p-i">自我介紹</button>
+    </div>
+    <div class="ix-panel" role="tabpanel" id="p-r" aria-labelledby="t-r"><p class="ix-panel-lead">虛構餐酒館「微醺所」的一支 15 秒 Reels：只動第 1 個環節，鉤子。</p><div class="ix-cmp ix-portrait"><div class="ix-cmp-stage" style="--pos:50%"><div class="ix-cmp-layer"><svg viewBox="0 0 270 480" aria-hidden="true" focusable="false"><defs><linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1B22"/><stop offset="1" stop-color="#4B2B2F"/></linearGradient><radialGradient id="pbr"><stop offset="0" stop-color="#FFC15A" stop-opacity=".55"/><stop offset="1" stop-color="#FFC15A" stop-opacity="0"/></radialGradient></defs><rect width="270" height="480" rx="26" fill="url(#pbg)"/><rect x="14" y="14" width="70" height="20" rx="10" fill="#FFFFFF" fill-opacity=".18"/><text x="49.0" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">0–3 秒</text><circle cx="135" cy="150" r="46" fill="none" stroke="#E9C9A0" stroke-width="3"/><text x="135" y="159" text-anchor="middle" font-size="26" font-weight="800" fill="#F4E3C8" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">微醺所</text><text x="135" y="218" text-anchor="middle" font-size="10" font-weight="600" fill="#C9B197" letter-spacing="3" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">WINE &amp; DINE</text><circle cx="60" cy="292" r="12" fill="#7C5A4C"/><rect x="45" y="306" width="30" height="46" rx="12" fill="#7C5A4C"/><polygon points="74,270 84,270 82,282 76,282" fill="#F2B35E"/><circle cx="110" cy="292" r="12" fill="#7C5A4C"/><rect x="95" y="306" width="30" height="46" rx="12" fill="#7C5A4C"/><polygon points="124,270 134,270 132,282 126,282" fill="#F2B35E"/><circle cx="160" cy="292" r="12" fill="#7C5A4C"/><rect x="145" y="306" width="30" height="46" rx="12" fill="#7C5A4C"/><polygon points="174,270 184,270 182,282 176,282" fill="#F2B35E"/><circle cx="210" cy="292" r="12" fill="#7C5A4C"/><rect x="195" y="306" width="30" height="46" rx="12" fill="#7C5A4C"/><polygon points="224,270 234,270 232,282 226,282" fill="#F2B35E"/><rect x="48" y="362" width="174" height="22" rx="5" fill="none" stroke="#FF6B81" stroke-width="1.5" stroke-dasharray="4 3"/><text x="135" y="377" text-anchor="middle" font-size="9" font-weight="500" fill="#CBB7A5" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">沒有酒單，只問你一句話</text><rect x="58" y="390" width="140" height="20" rx="10" fill="#FF6B81" fill-opacity="1"/><text x="128.0" y="404" text-anchor="middle" font-size="9" font-weight="700" fill="#FFFFFF" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">第 12 秒才出現・字太小</text></svg></div><div class="ix-cmp-layer ix-cmp-after"><svg viewBox="0 0 270 480" aria-hidden="true" focusable="false"><defs><linearGradient id="pag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1B22"/><stop offset="1" stop-color="#4B2B2F"/></linearGradient><radialGradient id="par"><stop offset="0" stop-color="#FFC15A" stop-opacity=".55"/><stop offset="1" stop-color="#FFC15A" stop-opacity="0"/></radialGradient></defs><rect width="270" height="480" rx="26" fill="url(#pag)"/><rect x="14" y="14" width="70" height="20" rx="10" fill="#FFFFFF" fill-opacity=".18"/><text x="49.0" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">0–3 秒</text><text x="135" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">這間酒吧</text><text x="135" y="152" text-anchor="middle" font-size="44" font-weight="800" fill="#FFD36B" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">沒有酒單</text><text x="135" y="190" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">只問你一句：</text><text x="135" y="228" text-anchor="middle" font-size="28" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">今天怎麼了？</text><circle cx="135" cy="285" r="74" fill="url(#par)"/><polygon points="123,245 147,245 143,295 127,295" fill="#F2B35E"/><rect x="121" y="243" width="28" height="4" rx="2" fill="#FFE2A8"/><rect x="20" y="296" width="230" height="14" rx="6" fill="#7A4638"/><rect x="20" y="310" width="230" height="36" fill="#3B2220"/><ellipse cx="135" cy="372" rx="28" ry="8" fill="#C9A27E"/><path d="M122 378 L114 404 M148 378 L156 404" stroke="#C9A27E" stroke-width="3" stroke-linecap="round"/><rect x="22" y="64" width="226" height="344" rx="8" fill="none" stroke="#FFFFFF" stroke-opacity=".38" stroke-dasharray="5 4"/><text x="242" y="402" text-anchor="end" font-size="8.5" fill="#FFFFFF" fill-opacity=".6" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">字幕安全區</text></svg></div><div class="ix-cmp-line"></div><div class="ix-cmp-knob" aria-hidden="true">⇆</div><span class="ix-cmp-lab l">原本</span><span class="ix-cmp-lab r">調整後</span><input type="range" min="0" max="100" value="50" aria-label="拖曳比較原本與調整後" aria-controls="nb1"><span class="ix-cmp-focus"></span><div class="ix-dots"><button type="button" class="ix-dot" style="left:50%;top:31%" data-note="① 原本：店名與 Logo 開場，換成任何一間餐酒館都成立。調整後：鉤子直接講出差異，「沒有酒單、只問你一句」。" aria-label="標註 1">1</button><button type="button" class="ix-dot" style="left:50%;top:62%" data-note="② 原本：多人乾杯，想一個人放鬆的人不覺得這是給他的。調整後：畫面改成一個人坐在吧檯。" aria-label="標註 2">2</button><button type="button" class="ix-dot" style="left:50%;top:86%" data-note="③ 原本：全店最特別的「沒有酒單」，第 12 秒才用小字出現。調整後：字落在安全區，發布後不會被裁掉。" aria-label="標註 3">3</button></div></div><div class="ix-note-box" id="nb1" aria-live="polite">拖曳中間的滑桿比較前後；點圓點看那一處改了什麼。</div></div></div>
+    <div class="ix-panel" role="tabpanel" id="p-d" aria-labelledby="t-d" hidden><p class="ix-panel-lead">虛構的記帳顧問公司，簡報第 1 頁：只動標題的講法。</p><div class="ix-cmp "><div class="ix-cmp-stage" style="--pos:50%"><div class="ix-cmp-layer"><svg viewBox="0 0 480 270" aria-hidden="true" focusable="false"><rect width="480" height="270" fill="#F4F1F5"/><rect x="0" y="0" width="480" height="8" fill="#9A93A2"/><rect x="36" y="38" width="64" height="30" rx="6" fill="none" stroke="#9A93A2" stroke-width="2"/><text x="68" y="58" font-size="12" font-weight="700" fill="#6E6879" text-anchor="middle" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">LOGO</text><text x="36" y="140" font-size="40" font-weight="800" fill="#4A4452" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">公司簡介 2026</text><text x="36" y="176" font-size="18" font-weight="500" fill="#6E6879" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">示範公司股份有限公司</text><text x="36" y="244" font-size="13" font-weight="500" fill="#9A93A2" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">創立於 2015 年・專業・誠信・服務</text></svg></div><div class="ix-cmp-layer ix-cmp-after"><svg viewBox="0 0 480 270" aria-hidden="true" focusable="false"><defs><linearGradient id="dkg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF6D8"/><stop offset="1" stop-color="#FFE9A8"/></linearGradient></defs><rect width="480" height="270" fill="url(#dkg)"/><text x="36" y="86" font-size="24" font-weight="800" fill="#3B2035" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">小店老闆，</text><text x="36" y="142" font-size="44" font-weight="800" fill="#B2489E" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">30 分鐘看懂</text><text x="36" y="190" font-size="30" font-weight="800" fill="#3B2035" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">自己這個月賺不賺</text><text x="36" y="244" font-size="13" font-weight="500" fill="#6E6879" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">示範公司｜只服務小店的記帳顧問</text></svg></div><div class="ix-cmp-line"></div><div class="ix-cmp-knob" aria-hidden="true">⇆</div><span class="ix-cmp-lab l">原本</span><span class="ix-cmp-lab r">調整後</span><input type="range" min="0" max="100" value="50" aria-label="拖曳比較原本與調整後" aria-controls="nb2"><span class="ix-cmp-focus"></span><div class="ix-dots"><button type="button" class="ix-dot" style="left:12%;top:52%" data-note="① 原本：「公司簡介 2026」每間公司都寫得出來。調整後：標題直接講客人得到什麼。" aria-label="標註 1">1</button><button type="button" class="ix-dot" style="left:12%;top:72%" data-note="② 原本：公司全名，客人還是不知道這跟他有什麼關係。調整後：把對象與好處說在同一句。" aria-label="標註 2">2</button><button type="button" class="ix-dot" style="left:12%;top:92%" data-note="③ 原本：「專業、誠信、服務」換成別家也成立。調整後：只留一句別家不會寫的定位。" aria-label="標註 3">3</button></div></div><div class="ix-note-box" id="nb2" aria-live="polite">拖曳中間的滑桿比較前後；點圓點看那一處改了什麼。</div></div></div>
+    <div class="ix-panel" role="tabpanel" id="p-i" aria-labelledby="t-i" hidden><p class="ix-panel-lead">虛構的保險業務，30 秒自我介紹：只動第一句與最後一句。</p><div class="ix-cmp "><div class="ix-cmp-stage" style="--pos:50%"><div class="ix-cmp-layer"><svg viewBox="0 0 480 270" aria-hidden="true" focusable="false"><rect width="480" height="270" fill="#F4F1F5"/><text x="36" y="64" font-size="14" font-weight="700" fill="#6E6879" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">30 秒自我介紹（原稿）</text><text x="36" y="112" font-size="22" font-weight="500" fill="#4A4452" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">大家好，我是示範人物小林，</text><text x="36" y="148" font-size="22" font-weight="500" fill="#4A4452" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">從事保險業十年，</text><text x="36" y="184" font-size="22" font-weight="500" fill="#4A4452" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">專業、誠信、用心服務每一位客戶。</text><text x="36" y="236" font-size="16" font-weight="500" fill="#9A93A2" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">歡迎多多介紹，謝謝大家！</text></svg></div><div class="ix-cmp-layer ix-cmp-after"><svg viewBox="0 0 480 270" aria-hidden="true" focusable="false"><defs><linearGradient id="ing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF6D8"/><stop offset="1" stop-color="#FFE9A8"/></linearGradient></defs><rect width="480" height="270" fill="url(#ing)"/><text x="36" y="64" font-size="14" font-weight="700" fill="#A36A00" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">30 秒自我介紹（調整後）</text><text x="36" y="112" font-size="22" font-weight="800" fill="#3B2035" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">我專門幫「接班的第二代」，</text><text x="36" y="148" font-size="22" font-weight="800" fill="#3B2035" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">把爸媽留下來的保單，</text><text x="36" y="190" font-size="34" font-weight="800" fill="#B2489E" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">一張一張看懂。</text><text x="36" y="236" font-size="16" font-weight="600" fill="#6E6879" text-anchor="start" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">你身邊有剛接班的朋友，請介紹給我。</text></svg></div><div class="ix-cmp-line"></div><div class="ix-cmp-knob" aria-hidden="true">⇆</div><span class="ix-cmp-lab l">原本</span><span class="ix-cmp-lab r">調整後</span><input type="range" min="0" max="100" value="50" aria-label="拖曳比較原本與調整後" aria-controls="nb3"><span class="ix-cmp-focus"></span><div class="ix-dots"><button type="button" class="ix-dot" style="left:12%;top:40%" data-note="① 原本：「從事保險業十年」是資歷，聽的人不知道該介紹誰給你。調整後：先講你專門幫哪一種人。" aria-label="標註 1">1</button><button type="button" class="ix-dot" style="left:12%;top:70%" data-note="② 原本：「專業、誠信、用心」每個人都這樣說。調整後：用一個具體的畫面，讓人記得住。" aria-label="標註 2">2</button><button type="button" class="ix-dot" style="left:12%;top:90%" data-note="③ 原本：「歡迎多多介紹」，聽的人不知道要介紹誰。調整後：指名要介紹的對象。" aria-label="標註 3">3</button></div></div><div class="ix-note-box" id="nb3" aria-live="polite">拖曳中間的滑桿比較前後；點圓點看那一處改了什麼。</div></div></div>
+  </div>
+  <p class="note">示意圖為示意畫面，店家、公司、人物與素材皆為虛構的示範資料，不是任何真實客戶。</p>
+</div></section>
+
+<section class="sec c-light"><div class="wrap">
+  <p class="kick">同業測試</p>
+  <h2 class="title">把店名換成同行，這句話還成立嗎？</h2>
+  <div class="rp"><table class="chk">
+    <tr><th>句子</th><th>把「微醺所」換成任何一間餐酒館</th><th>結果</th></tr>
+    <tr><td>「微醺所，讓你放鬆一晚」</td><td>每一間都能講，一樣成立</td><td><span class="tag no">不是差異</span></td></tr>
+    <tr><td>「這間酒吧沒有酒單，只問你一句：今天怎麼了？」</td><td>換成別間就不成立，只有這間這樣做</td><td><span class="tag yes">是差異</span></td></tr>
+  </table></div>
+</div></section>
+
+<section class="sec alt c-light"><div class="wrap">
+  <p class="kick">報告長什麼樣</p>
+  <h2 class="title">示範：一間餐酒館的第 1 檔</h2>
+  <p class="p">內容是虛構的餐酒館與素材，不是任何真實客戶的資料。</p>
+
+  <div class="rp">
+    <table>
+      <tr><th>客戶</th><td>微醺所（虛構餐酒館）</td><th>檔次</th><td>第 1 檔</td></tr>
+      <tr><th>平台</th><td>Meta（FB／IG）</td><th>目標</th><td>單月週間訂位 60 組</td></tr>
+      <tr><th>受眾</th><td>25–38 歲、在市區工作或居住、下班後想找地方放鬆的上班族</td><th>本檔素材</th><td>一支 15 秒 Reels，開場是店名與 Logo</td></tr>
+    </table>
+
+    <h3>一、診斷</h3>
+    <p class="p" style="font-size:14.5px">先把七個環節逐項掃過，看這間店的差異長在哪一環。</p>
+    <table>
+      <tr><th>環節</th><th>我們看到什麼</th><th>有無差異</th></tr>
+      <tr><td>1 鉤子（前 3 秒）</td><td>店名與 Logo，換成任何一間餐酒館都成立</td><td><span class="tag no">無</span></td></tr>
+      <tr><td>2 內容與切角</td><td>介紹調酒種類與氛圍</td><td><span class="tag keep">本檔不動</span></td></tr>
+      <tr><td>3 視覺</td><td>暗色暖光吧檯，質感不錯；但畫面是多人乾杯</td><td><span class="tag">部分</span></td></tr>
+      <tr><td>4 文案</td><td>「微醺所，讓你放鬆一晚」</td><td><span class="tag no">無</span></td></tr>
+      <tr><td>5 價格與產品名稱</td><td>套餐「經典雙人餐」</td><td><span class="tag">可調整</span></td></tr>
+      <tr><td>6 活動與玩法</td><td>「沒有酒單，調酒師只問你一句話」，這是全店最特別的做法，素材幾乎沒提</td><td><span class="tag yes">有，但沒講</span></td></tr>
+      <tr><td>7 敘事方式</td><td>先拍店內環境，最後才出現訂位資訊</td><td><span class="tag">可調整</span></td></tr>
+    </table>
+    <p class="p" style="font-size:14.5px"><b>這一檔要動的是第 1 環：鉤子。</b>這間店真正的差異，被放在最不容易被看到的地方。</p>
+    <div class="tri">
+      <div><span class="lab">現況</span>　前 3 秒是店名與 Logo；「沒有酒單，只問你一句話」出現在第 12 秒，字很小。</div>
+      <div><span class="lab">問題</span>　亮點被埋住：有講到獨特的地方，但放得太後面。</div>
+      <div><span class="lab">影響</span>　多數人前 3 秒就滑走，點進來的人看不出和其他餐酒館的差別，訂位多半只剩價格比較。</div>
+    </div>
+    <div class="tri">
+      <div><span class="lab">受眾落差</span>　受眾是下班後想放鬆的上班族，但畫面是多人乾杯聚會；想一個人放鬆的人，會覺得「那不是我的場合」。</div>
+      <div><span class="lab">目標落差</span>　目標是訂位，結尾卻只有 Logo 與 IG 帳號，想訂的人要自己去找訂位方式。</div>
+    </div>
+
+    <h3>二、具體調整指示</h3>
+    <div class="big">主建議（只有一個）：把「沒有酒單，只問你一句話」搬到前 3 秒，畫面換成一個人坐在吧檯。因為目標是週間訂位，鎖定的是下班後想放鬆的人，鉤子要讓他第一眼就認出「這是給我的」。</div>
+    <p class="p" style="font-size:14.5px"><b>引言與標題 3 版</b>（同一支素材可直接套用，不用重拍，變因只有一個）。三版打的是三種不同的力道，不是同一句換字：</p>
+    <div class="phones three">
+      <figure><svg viewBox="0 0 270 480" role="img" aria-label="調整後 A：沒有酒單，只問你一句" class="ph-svg"><defs><linearGradient id="pag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1B22"/><stop offset="1" stop-color="#4B2B2F"/></linearGradient><radialGradient id="par"><stop offset="0" stop-color="#FFC15A" stop-opacity=".55"/><stop offset="1" stop-color="#FFC15A" stop-opacity="0"/></radialGradient></defs><rect width="270" height="480" rx="26" fill="url(#pag)"/><rect x="14" y="14" width="70" height="20" rx="10" fill="#FFFFFF" fill-opacity=".18"/><text x="49.0" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">0–3 秒</text><text x="135" y="98" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">這間酒吧</text><text x="135" y="152" text-anchor="middle" font-size="44" font-weight="800" fill="#FFD36B" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">沒有酒單</text><text x="135" y="190" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">只問你一句：</text><text x="135" y="228" text-anchor="middle" font-size="28" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">今天怎麼了？</text><circle cx="135" cy="285" r="74" fill="url(#par)"/><polygon points="123,245 147,245 143,295 127,295" fill="#F2B35E"/><rect x="121" y="243" width="28" height="4" rx="2" fill="#FFE2A8"/><rect x="20" y="296" width="230" height="14" rx="6" fill="#7A4638"/><rect x="20" y="310" width="230" height="36" fill="#3B2220"/><ellipse cx="135" cy="372" rx="28" ry="8" fill="#C9A27E"/><path d="M122 378 L114 404 M148 378 L156 404" stroke="#C9A27E" stroke-width="3" stroke-linecap="round"/><rect x="22" y="64" width="226" height="344" rx="8" fill="none" stroke="#FFFFFF" stroke-opacity=".38" stroke-dasharray="5 4"/><text x="242" y="402" text-anchor="end" font-size="8.5" fill="#FFFFFF" fill-opacity=".6" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">字幕安全區</text></svg><figcaption><b>A　反常識</b>「這間酒吧沒有酒單，只問你一句：今天怎麼了？」<br>要測：「沒有酒單」這個差異本身，能不能把人攔下來</figcaption></figure>
+      <figure><svg viewBox="0 0 270 480" role="img" aria-label="調整後 B：全店 8 個位子，沒有雙人桌" class="ph-svg"><defs><linearGradient id="pb2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1B22"/><stop offset="1" stop-color="#4B2B2F"/></linearGradient><radialGradient id="pb2r"><stop offset="0" stop-color="#FFC15A" stop-opacity=".55"/><stop offset="1" stop-color="#FFC15A" stop-opacity="0"/></radialGradient></defs><rect width="270" height="480" rx="26" fill="url(#pb2g)"/><rect x="14" y="14" width="70" height="20" rx="10" fill="#FFFFFF" fill-opacity=".18"/><text x="49.0" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">0–3 秒</text><text x="135" y="100" text-anchor="middle" font-size="18" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">全店只有</text><text x="135" y="152" text-anchor="middle" font-size="46" font-weight="800" fill="#FFD36B" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">8 個位子</text><text x="135" y="196" text-anchor="middle" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">沒有一張</text><text x="135" y="230" text-anchor="middle" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">是雙人桌</text><rect x="14" y="300" width="242" height="14" rx="6" fill="#7A4638"/><rect x="14" y="314" width="242" height="30" fill="#3B2220"/><ellipse cx="33.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M29.5 368 L26.5 392 M37.5 368 L40.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><ellipse cx="62.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M58.5 368 L55.5 392 M66.5 368 L69.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><ellipse cx="91.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M87.5 368 L84.5 392 M95.5 368 L98.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><ellipse cx="120.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M116.5 368 L113.5 392 M124.5 368 L127.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><ellipse cx="149.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M145.5 368 L142.5 392 M153.5 368 L156.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><ellipse cx="178.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M174.5 368 L171.5 392 M182.5 368 L185.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><ellipse cx="207.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M203.5 368 L200.5 392 M211.5 368 L214.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><ellipse cx="236.5" cy="364" rx="11" ry="5" fill="#C9A27E"/><path d="M232.5 368 L229.5 392 M240.5 368 L243.5 392" stroke="#C9A27E" stroke-width="2" stroke-linecap="round"/><rect x="22" y="64" width="226" height="344" rx="8" fill="none" stroke="#FFFFFF" stroke-opacity=".38" stroke-dasharray="5 4"/><text x="242" y="402" text-anchor="end" font-size="8.5" fill="#FFFFFF" fill-opacity=".6" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">字幕安全區</text></svg><figcaption><b>B　數字與稀缺</b>「全店只有 8 個位子，沒有一張是雙人桌」<br>要測：空間上的差異，比做法上的差異更有感嗎</figcaption></figure>
+      <figure><svg viewBox="0 0 270 480" role="img" aria-label="調整後 C：看你一眼就知道給哪一杯" class="ph-svg"><defs><linearGradient id="pcg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B1B22"/><stop offset="1" stop-color="#4B2B2F"/></linearGradient><radialGradient id="pcr"><stop offset="0" stop-color="#FFC15A" stop-opacity=".55"/><stop offset="1" stop-color="#FFC15A" stop-opacity="0"/></radialGradient></defs><rect width="270" height="480" rx="26" fill="url(#pcg)"/><rect x="14" y="14" width="70" height="20" rx="10" fill="#FFFFFF" fill-opacity=".18"/><text x="49.0" y="28" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">0–3 秒</text><text x="135" y="112" text-anchor="middle" font-size="30" font-weight="800" fill="#FFD36B" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">今天不想說話？</text><text x="135" y="160" text-anchor="middle" font-size="24" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">沒關係。</text><text x="135" y="204" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">調酒師看你一眼，</text><text x="135" y="234" text-anchor="middle" font-size="20" font-weight="800" fill="#FFFFFF" letter-spacing="0" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">就知道給你哪一杯。</text><circle cx="135" cy="300" r="74" fill="url(#pcr)"/><circle cx="118" cy="268" r="15" fill="#8A6A5A"/><path d="M82 322 Q82 290 118 290 Q154 290 154 322 Z" fill="#6A4A3F"/><polygon points="170,288 190,288 187,320 173,320" fill="#F2B35E"/><rect x="168" y="286" width="24" height="4" rx="2" fill="#FFE2A8"/><rect x="20" y="320" width="230" height="14" rx="6" fill="#7A4638"/><rect x="20" y="334" width="230" height="40" fill="#3B2220"/><rect x="22" y="64" width="226" height="344" rx="8" fill="none" stroke="#FFFFFF" stroke-opacity=".38" stroke-dasharray="5 4"/><text x="242" y="402" text-anchor="end" font-size="8.5" fill="#FFFFFF" fill-opacity=".6" font-family="'Noto Sans TC','Microsoft JhengHei',sans-serif">字幕安全區</text></svg><figcaption><b>C　被懂</b>「今天不想說話？沒關係。調酒師看你一眼，就知道給你哪一杯。」<br>要測：情緒訴求，比場合與做法訴求更有感嗎</figcaption></figure>
+    </div>
+    <p class="p" style="font-size:14.5px">建議跑法：先跑 A，B 與 C 留到第二輪。同時跑三支，每支都拿不到足夠數據，就回到無法判斷是哪一句有效。</p>
+    <table>
+      <tr><th>視覺</th><td>畫面主體改成吧檯單人座位與一杯酒的特寫，不要多人乾杯；保留暗色暖光；鉤子字級比店名大，放在畫面中上方；字幕避開左右邊緣與底部（IG 發布後兩側會被裁切，底部會被帳號名與留言區蓋住）。</td></tr>
+      <tr><th>價格與名稱</th><td>套餐「經典雙人餐」改成單人也成立的名稱，例如「一句話微醺」。</td></tr>
+      <tr><th>活動與玩法</th><td>把週三設成「單人吧檯日」，素材裡直接講出來。</td></tr>
+      <tr><th>敘事</th><td>順序改成：一個人下班 → 坐下 → 被問一句 → 第一杯 → 訂位連結。</td></tr>
+      <tr><th>內容與切角</th><td><span class="tag keep">本檔不動</span></td></tr>
+    </table>
+
+    <h3>三、受眾設定建議</h3>
+    <table>
+      <tr><th>建議</th><td>收窄</td></tr>
+      <tr><th>怎麼調</th><td>以下班時段與市區範圍為主，先不放寬到全市。</td></tr>
+      <tr><th>為什麼</th><td>目標是週間訂位，晚間人在市區的人，更可能當晚下單。</td></tr>
+    </table>
+
+    <h3>四、下一版怎麼驗證</h3>
+    <table>
+      <tr><th>要驗的一件事</th><td>引言 A 能不能提高點擊訂位連結的比例</td></tr>
+      <tr><th>要看的數字</th><td>訂位連結點擊率、訂位組數</td></tr>
+      <tr><th>預期方向</th><td>上升</td></tr>
+      <tr><th>上一版的結果</th><td>這是第 1 檔，沒有上一版；從這一檔開始記錄，第 2 檔起會填入上一檔的假設與實際結果。</td></tr>
+    </table>
+    <p class="small">示範用的是虛構店家與素材。真實的報告會依你實際的素材與成效資料撰寫；沒有成效資料時，會在報告裡寫明哪些是推論。</p>
+  </div>
+</div></section>
+
+<section class="sec c-light"><div class="wrap">
+  <p class="kick">拿到報告之後</p>
+  <h2 class="title">從報告到上線，這樣落地</h2>
+  <p class="p">點每一段，看那一步要做什麼、手上拿著報告的哪一部分。<span class="ix-demo-tag">示意流程</span></p>
+  <ol class="ix-tl">
+    <li class="ix-tl-item"><button type="button" class="ix-tl-btn" aria-expanded="false"><span class="ix-tl-time">第 1 天</span><span class="ix-tl-name">讀診斷，選一版引言</span><span class="ix-tl-car" aria-hidden="true">▼</span></button><div class="ix-tl-body" hidden><p>先看七個環節的燈號，確認這一檔只動哪一個。再從 3 版引言與標題裡，挑你最想先試的一版。</p></div></li>
+    <li class="ix-tl-item"><button type="button" class="ix-tl-btn" aria-expanded="false"><span class="ix-tl-time">第 2–3 天</span><span class="ix-tl-name">照調整指示改素材</span><span class="ix-tl-car" aria-hidden="true">▼</span></button><div class="ix-tl-body" hidden><p>視覺、價格、活動與敘事怎麼配合，報告都寫成具體指示。你可以自己改，也可以直接交給你的設計與外包夥伴。</p></div></li>
+    <li class="ix-tl-item"><button type="button" class="ix-tl-btn" aria-expanded="false"><span class="ix-tl-time">第 4–7 天</span><span class="ix-tl-name">上線，做 A/B</span><span class="ix-tl-car" aria-hidden="true">▼</span></button><div class="ix-tl-body" hidden><p>引言與標題 3 版可以直接做 A/B；受眾設定依報告附的建議。</p></div></li>
+    <li class="ix-tl-item"><button type="button" class="ix-tl-btn" aria-expanded="false"><span class="ix-tl-time">第 2 週</span><span class="ix-tl-name">看結果，填回紀錄</span><span class="ix-tl-car" aria-hidden="true">▼</span></button><div class="ix-tl-body" hidden><p>報告附有「上一版的結果紀錄」欄位。哪一版有反應、哪一版沒有，記下來，下一檔就不從零開始。</p></div></li>
+    <li class="ix-tl-item"><button type="button" class="ix-tl-btn" aria-expanded="false"><span class="ix-tl-time">下一檔</span><span class="ix-tl-name">驗證下一件事</span><span class="ix-tl-car" aria-hidden="true">▼</span></button><div class="ix-tl-body" hidden><p>報告也寫了「下一版要驗證的事」，接著做下一個環節或下一個素材。</p></div></li>
+  </ol>
+  <div class="ix-bar" aria-hidden="true"><i style="flex:1"></i><i style="flex:2"></i><i style="flex:4"></i><i style="flex:3"></i><i style="flex:3"></i></div>
+  <p class="note">時間為示意，實際依你的素材與預算調整。</p>
+</div></section>
+<section class="sec c-light"><div class="wrap">
+  <p class="kick">怎麼拿到</p>
+  <h2 class="title">屬於差異化策略打造的每月內容</h2>
+  <ol class="cards">
+    <li class="card"><span class="no">起手專案</span><h3>內含 1 檔</h3><p>第 1 個月的起手專案，就會拿到 1 檔，立刻知道哪裡可以先改。</p></li>
+    <li class="card"><span class="no">加簽期</span><h3>每月 3 檔</h3><p>滿意再加簽，每月 3 檔，素材或場合依你的狀況決定。</p></li>
+    <li class="card"><span class="no">之後</span><h3>可以繼續</h3><p>加簽期結束後，可以改成每月固定 1 檔；想多做，可以另外加購。</p></li>
+  </ol>
+  <p style="margin-top:28px"><a class="cta line-btn" href="../contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5 1.1-.5 5.8-3.4 7.9-5.9C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>加 LINE 聊聊</a></p>
+</div></section>
+</main>
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <p class="brand-ft"><img src="../assets/logo_white_sm.png" alt="FireBirdUSP" width="96" height="48" style="display:block"></p>
+        <p style="margin:0">精準差異化行銷<br>先找到客人選你的理由，再決定錢花在哪。</p>
+        <p class="co">FireBirdUSP 是速傑企業股份有限公司延伸的行銷品牌</p>
+      </div>
+      <div>
+        <h4>服務</h4>
+        <ul><li><a href="../services/converter.html">商會引薦力打造</a></li><li><a href="../services/highlight.html">差異化策略打造</a></li><li><a href="../services/ads.html">精準廣告投放</a></li></ul>
+      </div>
+      <div>
+        <h4>從這裡開始</h4>
+        <ul>
+          <li><a href="../start/free-test.html">免費差異化測驗</a></li>
+          <li><a href="../start/diagnosis.html">品牌差異化診斷</a></li>
+          <li><a href="../about.html">關於 FireBirdUSP</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>公司資訊</h4>
+        <ul>
+          <li>速傑企業股份有限公司</li>
+          <li>統一編號　22294802</li>
+          <li>電話　<a href="tel:0223450080">02-2345-0080</a></li>
+          <li>傳真　02-3322-8785</li>
+          <li><a href="mailto:hello@firebirdusp.com">hello@firebirdusp.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ft-legal"><a href="../privacy.html">隱私權政策</a><a href="../cookies.html">Cookie 政策</a><a href="../terms.html">服務條款</a><a href="../faq.html">常見問題</a></p>
+    <div class="ft-bottom">
+      <span>© 2026 FireBirdUSP｜速傑企業股份有限公司</span>
+      <span><a href="../contact.html">加 LINE 聊聊</a></span>
+    </div>
+  </div>
+</footer>
+<script src="../assets/quiz-back.js" defer></script>
+<script src="../assets/menu.js" defer></script>
+<script src="../assets/interactive.js" defer></script>
+</body>
+</html>
