@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>品牌診斷範例報告</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=block" rel="stylesheet">
+<style>
+:root{--fb-rose:#D6336C;--fb-hot:#FF3399;--fb-ink:#5C4F58;--fb-muted:#6F6169;--fb-card:#FDF3F8;--fb-line:#E7C8DC;--fb-focus:#FFF0F6;--soft:#FFE3EF;--g:#2F7D5B;--a:#B7791F;--fb-grad:linear-gradient(135deg,#B2489E 0%,#D6336C 55%,#E3496F 100%)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--fb-ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.8;word-break:keep-all;overflow-wrap:anywhere}
+.nw{white-space:nowrap}
+:root{color-scheme:light}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--fb-hot);outline-offset:2px}
+header.top{background:var(--fb-grad);color:#fff;position:relative;overflow:hidden}
+header.top::before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 25% 30%,#ffffff2a,transparent 55%),radial-gradient(circle at 78% 70%,#FF339966,transparent 50%);filter:blur(60px);pointer-events:none}
+header.top .wrap{position:relative;padding-top:26px;padding-bottom:30px}
+.brandmark{position:absolute;right:24px;top:20px;font-weight:700;font-size:14px;letter-spacing:.04em}
+header.top h1{margin:32px 0 6px;font-size:clamp(26px,4.6vw,42px);font-weight:900;line-height:1.3}
+header.top p{margin:0;font-size:clamp(15px,2vw,18px)}
+.sample-tag{display:inline-block;margin-top:14px;background:#fff;color:var(--fb-rose);border-radius:999px;padding:4px 16px;font-size:14px;font-weight:700}
+.map{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px;font-size:14px}
+.map .grp{background:#ffffff26;border-radius:12px;padding:6px 12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.map b{font-weight:900}
+.map .ar{opacity:.8}
+nav.tabs{position:sticky;top:0;z-index:30;background:#fffffff5;backdrop-filter:blur(6px);border-bottom:1px solid var(--fb-line)}
+nav.tabs .wrap{display:flex;gap:8px;padding-top:10px;padding-bottom:10px;overflow-x:auto}
+nav.tabs button{flex:0 0 auto;border:1.5px solid var(--fb-line);background:#fff;color:var(--fb-ink);font-weight:700;border-radius:999px;padding:8px 16px;cursor:pointer}
+nav.tabs button[aria-selected=true]{background:var(--fb-rose);border-color:var(--fb-rose);color:#fff}
+nav.tabs .sep{flex:0 0 2px;background:var(--fb-line);margin:4px 4px}
+nav.sub{position:sticky;top:57px;z-index:20;background:#fffffff5;backdrop-filter:blur(6px);border-bottom:1px solid var(--fb-line);margin:0 calc(-1 * max(16px,env(safe-area-inset-right,0px))) 8px calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px))}
+nav.sub div{display:flex;gap:6px;overflow-x:auto;padding:8px 0}
+nav.sub a{flex:0 0 auto;text-decoration:none;color:var(--fb-ink);font-size:14px;font-weight:700;padding:3px 12px;border-radius:999px;border:1px solid transparent}
+nav.sub a:hover{border-color:var(--fb-line)}
+nav.sub a.on{background:var(--fb-focus);border-color:var(--fb-rose);color:var(--fb-rose)}
+section.pane{display:none;padding-block:26px 70px}
+section.pane.on{display:block}
+[id]{scroll-margin-top:84px}
+nav.sub::before{content:"本頁大綱";display:none}
+@media (min-width:960px){
+section.pane.hasnav.on{display:grid;grid-template-columns:230px minmax(0,1fr);column-gap:30px;align-items:start;max-width:1280px}
+section.pane.hasnav.on>*{grid-column:2;min-width:0}
+section.pane.hasnav.on>nav.sub{grid-column:1;grid-row:1 / span 300;position:sticky;top:76px;align-self:start;margin:0;padding:14px 10px 14px 0;background:transparent;backdrop-filter:none;border-bottom:0;border-right:2px solid var(--fb-line);max-height:calc(100vh - 96px);overflow-y:auto}
+nav.sub::before{display:block;font-size:12px;letter-spacing:.14em;font-weight:900;color:#9c8f98;padding:0 12px 8px}
+nav.sub div{flex-direction:column;overflow:visible;padding:0;gap:2px}
+nav.sub a{display:block;border-radius:10px;padding:8px 12px;line-height:1.35;white-space:normal;font-size:14.5px}
+nav.sub a.on{background:var(--fb-rose);border-color:var(--fb-rose);color:#fff}
+}
+.ribbon{display:inline-block;border-radius:999px;padding:2px 14px;font-size:13px;font-weight:700;margin-bottom:8px;color:#fff;background:var(--fb-rose)}
+.ribbon.d{background:#B2489E}
+.sec{scroll-margin-top:118px;padding-top:6px}
+h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 8px;color:var(--fb-rose);font-weight:900;line-height:1.35}
+h3{font-size:clamp(19px,2.4vw,24px);margin:44px 0 4px;color:var(--fb-ink);font-weight:900;line-height:1.4}
+h4{margin:0 0 4px}
+.what{margin:0 0 12px;color:var(--fb-muted);font-size:15px}
+.what b{color:var(--fb-rose)}
+.lead{font-size:17px;margin:0 0 18px}
+.note{font-size:14px;color:var(--fb-muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:var(--fb-card);border:1px solid var(--fb-line);border-radius:12px;padding:16px 18px}
+.card.focus{background:var(--fb-focus);border:2.5px solid var(--fb-rose)}
+.card.white{background:#fff}
+.cta{display:inline-block;background:var(--fb-hot);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 28px;margin-top:10px;border:0;cursor:pointer;transition:.2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px #FF339955}
+.ghost{background:#fff;color:var(--fb-rose);border:1.5px solid var(--fb-rose)}
+.rv{animation:fbUp .55s cubic-bezier(.22,1,.36,1) both}
+@keyframes fbUp{from{opacity:0;transform:translateY(16px)}}
+@keyframes ringfill{from{stroke-dashoffset:327}}
+@keyframes growx{from{width:0}}
+@keyframes pop{from{transform:scale(0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:6px;padding:0 8px;margin-right:6px;white-space:nowrap;vertical-align:1px}
+.tag.c{background:var(--fb-rose);color:#fff}.tag.i{background:var(--soft);color:var(--fb-rose);border:1px solid var(--fb-rose)}.tag.u{background:#fff;color:var(--fb-muted);border:1px dashed var(--fb-muted)}
+.pl{display:inline-block;border-radius:999px;padding:0 10px;font-size:13px;font-weight:700;white-space:nowrap}
+.pl.ok{background:#fff;border:1.5px solid var(--g);color:var(--g)}
+.pl.part{background:var(--soft);color:var(--fb-rose);border:1.5px solid var(--fb-rose)}
+.pl.miss{background:var(--fb-rose);color:#fff;border:1.5px solid var(--fb-rose)}
+.pl.na{background:#fff;border:1.5px dashed var(--fb-muted);color:var(--fb-muted)}
+/* rings */
+.ringbox{display:flex;align-items:center;gap:14px}
+.ring{width:108px;height:108px;flex:0 0 auto;position:relative}
+.ring.sm{width:78px;height:78px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .bg{fill:none;stroke:#fff;stroke-width:12}
+.ring .fg{fill:none;stroke:url(#g);stroke-width:12;stroke-linecap:round;stroke-dasharray:327;stroke-dashoffset:calc(327 - 327 * var(--v) / 100);animation:ringfill 1.2s cubic-bezier(.22,1,.36,1) both}
+.ring .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;color:var(--fb-rose)}
+.ring.sm .num{font-size:22px}
+.ringbox .t b{display:block;font-size:17px}
+.house{display:grid;gap:12px}
+.layer{border-radius:14px;padding:16px 20px}
+.layer.top{background:var(--fb-focus);border:2.5px solid var(--fb-rose)}
+.layer.base{background:var(--fb-card);border:1px solid var(--fb-line)}
+.layer h4{font-size:18px}
+.layer .q{color:var(--fb-muted);font-size:14px;margin:0 0 8px}
+/* scan & input */
+.inputdemo{background:#fff;border:2px solid var(--fb-rose);border-radius:14px;padding:16px 20px;box-shadow:0 12px 30px #D6336C1f}
+.inputdemo .lines{min-height:84px;font-size:16px}
+.inputdemo .ln{display:block;padding:2px 0}
+.inputdemo .ln small{color:var(--fb-muted);margin-left:6px}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--fb-rose);vertical-align:-3px;margin-left:1px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.autolist{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:12px}
+.autolist div{background:var(--fb-card);border:1px solid var(--fb-line);border-radius:10px;padding:8px 12px;display:flex;gap:8px;align-items:center;opacity:.45;transition:.4s;font-size:15px}
+.autolist div.on{opacity:1;border-color:var(--fb-rose);background:var(--fb-focus)}
+.autolist .tick{width:20px;height:20px;border-radius:50%;background:var(--fb-line);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.autolist .on .tick{background:var(--fb-rose)}
+.scan{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:16px 22px}
+.scan ul{list-style:none;margin:0;padding:0;columns:2;column-gap:24px}
+.scan li{display:flex;align-items:center;gap:10px;padding:4px 0;color:var(--fb-muted);transition:color .3s;break-inside:avoid}
+.scan li .dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--fb-line);flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff}
+.scan li.run{color:var(--fb-ink)}
+.scan li.run .dot{border-color:var(--fb-rose);border-top-color:transparent;animation:spin .8s linear infinite}
+.scan li.done{color:var(--fb-ink)}
+.scan li.done .dot{background:var(--fb-rose);border-color:var(--fb-rose)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.scanbar{height:6px;border-radius:99px;background:var(--fb-card);margin-top:10px;overflow:hidden}
+.scanbar i{display:block;height:100%;width:0;background:var(--fb-grad);transition:width .5s}
+.after-scan{transition:opacity .7s,transform .7s}
+.after-scan.hide{opacity:0;transform:translateY(14px);height:0;overflow:hidden}
+.gapnum{font-size:clamp(44px,8vw,64px);font-weight:900;line-height:1;color:var(--fb-rose)}
+.locked{position:relative}
+.locked .row{height:14px;border-radius:8px;background:var(--fb-line);margin:9px 0;filter:blur(3px);opacity:.75}
+.locked .row:nth-child(2){width:86%}.locked .row:nth-child(3){width:70%}
+.locked .msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--fb-rose);text-align:center;padding:0 12px}
+.teaser{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:12px 14px}
+.teaser .big{font-size:34px;font-weight:900;color:var(--fb-rose);line-height:1.1}
+.teaser .big small{font-size:15px;color:var(--fb-muted);font-weight:500}
+.big-quote{margin:36px 0;padding:26px 16px;text-align:center;font-size:clamp(22px,3.8vw,34px);font-weight:900;line-height:1.5}
+.big-quote span{background:var(--fb-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* tables */
+.tblwrap{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff}
+table.t th,table.t td{border:1px solid var(--fb-line);padding:8px 10px;text-align:left;vertical-align:top}
+table.t th{background:var(--fb-card)}
+table.t td.c,table.t th.c{text-align:center}
+/* rows */
+.dimrow{display:grid;grid-template-columns:120px 1fr 40px;gap:12px;align-items:center;margin:9px 0}
+.dimrow .track{height:15px;border-radius:99px;background:#fff;border:1px solid var(--fb-line);overflow:hidden}
+.dimrow .track i{display:block;height:100%;width:var(--w);background:var(--fb-grad);animation:growx 1.1s cubic-bezier(.22,1,.36,1) both}
+.dimrow .track i.low{background:var(--fb-rose)}
+.dimnote{margin:-4px 0 6px 132px;font-size:14px;color:var(--fb-muted)}
+.radarwrap{display:grid;grid-template-columns:minmax(260px,400px) 1fr;gap:24px;align-items:center}
+svg.radar{width:100%;height:auto;overflow:visible}
+.radar .grid{fill:none;stroke:var(--fb-line);stroke-width:1}.radar .axis{stroke:var(--fb-line);stroke-width:1}
+.radar .poly{fill:#D6336C33;stroke:#D6336C;stroke-width:2.5;transform-box:view-box;transform-origin:150px 150px;transform:scale(1);animation:pop 1.1s cubic-bezier(.22,1,.36,1) both}
+.radar .poly.goal{fill:none;stroke:#B2489E;stroke-dasharray:6 5;animation-delay:.35s}
+.radar text{font-size:11px;fill:var(--fb-ink);font-weight:700;font-family:inherit}
+.radar .pt{fill:#D6336C}
+.legendrow{display:flex;flex-wrap:wrap;gap:12px;font-size:14px}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px}
+/* status list */
+.srow{display:grid;grid-template-columns:78px 150px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--fb-line);align-items:start;font-size:15px}
+.srow:last-child{border:0}
+.item{border-radius:10px;padding:9px 13px;display:flex;gap:10px;align-items:flex-start}
+.item .cd{flex:0 0 auto;font-size:12px;font-weight:700;border-radius:6px;padding:0 6px;margin-top:3px}
+.item b{display:block;line-height:1.5}
+.item .o{font-size:14px;display:block;line-height:1.6}
+.item.miss{background:var(--fb-focus);border:2.5px solid var(--fb-rose)}.item.miss .cd{background:var(--fb-rose);color:#fff}
+.item.part{background:#fff;border:1.5px solid var(--fb-rose)}.item.part .cd{background:var(--soft);color:var(--fb-rose)}
+.item.ok{background:#fff;border:1px solid var(--fb-line);color:var(--fb-muted)}.item.ok .cd{background:var(--fb-card);color:var(--fb-muted)}
+.item.na{background:#fff;border:1.5px dashed var(--fb-muted);color:var(--fb-muted)}.item.na .cd{background:var(--fb-card)}
+.ck{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.grp{margin:14px 0}.grp>h4{font-size:17px;display:flex;align-items:center;gap:10px}.grp>h4 small{font-weight:500;color:var(--fb-muted);font-size:14px}
+details.fold{border:1px solid var(--fb-line);border-radius:12px;padding:6px 14px;background:#fff;margin:8px 0}
+details.fold summary{cursor:pointer;font-weight:700;padding:6px 0}
+.fchips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.fchip{border:1.5px solid var(--fb-line);background:#fff;border-radius:999px;padding:3px 14px;cursor:pointer;font-size:14px;font-weight:700;color:var(--fb-ink)}
+.fchip[aria-pressed=true]{background:var(--fb-rose);color:#fff;border-color:var(--fb-rose)}
+.item.hide{display:none}
+/* source cards */
+.srccard{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:12px 16px;margin:8px 0}
+.srccard summary{cursor:pointer;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.srccard .nm{font-weight:900;font-size:17px}
+.srccard .one{color:var(--fb-ink);font-weight:700}
+.srccard ul{margin:6px 0 0;padding-left:20px;font-size:14.5px}
+.srccard .cv{margin-top:6px;font-size:14.5px}
+.srccard .vis{margin-top:4px;font-size:14px;color:var(--fb-muted)}
+.sc{margin-left:auto;font-weight:900;color:var(--fb-rose)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:10px 14px;flex:1 1 230px}
+.chip.main{border:2.5px solid var(--fb-rose);background:var(--fb-focus)}
+.chip b{color:var(--fb-rose);display:block}
+/* voice */
+.tp{display:grid;grid-template-columns:130px 1fr;gap:4px 14px;background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:10px 14px;margin:7px 0}
+.tp .w{font-weight:700;color:var(--fb-muted);font-size:14px}.tp q{font-weight:700;font-size:16.5px;quotes:"「" "」"}.tp .n{grid-column:2;font-size:14px;color:var(--fb-muted)}
+.swapbox{background:var(--fb-focus);border:2.5px solid var(--fb-rose);border-radius:12px;padding:12px 18px;font-size:18px;font-weight:700;margin-top:8px}
+.swapbox mark{background:#FFD3E6;color:var(--fb-rose);border-radius:6px;padding:0 6px}
+.meter{height:12px;background:#fff;border:1px solid var(--fb-line);border-radius:99px;overflow:hidden;margin-top:6px}
+.meter i{display:block;height:100%;width:var(--w);background:var(--fb-grad);animation:growx 1.2s cubic-bezier(.22,1,.36,1) both}
+/* ads */
+.adgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ad{background:#fff;border:1.5px solid var(--fb-line);border-radius:14px;overflow:hidden}
+.ad .art{height:110px;display:flex;align-items:flex-end;padding:10px 14px;color:#fff;font-weight:900;font-size:15px;text-shadow:0 1px 6px #0004}
+.ad .bd{padding:12px 14px}
+.ad .meta{font-size:13px;color:var(--fb-muted)}
+.ad .px{margin:6px 0;font-size:14.5px}
+.match{border-radius:10px;padding:8px 12px;margin-top:8px;font-size:14px}
+.match.yes{background:#fff;border:1.5px solid var(--g)}
+.match.partial{background:var(--soft);border:1.5px solid var(--fb-rose)}
+.match.no{background:var(--fb-focus);border:2.5px solid var(--fb-rose)}
+.match.none{background:#fff;border:1.5px dashed var(--fb-muted)}
+.lchk{list-style:none;padding:0;margin:6px 0 0;font-size:14px}
+.lchk li{display:flex;gap:8px;padding:2px 0}
+.lchk .y{color:var(--g);font-weight:900}.lchk .n{color:var(--fb-rose);font-weight:900}
+.fmt{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.fmt span{border:1.5px solid var(--fb-line);background:#fff;border-radius:999px;padding:0 12px;font-size:14px;font-weight:700}
+.fmt span b{color:var(--fb-rose)}
+/* flow */
+.flow{display:grid;grid-template-columns:1fr 34px 1fr 150px;gap:6px 8px;align-items:center;background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:10px 14px;margin:8px 0;font-size:14.5px}
+.flow .ar{color:var(--fb-rose);font-weight:900;text-align:center}
+.flow .src{font-weight:700}
+.flow .dst b{display:block}
+/* vs / peers */
+.vs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.vs .col{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:14px 16px}
+.vs .col.win{border:2.5px solid var(--fb-rose);background:var(--fb-focus)}
+.vs ul{margin:6px 0 0;padding-left:20px}
+.cmpr{display:grid;grid-template-columns:150px 1fr 56px;gap:10px;align-items:center;margin:5px 0;font-size:15px}
+.cmpr .track{height:13px;background:#fff;border:1px solid var(--fb-line);border-radius:99px;overflow:hidden}
+.cmpr .track i{display:block;height:100%;width:var(--w);background:var(--fb-grad);animation:growx 1s cubic-bezier(.22,1,.36,1) both}
+.cmpr .track i.peer{background:#C9B7C2}
+/* lights */
+.lt{display:grid;grid-template-columns:190px 90px 1fr;gap:10px;align-items:start;padding:9px 0;border-bottom:1px solid var(--fb-line)}
+.lt:last-child{border:0}
+.lamp{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:14px}
+.lamp i{width:14px;height:14px;border-radius:50%;display:inline-block}
+.lamp.g i{background:var(--g)}.lamp.y i{background:#E8A93B}.lamp.r i{background:var(--fb-rose)}.lamp.u i{background:#fff;border:2px dashed var(--fb-muted)}
+.fd{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:12px 16px;margin:9px 0}
+.fd h4{font-size:16.5px}
+.fd .ev{font-size:13px;color:var(--fb-muted);margin-top:4px}
+.fix{list-style:none;padding:0;margin:6px 0 0}
+.fix li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;cursor:pointer}
+.fix .box{flex:0 0 22px;height:22px;border-radius:6px;border:2px solid var(--fb-rose);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;margin-top:2px;background:#fff}
+.fix li.done .box{background:var(--fb-rose)}.fix li.done .tx{text-decoration:line-through;color:var(--fb-muted)}
+.top3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:t}
+.top3 .card:before{counter-increment:t;content:counter(t);display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--fb-rose);color:#fff;font-weight:900;align-items:center;justify-content:center;margin-bottom:6px}
+.bars2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hb{display:grid;grid-template-columns:150px 1fr 38px;gap:8px;align-items:center;margin:5px 0;font-size:14.5px}
+.hb .track{height:12px;background:#fff;border:1px solid var(--fb-line);border-radius:99px;overflow:hidden}
+.hb .track i{display:block;height:100%;width:var(--w);background:var(--fb-grad);animation:growx 1s both}
+.hb .track i.peer{background:#C9B7C2}
+.ba{position:relative;border-radius:14px;overflow:hidden;border:1.5px solid var(--fb-line);background:#fff;min-height:250px}
+.ba .ly{padding:20px 24px}
+.ba .before{background:repeating-linear-gradient(45deg,#fff,#fff 10px,#FAF0F6 10px,#FAF0F6 20px)}
+.ba .afterL{position:absolute;inset:0;background:var(--fb-focus);clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.ba .tg{display:inline-block;font-size:12px;font-weight:700;color:#fff;border-radius:99px;padding:1px 10px;margin-bottom:6px}
+.ba .before .tg{background:#8f8189}.ba .afterL .tg{background:var(--fb-rose)}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;background:var(--fb-hot);transform:translateX(-1.5px);pointer-events:none}
+.ba .handle:after{content:"⇄";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:var(--fb-hot);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+@media (min-width:768px){.ba .before{padding-left:56%}.ba .afterL{padding-right:46%}}
+.wk{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative;padding-top:24px}
+.wk:before{content:"";position:absolute;left:0;right:0;top:8px;height:4px;background:var(--fb-line);border-radius:4px}
+.wk:after{content:"";position:absolute;left:0;top:8px;height:4px;width:100%;background:var(--fb-grad);border-radius:4px;animation:growx 1.4s cubic-bezier(.22,1,.36,1) both}
+.wk .w{position:relative;background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:10px 12px;font-size:14px}
+.wk .w:before{content:"";position:absolute;top:-24px;left:12px;width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--fb-rose)}
+.wk .w b{display:block;font-size:16px;color:var(--fb-rose)}
+.wk .w i{font-style:normal;color:var(--fb-muted);display:block;font-size:13px;margin-top:4px}
+.code{background:var(--fb-card);border:1px solid var(--fb-line);border-radius:10px;padding:10px 14px;font-size:13px;white-space:pre-wrap;word-break:break-all;line-height:1.6}
+.gate{position:relative;height:18px;background:#fff;border:1px solid var(--fb-line);border-radius:99px;margin:10px 0 4px}
+.gate i{position:absolute;left:0;top:0;bottom:0;border-radius:99px;background:var(--fb-grad)}
+.gate b{position:absolute;top:-6px;bottom:-6px;width:3px;background:var(--fb-hot)}
+/* ===== v5：廣告示意（框起來的素材差異）、線框圖、商品全覽 ===== */
+.adrow{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr) minmax(0,300px);gap:16px;align-items:start;background:#fff;border:1.5px solid var(--fb-line);border-radius:14px;padding:14px;margin:12px 0}
+.adrow>*{min-width:0}
+.adm{border:1.5px solid var(--fb-line);border-radius:12px;background:#fff;padding:12px;font-size:14px}
+.adm .top{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+.adm .av{width:30px;height:30px;border-radius:50%;background:var(--fb-grad);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.adm small{display:block;color:var(--fb-muted);font-size:12px}
+.fr{position:relative;border-radius:6px;padding:5px 7px;margin:9px 0;border:2px solid}
+.fr:before{content:attr(data-n);position:absolute;top:-11px;left:-9px;width:20px;height:20px;border-radius:50%;color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.fr.ok{border-color:var(--g)}.fr.ok:before{background:var(--g)}
+.fr.warn{border-color:var(--fb-rose)}.fr.warn:before{background:var(--fb-rose)}
+.fr.gap{border:2px dashed var(--fb-rose)}.fr.gap:before{background:var(--fb-rose)}
+.adm .art{height:118px;border-radius:5px;display:flex;align-items:flex-end;padding:8px;color:#fff;font-weight:900;font-size:14px;text-shadow:0 1px 6px #0005}
+.adm .foot{display:flex;gap:8px;align-items:center}
+.adm .foot .l{flex:1;min-width:0}
+.adm .btn{display:inline-block;background:var(--fb-hot);color:#fff;border-radius:6px;padding:2px 10px;font-weight:700;font-size:13px;white-space:nowrap}
+.notes{list-style:none;margin:0;padding:0;font-size:14.5px}
+.notes li{display:flex;gap:8px;padding:5px 0;align-items:flex-start}
+.notes .nb{flex:0 0 20px;height:20px;border-radius:50%;color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.notes .nb.ok{background:var(--g)}.notes .nb.warn,.notes .nb.gap{background:var(--fb-rose)}
+.lp{border:1.5px solid var(--fb-line);border-radius:10px;background:#fff;overflow:hidden;font-size:13px}
+.lp .bar{display:flex;gap:5px;align-items:center;background:var(--fb-card);padding:6px 10px;border-bottom:1px solid var(--fb-line)}
+.lp .bar i{width:8px;height:8px;border-radius:50%;background:var(--fb-line);display:inline-block}
+.lp .bar span{margin-left:6px;color:var(--fb-muted);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lp .blk{margin:6px 8px;padding:7px 9px;border-radius:6px;border:1.5px solid var(--fb-line);line-height:1.5}
+.lp .blk.ok{border-color:#d9ccd3;background:#faf6f8;color:var(--fb-muted)}
+.lp .blk.weak{border:1.5px solid var(--fb-rose);background:var(--soft)}
+.lp .blk.gap{border:2px dashed var(--fb-rose);background:var(--fb-focus);color:var(--fb-rose);font-weight:700}
+.lp .blk.add{border:2px dashed var(--g);background:#f1f9f4;color:var(--g);font-weight:700}
+.lp .blk.na{border:1.5px dashed var(--fb-muted);color:var(--fb-muted);background:#fff}
+.lp .fold{margin:8px 0;border-top:2px dashed var(--fb-hot);position:relative;height:0}
+.lp .fold span{position:absolute;left:50%;top:-9px;transform:translateX(-50%);background:#fff;color:var(--fb-hot);font-size:11px;font-weight:700;padding:0 8px;white-space:nowrap}
+.lpcap{font-size:13px;font-weight:700;margin:0 0 4px;color:var(--fb-muted)}
+.ba2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ba2>*{min-width:0}
+.lay{position:relative;aspect-ratio:1/1;max-width:100%;border:1.5px solid var(--fb-line);border-radius:10px;background:#fff}
+.lay .bx{position:absolute;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;font-weight:700;line-height:1.3;padding:2px}
+.lay .bx.cur{background:var(--soft);border:1.5px solid var(--fb-rose);color:var(--fb-rose)}
+.lay .bx.add{background:#f1f9f4;border:2px dashed var(--g);color:var(--g)}
+.lay .bx.gap{background:var(--fb-focus);border:2px dashed var(--fb-rose);color:var(--fb-rose)}
+.lay .bx.ok{background:#faf6f8;border:1.5px solid #d9ccd3;color:var(--fb-muted)}
+.pcard{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:12px 14px}
+.catsum{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.catsum .c{background:#fff;border:1.5px solid var(--fb-line);border-radius:12px;padding:10px 14px}
+.catsum .c b{font-size:22px;color:var(--fb-rose)}
+.stbar{display:flex;height:10px;border-radius:99px;overflow:hidden;margin-top:6px;background:#fff;border:1px solid var(--fb-line)}
+.stbar i{display:block;height:100%}
+.stbar .ok{background:var(--g)}.stbar .part{background:#E8A93B}.stbar .miss{background:var(--fb-rose)}
+.samples{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.samples div{background:#fff;border:1.5px solid var(--fb-line);border-radius:10px;padding:8px;font-size:13.5px}
+.samples .im{height:54px;border-radius:6px;margin-bottom:6px}
+.mtx th:first-child,.mtx td:first-child{white-space:nowrap}
+.me td{background:var(--fb-focus)}
+@media (max-width:1000px){.adrow{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.adrow>.lpw{grid-column:1/-1}}
+@media (max-width:767px){.adrow{grid-template-columns:1fr}.ba2{grid-template-columns:1fr}.catsum{grid-template-columns:1fr 1fr}.samples{grid-template-columns:1fr 1fr}}
+/* ===== v8：訂閱與複測 ===== */
+.phone{max-width:360px;background:#fff;border:2px solid var(--fb-line);border-radius:22px;padding:12px 14px;box-shadow:0 12px 30px #D6336C1f}
+.phone .pht{display:flex;gap:8px;align-items:center;border-bottom:1px solid var(--fb-line);padding-bottom:8px;margin-bottom:6px}
+.phone .pht small{margin-left:auto;color:var(--fb-muted)}
+.av2{width:28px;height:28px;border-radius:50%;background:var(--fb-grad);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.bb{max-width:90%;padding:9px 12px;border-radius:14px;margin:8px 0;font-size:14.5px;line-height:1.7}
+.bb.ai{background:var(--fb-card);border:1px solid var(--fb-line);border-bottom-left-radius:4px}
+.bb.me{margin-left:auto;background:var(--fb-rose);color:#fff;border-bottom-right-radius:4px}
+.rep{background:#fff;border:2px solid var(--fb-line);border-radius:14px;padding:14px 16px}
+.rep-h{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline;border-bottom:2px solid var(--fb-rose);padding-bottom:6px}
+footer{border-top:1px solid var(--fb-line);padding:22px 0 40px;color:var(--fb-muted);font-size:14px}
+@media (max-width:900px){.radarwrap{grid-template-columns:1fr}.vs{grid-template-columns:1fr}.wk{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.flow .ar{display:none}}
+@media (max-width:767px){
+  .grid2,.grid3,.top3,.ck,.adgrid,.bars2{grid-template-columns:1fr}
+  .brandmark{position:static;margin-bottom:6px}
+  header.top h1{margin-top:10px}
+  .ringbox{flex-direction:column;align-items:flex-start}
+  .dimrow{grid-template-columns:96px 1fr 36px}.dimnote{margin-left:0}
+  .tp{grid-template-columns:1fr}.tp .n{grid-column:1}
+  .lt{grid-template-columns:1fr}
+  .srow{grid-template-columns:70px 1fr}.srow>span:last-child{grid-column:1/-1}
+  .cmpr{grid-template-columns:96px 1fr 50px}.hb{grid-template-columns:100px 1fr 34px}
+  .ba{min-height:340px}.wk{grid-template-columns:1fr}
+  .scan ul{columns:1}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#B2489E"/><stop offset=".55" stop-color="#D6336C"/><stop offset="1" stop-color="#E3496F"/></linearGradient></defs></svg>
+
+<header class="top"><div class="wrap">
+  <div class="brandmark">FireBirdUSP</div>
+  <h1>品牌診斷與優化<br>報告範例預覽 <span class="nw">v5</span></h1>
+  <p>先補齊基本盤，再做差異化。這一版假設「所有資料都提供了」，把原本品牌差異化診斷的內容全部放進來，並分層。</p>
+  <span class="sample-tag">範例｜虛構品牌「禾穗手作堅果塔」，數字與觀察皆為示意</span>
+  <div class="map" aria-label="分層地圖">
+    <span class="grp"><b>地基・先做</b>免費快篩 <span class="ar">→</span> 基本盤診斷 <span class="ar">→</span> 基本盤補強</span>
+    <span class="ar">→</span>
+    <span class="grp"><b>差異化・再做</b>差異化診斷 <span class="ar">→</span> 差異化優化</span>
+    <span class="ar">→</span>
+    <span class="grp"><b>訂閱</b>含每月複測</span>
+  </div>
+</div></header>
+
+<nav class="tabs" aria-label="報告版本"><div class="wrap" role="tablist">
+  <button role="tab" aria-selected="true" aria-controls="p1" id="t1">① 免費快篩</button>
+  <button role="tab" aria-selected="false" aria-controls="p2" id="t2">② 基本盤診斷</button>
+  <button role="tab" aria-selected="false" aria-controls="p3" id="t3">③ 基本盤補強</button>
+  <span class="sep"></span>
+  <button role="tab" aria-selected="false" aria-controls="p4" id="t4">④ 差異化診斷</button>
+  <button role="tab" aria-selected="false" aria-controls="p5" id="t5">⑤ 差異化優化</button>
+  <span class="sep"></span>
+  <button role="tab" aria-selected="false" aria-controls="p6" id="t6">⑥ 訂閱（含複測）</button>
+</div></nav>
+
+<main>
+<section class="pane wrap on" id="p1" role="tabpanel" aria-labelledby="t1"></section>
+<section class="pane wrap" id="p2" role="tabpanel" aria-labelledby="t2"></section>
+<section class="pane wrap" id="p3" role="tabpanel" aria-labelledby="t3"></section>
+<section class="pane wrap" id="p4" role="tabpanel" aria-labelledby="t4"></section>
+<section class="pane wrap" id="p5" role="tabpanel" aria-labelledby="t5"></section>
+<section class="pane wrap" id="p6" role="tabpanel" aria-labelledby="t6"></section>
+</main>
+
+<footer><div class="wrap">
+  <p style="margin:0 0 6px">本頁為版面與內容方向的示意，不是真實客戶報告。所有數字、商品、對手、廣告、職缺與 AI 回答皆為虛構。</p>
+  <p style="margin:0">我們提供的是觀察與依據；資料更完整，更容易被人與 AI 正確理解，但我們不保證任何成效或被推薦。</p>
+</div></footer>
+
+<script>
+(function(){
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return [].slice.call((r||document).querySelectorAll(s))};
+var ran={};
+
+/* ============ 資料（虛構品牌：禾穗手作堅果塔；假設所有資料都有提供） ============ */
+var ST={ok:'已有',part:'部分',miss:'缺',na:'資料不足'}, W={ok:1,part:.5,miss:0};
+var AREAS=[
+ {k:'h',name:'給人看的內容',meaning:'故事、情境、見證、信任與一致性。',items:[
+  ['品牌故事','ok','官網「關於我們」寫了創辦動機與選料堅持。'],
+  ['一句話差異','part','各處第一句話不同，且多數同行也能這樣說。'],
+  ['使用與送禮情境','ok','有寫「送禮」「下午茶」「企業禮盒」。'],
+  ['具體見證','part','蝦皮與嘖嘖有留言，官網沒放；多是「很好吃」，缺「誰、什麼情況、為何適合」。'],
+  ['信任證據','ok','Google 4.7 星 212 則、蝦皮 4.9、嘖嘖 1,056 位支持者。'],
+  ['說法與視覺一致','miss','13 個接觸點有 13 種第一句話；視覺大致一致。'],
+  ['官網內容','part','38 款商品頁，常見問題頁只有 2 題。'],
+  ['粉專與社群更新','ok','FB、IG 近 30 天有發文。'],
+  ['BNI 資料齊全','ok','GAINS 表、雙面名片、5 分鐘簡報、Sales KIT 都有。'],
+  ['顧客關係入口','ok','有會員頁與 LINE 官方帳號。']]},
+ {k:'a',name:'給 AI 讀的資料',meaning:'商品資料是否是可讀、可比較、可驗證的文字。',items:[
+  ['適合／不適合誰','miss','38 款商品頁都沒有「哪些人不建議」。'],
+  ['成分與規格','part','12 款有文字，26 款只出現在圖片。'],
+  ['使用方式與單次成本','part','有保存方式，沒有食用量與每入成本。'],
+  ['與替代品的差異','miss','沒有與同類商品的具體比較。'],
+  ['庫存與價格即時','miss','商品頁沒有庫存狀態；官網、蝦皮、momo 價格不一致。'],
+  ['交期與配送範圍','ok','有獨立配送說明頁。'],
+  ['退換貨規則','ok','有獨立頁面，寫得清楚。'],
+  ['重要資料不只放在圖片','miss','成分、容量等主要資料在圖片裡。'],
+  ['各處資料一致','part','規格大致一致，價格有落差。'],
+  ['公開口碑與常見問題','part','有蝦皮評價與嘖嘖留言；常見問題只有 2 題。'],
+  ['可驗證的履約','ok','蝦皮 4.9 星、銷售 3,100+、出貨紀錄可讀。'],
+  ['結構化標記','part','只有基本商品標記，缺常見問題標記與關聯連結。'],
+  ['AI 可見度基礎檢測','part','能說出品牌名稱，但說法與官網不一致；3 題中 1 題未提到。']]},
+ {k:'t',name:'數據追蹤',meaning:'有在看數據，但只看得到 Meta 那一段。',items:[
+  ['Google Analytics 4','ok','走 GTM 載入。'],['Google 代碼管理工具（GTM）','ok','容器內另有 Clarity。'],
+  ['Meta Pixel','ok','走 GTM。'],['Meta CAPI（伺服器端）','miss','未見設定跡象。'],
+  ['Google 廣告轉換','miss','未偵測；GTM 可能動態載入，建議用 Tag Assistant 確認。'],
+  ['LINE Tag','miss','主要詢問在 LINE，卻看不到來源。'],['TikTok Pixel','miss','有 TikTok 帳號與影片，未裝。'],
+  ['舊版 Universal Analytics 已清除','miss','UA 代碼還掛著。'],['Microsoft Clarity（熱點圖）','ok','有。']]},
+ {k:'d',name:'廣告佈局',meaning:'廣告主要只在 Meta，其他渠道沒查到。',items:[
+  ['Facebook／Instagram 廣告','ok','刊登中 4 則。'],['Google 搜尋廣告','part','品牌字有，品類字（手作堅果塔推薦）沒出現。'],
+  ['Google 購物廣告','miss','沒看到。'],['LINE 廣告','miss','沒看到。'],
+  ['再行銷／動態商品廣告','miss','沒看到用商品目錄跑的廣告。'],['影片素材','part','4 則中只有 1 則影片。'],
+  ['TikTok／YouTube 廣告','miss','有帳號，沒看到投放。']]},
+ {k:'e',name:'電商體驗',meaning:'買的流程沒問題，問題在「為什麼要在這裡買」。',items:[
+  ['可線上下單','ok','官網、蝦皮、momo。'],['會員系統','ok','首購 9 折。'],['滿額免運','ok','滿 1,500。'],
+  ['商品頁有評價','part','有，但放在最底部。'],['商品頁講得出來歷與適合誰','part','38 款中約 6 款有寫。'],
+  ['手機版結帳順','ok','順。'],['多通路價格庫存一致','miss','官網、蝦皮、momo 有 7 款價格不同。']]},
+ {k:'c',name:'內容與社群',meaning:'內容多在展示商品；挑選與製作的人，還有空間多做。',items:[
+  ['Instagram','ok','8,600 追蹤、每週 3 篇。'],['Facebook 粉專','part','多為 IG 同步，互動低。'],
+  ['LINE 官方帳號','ok','約 1,200 位好友。'],['TikTok','part','5,300 粉絲、38 支影片，更新零星。'],
+  ['YouTube','part','1,900 訂閱、24 支，近 2 個月沒更新。'],['部落格持續更新','miss','沒有部落格。'],
+  ['短影音持續度','part','每週約 1 支。'],['客人的內容（UGC）被轉用','part','偶爾限動轉發，沒有整理成精選。']]},
+ {k:'s',name:'SEO 與關鍵字',meaning:'客人用 Google 搜尋時，找不找得到、找得準。',items:[
+  ['頁面標題與摘要','part','12 頁標題都掛品牌名，看不出這頁在賣什麼。'],['canonical','miss','沒有 canonical 標示。'],['H1 與標題層級','part','H1 沒有品類字；H2 層級不統一。'],['圖片 alt 與檔名','miss','商品圖沒有描述性 alt，檔名是亂碼。'],
+  ['圖片大小與速度','miss','首頁圖每張 1.2–1.8 MB，全是 JPG。'],['內部連結','part','系列頁、商品頁、企業內容之間沒有互連。'],['分享預覽圖（og）','miss','貼進 LINE 預覽空白。'],['Google 商家完整度','part','類別是「甜點店」，簡介只有營業資訊。'],
+  ['sitemap 與 robots','ok','正常，sitemap 38 個商品網址。'],['沒有被誤擋（noindex）','ok','沒有擋搜尋引擎。'],['品牌字排名','ok','搜「禾穗堅果塔」排第 1（示意）。'],['品類字排名','miss','「手作堅果塔」「堅果塔推薦」前 20 名沒出現（示意）。'],['情境與疑慮字有對應內容','miss','「太甜嗎」「保存」「過敏」沒有對應的頁面。']]},
+ {k:'g',name:'AIO／AI 搜尋就緒',meaning:'AI 搜尋與推薦時，抓得到、引用得了嗎。',items:[
+  ['問答式內容（FAQ）','miss','常見問題只有 2 題。'],['規格用表格呈現','miss','規格是圖片或散文，沒有表格。'],['品牌實體一致與 sameAs','part','名稱略有不同；官網沒有關聯連結到各平台。'],['第三方引用與評測','miss','沒有公開評測或媒體引用。'],
+  ['評價可驗證且有摘要','part','蝦皮、Google 有評價，沒有整理成摘要。'],['商品資料 feed（價格庫存即時）','miss','沒有商品資料來源提供給購物平台與 AI。'],['爬蟲可讀（沒擋）','ok','沒有擋爬蟲。'],['每頁有更新日期','miss','沒有「最後更新」。'],['品牌實體頁（關於與創辦人）','ok','關於頁完整。'],['有定期追蹤 AI 回答','miss','沒有固定追蹤。']]}
+];
+function areaScore(a){var v=a.items.filter(function(x){return x[1]!=='na'});return Math.round(v.reduce(function(s,x){return s+W[x[1]]},0)/v.length*100);}
+AREAS.forEach(function(a){a.score=areaScore(a);});
+var SHORT={h:'給人',a:'給 AI',t:'追蹤',d:'廣告',e:'電商',c:'內容',s:'SEO',g:'AIO'};AREAS.forEach(function(a){a.short=SHORT[a.k];});
+var NCHK=AREAS.reduce(function(n,a){return n+a.items.length},0);
+var BASE=Math.round(AREAS.reduce(function(s,a){return s+a.score},0)/AREAS.length);
+var GAPS=0,GAPLIST=[];AREAS.forEach(function(a){a.items.forEach(function(x){if(x[1]==='miss'||x[1]==='part'){GAPS++;}});});
+var AR=function(k){return AREAS.filter(function(a){return a.k===k})[0]};
+var LOWEST=AREAS.slice().sort(function(a,b){return a.score-b.score})[0];
+
+var DIM=[['品牌亮點',68,'確認','有創辦故事與「每款標示烘焙日」的堅持；目前主要在 Sales KIT 與作品集，官網與 IG 還沒帶到。'],
+ ['行銷亮點',54,'推測','和同場景品牌比，「用心手作」「質感」說法有重疊；差異還有空間講得更清楚。'],
+ ['被看見',64,'確認','官網、IG、TikTok、YouTube、嘖嘖、蝦皮都找得到；但搜品類字時前兩頁還沒出現。'],
+ ['被記得',41,'確認','13 個接觸點有 13 種第一句話；想轉述的人不知道該講哪一句。'],
+ ['被選擇',66,'確認','4.7 星 212 則、蝦皮 4.9、嘖嘖 1,056 位支持者；這些話多半還沒放回官網與廣告。']];
+var DNOW=DIM.map(function(d){return d[1]}), DGOAL=[82,76,76,74,80];
+var TOTAL=Math.round(DNOW.reduce(function(a,b){return a+b},0)/5);
+function stage(n){return n>=80?'亮點到位，可以加碼放大':n>=60?'有記憶點，還差放大':n>=40?'看得出一點，但陌生人還記不住':'陌生人還看不出為什麼選你';}
+
+var SRC=[['官網（SHOPLINE）','讀到','17 頁、38 款商品','c'],['Facebook 粉專','讀到','近 30 天 14 篇','c'],['Instagram','讀到','8,600 追蹤、近 30 則','c'],['Google 商家','讀到','4.7 星、212 則，抽讀 60 則','c'],
+ ['LINE 官方帳號','部分','公開頁讀到好友約 1,200；歡迎訊息與圖文選單看不到，請截圖','i'],['名單頁（試吃券）','讀到','表單在第 3 屏','c'],['嘖嘖募資頁','讀到','已結案；1,056 位支持者','c'],
+ ['TikTok','讀到','5,300 粉絲、38 支影片','c'],['YouTube','讀到','1,900 訂閱、24 支影片','c'],['蝦皮','讀到','評價 4.9、銷售 3,100+','c'],['momo','讀到','品牌館有上架','c'],['Pinkoi','看不到','沒找到店鋪','u']];
+var FILES=[['名片正面','讀到','「禾穗手作・堅果塔」'],['名片反面','讀到','「用心做的每一口」'],['GAINS 表','讀到','想被引薦：企業採購、人資、活動主辦'],['5 分鐘主題簡報（12 頁）','讀到','第一句「我是做堅果塔的禾穗」'],['Sales KIT（16 頁）','讀到','「為企業挑一份不太甜的禮」'],['作品集（18 頁）','讀到','「每一款都標示烘焙日」']];
+
+var LT=[['A 客人在 Google 找不找得到','y','確認','12 頁標題都掛品牌名，看不出這頁在賣什麼；缺 canonical。'],
+ ['B 客人問 AI 時會不會推薦你','r','確認','營業時間與運費門檻只在圖片；商品結構化資料不全；常見問題沒有標記。'],
+ ['C 客戶資料是不是散在各處','r','確認','官網、蝦皮、momo、LINE、嘖嘖各一份名單，同一個客人對不起來。'],
+ ['D 網站好不好改','y','確認','用 SHOPLINE 模板，改大方向容易，細部客製受限。'],
+ ['E 報名、預約、付款要不要人工','y','推測','企業禮盒詢價靠 LINE 聊，每筆人工回覆；要問一個月詢問量。'],
+ ['F 客人進來後做不做得完','y','確認','手機版首頁商品圖每張 1.2–1.8 MB、全是 JPG，沒有延遲載入。'],
+ ['G 客人信不信你','g','確認','Google 4.7 星、蝦皮 4.9、嘖嘖 1,056 位支持者；信任證據足。']];
+var PROBE=[['平台指紋','SHOPLINE（高）'],['robots.txt／sitemap','正常；sitemap 38 個商品網址'],['結構化資料','只有基本商品標記'],['首頁圖片','6 張、每張 1.2–1.8 MB、JPG、無延遲載入'],['外連（官網）','facebook、instagram、lin.ee、shopee、momo、zeczec'],['連結檢查','檢查 12 個外部連結：壞連結 1（/pages/old-promo 404）、href="#" 按鈕 1、範本連結 0']];
+var CHAN=[['蝦皮','有','評價 4.9、銷售 3,100+','c'],['momo','有','品牌館','c'],['Pinkoi','沒找到','待確認','u'],['Facebook','有','近 30 天 14 篇','c'],['Instagram','有','8,600 追蹤','c'],['LINE','有','約 1,200 好友','c'],['Google 商家','有','4.7 星・212 則','c'],['嘖嘖','有（已結案）','1,056 位支持者','c'],['TikTok','有','5,300 粉絲','c'],['YouTube','有','1,900 訂閱','c']];
+var PRODBASE=[['成分與容量有文字',12],['有「適合／不適合」說明',0],['標示烘焙日',5],['有庫存狀態',0],['官網、蝦皮、momo 價格一致',31],['有來歷或適合誰的說明',6]];
+var FIND=[['【確認】38 款商品中 26 款的成分與容量只在圖片裡','AI 與搜尋引擎讀不到，客人也不能搜尋或複製。','客人問 AI「這款堅果塔有什麼成分」，AI 答不出來。','官網商品頁原始碼與圖片比對','c'],
+ ['【確認】官網、蝦皮、momo 有 7 款價格不同','客人與 AI 可能引用不同價格。','客人看到不同價格，會對哪個才是對的產生疑慮。','三個通路商品價格比對','c'],
+ ['【確認】追蹤碼缺 5 項（CAPI、Google 廣告轉換、LINE Tag、TikTok Pixel，舊 UA 沒清）','只看得到 Meta 那一段；Google、LINE、TikTok 來的客人有沒有買，現在看不到。','之後要加預算時，不知道哪個渠道有效。','官網原始碼與 GTM 容器','c'],
+ ['【確認】首頁圖片過大、全是 JPG','手機網路下第一眼要等好幾秒。','廣告進站的客人可能等不及就離開。','頁面圖片大小檢查','c'],
+ ['【推測】企業禮盒詢價靠 LINE 人工回','每筆詢問都要有人回，Q4 檔期可能忙不過來。','要問你一個月大概幾個詢問、誰在回。','官網只有 LINE 入口','i']];
+var FIXL=['把 26 款商品的成分與容量，用文字寫在商品頁。','統一官網、蝦皮、momo 的 7 款價格。','首頁商品圖轉成 WebP、每張壓到 300 KB 以下、開延遲載入。','清掉舊版 UA 代碼；補 Google 廣告轉換、LINE Tag、TikTok Pixel。','常見問題補到 8 題，加上保存與過敏說明。','修掉壞連結（/pages/old-promo）。'];
+var EVID=[['c','網站','官網使用 SHOPLINE','官網原始碼',100],['c','網站','首頁主標為「用心手作，每一口都是幸福」','官網首頁',100],['c','追蹤','偵測到 GTM、GA4、Meta Pixel、Clarity；未見 CAPI、Google 廣告轉換、LINE Tag、TikTok Pixel','官網原始碼＋GTM 容器',100],['c','追蹤','偵測到已停用的 Universal Analytics','官網原始碼',100],
+ ['c','廣告','Meta 廣告檔案庫：刊登中 4 則、已停止 6 則；最久 41 天','Meta 廣告檔案庫',95],['c','商品','全站 38 款，售價 180–2,980，中位數 680','開店平台商品接口',95],['c','來源','Google 商家 4.7 星、212 則評論','Google 商家',100],['c','來源','蝦皮評價 4.9、銷售 3,100+','蝦皮賣場',100],['c','來源','嘖嘖已結案，1,056 位支持者','嘖嘖募資頁',100],['c','檔案','Sales KIT 與作品集有清楚說法，官網未出現同段內容','客戶提供檔案',100],
+ ['c','組織','資本額 300 萬、2019 年成立（經濟部公司登記）；員工約 6 人（104 公司頁）','經濟部、104',85],['c','組織','104 正在徵「短影音小編」與「企業禮盒業務」','104 公開頁',85],
+ ['i','客群','主要客群為 28–45 歲、送禮與自用','AI 分析（價位與留言）',70],['i','組織','徵業務＝想開企業禮盒；徵短影音＝想做 TikTok，但目前零星','AI 分析（職缺內容）',60],['i','競品','三家同場景對手的說法與禾穗高度重疊','AI 分析（首頁與簡介比對）',70],['i','客人語言','客人描述的特色，未被品牌自己的文案使用','評論抽讀 60 則＋文案比對',75],
+ ['u','追蹤','未偵測 Google 廣告轉換，但有 GTM，可能動態載入','需用 Tag Assistant 確認',70],['u','來源','LINE 歡迎訊息與圖文選單內容','需對方提供截圖',0],['u','廣告','各則廣告的實際成效（點擊、轉換）','需當面詢問',0],['u','通路','Pinkoi 是否有上架','網頁搜尋，待確認',60]];
+var LIMITS=['LINE 歡迎訊息與圖文選單看不到，需要你提供截圖。','各則廣告的成效數字沒有，所以廣告相關判斷標為推論。','PageSpeed 的使用者體驗數據、手機實機畫面，這次看不到。','Pinkoi 是否有店鋪，搜尋結果不確定。','TikTok、YouTube 的影片內容只讀了標題、簡介與前 10 支，沒有逐支看畫面。'];
+var PROCESS=['辨識網址類型：官網、粉專、Google 商家、LINE、名單頁、嘖嘖、TikTok、YouTube、蝦皮、momo','讀取 6 份檔案（名片正反、GAINS、簡報、Sales KIT、作品集），文字、表格、文字方塊、圖片四層都抽','官網平台指紋與原始碼掃描：發現 4 種追蹤工具','下載 GTM 容器，容器內另發現 Clarity','Meta 廣告檔案庫：刊登中 4、已停止 6；逐則點進落地頁檢查承接','檢查 12 個外部連結：壞連結 1、href="#" 1','讀取商品目錄 38 款','Google 商家抽讀 60 則評論','查 104 公司頁與職缺','研究同場景品牌：整理 4 個直接對手（Google 地圖搜尋＋客戶提供）','用 3 題 × 5 家 AI 做可見度測試','依基本盤 6 面向與亮點五維計分，撰寫發現與下一步'];
+var AIS=['ChatGPT','Gemini','Perplexity','Copilot','Google AI 摘要'];
+var AIQ=[['① 推薦「台北手作堅果塔」的品牌',['miss','miss','miss','miss','na']],['② 介紹一下「禾穗」',['part','part','na','part','ok']],['③ 「禾穗」和同行差在哪',['na','part','na','na','na']]];
+var VOICES=[['名片正面','禾穗手作・堅果塔','只有品名，沒有差異說明。'],['名片反面','用心做的每一口','與多數同行說法相近。'],['官網首頁','用心手作，每一口都是幸福','換成同行也成立。'],['Instagram 簡介','手作堅果塔｜幸福滋味','與官網略不同。'],['TikTok 簡介','每天現做的堅果塔','「現做」目前沒有佐證。'],['YouTube 頻道','禾穗的烘焙日常','講日常，沒講差異。'],['嘖嘖募資標題','一只手掌大的送禮堅果塔','最具體的一句，有情境。'],['蝦皮賣場','手作堅果塔 送禮自用','平台慣用說法。'],['廣告（4 則中 3 則）','質感堅果塔，送禮首選','「質感」「首選」是同業也常用的說法。'],['Sales KIT 封面','為企業挑一份不太甜的禮','指向特定客群與特點。'],['5 分鐘簡報第一句','我是做堅果塔的禾穗','自我介紹，沒有帶出差異。'],['GAINS 表','想被引薦：企業採購、人資、活動主辦','清楚指向對象。'],['作品集封面','每一款都標示烘焙日','最有料的一句，卻沒放上官網。']];
+var FIL=[['名片正面','「禾穗手作・堅果塔」',['品名與 Logo','沒有創辦人名字與職稱','沒有 QR code'],'三個詞都在講品類；「標示烘焙日」這個特點還沒上名片。',48],
+ ['名片反面','「用心做的每一口」',['地址、電話、LINE QR','一句形容語'],'反面有 QR，但說法與正面、官網不同。',52],
+ ['GAINS 表','「想被引薦：企業採購、人資、活動主辦」',['目標客群 3 類','引薦關鍵字 5 個'],'目標客群清楚，但沒有一句「別人替你講」的話。',66],
+ ['5 分鐘主題簡報（12 頁）','「我是做堅果塔的禾穗」',['故事線：創業→選料→烘焙日→企業禮盒','亮點「標示烘焙日」出現在第 7 頁'],'最有料的亮點到第 7 頁才出現，前 6 頁較多是自我介紹。',58],
+ ['Sales KIT（16 頁）','「為企業挑一份不太甜的禮」',['封面＋品牌介紹 2 頁','禮盒方案 8 頁、合作案例 3 頁、聯絡 1 頁','企業客戶 Logo 5 個'],'說法最清楚，但只給企業客戶看；官網與 IG 沒放。',72],
+ ['作品集（18 頁）','「每一款都標示烘焙日」',['18 款商品，每款附產地與烘焙日','有 4 組製作過程照','沒有客人使用情境'],'證據很足，卻沒放上官網。',70]];
+var SRCCARDS=[['官網','讀到','「用心手作，每一口都是幸福」',['首頁、關於我們、商品頁 38 款','追蹤碼：GA4、GTM、Meta Pixel、Clarity','沒有部落格'],'最有料的「標示烘焙日」，藏在「關於我們」第三屏之後。','第一眼可信度高、有套版感但乾淨；與 IG 像同一個人；有 1 個壞連結與 1 個 href="#" 按鈕。',62],
+ ['Facebook 粉專','讀到','「手作堅果塔｜幸福滋味」',['近 30 天 14 篇','多為 IG 同步','互動偏低'],'說法與官網不同，也沒有放烘焙日標示。','視覺與 IG 同一套，第一眼像品牌帳號。',50],
+ ['Instagram','讀到','「手作堅果塔｜幸福滋味」',['8,600 追蹤、近 30 則','精選動態：新品、門市、運費'],'簡介與精選動態還可以多講一句「為什麼選禾穗」。','質感一致；貼文偏商品展示。',58],
+ ['Google 商家','讀到','「甜點店」',['4.7 星、212 則評論','商家介紹只有營業時間與地址'],'評論裡有客人自己描述的特色（不太甜、烘焙日期清楚），沒用在商家介紹。','類別太泛，看不出是堅果塔專賣。',71],
+ ['LINE 官方帳號','部分','（公開頁只有名稱）',['好友約 1,200','歡迎訊息、圖文選單從外部看不到'],'要請你給截圖才能判斷。','這項標「待確認」。',35],
+ ['名單頁（試吃券）','讀到','「免費領禮盒試吃券」',['表單欄位 4 個（姓名、Email、電話、生日）','表單在第 3 屏'],'第一屏可以多講一句「領了能得到什麼」；表單在第 3 屏，可能有人沒滑到。','手機上表單輸入順。',49],
+ ['嘖嘖募資頁','讀到','「一只手掌大的送禮堅果塔」',['已結案、1,056 位支持者','故事段落完整，附製作過程'],'這是所有來源裡說得最完整的一份；官網沒放同一段。','第一眼可信度高，有真人與製作畫面。',74],
+ ['TikTok','讀到','「每天現做的堅果塔」',['5,300 粉絲、38 支影片','簡介連結到蝦皮'],'影片多在展示商品；「為什麼不太甜、為什麼標烘焙日」沒講。','與其他平台視覺不太像同一個人。',45],
+ ['YouTube','讀到','「禾穗的烘焙日常」',['1,900 訂閱、24 支','近 2 個月沒更新'],'頻道簡介沒有放差異點。','縮圖風格與其他平台不一致。',40],
+ ['蝦皮','讀到','「手作堅果塔 送禮自用」',['評價 4.9、銷售 3,100+','商品名稱與官網不同'],'賣場標題沿用平台慣用語，沒有放烘焙日。','賣場像一般賣家，辨識度低。',55]];
+var ADS={status:'有在投',running:4,stopped:6,longest:41,topics:['送禮禮盒','烘焙日標示','試吃券','現做影片'],offers:['滿 1,500 免運','試吃券','會員首購 9 折'],fmts:[['圖片',1],['輪播',1],['名單型',1],['影片',1]],list:[
+ {t:'秋季堅果塔｜質感堅果塔，送禮首選',f:'圖片',days:22,pf:'Instagram',cta:'立即購買',land:'/collections/gift（商品列表）',art:['#e9d8c4','#c9a98a'],cap:'禮盒單品圖',m:['none','「質感」「首選」（通用說法）','商品列表，第一屏沒有介紹文字','兩邊都還沒放上亮點，這則最有空間。'],ck:[[0,'第一屏延續廣告的亮點','第一屏是商品列表'],[0,'主標與廣告說法一致','廣告講「質感」，頁面講「幸福」'],[1,'下一步清楚','加入購物車按鈕明顯']]},
+ {t:'每款標示烘焙日，不用猜新不新鮮',f:'輪播',days:41,pf:'Facebook、Instagram',cta:'了解更多',land:'/pages/fresh（品牌說明）',art:['#d9c9e0','#b99ab8'],cap:'烘焙日標示 輪播 1/5',m:['yes','標示烘焙日的堅持','「新鮮」頁第一屏：烘焙日標示說明','接得很好；只差最後一步連到商品。'],ck:[[1,'第一屏延續廣告的亮點','有接上烘焙日'],[1,'主標與廣告說法一致','同樣在講烘焙日'],[0,'下一步清楚','頁面沒有連到商品，想買的人要自己找']]},
+ {t:'免費領｜禮盒試吃券',f:'名單型',days:14,pf:'Facebook、Instagram',cta:'索取',land:'lp.…/tasting（名單頁）',art:['#f2dfe6','#d9a3b8'],cap:'試吃券',m:['partial','試吃券與送禮情境','標題「禮盒試吃券」，品牌介紹在第二屏','主題接上；「為什麼值得試」這份心意可以多說一句。'],ck:[[1,'第一屏延續廣告的亮點','標題與廣告一致'],[1,'主標與廣告說法一致','同一個承諾'],[0,'下一步清楚','表單在第 3 屏，還要填生日']]},
+ {t:'現做堅果塔 15 秒｜每天早上現烤',f:'影片',days:9,pf:'Instagram、TikTok（Reels）',cta:'立即訂購',land:'zeczec.com/…（已結案的募資頁）',art:['#ead2d9','#c78a9e'],cap:'現做影片 15 秒',m:['partial','「現做」的畫面','募資頁（已結案）：故事完整，但無法下單','影片有記憶點，但導去已結案的頁面，下一步走不通。'],ck:[[1,'第一屏延續廣告的亮點','有製作畫面'],[0,'主標與廣告說法一致','廣告講「現做」，募資頁講「手掌大」'],[0,'下一步清楚','已結案，沒有購買入口']]}]};
+var LINKS=[['官網','→','蝦皮（購買按鈕）','賣場第一屏是平台商品列表，說法換成「手作堅果塔 送禮自用」','partial','正常'],['Instagram 簡介連結','→','官網首頁','首頁第一屏沒有承接 IG 的「手作堅果塔」說法','partial','正常'],['名片 QR','→','LINE 官方帳號','可加好友；歡迎訊息待確認','yes','正常'],['TikTok 簡介連結','→','蝦皮','落地是商品列表，沒有影片提到的「現做」','no','正常'],['YouTube 說明欄','→','嘖嘖（已結案）','故事好，但已結案，沒有購買入口','no','頁面可開，但下一步斷了'],['官網「促銷活動」按鈕','→','/pages/old-promo','打不開（404）','no','壞連結'],['官網首頁輪播按鈕','→','#','按下去沒有去任何地方（可能由程式動態換掉，需確認）','none','href="#"']];
+var MATCH={yes:'✓ 接上了',partial:'△ 部分接上',no:'✕ 還沒接上',none:'— 兩邊都還沒放亮點'};
+var PEERS=[['同行 A','4.6','812','Google 地圖搜尋','手作堅果塔，標示糖度與保存期限','中高價','標示得比禾穗完整；禾穗的烘焙日標示只在部分商品。'],['同行 B','4.8','95','客戶提供','日系低糖堅果塔','中價','有低糖選項；禾穗只在 IG 提到新品。'],['同行 C','4.4','1,530','Google 地圖搜尋','平價大量、可批發','平價','拼的是「多」與「便宜」；禾穗不需要跟它比價。'],['同行 D','4.5','260','Google 地圖搜尋','企業禮盒專做','中高價','有企業案例頁；禾穗的案例只在 Sales KIT。']];
+var PSTR=['有一手的製作畫面與募資紀錄（1,056 位支持者），同場景對手少有','Google 4.7 星、212 則，蝦皮 4.9；客人自己在講喜歡的理由','有 BNI 引薦網絡，能直接接觸企業採購與人資'];
+var PCAU=['13 個地方有 13 種自我介紹，想轉述的人不知道該講哪一句','最有記憶點的影片廣告，落地頁是已結案的募資頁','沒查到 Google 搜尋與購物廣告，主動搜尋的人可能比較不容易遇到','舊 UA 代碼沒清，數據維護鬆散'];
+var PRODS=[['綜合堅果塔 6 入（主力）','NT$680','ok','有烘焙日標示、4.9 星、嘖嘖有完整故事','商品頁沒有「適合／不適合」與單次成本'],['單顆堅果塔（6 款口味）','NT$180–220','part','口味介紹完整','缺「為什麼選這款」與搭配建議'],['12 入禮盒','NT$1,280','part','有送禮情境','缺一句能轉述的話；包裝與保存說明在圖片裡'],['企業禮盒（Q4 檔期）','NT$1,980–2,980','miss','Sales KIT 有完整提案','官網沒有企業案例與採購說明；價格只在 LINE 詢問'],['低糖系列（新品）','NT$250','miss','IG 有提到','官網沒有商品頁；對手 B 已有低糖主打'],['冷凍保存與回購（訂閱）','—','miss','客人在留言問過「可以冷凍嗎」','沒有商品、沒有說明；回購入口缺']];
+var PINS=['38 款裡約 6 款有寫來歷或適合誰——這 6 款的評價數明顯較多（推論，需對方後台確認）。','企業禮盒有明顯季節性，Q4 是最大檔期；送禮的人最需要一句能轉述的話。','「不太甜」是客人最常提的特色，卻不在商品頁標題與廣告裡。','冷凍保存是客人反覆問的問題，可以變成商品與常見問題。'];
+var VOC=[['不會太甜',7,0],['送禮有面子',5,0],['烘焙日期很清楚',4,1],['包裝好看',4,0],['用心手作',2,9]];
+var ORG={size:[['公司','禾穗食品有限公司（示範）'],['資本額','300 萬元（示範）'],['成立','2019'],['員工','約 6 人（來源：104 公司頁，示範）'],['產業','烘焙・甜點']],jobs:[['短影音小編','104',['TikTok','Reels 剪輯','每週 2 支']],['企業禮盒業務','104',['B2B 開發','提案簡報','Q4 檔期']]],ins:['徵短影音小編＝老闆知道影音要做，但現在 38 支影片更新零星，也沒有講差異。','徵企業禮盒業務＝想把企業禮盒做大；官網卻沒有企業案例與採購說明，業務進來可能沒有素材可用。']};
+var CAND=[{t:'每款標示產地與烘焙日',ty:1,pl:[1,2],q:[4,4,3,3,5],th:[1,1,.5],ev:'官網 5 款、作品集 18 款、粉專 3 篇'},{t:'不太甜、6 入的送禮尺寸',ty:0,pl:[1,3],q:[5,3,4,2,4],th:[1,1,0],ev:'7 則留言提到「不會太甜」'},{t:'每日現做，賣完為止',ty:4,pl:[0,3],q:[3,4,2,4,3],th:[1,.5,1],ev:'TikTok 簡介與 1 支影片，沒有佐證（進待補清單）'},{t:'可冷凍保存 3 週',ty:3,pl:[1,2],q:[4,4,3,3,4],th:[1,1,.5],ev:'留言多次詢問；官網沒有說明'}];
+var TYPES=['客戶需求型','產品差異型','市場空缺型','技術能力型','商業模式型','客戶成果型'],PLACES=['品牌','產品','網站','廣告'],QN=['相關性','差異性','可信度','可擁有性','可重複性'];
+var READY={level:'partial',verdict:'陌生人第一次接觸禾穗，大多記得「手作堅果塔，用心」，但記不住它跟別家哪裡不一樣。最有料的「每款標示烘焙日」「不太甜」其實存在，卻散在 Sales KIT、作品集與嘖嘖，官網與廣告還沒帶到。',remembered:'「手作堅果塔，用心做的」（沒有差異）',reason:'看得到：標示烘焙日、不太甜、1,056 位募資支持者；但這些散在不同地方，陌生人不一定看得到。',give:['先把基本盤補到一定程度，再談差異化（地基先行）','說法統一：13 個接觸點收斂成少數幾句','廣告與導外連結的承接補齊','商品化補強：企業禮盒、低糖、冷凍保存'],first:[['先決定主要身分','個人送禮與企業禮盒，現在說法各講各的，要先決定主打哪一個'],['提供各則廣告的成效數字','沒有數字，廣告相關判斷只能標推論'],['提供 LINE 歡迎訊息與圖文選單截圖','外部看不到這一塊'],['說明 BNI 想被引薦的第一類對象','GAINS 寫了 3 類，要先決定先做哪一類'],['修好 1 個壞連結與 1 個 href="#" 按鈕','讓導外動線先走得通']]};
+
+/* ============ 小工具 ============ */
+function pill(s){return '<span class="pl '+s+'">'+ST[s]+'</span>';}
+function tagc(t){return t==='c'?'<span class="tag c">確認</span>':t==='i'?'<span class="tag i">推測</span>':'<span class="tag u">待確認</span>';}
+function ring(v,label,note,sm){return '<div class="ringbox"><div class="ring'+(sm?' sm':'')+'" style="--v:'+v+'"><svg viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" cx="60" cy="60" r="52"/></svg><div class="num" data-count="'+v+'">'+v+'</div></div><div class="t"><b>'+label+'</b><span class="note">'+note+'</span></div></div>';}
+function sec(id,title,what,inner){return '<div class="sec" id="'+id+'"><h3>'+title+'</h3><p class="what"><b>這一段在看：</b>'+what+'</p>'+inner+'</div>';}
+function rv(h,st){return '<div class="rv"'+(st?' style="'+st+'"':'')+'>'+h+'</div>';}
+function cur(n){return '<span class="d" style="display:inline-block;width:22px;height:22px;border-radius:50%;background:var(--fb-rose);color:#fff;text-align:center;line-height:22px;font-size:12px;font-weight:900;margin-right:6px">'+n+'</span>';}
+function polyPts(vals,r){var n=vals.length;return vals.map(function(v,i){var a=-Math.PI/2+i*2*Math.PI/n;return (150+Math.cos(a)*r*v/100)+','+(150+Math.sin(a)*r*v/100);}).join(' ');}
+function radar(labels,now,goal){var n=labels.length,R=96,h='';
+  [25,50,75,100].forEach(function(l){h+='<polygon class="grid" points="'+polyPts(labels.map(function(){return l}),R)+'"/>';});
+  labels.forEach(function(d,i){var a=-Math.PI/2+i*2*Math.PI/n,px=150+Math.cos(a)*R,py=150+Math.sin(a)*R,qx=150+Math.cos(a)*R*1.2,qy=150+Math.sin(a)*R*1.2;h+='<line class="axis" x1="150" y1="150" x2="'+px+'" y2="'+py+'"/>';var anc=qx<140?'end':(qx>160?'start':'middle');h+='<text x="'+qx+'" y="'+(qy+4)+'" text-anchor="'+anc+'">'+d+'</text>';});
+  if(goal)h+='<polygon class="poly goal" points="'+polyPts(goal,R)+'"/>';
+  h+='<polygon class="poly" points="'+polyPts(now,R)+'"/>';
+  now.forEach(function(v,i){var a=-Math.PI/2+i*2*Math.PI/n;h+='<circle class="pt" cx="'+(150+Math.cos(a)*R*v/100)+'" cy="'+(150+Math.sin(a)*R*v/100)+'" r="3.5"/>';});
+  return '<svg class="radar" viewBox="0 0 300 300" role="img" aria-label="雷達圖">'+h+'</svg>';}
+function itemCard(c,i){return '<div class="item '+c[1]+'" data-l="'+(c._a||'')+'"><span class="cd">'+ST[c[1]]+'</span><div><b>'+c[0]+'</b><span class="o">'+c[2]+'</span></div></div>';}
+function grouped(items,a){var gs=[['miss','最需要先補'],['part','可以再補強'],['ok','已經做到'],['na','資料不足（不計分）']];
+  return gs.map(function(g){var its=items.filter(function(x){return x[1]===g[0]}).map(function(x){if(a)x._a=a;return x;});if(!its.length)return '';
+    var inner=its.map(itemCard).join('');
+    if(g[0]==='ok'||g[0]==='na')return '<details class="fold"><summary>'+g[1]+'（'+its.length+'）<span class="note">　點開看</span></summary><div class="ck" style="margin:8px 0">'+inner+'</div></details>';
+    return '<div class="grp"><h4>'+g[1]+'<small>'+its.length+' 項</small></h4><div class="ck">'+inner+'</div></div>';}).join('');}
+function srows(items){return items.map(function(x){return '<div class="srow"><span>'+pill(x[1])+'</span><b>'+x[0]+'</b><span class="note" style="font-size:14.5px">'+x[2]+'</span></div>';}).join('');}
+function hb(label,v,peer,txt){return '<div class="hb"><span>'+label+'</span><div class="track"><i class="'+(peer?'peer':'')+'" style="--w:'+Math.min(100,v)+'%"></i></div><span class="note">'+(txt||v)+'</span></div>';}
+function adCard(a,withMatch){return '<div class="ad"><div class="art" style="background:linear-gradient(135deg,'+a.art[0]+','+a.art[1]+')">'+a.cap+'</div><div class="bd"><b>'+a.t+'</b><div class="meta">'+a.f+'・已刊登 '+a.days+' 天・'+a.pf+'・按鈕「'+a.cta+'」</div><div class="px">落地頁：'+a.land+'</div><div class="match '+a.m[0]+'"><b>'+MATCH[a.m[0]]+'</b><br>廣告的亮點：'+a.m[1]+'<br>落地頁第一屏：'+a.m[2]+'<br><span class="note">'+a.m[3]+'</span></div><ul class="lchk">'+a.ck.map(function(c){return '<li><span class="'+(c[0]?'y':'n')+'">'+(c[0]?'✓':'✕')+'</span><span><b>'+c[1]+'</b>：'+c[2]+'</span></li>';}).join('')+'</ul></div></div>';}
+function tpList(arr){return arr.map(function(t){return '<div class="tp"><span class="w">'+t[0]+'</span><q>'+t[1]+'</q><span class="n">'+t[2]+'</span></div>';}).join('');}
+function lights(){var nm={g:'沒問題',y:'注意',r:'要先處理',u:'看不到'};return LT.map(function(l){return '<div class="lt"><b>'+l[0]+'</b><span class="lamp '+l[1]+'"><i></i>'+nm[l[1]]+'</span><span><span class="tag '+(l[2]==='確認'?'c':'i')+'">'+l[2]+'</span>'+l[3]+'</span></div>';}).join('');}
+function finds(){return FIND.map(function(f,i){return '<div class="fd"><h4>'+(i+1)+'. '+f[0]+'</h4><div><b>代表什麼：</b>'+f[1]+'</div><div><b>你可能會感覺到：</b>'+f[2]+'</div><div class="ev">依據：'+f[3]+'</div></div>';}).join('');}
+function evid(){var gs=[['c','● 已確認','系統直接看到的，有原始碼、平台接口或公開頁面佐證。'],['u','○ 待確認','查不到或只有間接線索。'],['i','◐ 推論','AI 或規則從事實推出來的判斷，是觀點不是資料。']];
+  return gs.map(function(g){var rows=EVID.filter(function(e){return e[0]===g[0]});return '<details class="fold"'+(g[0]==='c'?'':'')+'><summary>'+g[1]+'（'+rows.length+'）<span class="note">　'+g[2]+'</span></summary><div class="tblwrap"><table class="t"><thead><tr><th>類別</th><th>內容</th><th>來源</th><th class="c">信心</th></tr></thead><tbody>'+rows.map(function(e){return '<tr><td>'+e[1]+'</td><td>'+e[2]+'</td><td>'+e[3]+'</td><td class="c">'+e[4]+'%</td></tr>';}).join('')+'</tbody></table></div></details>';}).join('')+
+ '<details class="fold"><summary>這次沒讀到的地方（'+LIMITS.length+'）</summary><ul>'+LIMITS.map(function(l){return '<li>'+l+'</li>';}).join('')+'</ul></details><details class="fold"><summary>處理紀錄（'+PROCESS.length+' 步）</summary><ol>'+PROCESS.map(function(l){return '<li>'+l+'</li>';}).join('')+'</ol></details>';}
+function fixlist(){return '<ul class="fix" id="fixList">'+FIXL.map(function(t){return '<li><span class="box"></span><span class="tx">'+t+'</span></li>';}).join('')+'</ul>';}
+function wk(ws){return '<div class="wk">'+ws.map(function(w){return '<div class="w"><b>'+w[0]+'</b>'+w[1]+'<i>'+w[2]+'</i></div>';}).join('')+'</div>';}
+function cta(t){return '<a class="cta" href="#" onclick="return false">'+t+'</a>';}
+
+/* ============ ① 免費快篩 ============ */
+function bindSwap1(){var b=$('#swapBtn1');if(!b)return;var sw=false;b.addEventListener('click',function(){sw=!sw;$('#swapBox1').innerHTML=sw?'「<mark>同行 A</mark>：用心手作，每一口都是幸福」<br><span class="note">這句話一樣成立。</span>':'「<mark>禾穗</mark>：用心手作，每一口都是幸福」';this.textContent=sw?'換回「禾穗」':'換人測試：把「禾穗」換成同行 →';});}
+function lockedBox(msg){return '<div class="locked" aria-hidden="true"><div class="row"></div><div class="row"></div><div class="msg">'+msg+'</div></div>';}
+function P1(){
+ var okTrack=AR('t').items.filter(function(x){return x[1]==='ok'}).length;
+ var good=ADS2.filter(function(a){return a.m[0]==='yes'}).length;
+ var badLinks=LINKS2.filter(function(l){return l.st==='no'||l.st==='none'}).length;
+ var h='<nav class="sub" aria-label="目錄"><div id="sub1"></div></nav>'+rv('<span class="ribbon" id="s1-top">免費快篩</span><h2>你的最大缺口，不在「有沒有故事」，在「AI 讀不讀得懂」。</h2><p class="lead">貼上一個連結，約一分鐘，我們掃一遍公開資料，給你兩份快篩：先看地基（基本盤），再看差異化。</p>');
+ h+='<div class="inputdemo rv" style="margin-bottom:14px"><div class="lines" id="freeLines" aria-live="polite"><span class="ln">hesui-tart.example.tw<small>官網</small></span></div><button class="cta" id="scanBtn" type="button" style="margin-top:6px">重新示範掃描</button><span class="note" style="margin-left:10px">只要一個連結（官網或粉專擇一），不用填問卷。</span></div>';
+ h+='<div class="scan rv"><ul id="scanList">'+['讀取官網（17 頁、38 款商品）','讀取粉專、IG、TikTok、YouTube','讀取蝦皮、momo、嘖嘖募資頁','偵測追蹤碼，並翻 Meta 廣告檔案庫','點進廣告與導外連結的落地頁','比對各處價格、名稱、第一句話','找同場景對手並比較','用 AI 問答測試是否被提到','計算地基與差異化分數'].map(function(t){return '<li class="done"><span class="dot">✓</span>'+t+'</li>';}).join('')+'</ul><div class="scanbar"><i id="scanProg" style="width:100%"></i></div></div>';
+ h+='<div class="after-scan" id="afterScan">';
+ /* A. 地基快篩 */
+ h+='<h3 id="s1-a" style="margin-top:30px"><span class="ribbon" style="margin:0 8px 0 0">地基</span>快篩 A：基本盤（查不查得到、看不看得懂）</h3><p class="what"><b>這一段在看：</b>人、AI、Google 找到你、看懂你的完整度。分數是「完成了多少」，不是好不好。</p>';
+ h+='<div class="radarwrap rv"><div>'+radar(AREAS.map(function(a){return a.short||a.name}),AREAS.map(function(a){return a.score}))+'</div><div>'+ring(BASE,'基本盤完整度','八個面向的平均')+'<div style="margin-top:10px">'+AREAS.map(function(a){return '<div class="dimrow" style="grid-template-columns:110px 1fr 36px"><b>'+a.name+'</b><div class="track"><i class="'+(a.score<=40?'low':'')+'" style="--w:'+a.score+'%"></i></div><b>'+a.score+'</b></div>';}).join('')+'</div></div></div>';
+ h+=rv('<div class="card" style="margin-top:14px"><div style="display:flex;gap:22px;align-items:center;flex-wrap:wrap"><div><div class="gapnum" data-count="'+GAPS+'">'+GAPS+'</div><div class="note">個缺口（「缺」與「部分」都算）</div></div><div style="flex:1 1 260px"><b>先看最大的三個：</b></div></div>'+
+  '<div class="fd"><h4>1. 38 款商品中，有 26 款的成分與容量只放在圖片裡</h4><div>AI 與搜尋引擎讀不到，客人也不能搜尋或複製。</div><div class="ev">依據：官網商品頁原始碼與圖片比對</div></div>'+
+  '<div class="fd"><h4>2. 官網、蝦皮、momo 有 7 款價格不同</h4>'+lockedBox('代表什麼、依據與補法，在基本盤診斷')+'</div>'+
+  '<div class="fd"><h4>3. 追蹤碼只到位 '+okTrack+'／'+AR('t').items.length+' 項</h4>'+lockedBox('缺哪幾項、怎麼補，在基本盤診斷')+'</div></div>');
+ h+=rv('<div class="card white" style="margin-top:12px"><b>AI 問答快照（問 1 題，看 5 家 AI）</b><div class="note">「推薦台北做手作堅果塔的品牌」（示意；每次回答會不同）</div><div class="tblwrap" style="margin-top:6px"><table class="t"><thead><tr>'+AIS.map(function(a){return '<th class="c">'+a+'</th>';}).join('')+'</tr></thead><tbody><tr>'+AIQ[0][1].map(function(v){var m={ok:'提到',part:'描述不完整',miss:'未提到',na:'資料不足'};return '<td class="c"><span class="pl '+v+'">'+m[v]+'</span></td>';}).join('')+'</tr></tbody></table></div><div class="note" style="margin-top:6px">另外 2 題（介紹你、與同行比較）與原因，在基本盤診斷。</div></div>');
+ h+=rv('<div class="grid4" style="margin-top:12px"><div class="teaser"><div class="big">'+okTrack+'<small> ／ '+AR('t').items.length+'</small></div>追蹤碼到位</div><div class="teaser"><div class="big">'+AR('s').items.filter(function(x){return x[1]==='miss'}).length+'<small> 項</small></div>SEO 基本功缺漏</div><div class="teaser"><div class="big">'+KW.filter(function(k){return k[3]==='none'}).length+'<small> ／ '+KW.length+'</small></div>關鍵字前 20 沒出現</div><div class="teaser"><div class="big">'+AR('g').items.filter(function(x){return x[1]==='miss'}).length+'<small> 項</small></div>AI 搜尋就緒缺漏</div></div>');
+ /* B. 差異化快篩 */
+ h+='<h3 id="s1-b" style="margin-top:40px"><span class="ribbon d" style="margin:0 8px 0 0">差異化</span>快篩 B：別人說不說得出你不一樣</h3><p class="what"><b>這一段在看：</b>你的亮點被看見、被記得、被放大了多少。建議先補地基，再做差異化。</p>';
+ h+='<div class="radarwrap rv"><div>'+radar(DIM.map(function(d){return d[0]}),DNOW)+'</div><div>'+ring(TOTAL,'亮點完成度',stage(TOTAL))+'<div class="grid2" style="margin-top:10px"><div class="card focus"><b>卡點：被記得（'+DIM[3][1]+'）</b><br><span class="note">各地方的自我介紹還沒統一。</span></div><div class="card white"><b>強項：品牌亮點（'+DIM[0][1]+'）</b><br><span class="note">有一段同行講不了的堅持。</span></div></div></div></div>';
+ h+=rv('<div class="card white" style="margin-top:12px"><b>說法對照：13 個地方，13 種第一句話（先看 3 個）</b>'+tpList([VOICES[2],VOICES[3],VOICES[0]])+'<button class="cta ghost" id="swapBtn1" type="button" style="margin:8px 0 0">換人測試：把「禾穗」換成同行 →</button><div class="swapbox" id="swapBox1" aria-live="polite">「<mark>禾穗</mark>：用心手作，每一口都是幸福」</div><div class="note" style="margin-top:6px">其餘 10 個地方、說法重疊度與卡在哪，在差異化診斷。</div></div>');
+ h+=rv('<div class="card white" style="margin-top:12px"><b>廣告長這樣：框起來的素材差異（先看 1 則，共 '+ADS2.length+' 則）</b><div class="adrow" style="grid-template-columns:minmax(0,330px) minmax(0,1fr);border:0;padding:8px 0 0"><div>'+adMock(ADS2[0],'禾穗手作堅果塔','禾')+'</div><div><b>框起來的差異</b>'+lockedBox('每一框的說明、落地頁線框圖、同行的廣告素材與比較，在差異化診斷')+'</div></div></div>');
+ h+=rv('<div class="grid4" style="margin-top:12px"><div class="teaser"><div class="big">'+good+'<small> ／ '+ADS2.length+'</small></div>廣告落地頁承接得好</div><div class="teaser"><div class="big">'+badLinks+'<small> 條</small></div>導外連結走不通或有問題</div><div class="teaser"><div class="big">'+PEERADS.length+'<small> 家</small></div>同場景對手</div><div class="teaser"><div class="big">'+PSTAT.ok+'<small> ／ '+PSTAT.n+'</small></div>商品化到位</div></div>');
+ h+=nextSteps();
+ /* C. 完整報告多了什麼 */
+ h+='<h3 id="s1-c" style="margin-top:40px">完整報告多了什麼</h3><p class="what"><b>這一段在看：</b>免費告訴你「是什麼、有多少」；付費告訴你「是哪一項、依據是什麼、怎麼補」。</p>';
+ h+=rv('<div class="tblwrap"><table class="t"><thead><tr><th>內容</th><th class="c">免費快篩</th><th class="c">基本盤診斷</th><th class="c">基本盤補強</th><th class="c">差異化診斷</th><th class="c">差異化優化</th></tr></thead><tbody>'+
+  [['整體分數與雷達圖','●','●','●','●','●'],['缺口數量與最大 3 個缺口','●（3 個）','全部','全部','—','—'],['每個缺口的依據與代表什麼','—','●','●','—','—'],['怎麼補（具體做法與優先順序）','—','—','●','—','●'],['AI 問答測試','1 題','3 題 × 5 家','追蹤方式','—','—'],['SEO 與關鍵字','數字','逐項與關鍵字表','補法與頁面對應','—','—'],['說法對照（13 個地方）','3 個','—','—','全部＋換人測試','統一方向與候選句'],['廣告：框起來的素材差異','1 則','—','—','全部＋落地頁線框圖','重接建議'],['導外連結與落地頁','數字','—','—','每條線框圖','修正建議'],['同行的廣告與導外','數字','—','—','4 家並排','差異與優化動作'],['商品全覽與商品化','數字','基本資料完整度','—','38 款逐款','系列優先順序'],['30 天規劃與驗收','—','—','●','—','●']].map(function(r){return '<tr><td><b>'+r[0]+'</b></td>'+r.slice(1).map(function(x){return '<td class="c">'+x+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div><p class="note" style="margin-top:6px">所有優化都是「建議與驗收」，我們不替你落地實作。</p>');
+ h+=rv('<div class="big-quote"><span>客人看得到你的故事，<br>AI 卻讀不到你的規格。</span></div><p class="note">這是依公開資料的觀察，不是結論；讀不到的項目標「資料不足」，不計入分數。</p>'+cta('想看完整報告 → 來 LINE 聊聊'));
+ h+='</div>';
+ return h;}
+
+/* ============ ② 基本盤診斷 ============ */
+function P2(){var h='<nav class="sub" aria-label="目錄"><div id="sub2"></div></nav>';
+ h+=sec('s2-ov','總覽：地基完整度','基本盤整體幾分、哪一面最凹陷。你可以先看最低的那一條。',
+  rv('<span class="ribbon">地基・先診斷</span><h2 style="font-size:clamp(20px,2.8vw,28px)">禾穗的商品不差，差在別人，以及 AI，查不到足夠的資料。</h2><p class="lead">嗨，謝謝你讓我們看你的資料。這份報告站在「一個從沒見過你的陌生人，和一個替他找東西的 AI」的角度，整理它們第一次接觸禾穗時，會看到什麼、會在哪裡停下來。讀不到的地方，我們直接標出來，不硬寫。</p>')+
+  '<div class="radarwrap rv"><div>'+radar(AREAS.map(function(a){return a.short||a.name}),AREAS.map(function(a){return a.score}))+'</div><div>'+ring(BASE,'基本盤完整度',AREAS.length+' 個面向的平均')+'<div style="margin-top:12px">'+AREAS.map(function(a){return '<div class="dimrow" style="grid-template-columns:110px 1fr 36px"><b>'+a.name+'</b><div class="track"><i class="'+(a.score<=40?'low':'')+'" style="--w:'+a.score+'%"></i></div><b>'+a.score+'</b></div>';}).join('')+'</div><p style="margin:8px 0 0"><b>最凹陷的是「'+LOWEST.name+'」（'+LOWEST.score+'）：</b>'+LOWEST.meaning+'</p></div></div>'+
+  rv('<div class="grid3" style="margin-top:14px"><div class="card"><b style="color:var(--fb-rose)">現在的狀況</b><br>故事與信任證據足；商品規格、價格一致性、追蹤與廣告佈局還有很多空白。</div><div class="card"><b style="color:var(--fb-rose)">我們給你</b><br>讀到什麼、行銷基礎四項、官網七類燈號、'+NCHK+' 項逐項檢查、AI 可見度、關鍵字現況、通路與商品、發現與先修、依據。</div><div class="card"><b style="color:var(--fb-rose)">你要給我們</b><br>一個連結。有 LINE 歡迎訊息截圖更好（選填）。</div></div>')+
+  '<h3 style="font-size:19px;margin-top:28px">你只要做這一件事</h3><div class="inputdemo rv"><div class="lines" id="payLines"><span class="ln">hesui-tart.example.tw<small>官網</small></span><span class="ln">facebook.com/hesuitart.example<small>粉專</small></span><span class="ln">maps.example/hesui-tart<small>Google 商家（選填）</small></span></div><div class="note">沒貼的我們標「資料不足」，不扣分、不猜。有名片、GAINS 表、簡報，拍照或丟檔案即可。不用填問卷、不用整理商品清單。</div><div class="autolist" id="autoList">'+['自己找出商品清單','自己讀價格、規格、交期','自己偵測追蹤碼與廣告','自己點進廣告的落地頁','自己查通路、104、對手','自己用 AI 問答測試','自己算分數、畫圖'].map(function(t){return '<div class="on"><span class="tick">✓</span>'+t+'</div>';}).join('')+'</div></div>');
+ h+=sec('s2-scope','讀到什麼、讀不到什麼','這份報告的資料範圍（來源 12 個、檔案 6 份）。讀不到的，不猜、不算分。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>來源</th><th>狀態</th><th>讀到什麼</th></tr></thead><tbody>'+SRC.map(function(s){return '<tr><td><b>'+s[0]+'</b></td><td>'+(s[3]==='c'?'<span class="tag c">讀到</span>':s[3]==='i'?'<span class="tag i">部分</span>':'<span class="tag u">看不到</span>')+'</td><td>'+s[2]+'</td></tr>';}).join('')+'</tbody></table></div><div class="tblwrap" style="margin-top:12px"><table class="t"><thead><tr><th>檔案</th><th>狀態</th><th>第一句話（照原文）</th></tr></thead><tbody>'+FILES.map(function(s){return '<tr><td><b>'+s[0]+'</b></td><td><span class="tag c">'+s[1]+'</span></td><td>'+s[2]+'</td></tr>';}).join('')+'</tbody></table></div><p class="note" style="margin-top:8px"><span class="tag c">確認</span>讀到的事實　<span class="tag i">推測</span>依資料推論　<span class="tag u">待確認</span>讀不到或要你確認</p><div class="card white" style="margin-top:8px"><b>你出現在哪裡（曝光，另列、不計分）</b>　<span class="pl ok">充足</span><br>官網、FB、IG、TikTok、YouTube、Google 商家、蝦皮、momo、嘖嘖都找得到。曝光多不等於有亮點，曝光少也不等於沒亮點；這一項不計分。</div>'));
+ h+=sec('s2-four','行銷基礎四項：追蹤、廣告、電商、內容','技術面的基本盤：有沒有在量、有沒有在投、買得順不順、內容有沒有在經營。',
+  rv('<div class="grid4">'+['t','d','e','c'].map(function(k){var a=AR(k);return '<div class="card'+(a.score<=40?' focus':'')+'">'+ring(a.score,a.name,'',true)+'</div>';}).join('')+'</div>')+
+  ['t','d','e','c'].map(function(k){var a=AR(k);return rv('<details class="fold" '+(k==='t'?'open':'')+'><summary>'+a.name+'　<span class="pl '+(a.score<=40?'miss':a.score<=60?'part':'ok')+'">'+a.score+' 分</span>　<span class="note">'+a.meaning+'</span></summary>'+srows(a.items)+'</details>');}).join(''));
+ h+=sec('s2-site','官網七類燈號與技術探測','你的官網在「找不找得到、AI 看不看得懂、信不信你」等七件事上的狀態，以及我們直接讀到的技術事實。',
+  rv('<div class="card white">'+lights()+'</div>')+'<h3 style="font-size:18px;margin-top:22px">技術探測（我們直接讀到的事實）</h3>'+rv('<div class="tblwrap"><table class="t"><tbody>'+PROBE.map(function(p){return '<tr><th style="width:150px">'+p[0]+'</th><td><span class="tag c">確認</span>'+p[1]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+  rv('<div class="card white" style="margin-top:12px"><b>在地店家／電商這一型，要多看的幾件事</b><ul style="margin:6px 0 0;padding-left:20px"><li>營業時間、地址、價格各頁是否一致：<span class="pl part">部分</span></li><li>菜單／價目表是文字還是圖片：<span class="pl miss">圖片</span></li><li>Google 商家資料完整、評論回覆：<span class="pl part">部分</span></li><li>線上付款、庫存、預約時段：<span class="pl part">庫存缺</span></li><li>商品頁速度與圖片大小：<span class="pl miss">過大</span></li></ul></div>'));
+ h+=sec('s2-check',NCHK+' 項逐項檢查','基本盤的每一項。怎麼讀：粉紅粗框＝最需要先補；細框＝可以再補強；灰色＝已經做到。',
+  '<div class="fchips" id="layerF" role="group" aria-label="篩選"><button class="fchip" aria-pressed="true" data-l="all">全部</button>'+AREAS.map(function(a){return '<button class="fchip" aria-pressed="false" data-l="'+a.k+'">'+a.name+' '+a.items.length+'</button>';}).join('')+'</div><div class="rv" id="checks">'+grouped([].concat.apply([],AREAS.map(function(a){return a.items.map(function(x){var c=x.slice();c._a=a.k;return c;});})),'')+'</div>');
+ h+=sec('s2-ai','AI 可見度檢測','用固定三個問題問多家 AI，看有沒有提到你、怎麼介紹你。每次回答會不同，所以寫「這次觀察到」，不是排名。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>問題＼AI</th>'+AIS.map(function(a){return '<th class="c">'+a+'</th>';}).join('')+'</tr></thead><tbody>'+AIQ.map(function(q){return '<tr><td>'+q[0]+'</td>'+q[1].map(function(v){var m={ok:'提到',part:'描述不完整',miss:'未提到',na:'資料不足'};return '<td class="c"><span class="pl '+v+'">'+m[v]+'</span></td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div><p class="note">（示意）</p>')+
+  '<div class="rv" id="chatWrap"><div class="card white" style="margin-top:8px"><div class="bub me in" style="margin-left:auto;background:var(--fb-rose);color:#fff;border-radius:16px;padding:10px 14px;max-width:90%;margin-bottom:8px;opacity:1">幫我找台北適合送禮的手作堅果塔，不要太甜，6 入。</div><div style="background:var(--fb-card);border:1px solid var(--fb-line);border-radius:16px;padding:10px 14px;max-width:90%">AI 助理（示意）：我整理了 3 個符合條件的選項：同行 A（標示糖度與保存期限，現貨）、同行 B（有常見問題與退換貨說明）、同行 C（可選低糖）。其他店家因為缺少規格或庫存資訊，這次沒有列入比較。</div></div><div class="card focus" style="margin-top:8px"><b>禾穗沒出現在名單。</b>可能的原因：規格與庫存資訊 AI 讀不到。<span class="note">（示意；不同 AI、不同時間結果會不同。）</span></div></div>');
+ h+=sec('s2-chan','通路與公司概況','你在哪些平台上、公司的基本規模；這些影響能做什麼、先做什麼。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>通路／平台</th><th>狀態</th><th>內容</th></tr></thead><tbody>'+CHAN.map(function(c){return '<tr><td><b>'+c[0]+'</b></td><td>'+(c[3]==='c'?'<span class="tag c">'+c[1]+'</span>':'<span class="tag u">'+c[1]+'</span>')+'</td><td>'+c[2]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>公司基本資料</b><div style="margin-top:6px">'+ORG.size.map(function(r){return '<div class="note" style="font-size:14.5px"><b>'+r[0]+'：</b>'+r[1]+'</div>';}).join('')+'<div class="note" style="font-size:14.5px"><b>BNI：</b>會員（行業別：手作甜點）</div></div></div><div class="card white"><b>我們讀到的自我介紹與語氣</b><div style="margin-top:6px"><div class="note" style="font-size:14.5px"><b>一句話：</b>手作堅果塔，主打送禮與企業禮盒。</div><div class="note" style="font-size:14.5px"><b>客群（推論）：</b>28–45 歲、送禮與自用。</div><div class="note" style="font-size:14.5px"><b>語氣：</b>溫和、生活提案式。</div><div class="note" style="font-size:14.5px"><b>最希望客人做的事：</b>線上下單；次要：加 LINE、詢問企業禮盒。</div></div></div></div>'));
+ h+=sec('s2-prod','商品資料的基本盤','38 款商品的資料完整度（有沒有寫成可讀的文字）。價格帶 NT$'+PSTAT.min+'–'+PSTAT.max.toLocaleString()+'，中位數 '+PSTAT.median+'。',
+  rv('<div class="card white">'+PRODBASE.map(function(p){return hb(p[0],Math.round(p[1]/38*100),false,p[1]+'／38');}).join('')+'</div>')+'<p class="note">商品「有沒有被整理成好賣的產品」（商品化），在差異化診斷。</p>');
+ h+=sec('s2-find','發現與先修清單','依影響大小排序的發現，每一項附依據與「你可能會感覺到什麼」。',
+  rv(finds())+'<h3 style="font-size:19px;margin-top:26px">最值得先處理的 3 件事</h3>'+rv('<div class="top3"><div class="card focus"><b>把 26 款規格改成文字</b><br><span class="note">成分、容量不要只放在圖片裡。</span></div><div class="card"><b>統一三個通路的價格</b><br><span class="note">官網、蝦皮、momo 有 7 款不同。</span></div><div class="card"><b>補追蹤碼、清舊 UA</b><br><span class="note">之後談廣告才有依據。</span></div></div>')+
+  '<h3 style="font-size:19px;margin-top:26px">不換網站，這週就能自己改（點一下打勾）</h3>'+rv(fixlist())+rv('<p style="margin-top:8px"><b>要不要整套改版？</b>不用。問題集中在資料與追蹤，修在原本的平台就好；C（名單分散）與 F（圖片過大）是兩件獨立的事，各自處理。</p>')+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>要問你的問題</b><ul style="margin:6px 0 0;padding-left:20px"><li>名單現在主要存在哪裡？誰在整理？</li><li>LINE 官方帳號的歡迎訊息與圖文選單可以給我們截圖嗎？</li><li>各則廣告的成效數字？</li><li>一個月企業禮盒詢價大約幾筆？誰在回？</li></ul></div><div class="card white"><b>想一想</b><ul style="margin:6px 0 0;padding-left:20px"><li>第一次路過的人，你希望他記住哪一句話？</li><li>你堅持標示烘焙日，背後的原因是什麼？</li></ul></div></div>'));
+ h+=sec('s2-evid','依據、限制與處理紀錄','每個結論的依據，分「已確認／待確認／推論」，並標信心。',rv(evid()));
+ h+=sec('s2-next','下一步','先補地基，再談差異化。',
+  rv('<div class="chips"><div class="chip main"><b>主推：基本盤補強</b>逐項補法、優先順序、30 天計畫。</div><div class="chip"><b>次推：差異化診斷</b>等基本盤補到一定程度，再看「說不說得出你不一樣」。</div></div><details class="fold" style="margin-top:10px"><summary>其他可能適合的</summary><p>商會引薦力打造（你是 BNI 會員）；精準廣告投放（等追蹤碼與說法補齊後）。</p></details><p style="margin-top:14px"><b>14 天內升級基本盤補強，診斷費全額抵扣。</b></p>'+cta('想知道怎麼補 → 來 LINE 聊聊')));
+ return h;}
+
+/* ============ ③ 基本盤補強 ============ */
+function P3(){var h='<nav class="sub" aria-label="目錄"><div id="sub3"></div></nav>';
+ var goal=AREAS.map(function(a){return Math.min(100,a.score+({h:12,a:34,t:46,d:30,e:20,c:22,s:34,g:40})[a.k]);});
+ h+=sec('s3-ov','補完之後，基本盤會長這樣（示意目標）','每一面向補完後的完整度目標。目標是資料與設定的完整度，不是業績或排名，也不保證 AI 會推薦。',
+  rv('<span class="ribbon">地基・再補強</span><h2 style="font-size:clamp(20px,2.8vw,28px)">補法不用一次做完，先補這三件，你的商品頁就從「圖片」變成「資料」。</h2>')+
+  '<div class="radarwrap rv"><div>'+radar(AREAS.map(function(a){return a.short||a.name}),AREAS.map(function(a){return a.score}),goal)+'</div><div><div class="legendrow"><span><i class="sw" style="background:#D6336C"></i>目前</span><span><i class="sw" style="background:#B2489E"></i>補完後目標（虛線）</span></div>'+AREAS.map(function(a,i){return hb(a.name+'：'+a.score+' → '+goal[i],goal[i],false,goal[i]);}).join('')+'</div></div>');
+ h+=sec('s3-fix','四個面向的補法','每個面向要補什麼、先補哪個（示意）。',
+  rv('<div class="card white"><h4>數據追蹤（先補，之後談廣告才有依據）</h4><ul style="margin:6px 0 0;padding-left:20px"><li>先補 Google 廣告轉換、LINE Tag、TikTok Pixel；用 Tag Assistant 確認 GTM 是否動態載入</li><li>清掉舊版 UA 代碼</li><li>評估 Meta CAPI（伺服器端）</li><li>在 GTM 設好「LINE 加好友」「企業禮盒詢價」兩個轉換事件</li></ul></div>')+
+  rv('<div class="card white" style="margin-top:10px"><h4>廣告佈局（先不擴張）</h4><ul style="margin:6px 0 0;padding-left:20px"><li>先補追蹤與落地頁，再擴到 Google 品類字與購物廣告</li><li>影片素材從 1 則增加到 3 則，並導向可下單的頁面</li><li>再行銷／動態商品廣告，等商品資料文字化後再開</li></ul></div>')+
+  rv('<div class="card white" style="margin-top:10px"><h4>電商體驗</h4><ul style="margin:6px 0 0;padding-left:20px"><li>商品頁評價往上移到第一屏下方</li><li>38 款補來歷與「適合／不適合誰」，先從 12 入禮盒與企業禮盒</li><li>統一官網、蝦皮、momo 的價格與庫存規則（誰是主價）</li></ul></div>')+
+  rv('<div class="card white" style="margin-top:10px"><h4>內容與社群</h4><ul style="margin:6px 0 0;padding-left:20px"><li>TikTok 每週 1 → 2 支；YouTube 先決定要放什麼，再恢復更新</li><li>把客人的內容（限動轉發、評論）整理成「精選」</li><li>部落格先不開，先把保存、送禮問答放進常見問題</li></ul></div>'));
+ h+=sec('s3-ba','示範：商品頁規格，從圖片變成文字','最大缺口的補法。左右拖拉看前後差異。',
+  '<div class="ba rv" id="ba" style="--p:50%"><div class="ly before"><span class="tg">補完前</span><br><b style="font-size:19px">綜合堅果塔 6 入</b><br>商品頁只有一張圖，成分與容量都在圖片裡。AI 讀到：商品名稱，沒有其他資料。</div><div class="ly afterL"><span class="tg">補完後（示意文字）</span><br><b style="font-size:19px">綜合堅果塔 6 入</b><br>成分：（逐項列出）　容量：每入 45g<br>適合：想送禮、喜歡不太甜的人<br>不建議：對堅果過敏者、需要低糖飲食者<br>保存：冷藏 5 天、冷凍 3 週<br>庫存：現貨｜出貨：下單後 2 個工作天</div><div class="handle"></div><input type="range" min="5" max="95" value="50" id="baRange" aria-label="拖拉比較補完前後"></div>');
+ h+=sec('s3-ai','讓 AI 讀得懂的補法','改善 AI 可見度的具體做法。',
+  rv('<div class="grid2"><div class="card white"><b>要補的清單</b><ul style="margin:6px 0 0;padding-left:20px"><li>商品頁加上結構化標記（商品、常見問題）</li><li>常見問題頁補到 8 題以上並加標記</li><li>每頁加「最後更新」日期</li><li>官網加上與 LINE、IG、FB、蝦皮的關聯連結</li><li>在公開平台補一致的店家資料</li></ul></div><div class="card white"><b>結構化標記長相（示意）</b><div class="code">{"@type":"Product","name":"綜合堅果塔 6 入",\n"description":"…適合與不適合說明…",\n"offers":{"price":"680","availability":"InStock"}}</div></div></div>'));
+ h+=sec('s3-chan','通路一致與名單整合','同一個商品在各通路的名稱與價格，以及客戶名單怎麼收。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>商品</th><th>官網</th><th>蝦皮</th><th>momo</th><th>建議</th></tr></thead><tbody><tr><td>綜合堅果塔 6 入</td><td>680</td><td>680</td><td>720</td><td>三處同價，或註明通路價差原因</td></tr><tr><td>12 入禮盒</td><td>1,280</td><td>1,180</td><td>1,280</td><td>決定誰是主價</td></tr><tr><td>企業禮盒</td><td>詢價</td><td>—</td><td>1,980</td><td>官網補採購說明</td></tr></tbody></table></div><div class="card white" style="margin-top:10px"><b>名單整合</b>：官網、蝦皮、momo、LINE、嘖嘖各一份名單。建議先決定主名單（LINE 或會員），其他定期匯入。</div>'));
+ h+=sec('s3-plan','30 天行動規劃','每週做什麼、誰做、成本、怎麼算有效（示意）。',
+  rv(wk([['第 1 週','規格改成文字（26 款）','誰：你或同仁　成本：工時　有效：每款商品頁有成分與容量文字'],['第 2 週','統一價格；補追蹤碼；修壞連結','誰：你或同仁　成本：低　有效：價格一致；追蹤碼偵測到'],['第 3 週','圖片壓縮；常見問題補到 8 題','誰：你　成本：低　有效：首頁載入明顯變快'],['第 4 週','整理 3 則具體見證；名單主檔決定','誰：你　成本：低　有效：見證含「誰、情況、為何適合」']])));
+ h+=sec('s3-gate','什麼時候做差異化','先補地基，再看差異化。建議基本盤完整度到一定程度後再做差異化診斷（門檻為 AI 建議，待你定）。',
+  rv('<div class="card white"><b>目前基本盤 '+BASE+'；建議門檻 60</b><div class="gate"><i style="width:'+BASE+'%"></i><b style="left:60%"></b></div><span class="note">到 60 左右，再做差異化診斷，才不會在地基不穩時放大錯的東西。</span></div><div class="chips" style="margin-top:12px"><div class="chip main"><b>主推：差異化診斷</b>補到門檻後，看說法、廣告、同行、商品的差異。</div><div class="chip"><b>次推：商會引薦力打造</b>你是 BNI 會員，GAINS 與簡報都齊。</div></div><p style="margin-top:12px">'+cta('想要這份補強 → 來 LINE 聊聊')+'</p>'));
+ return h;}
+
+/* ============ ④ 差異化診斷 ============ */
+function P4(){var h='<nav class="sub" aria-label="目錄"><div id="sub4"></div></nav>';
+ h+=sec('s4-ready','準備度判斷','先講直白判斷：陌生人看完記得什麼、為什麼要選你、我們能給什麼、你要先給我們什麼。',
+  rv('<span class="ribbon d">差異化・診斷</span><h2 style="font-size:clamp(20px,2.8vw,28px)">地基夠穩了，現在看：別人說不說得出你跟別人哪裡不一樣。</h2>')+
+  rv('<div class="card focus"><b>準備度：<span class="pl part">部分到位</span></b><p style="margin:6px 0 0">'+READY.verdict+'</p></div><div class="grid2" style="margin-top:12px"><div class="card white"><b>陌生人看完能記住的一句話</b><p style="margin:4px 0 0">'+READY.remembered+'</p></div><div class="card white"><b>看得到的「為什麼要選你」</b><p style="margin:4px 0 0">'+READY.reason+'</p></div></div><div class="grid2" style="margin-top:12px"><div class="card white"><b>我們能給你</b><ul style="margin:6px 0 0;padding-left:20px">'+READY.give.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul></div><div class="card white"><b>你要先給我們（合作前提）</b><ul style="margin:6px 0 0;padding-left:20px">'+READY.first.map(function(g){return '<li><b>'+g[0]+'</b>：<span class="note">'+g[1]+'</span></li>';}).join('')+'</ul></div></div>'));
+ h+=sec('s4-five','亮點完成度與五維','你的亮點被看見、被記得、被放大了多少。完成度是「完成了多少」，不是手藝好不好。',
+  '<div class="radarwrap rv"><div>'+radar(DIM.map(function(d){return d[0]}),DNOW)+'</div><div>'+ring(TOTAL,'亮點完成度',stage(TOTAL))+'<div style="margin-top:10px">'+DIM.map(function(d){return '<div class="dimrow"><b>'+d[0]+'</b><div class="track"><i class="'+(d[1]<=45?'low':'')+'" style="--w:'+d[1]+'%"></i></div><b>'+d[1]+'</b></div><div class="dimnote"><span class="tag '+(d[2]==='確認'?'c':'i')+'">'+d[2]+'</span>'+d[3]+'</div>';}).join('')+'</div></div></div>'+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card focus"><b>卡點：被記得（41）</b><br>各地方的自我介紹還沒統一，接觸過的人想轉述時，手上可能還少一句固定的話。</div><div class="card white"><b>強項：品牌亮點（68）</b><br>有一段同行講不了的堅持，只是目前主要在 Sales KIT 與作品集。</div></div>'));
+ h+=sec('s4-voice','說法對照：13 個地方的第一句話','陌生人在每個接觸點第一眼讀到什麼，以及換成同行還成不成立。',
+  rv(tpList(VOICES))+rv('<button class="cta ghost" id="swapBtn" type="button" style="margin:10px 0 0">換人測試：把「禾穗」換成同行 →</button><div class="swapbox" id="swapBox" aria-live="polite">「<mark>禾穗</mark>：用心手作，每一口都是幸福」</div>')+
+  rv('<div style="margin-top:12px"><b>說法重疊度</b><span class="note">（同行也能這樣說的程度）</span><div class="meter"><i style="--w:78%"></i></div><p class="note" style="margin-top:6px">13 個地方有 13 種說法；其中「用心手作」「質感」「首選」換成同行也成立。最清楚的兩句——「為企業挑一份不太甜的禮」「每一款都標示烘焙日」——只在 Sales KIT 與作品集。</p></div>'));
+ h+=sec('s4-files','檔案逐份分析','你想讓別人怎麼看你：名片正反、GAINS 表、5 分鐘簡報、Sales KIT、作品集。檔案＝「想讓別人怎麼看你」；網址來源＝「別人在外面看到的你」，兩邊的落差，就是亮點被蓋住的地方。',
+  FIL.map(function(f){return rv('<details class="srccard" open><summary><span class="nm">'+f[0]+'</span><span class="one">'+f[1]+'</span><span class="sc">'+f[4]+'</span></summary><ul>'+f[2].map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><div class="cv"><b>料被什麼蓋住：</b>'+f[3]+'</div></details>');}).join(''));
+ h+=sec('s4-src','來源逐個分析（含第一眼視覺）','每個外面看得到你的地方：第一句、看到什麼、被什麼蓋住，以及看截圖的第一眼觀察（可信度、套版感、像不像同一個人、有沒有壞掉的區塊）。',
+  SRCCARDS.map(function(s,i){return rv('<details class="srccard"'+(i<2?' open':'')+'><summary><span class="nm">'+s[0]+'</span>'+(s[1]==='讀到'?'<span class="tag c">讀到</span>':'<span class="tag i">部分</span>')+'<span class="one">'+s[2]+'</span><span class="sc">'+s[6]+'</span></summary><ul>'+s[3].map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul><div class="cv"><b>料被什麼蓋住：</b>'+s[4]+'</div><div class="vis"><b>看截圖的第一眼：</b>'+s[5]+'</div></details>');}).join(''));
+ h+=sec('s4-ads','廣告呈現的差異化','我們翻了 Meta 廣告檔案庫：投了幾則、主打什麼、樣貌如何、廣告的亮點有沒有在落地頁接上。',
+  rv('<div class="card white"><b>廣告狀態：<span class="pl ok">'+ADS.status+'</span></b>　刊登中 '+ADS.running+' 則、已停止 '+ADS.stopped+' 則；刊登最久 '+ADS.longest+' 天（通常代表那是有效的素材）。<div class="fmt">'+ADS.fmts.map(function(f){return '<span>'+f[0]+' <b>'+f[1]+'</b></span>';}).join('')+'</div><div class="note" style="margin-top:6px">主題：'+ADS.topics.join('、')+'　｜　優惠：'+ADS.offers.join('、')+'</div></div>')+
+  '<div class="adgrid" style="margin-top:12px">'+ADS.list.map(function(a){return rv(adCard(a));}).join('')+'</div><p class="note">素材縮圖為示意色塊；真實報告用廣告截圖。只描述你現有的亮點，不寫我們建議的亮點。</p>');
+ h+=sec('s4-links','落地頁與導外連結的差異化診斷','從官網、IG、名片 QR、TikTok、YouTube 導出去的每一條連結：點過去之後，第一屏有沒有接住亮點、下一步清不清楚、連結本身健康嗎。',
+  rv(LINKS.map(function(l){var m={yes:'yes',partial:'partial',no:'no',none:'none'}[l[4]];return '<div class="flow"><span class="src">'+l[0]+'</span><span class="ar">→</span><span class="dst"><b>'+l[2]+'</b><span class="note">'+l[3]+'</span></span><span><span class="match '+m+'" style="display:block;margin:0;text-align:center;padding:2px 8px">'+MATCH[l[4]]+'</span><span class="note">'+l[5]+'</span></span></div>';}).join(''))+'<p class="note">連結檢查是我們直接讀到的事實；承接判斷是觀察，不是對你的評價。</p>');
+ h+=sec('s4-peer','與同行的差異','把你和同場景、客人會一起比較的 4 家擺在一起：星等、評論數、主打說法、價位，以及差異在哪、說法有沒有重疊。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>品牌</th><th class="c">Google 星等</th><th class="c">評論數</th><th>來源</th><th>主打</th><th>價位</th><th>跟禾穗擺一起，差異在哪</th></tr></thead><tbody><tr style="background:var(--fb-focus)"><td><b>禾穗（你）</b></td><td class="c">4.7</td><td class="c">212</td><td>—</td><td>手作堅果塔、送禮與企業禮盒</td><td>中價</td><td>—</td></tr>'+PEERS.map(function(p){return '<tr><td><b>'+p[0]+'</b></td><td class="c">'+p[1]+'</td><td class="c">'+p[2]+'</td><td>'+p[3]+'</td><td>'+p[4]+'</td><td>'+p[5]+'</td><td>'+p[6]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+  rv('<div class="bars2" style="margin-top:12px"><div class="card white"><b>Google 星等</b>'+hb('禾穗',94,false,'4.7')+PEERS.map(function(p){return hb(p[0],parseFloat(p[1])/5*100,true,p[1]);}).join('')+'</div><div class="card white"><b>評論數</b>'+hb('禾穗',212/1530*100,false,'212')+PEERS.map(function(p){return hb(p[0],parseInt(p[2].replace(',',''))/1530*100,true,p[2]);}).join('')+'</div></div>')+
+  rv('<div class="vs" style="margin-top:12px"><div class="col win"><h4>你有，對手沒有</h4><span class="note">可能是真亮點</span><ul><li>一手的製作畫面與募資紀錄</li><li>每款標示烘焙日（部分商品）</li></ul></div><div class="col"><h4>大家都有</h4><span class="note">只是門檻</span><ul><li>手作、用心、新鮮</li><li>送禮盒包裝</li><li>LINE 訂購</li></ul></div><div class="col"><h4>對手有，你沒有</h4><span class="note">可能被超越的地方</span><ul><li>規格文字化、保存說明</li><li>低糖選項（同行 B）</li><li>企業案例頁（同行 D）</li></ul></div></div>')+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>你的優勢</b><ul style="margin:6px 0 0;padding-left:20px">'+PSTR.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div><div class="card white"><b>要留意的地方</b><ul style="margin:6px 0 0;padding-left:20px">'+PCAU.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div></div><p class="note" style="margin-top:8px"><span class="tag i">推測</span>對手 A、C、D 由我們在 Google 地圖搜尋找到，B 是你提供；若判斷不對，請告訴我們。</p>'));
+ h+=sec('s4-prod','商品與商品化：哪些有、哪些不足、哪些還 OK','「商品化」＝每個商品系列有沒有被整理成「客人能一句話講清楚、敢下單」的產品：來歷、適合誰、價格理由、可轉述的一句話、證據。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>商品／系列</th><th>價位</th><th class="c">商品化</th><th>看到什麼</th><th>缺什麼</th></tr></thead><tbody>'+PRODS.map(function(p){var lab={ok:'還 OK',part:'部分',miss:'不足'}[p[2]];return '<tr><td><b>'+p[0]+'</b></td><td>'+p[1]+'</td><td class="c"><span class="pl '+p[2]+'">'+lab+'</span></td><td>'+p[3]+'</td><td>'+p[4]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>價格帶</b><div class="note" style="font-size:14.5px">全站 38 款，NT$180–2,980，中位數 680；以 NT$500–1,300 的日常禮盒為主，企業禮盒拉高。</div></div><div class="card white"><b>主要品類</b><div class="note" style="font-size:14.5px">單顆口味、6 入禮盒、12 入禮盒、企業禮盒、低糖系列、保存品。主力：綜合堅果塔 6 入。</div></div></div><div class="card white" style="margin-top:12px"><b>我們的觀察</b><ul style="margin:6px 0 0;padding-left:20px">'+PINS.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>'));
+ h+=sec('s4-voc','客人的語言 vs 品牌的語言','Google 評論抽讀 60 則：客人最常提的特色，品牌自己的文案有沒有用到。',
+  rv('<div class="card white"><div class="legendrow"><span><i class="sw" style="background:#D6336C"></i>客人最常提（則）</span><span><i class="sw" style="background:#C9B7C2"></i>品牌文案出現（處）</span></div>'+VOC.map(function(v){return hb(v[0],v[1]*10,false,v[1]+' 則')+hb('　品牌文案',v[2]*10,true,v[2]+' 處');}).join('')+'</div><p class="note" style="margin-top:6px"><span class="tag i">推測</span>客人描述的特色，品牌自己的文案多半沒有用；「用心手作」是品牌最常用、客人幾乎沒提的說法。</p>'));
+ h+=sec('s4-org','104 與組織線索','公司規模、徵才職缺透露出的方向。職缺是公開資料，我們只做推論，標「推測」。',
+  rv('<div class="grid2"><div class="card white"><b>公司與規模</b>'+ORG.size.map(function(r){return '<div class="note" style="font-size:14.5px"><b>'+r[0]+'：</b>'+r[1]+'</div>';}).join('')+'</div><div class="card white"><b>正在徵才（104）</b>'+ORG.jobs.map(function(j){return '<div style="margin-top:6px"><b>'+j[0]+'</b>　'+j[2].map(function(t){return '<span class="tag u">'+t+'</span>';}).join('')+'</div>';}).join('')+'</div></div><div class="card white" style="margin-top:10px"><b>我們的推論</b><ul style="margin:6px 0 0;padding-left:20px">'+ORG.ins.map(function(x){return '<li><span class="tag i">推測</span>'+x+'</li>';}).join('')+'</ul></div>'));
+ h+=sec('s4-cand','候選亮點與品質','從你自己的資料裡找到的亮點：類型、用在哪、品質如何。診斷只點出現況，不替你定答案。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>類型＼用在哪</th>'+PLACES.map(function(p){return '<th class="c">'+p+'</th>';}).join('')+'</tr></thead><tbody>'+TYPES.map(function(ty,i){return '<tr><td>'+ty+'</td>'+PLACES.map(function(p,j){var hit=CAND.map(function(c,k){return (c.ty===i&&c.pl.indexOf(j)>-1)?(k+1):0;}).filter(Boolean);return '<td class="c">'+hit.map(cur).join('')+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div>')+
+  CAND.map(function(c,k){return rv('<div class="srccard" style="margin:10px 0"><h4>'+cur(k+1)+c.t+'</h4><div class="note">類型：'+TYPES[c.ty]+'｜用在：'+c.pl.map(function(p){return PLACES[p]}).join('、')+'｜依據：'+c.ev+'</div><div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:8px 0">'+c.q.map(function(v,i){return '<div style="text-align:center;font-size:13px;color:var(--fb-muted)"><div style="height:8px;border-radius:99px;background:var(--fb-card);border:1px solid var(--fb-line);overflow:hidden;margin-bottom:3px"><i style="display:block;height:100%;width:'+(v*20)+'%;background:var(--fb-grad)"></i></div>'+QN[i]+' '+v+'／5</div>';}).join('')+'</div><div style="display:flex;gap:8px;flex-wrap:wrap;font-size:14px">'+['有畫面','想轉述','只有你能說'].map(function(n,i){var v=c.th[i];return '<span class="pl '+(v===1?'miss':v===.5?'part':'na')+'">'+n+'</span>';}).join('')+'</div></div>');}).join('')+'<p class="note">三條件：粉紅實心＝符合；粉紅淡底＝部分符合；虛線＝目前看不出來。</p>');
+ h+=sec('s4-find','發現三件事、先修與服務對應','見面前先記起來的三件事；以及服務怎麼對應（主推 1 項、次推 1 項，其餘收起）。',
+  rv('<div class="fd"><h4>1. 同一家店，13 種第一句話</h4><div>名片、官網、IG、TikTok、YouTube、嘖嘖、蝦皮、廣告、Sales KIT、簡報、作品集…每個地方的說法都有道理，但放在一起還沒統一，想轉述的人可能不知道挑哪一句。</div><div class="ev">依據：13 個接觸點第一句話逐字比對</div></div><div class="fd"><h4>2. 最有記憶點的影片廣告，導去已結案的募資頁</h4><div>「現做」的畫面很有記憶點，但點進去的是已結案的頁面，下一步走不通。</div><div class="ev">依據：廣告 4 落地頁；YouTube 說明欄連結</div></div><div class="fd"><h4>3. 客人自己講的好話，還沒回到品牌的說法裡</h4><div>「不會太甜」是客人最常提的特色，卻不在商品標題與廣告裡；料其實有，只是還放在客人那邊。</div><div class="ev">依據：Google 評論抽讀 60 則＋官網與廣告逐字比對（推論）</div></div>')+
+  rv('<div class="chips" style="margin-top:12px"><div class="chip main"><b>主推：差異化優化</b>先統一說法與補承接，從廣告素材與官網兩個環節開始。</div><div class="chip"><b>次推：商會引薦力打造</b>你是 BNI 會員，GAINS 與簡報齊全，可把差異說法變成引薦說法。</div></div><details class="fold" style="margin-top:10px"><summary>其他可能適合的（點開看）</summary><p><b>精準廣告投放</b>：等說法統一、追蹤補齊後再談；評估前先問：每月預算、現在誰在投、想用哪些渠道。</p></details>')+
+  rv('<div class="card white" style="margin-top:10px"><b>這次最該優先優化的環節</b><table class="t" style="margin-top:6px"><tbody><tr><td>廣告素材</td><td><span class="pl miss">需要</span></td><td>4 則廣告只有 1 則承接完整</td></tr><tr><td>網站</td><td><span class="pl miss">需要</span></td><td>烘焙日標示藏在第三屏、作品集沒上官網</td></tr><tr><td>簡報／名片</td><td><span class="pl part">可併入</span></td><td>名片三個詞都是品類</td></tr><tr><td>活動</td><td><span class="pl na">待談</span></td><td>這次沒看到活動素材</td></tr></tbody></table></div>')+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>見面前可以先準備</b><ul style="margin:6px 0 0;padding-left:20px"><li>想一想最常被客人稱讚的是哪一件事</li><li>三位常客的話（可去識別）</li><li>廣告成效數字、LINE 歡迎訊息截圖</li></ul></div><div class="card white"><b>想一想</b><ul style="margin:6px 0 0;padding-left:20px"><li>第一次路過的人，你希望他記住哪一句話？</li><li>企業禮盒與個人送禮，你想先主打哪一個？</li></ul></div></div>'));
+ h+=sec('s4-evid','依據、限制與處理紀錄','每個結論的依據與信心。',rv(evid()));
+ h+=rv('<p style="margin-top:18px"><b>14 天內升級差異化優化，診斷費全額抵扣（建議，待你定）。</b></p>'+cta('想知道怎麼優化 → 來 LINE 聊聊'));
+ return h;}
+
+/* ============ ⑤ 差異化優化 ============ */
+function P5(){var h='<nav class="sub" aria-label="目錄"><div id="sub5"></div></nav>';
+ h+=sec('s5-unify','說法統一：13 個地方收斂成少數幾句','各接觸點現在的第一句話，與統一方向（示意）。',
+  rv('<span class="ribbon d">差異化・優化</span><h2 style="font-size:clamp(20px,2.8vw,28px)">你不一定要更會說故事，先讓別人說得清楚你。</h2>')+
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>接觸點</th><th>現在</th><th>統一方向（示意）</th></tr></thead><tbody><tr><td>官網首頁</td><td>用心手作，每一口都是幸福</td><td>以「標示烘焙日、不太甜的送禮堅果塔」為主軸</td></tr><tr><td>IG／FB／TikTok／YouTube 簡介</td><td>各不相同</td><td>同一句主軸，加平台語氣</td></tr><tr><td>Google 商家／蝦皮／momo</td><td>甜點店／手作堅果塔 送禮自用</td><td>類別與標題改成同一主軸</td></tr><tr><td>名片正反面</td><td>禾穗手作・堅果塔／用心做的每一口</td><td>正面放品名＋主軸，反面放 QR</td></tr><tr><td>5 分鐘簡報</td><td>第 7 頁才出現烘焙日</td><td>主軸提前到第 2 頁</td></tr><tr><td>Sales KIT／作品集</td><td>說法最清楚</td><td>把它的說法同步到官網</td></tr></tbody></table></div>'));
+ h+=sec('s5-lines','一句話，換人測試（示意）','診斷只指出「同行也能說」；這裡給候選句，並逐一測試。',
+  rv([['用心手作，每一口都是幸福','換成同行也成立（原本）','miss'],['每款標示產地與烘焙日，不用猜新不新鮮','同行不一定講得出來','ok'],['不太甜的送禮堅果塔，6 入就能出手','指向特定情境','ok'],['冷凍也能保存 3 週的手作堅果塔','可再與實際保存測試核對','part'],['每天現做的堅果塔','目前沒有佐證，先不放大','na']].map(function(c){return '<div class="srccard" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0"><b style="font-size:17px">「'+c[0]+'」</b><span class="pl '+c[2]+'">'+c[1]+'</span></div>';}).join('')+'<p class="note">候選句皆為虛構示意；實際會依你的資料與可驗證的事實挑選，不寫無法證實的說法。</p>'));
+ h+=sec('s5-ads','廣告與落地頁重接','每則廣告現在的承接狀態，以及建議的接法（只講結構，不替你寫文案）。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>廣告</th><th>現在</th><th>建議的接法</th></tr></thead><tbody><tr><td>秋季堅果塔（圖片）</td><td>'+MATCH.none+'</td><td>換成帶主軸的素材；落地頁第一屏放同一句，再放商品</td></tr><tr><td>每款標示烘焙日（輪播，41 天）</td><td>'+MATCH.yes+'</td><td>頁面加「商品連結」，成為主力素材；別動它的說法</td></tr><tr><td>試吃券（名單型）</td><td>'+MATCH.partial+'</td><td>表單提前到第一屏；第一屏補「領了能得到什麼」</td></tr><tr><td>現做影片</td><td>'+MATCH.partial+'</td><td>導到可下單的商品頁，不要導到已結案的募資頁</td></tr></tbody></table></div>'));
+ h+=sec('s5-links','導外連結修正','每一條導外連結要修什麼。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>連結</th><th>問題</th><th>修法</th></tr></thead><tbody><tr><td>官網「促銷活動」按鈕</td><td>404</td><td>改到現行活動頁或移除</td></tr><tr><td>官網首頁輪播按鈕（href="#"）</td><td>按下去沒去任何地方</td><td>確認是否動態換掉；沒有就補真實連結</td></tr><tr><td>TikTok 簡介 → 蝦皮</td><td>落地是商品列表，沒承接「現做」</td><td>導到官網專頁，放「現做」說明＋商品</td></tr><tr><td>YouTube 說明欄 → 嘖嘖（已結案）</td><td>下一步斷了</td><td>改導到可下單的商品頁</td></tr><tr><td>IG 簡介連結 → 官網首頁</td><td>首頁第一屏沒承接 IG 說法</td><td>首頁第一屏放同一句主軸</td></tr></tbody></table></div>'));
+ h+=sec('s5-prod','商品化補法','每個商品系列補哪五件事：來歷、適合誰、價格理由、一句可轉述的話、證據（示意）。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>系列</th><th class="c">來歷</th><th class="c">適合誰</th><th class="c">價格理由</th><th class="c">可轉述的話</th><th class="c">證據</th><th>優先順序</th></tr></thead><tbody>'+[['綜合堅果塔 6 入','ok','part','part','ok','ok','維持；補「適合／不適合」'],['單顆口味','ok','part','na','part','part','補搭配建議'],['12 入禮盒','part','ok','part','miss','part','第二優先：補可轉述的一句話'],['企業禮盒','miss','part','miss','miss','miss','第一優先：官網補企業案例與採購說明'],['低糖系列','miss','miss','miss','miss','miss','等基本盤補齊後上架商品頁'],['冷凍保存與回購','miss','miss','miss','miss','miss','先寫進常見問題，再決定要不要做成商品']].map(function(r){return '<tr><td><b>'+r[0]+'</b></td>'+r.slice(1,6).map(function(s){return '<td class="c"><span class="pl '+s+'">'+({ok:'有',part:'部分',miss:'缺',na:'—'}[s])+'</span></td>';}).join('')+'<td>'+r[6]+'</td></tr>';}).join('')+'</tbody></table></div>'));
+ h+=sec('s5-peer','與同行拉開差異的動作','對手有你沒有、大家都有、你有對手沒有，各該怎麼做。',
+  rv('<div class="vs"><div class="col win"><h4>你有，對手沒有 → 放大</h4><ul><li>把烘焙日標示擴到全部 38 款</li><li>把製作畫面放回官網首屏</li></ul></div><div class="col"><h4>大家都有 → 不當主打</h4><ul><li>「手作、用心、新鮮」降成背景資訊</li><li>不要再拿它當第一句話</li></ul></div><div class="col"><h4>對手有，你沒有 → 補或放棄</h4><ul><li>規格與保存說明：補（基本盤已列）</li><li>低糖：評估要不要做</li><li>企業案例頁：補</li></ul></div></div>'));
+ h+=sec('s5-voc','把客人的話放回品牌的說法','客人最常提的特色，可以用在哪些地方（只指出位置，不替你寫文案）。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>客人說的</th><th>可以用在哪</th></tr></thead><tbody><tr><td>不會太甜（7 則）</td><td>商品標題、廣告第一句、Google 商家介紹</td></tr><tr><td>送禮有面子（5 則）</td><td>12 入與企業禮盒商品頁、Sales KIT 與官網企業頁</td></tr><tr><td>烘焙日期很清楚（4 則）</td><td>官網首屏、名片、蝦皮與 momo 標題</td></tr><tr><td>包裝好看（4 則）</td><td>IG 精選、TikTok 開箱影片</td></tr></tbody></table></div><p class="note">使用客人的原話前，需取得同意並去識別。</p>'));
+ h+=sec('s5-cand','候選亮點怎麼補強','四個候選亮點，各自差在哪、先補什麼。',
+  rv([['每款標示產地與烘焙日','先擴到全部 38 款，並拍一張實際烘焙日照片當佐證。'],['不太甜、6 入的送禮尺寸','與同行說法相近；加上「甜度」的具體描述與送禮情境，區隔得更清楚。'],['每日現做，賣完為止','先補佐證（製作紀錄、庫存告罄貼文）再放大；沒有佐證前，不放在首屏。'],['可冷凍保存 3 週','先實測並留下紀錄，再寫進商品頁與常見問題。']].map(function(c,i){return '<div class="srccard"><h4>'+cur(i+1)+c[0]+'</h4>'+c[1]+'</div>';}).join('')));
+ h+=sec('s5-plan','30 天行動規劃與驗證路徑','每週做什麼、誰做、成本、怎麼算有效；以及驗證的順序（示意）。',
+  rv(wk([['第 1 週','統一官網、IG、Google 商家的第一句話','誰：你　成本：低　有效：三處同一句'],['第 2 週','修導外連結；廣告 2 加商品連結','誰：你或同仁　成本：低　有效：承接 4 則中 3 則以上'],['第 3 週','官網補企業案例與採購說明','誰：你　成本：工時　有效：企業禮盒頁有案例與詢價流程'],['第 4 週','客人的話放回標題與廣告；小額測試新素材','誰：你或同仁　成本：小額　有效：新舊素材點擊與詢問比較']]))+
+  rv('<div class="card white" style="margin-top:12px"><b>驗證路徑</b>：改說法（1–2 週有感）→ 問老客戶與口碑測試 → 小額素材測試 → 再放大。<span class="note">不保證成效；時程是誠實的估計。</span></div>')+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>待補證據清單</b><ul style="margin:6px 0 0;padding-left:20px"><li>「每日現做」的佐證（製作紀錄、照片）</li><li>具體見證 3 則（取得同意）</li><li>冷凍保存的實測紀錄</li></ul></div><div class="card white"><b>矛盾與風險</b><ul style="margin:6px 0 0;padding-left:20px"><li>廣告講「質感」、頁面講「幸福」，說法不一致</li><li>「現做」「手作」無法佐證前，不建議放大</li><li>已結案的募資頁仍被導流</li></ul></div></div>')+
+  '<div class="big-quote"><span>先把差異說清楚，<br>再決定錢要花在哪。</span></div>'+cta('想要這份優化 → 來 LINE 聊聊'));
+ return h;}
+
+/* ============ v5：商品全覽、廣告示意（框起來的素材差異）、線框圖、同行廣告 ============ */
+var CAT=[
+ ['單顆口味','口味形容詞為主，缺「為什麼是這個口味」','補成分、甜度、過敏原文字；每款加搭配建議',[['原味核桃塔',180,'經典，堅果香','part','成分只在圖片'],['蜂蜜杏仁塔',190,'蜂蜜與杏仁的小確幸','part','成分只在圖片'],['抹茶腰果塔',200,'抹茶控必試','part','沒寫甜度'],['焦糖胡桃塔',200,'焦糖微苦、胡桃酥脆','part','沒寫甜度'],['海鹽夏威夷果塔',220,'鹹甜交錯','part','成分只在圖片'],['黑糖南瓜子塔',190,'黑糖香、南瓜子脆','part','沒寫過敏原']]],
+ ['6 入禮盒','主力系列。烘焙日限定款最有差異，但說法與經典款幾乎相同','把烘焙日標示放到所有 6 入款；季節款各補一句可轉述的話',[['經典綜合 6 入',680,'用心手作，送禮首選','ok','補「適合／不適合」'],['抹茶綜合 6 入',720,'抹茶控的綜合禮盒','part','缺烘焙日'],['蜂蜜綜合 6 入',700,'蜂蜜香氣綜合','part','缺烘焙日'],['烘焙日限定 6 入',760,'每盒標示烘焙日','ok','可成為主打款'],['中秋限定 6 入',780,'中秋送禮','part','季節款，缺可轉述的話'],['聖誕限定 6 入',780,'聖誕送禮','part','季節款，缺可轉述的話'],['母親節限定 6 入',780,'母親節心意','part','季節款，缺可轉述的話'],['畢業季 6 入',680,'畢業季小禮','part','說法與其他款相同']]],
+ ['12 入禮盒','大盒版沿用 6 入說法，沒有分享情境','補「幾人分享」情境、包裝與保存的文字說明',[['經典綜合 12 入',1280,'分享、送禮兩相宜','part','缺可轉述的話'],['抹茶綜合 12 入',1360,'抹茶系列大盒','part','缺烘焙日'],['蜂蜜綜合 12 入',1320,'蜂蜜系列大盒','part','缺烘焙日'],['烘焙日限定 12 入',1420,'每盒標示烘焙日','part','包裝與保存說明在圖片裡'],['中秋 12 入',1480,'中秋大禮盒','part','季節款'],['過年 12 入',1480,'新年送禮','part','季節款'],['婚禮喜餅款 12 入',1680,'喜慶用','miss','沒有喜餅用的說明與客製'],['滿月款 12 入',1580,'滿月分享','miss','沒有說明與客製']]],
+ ['企業禮盒','官網最弱的系列之一：沒有企業案例與採購說明','建立企業專頁：案例、採購流程、發票與客製說明、詢價表單',[['會議茶點盒（10 盒起）',980,'會議小點心','miss','沒有企業案例與採購說明'],['企業禮盒 6 入（10 盒起）',1680,'企業送禮','miss','只有 Sales KIT 有提案'],['企業禮盒 12 入（10 盒起）',1980,'企業大禮','miss','報價只在 LINE 詢問'],['年節企業禮盒',2480,'年節送客戶','miss','沒有發票、客製、運送說明'],['客製標籤禮盒（30 盒起）',2780,'可客製標籤','miss','沒有客製流程'],['員工福利大禮盒（30 盒起）',2980,'員工福利','miss','沒有案例']]],
+ ['低糖系列（新品）','每頁只有一張圖與一句話','補糖度數字、與一般款的差異、適合誰',[['低糖原味塔',250,'低糖原味','miss','頁面只有一張圖與一句話'],['低糖抹茶塔',260,'低糖抹茶','miss','沒有糖度數字'],['低糖蜂蜜塔',260,'低糖蜂蜜','miss','沒有糖度數字'],['低糖試吃組（6 款各 1）',520,'低糖入門','miss','沒有適合誰'],['低糖綜合 6 入',780,'低糖送禮','miss','沒有與一般款的差異'],['低糖綜合 12 入',1480,'低糖大盒','miss','沒有保存說明']]],
+ ['保存與配件','客人最常問保存，卻沒被整理成商品說明','把冷凍保存寫成可買的組合＋常見問題，並附實測紀錄',[['保冷袋',180,'保冷用','part','沒寫可保冷多久'],['冷凍保存組',1260,'冷凍 3 週保存','part','沒有實測紀錄'],['保鮮盒',220,'保鮮用','part','沒有尺寸'],['手提袋組',190,'送禮手提袋','ok','資訊足夠']]]
+];
+var ALLP=[];CAT.forEach(function(c){c[3].forEach(function(p){ALLP.push(p);});});
+var PSTAT=(function(){var v=ALLP.map(function(p){return p[1]}).sort(function(a,b){return a-b});var n=v.length,m=n%2?v[(n-1)/2]:Math.round((v[n/2-1]+v[n/2])/2);
+ var bands=[['低於 250',0,249],['250–699',250,699],['700–1,299',700,1299],['1,300–1,999',1300,1999],['2,000 以上',2000,99999]].map(function(b){return [b[0],v.filter(function(x){return x>=b[1]&&x<=b[2]}).length];});
+ return {n:n,min:v[0],max:v[n-1],median:m,bands:bands,ok:ALLP.filter(function(p){return p[3]==='ok'}).length,part:ALLP.filter(function(p){return p[3]==='part'}).length,miss:ALLP.filter(function(p){return p[3]==='miss'}).length};})();
+var CHPROD=[['官網',38,'「禾穗手作 ○○塔」','基準價','主體；缺規格文字','c'],['蝦皮',22,'「手作堅果塔 送禮自用 ○○」','7 款比官網低 20–100 元','標題沿用平台慣用語；建議帶主軸與烘焙日，價格與官網對齊','c'],['momo',12,'「禾穗 堅果塔 禮盒」','3 款比官網高 40 元','標題沒有差異；建議對齊官網主軸','c'],['Pinkoi',0,'—','—','沒找到店鋪（待確認）','u']];
+var SAMP=[['經典綜合 6 入',680,['#e9d8c4','#c9a98a']],['烘焙日限定 6 入',760,['#d9c9e0','#b99ab8']],['抹茶綜合 6 入',720,['#d7e4d0','#9fbd91']],['經典綜合 12 入',1280,['#f0e0c8','#d8b48a']],['年節企業禮盒',2480,['#d6dbe8','#8c9bbd']],['低糖原味塔',250,['#e5efe0','#b5cfa8']],['冷凍保存組',1260,['#dbe7ef','#9fbcd1']],['手提袋組',190,['#f2dfe6','#d9a3b8']]];
+
+var ADS2=[
+ {t:'秋季堅果塔｜質感堅果塔，送禮首選',f:'圖片',days:22,pf:'Instagram',cta:'立即購買',text:'秋日新品上架 質感堅果塔，送禮首選。全館滿 1,500 免運。',headline:'秋季堅果塔｜質感堅果塔',link:'HESUI-TART.EXAMPLE.TW',land:'/collections/gift（商品列表）',art:['#e9d8c4','#c9a98a'],cap:'禮盒單品圖',
+  fr:[['warn','「質感」「首選」是同業也常用的說法，沒帶出禾穗獨有的特點'],['warn','只有單品圖，沒有製作過程或烘焙日標示；與同行素材相似'],['ok','連到商品列表，品名清楚'],['ok','「立即購買」與頁面按鈕一致']],
+  m:['none','「質感」「首選」（通用說法）','商品列表，第一屏沒有介紹文字','兩邊都還沒放上亮點，這則最有空間。'],
+  lp:[['品牌列＋導覽','ok'],['第一屏就是商品格（沒有主軸那一句）','weak',44],['__fold'],['滿額免運橫幅','ok'],['缺：承接廣告說法的一句主軸','gap']],
+  after:[['品牌列＋導覽','ok'],['第一屏：同一句主軸＋主視覺（與廣告素材一致）','add',48],['__fold'],['商品格（保留）','ok'],['＋烘焙日標示說明條','add']],
+  sug:['素材：把「烘焙日標示」放進畫面，不只放單品圖','主文：第一句放主軸，不用「質感」「首選」','按鈕文字與落地頁第一屏一致']},
+ {t:'每款標示烘焙日，不用猜新不新鮮',f:'輪播',days:41,pf:'Facebook、Instagram',cta:'了解更多',text:'每款標示產地與烘焙日，不用猜新不新鮮。',headline:'每款標示烘焙日',link:'HESUI-TART.EXAMPLE.TW',land:'/pages/fresh（品牌說明）',art:['#d9c9e0','#b99ab8'],cap:'烘焙日標示 輪播 1/5',
+  fr:[['ok','說法具體：標示烘焙日，是同行少講的'],['ok','輪播第 1 張就是烘焙日標示，清楚'],['ok','連到說明頁，說法一致'],['warn','「了解更多」，但頁面沒有商品連結，下一步斷了']],
+  m:['yes','標示烘焙日的堅持','「新鮮」頁第一屏：烘焙日標示說明','接得很好；只差最後一步連到商品。'],
+  lp:[['品牌列','ok'],['第一屏：烘焙日標示說明＋製作照','ok',44],['__fold'],['品牌理念長文','weak'],['缺：商品連結／加入購物車','gap']],
+  after:[['品牌列','ok'],['第一屏：烘焙日標示說明＋製作照（保留）','ok',44],['__fold'],['＋商品連結區（6 入／12 入）','add'],['品牌理念（保留）','ok']],
+  sug:['這則是主力素材，說法別動','只補「商品連結」，讓被打動的人下一步走得通','可複製成 2 個版本（6 入、企業禮盒）做測試']},
+ {t:'免費領｜禮盒試吃券',f:'名單型',days:14,pf:'Facebook、Instagram',cta:'索取',text:'想送禮又怕太甜？免費領禮盒試吃券，先吃再決定。',headline:'免費領｜禮盒試吃券',link:'LP.HESUI-TART.EXAMPLE.TW',land:'lp…/tasting（名單頁）',art:['#f2dfe6','#d9a3b8'],cap:'試吃券',
+  fr:[['ok','有切入客人的疑慮（怕太甜）'],['warn','素材是券的示意，沒有帶出「不太甜」'],['ok','標題與廣告一致'],['ok','「索取」清楚']],
+  m:['partial','試吃券與送禮情境','標題「禮盒試吃券」，品牌介紹在第二屏','主題接上；「為什麼值得試」這份心意可以多說一句。'],
+  lp:[['品牌列','ok'],['第一屏：標題「禮盒試吃券」＋大圖','ok',44],['__fold'],['品牌介紹（第二屏）','weak'],['表單（第 3 屏，含生日欄位）','weak'],['缺：第一屏沒寫「領了能得到什麼」','gap']],
+  after:[['品牌列','ok'],['第一屏：標題＋「領了能得到什麼」一行＋表單（提前）','add',56],['__fold'],['品牌介紹','ok'],['＋「不太甜」的說明','add']],
+  sug:['表單從第 3 屏提前到第一屏','欄位只留必要的（拿掉生日）','素材帶出「不太甜」']},
+ {t:'現做堅果塔 15 秒｜每天早上現烤',f:'影片',days:9,pf:'Instagram、TikTok（Reels）',cta:'立即訂購',text:'每天早上現烤，一盒一盒包好。15 秒看製作過程。',headline:'現做堅果塔 15 秒',link:'ZECZEC.COM/…',land:'zeczec.com/…（已結案的募資頁）',art:['#ead2d9','#c78a9e'],cap:'現做影片 15 秒',
+  fr:[['ok','主文講「現做」，有畫面'],['ok','15 秒製作畫面，是四則裡最有記憶點的'],['warn','連到已結案的募資頁'],['warn','「立即訂購」，但頁面無法下單']],
+  m:['partial','「現做」的畫面','募資頁（已結案）：故事完整，但無法下單','影片有記憶點，但導去已結案的頁面，下一步走不通。'],
+  lp:[['募資頁橫幅：已結案','weak'],['第一屏：故事影片＋標題「手掌大」','ok',44],['__fold'],['缺：購買入口（已結案）','gap']],
+  after:[['品牌列','ok'],['第一屏：現做影片＋商品入口','add',52],['__fold'],['＋可下單的商品列表','add'],['故事（保留）','ok']],
+  sug:['導到可下單的商品頁，不要導到已結案的募資頁','影片第一秒出現主軸一句','補追蹤碼，才知道有沒有效']}];
+var ADS2LAB=['主文','素材畫面','標題與連結','按鈕'];
+var LINKS2=[
+ {src:'官網',dst:'蝦皮（購買按鈕）',url:'shopee.tw/…',st:'partial',health:'正常',note:'賣場第一屏是平台商品列表，說法換成「手作堅果塔 送禮自用」',lp:[['賣場橫幅','ok'],['商品列表（平台版型）','weak',40],['__fold'],['缺：禾穗主軸的說明','gap']],after:[['賣場橫幅','ok'],['賣場簡介：同一句主軸＋烘焙日標示','add',40],['__fold'],['商品標題帶主軸','add'],['商品列表','ok']],fix:'賣場簡介與商品標題對齊官網主軸；價格與官網一致'},
+ {src:'Instagram 簡介連結',dst:'官網首頁',url:'hesui-tart.example.tw',st:'partial',health:'正常',note:'首頁第一屏沒有承接 IG 的「手作堅果塔」說法',lp:[['導覽','ok'],['首屏：用心手作，每一口都是幸福','weak',40],['__fold'],['缺：承接 IG 說法的一句','gap'],['商品精選','ok']],after:[['導覽','ok'],['首屏：同一句主軸（與 IG 簡介一致）','add',40],['__fold'],['商品精選（保留）','ok'],['＋客人的話（不會太甜）','add']],fix:'首頁第一屏放與 IG 簡介一致的主軸；IG 連結改到帶參數的專頁以便追蹤'},
+ {src:'名片 QR',dst:'LINE 官方帳號',url:'lin.ee/…',st:'yes',health:'正常',note:'可加好友；歡迎訊息待確認',lp:[['LINE 官方帳號首頁','ok'],['歡迎訊息：待確認（需截圖）','na']],after:[['LINE 官方帳號首頁','ok'],['歡迎訊息：第一句放主軸，附兩個入口（個人送禮／企業禮盒）','add',44]],fix:'歡迎訊息放主軸與兩個入口；圖文選單加「企業禮盒詢價」'},
+ {src:'TikTok 簡介連結',dst:'蝦皮',url:'shopee.tw/…',st:'no',health:'正常',note:'落地是商品列表，沒有影片提到的「現做」',lp:[['賣場橫幅','ok'],['商品列表','weak',40],['__fold'],['缺：影片提到的「現做」說明','gap']],after:[['官網專頁：現做影片','add',44],['__fold'],['商品入口（6 入／12 入）','add'],['蝦皮連結（次要）','ok']],fix:'改導到官網「現做」專頁，再放商品入口；蝦皮當次要選項'},
+ {src:'YouTube 說明欄',dst:'嘖嘖（已結案）',url:'zeczec.com/…',st:'no',health:'頁面可開，但下一步斷了',note:'故事好，但已結案，沒有購買入口',lp:[['募資頁標題','ok'],['已結案標示','weak',36],['__fold'],['缺：購買入口','gap']],after:[['官網商品頁','add',44],['__fold'],['嘖嘖故事摘要（保留賣點）','ok'],['購買入口','add']],fix:'說明欄改連官網商品頁；嘖嘖當「品牌故事」附連結'},
+ {src:'官網「促銷活動」按鈕',dst:'/pages/old-promo',url:'/pages/old-promo',st:'no',health:'壞連結（404）',note:'打不開',lp:[['404：頁面不存在','gap',44]],after:[['現行活動頁，或移除按鈕','add',44]],fix:'改到現行活動頁或移除；上線前跑一次連結檢查'},
+ {src:'官網首頁輪播按鈕',dst:'#',url:'href="#"',st:'none',health:'href="#"',note:'按下去沒去任何地方（可能由程式動態換掉，需確認）',lp:[['（沒有目的地）','gap',44]],after:[['補真實連結，或確認是否動態換掉','add',44]],fix:'確認是否動態換掉；沒有就補真實連結'}];
+var MATCHL={yes:'✓ 接上了',partial:'△ 部分接上',no:'✕ 還沒接上',none:'— 兩邊都還沒放亮點'};
+var PEERADS=[
+ {n:'同行 A',r:'4.6／812',pos:'手作堅果塔，標示糖度與保存期限',ad:{f:'輪播',days:33,pf:'Instagram',cta:'立即訂購',text:'每款標示糖度與保存期限，送禮放心。',headline:'每款標示糖度',link:'PEER-A.EXAMPLE',art:['#e8d9c9','#c4a07c'],cap:'產品特寫＋糖度標籤',fr:[['ok','主文用「糖度、保存期限」講具體資訊'],['ok','產品特寫＋標籤圖示，一眼看到資訊'],['ok','連到商品頁'],['ok','按鈕一致']]},lp:[['品牌列','ok'],['第一屏：商品圖＋糖度表','ok',44],['__fold'],['成分、保存、適合說明','ok'],['評價（第二屏）','ok']],take:['把「資訊」放在素材上，不只放商品圖','落地頁第一屏就有糖度表','評價放在第二屏']},
+ {n:'同行 B',r:'4.8／95',pos:'日系低糖堅果塔',ad:{f:'圖片',days:17,pf:'Facebook、Instagram',cta:'了解更多',text:'低糖不是無味。三種口味，先試一顆。',headline:'低糖不是無味',link:'PEER-B.EXAMPLE',art:['#dfe9d9','#a9c79a'],cap:'手持一顆＋大字「低糖不是無味」',fr:[['ok','主文直接回應「低糖會不會沒味道」的疑慮'],['ok','真人手持＋大字，辨識度高'],['ok','連到低糖專頁，有常見問題'],['ok','按鈕一致']]},lp:[['品牌列','ok'],['第一屏：低糖專頁標題＋三個常見問題','ok',48],['__fold'],['成分表','ok'],['缺：沒有企業禮盒入口','gap']],take:['用客人的疑慮當主文','常見問題放第一屏']},
+ {n:'同行 C',r:'4.4／1,530',pos:'平價大量、可批發',ad:{f:'圖片',days:12,pf:'Facebook',cta:'立即購買',text:'買 2 送 1，全館限時。',headline:'買 2 送 1',link:'PEER-C.EXAMPLE',art:['#f3c9c9','#e07a7a'],cap:'大字「買 2 送 1」',fr:[['warn','促銷導向，與其他平價品牌相同'],['warn','大字促銷，沒有品牌個性'],['ok','直接連商品列表'],['ok','按鈕一致']]},lp:[['倒數橫幅','ok'],['第一屏：商品格＋價格','ok',44],['__fold'],['缺：沒有品牌故事與資訊','gap']],take:['拼價格與數量，不是禾穗要走的路','不要用同樣的促銷素材']},
+ {n:'同行 D',r:'4.5／260',pos:'企業禮盒專做',ad:{f:'名單型',days:38,pf:'Facebook、Instagram',cta:'索取報價',text:'企業禮盒，24 小時內回覆報價。',headline:'企業禮盒報價',link:'PEER-D.EXAMPLE',art:['#d6dbe8','#8c9bbd'],cap:'辦公室情境＋企業 Logo 牆',fr:[['ok','主文講採購最在意的事：回覆時限'],['ok','辦公室情境＋企業 Logo 牆，建立信任'],['ok','連到企業頁'],['ok','「索取報價」清楚']]},lp:[['品牌列','ok'],['第一屏：企業禮盒標題＋報價表單','ok',48],['__fold'],['案例 Logo 牆與採購流程','ok'],['常見問題（發票、客製、運送）','ok']],take:['案例與流程放在第一屏下方','表單欄位少，並有回覆時限']}];
+var MTX=[['素材主角','禾穗：商品單品圖、烘焙日輪播、試吃券、現做影片','A：產品特寫＋標籤','B：真人手持＋大字','C：大字促銷','D：辦公室情境＋Logo 牆'],
+ ['主文切入','質感、首選、烘焙日、現做','具體資訊（糖度、保存）','客人的疑慮','價格促銷','採購在意的事'],
+ ['格式','圖片、輪播、名單型、影片','輪播','圖片','圖片','名單型'],
+ ['落地頁第一屏','商品列表、說明頁、名單頁、已結案募資頁','商品圖＋糖度表','低糖專頁＋常見問題','商品格＋價格','企業標題＋報價表單'],
+ ['下一步','2 則走得通、2 則斷掉','清楚','清楚','清楚','清楚'],
+ ['刊登最久','41 天','33 天','17 天','12 天','38 天']];
+
+function wire(url,blocks){return '<div class="lp"><div class="bar"><i></i><i></i><i></i><span>'+url+'</span></div>'+blocks.map(function(b){if(b[0]==='__fold')return '<div class="fold"><span>第一屏到這裡</span></div>';return '<div class="blk '+b[1]+'"'+(b[2]?' style="min-height:'+b[2]+'px"':'')+'>'+b[0]+'</div>';}).join('')+'</div>';}
+function adMock(a,brand,av){var f=a.fr;return '<div class="adm"><div class="top"><span class="av">'+av+'</span><span><b>'+brand+'</b><small>贊助・'+a.f+'・已刊登 '+a.days+' 天</small></span></div><div class="fr '+f[0][0]+'" data-n="1">'+a.text+'</div><div class="fr '+f[1][0]+'" data-n="2"><div class="art" style="background:linear-gradient(135deg,'+a.art[0]+','+a.art[1]+')">'+a.cap+'</div></div><div class="foot"><div class="fr '+f[2][0]+' l" data-n="3"><small>'+a.link+'</small><b>'+a.headline+'</b></div><div class="fr '+f[3][0]+'" data-n="4"><span class="btn">'+a.cta+'</span></div></div></div>';}
+function notesOf(a){return '<ul class="notes">'+a.fr.map(function(f,i){return '<li><span class="nb '+f[0]+'">'+(i+1)+'</span><span><b>'+ADS2LAB[i]+'：</b>'+f[1]+'</span></li>';}).join('')+'</ul>';}
+function frameLegend(){return '<p class="note"><span class="pl ok">綠框</span> 這一處說得到位　<span class="pl part">粉紅框</span> 這一處還有空間　<span class="pl miss">虛線</span> 缺少　｜素材縮圖為示意色塊，真實報告用廣告截圖。只描述現有的，不替你寫文案。</p>';}
+function lay(boxes){return '<div class="lay">'+boxes.map(function(b){return '<div class="bx '+b[4]+'" style="left:'+b[0]+'%;top:'+b[1]+'%;width:'+b[2]+'%;height:'+b[3]+'%">'+b[5]+'</div>';}).join('')+'</div>';}
+function prodWire(kind){return kind==='now'?wire('hesui-tart.example.tw/products/…',[['一張大圖（成分與容量在圖裡）','weak',60],['__fold'],['價格＋購買按鈕','ok'],['缺：成分、容量、保存（文字）','gap'],['缺：適合／不適合誰','gap'],['評價（最底部）','weak']]):wire('hesui-tart.example.tw/products/…',[['商品名＋一句可轉述的話','add'],['主圖＋烘焙日標示徽章','add',56],['__fold'],['成分／容量／保存（文字）','add'],['適合／不適合誰','add'],['價格理由與單次成本','add'],['評價與客人的話','add'],['企業採購入口','add']]);}
+function replaceSec(id,html){var el=document.getElementById(id);if(!el)return;var t=document.createElement('div');t.innerHTML=html;el.replaceWith(t.firstChild);}
+function insertAfter(id,html){var el=document.getElementById(id);if(!el)return;var t=document.createElement('div');t.innerHTML=html;el.after(t.firstChild);}
+
+function adsRows(){return ADS2.map(function(a){return rv('<div class="adrow"><div>'+adMock(a,'禾穗手作堅果塔','禾')+'</div><div><b>框起來的素材差異</b>'+notesOf(a)+'<div class="match '+a.m[0]+'" style="margin-top:8px"><b>亮點對應：'+MATCHL[a.m[0]]+'</b><br>廣告：'+a.m[1]+'<br>落地頁第一屏：'+a.m[2]+'<br><span class="note">'+a.m[3]+'</span></div></div><div class="lpw"><p class="lpcap">落地頁線框圖：'+a.land+'</p>'+wire(a.land.split('（')[0],a.lp)+'</div></div>');}).join('');}
+function newAds(){return sec('s4-ads','廣告呈現的差異化','我們翻了 Meta 廣告檔案庫：投了幾則、主打什麼、樣貌如何；每則廣告「框起來」標出素材的差異，右邊是點進去的落地頁線框圖，看得出缺在哪裡。',
+ rv('<div class="card white"><b>廣告狀態：<span class="pl ok">有在投</span></b>　刊登中 4 則、已停止 6 則；刊登最久 41 天（通常代表那是有效的素材）。<div class="fmt" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><span class="pl ok">圖片 1</span><span class="pl ok">輪播 1</span><span class="pl ok">名單型 1</span><span class="pl ok">影片 1</span></div><div class="note" style="margin-top:6px">廣告在講什麼：送禮禮盒、烘焙日標示、試吃券、現做影片　｜　優惠：滿 1,500 免運、試吃券、會員首購 9 折　｜　已停止 6 則多為上一季新品與中秋禮盒</div></div>')+adsRows()+rv(frameLegend()));}
+function newLinks(){return sec('s4-links','落地頁與導外連結的差異化診斷','從官網、IG、名片 QR、TikTok、YouTube 導出去的每一條連結：點過去之後，第一屏有沒有接住亮點、下一步清不清楚、連結本身健康嗎。右邊是目的地的線框圖，標出缺在哪裡。',
+ LINKS2.map(function(l){return rv('<div class="adrow" style="grid-template-columns:minmax(0,1fr) minmax(0,300px)"><div><b>'+l.src+' → '+l.dst+'</b><br><span class="match '+l.st+'" style="display:inline-block;margin:6px 0">'+MATCHL[l.st]+'</span><div class="note" style="font-size:14.5px"><b>連結狀態：</b>'+l.health+'</div><p style="margin:6px 0 0">'+l.note+'</p></div><div class="lpw"><p class="lpcap">目的地線框圖：'+l.url+'</p>'+wire(l.url,l.lp)+'</div></div>');}).join('')+rv('<p class="note"><span class="pl part">粉紅實心</span> 這一塊還有空間　<span class="pl miss">虛線</span> 缺少　｜連結健康檢查是我們直接讀到的事實；承接判斷是觀察，不是對你的評價。</p>'));}
+function newProd(){var cs=CAT.map(function(c){var n=c[3].length,o=c[3].filter(function(p){return p[3]==='ok'}).length,pa=c[3].filter(function(p){return p[3]==='part'}).length,m=n-o-pa,ps=c[3].map(function(p){return p[1]});return '<div class="c"><b>'+n+'</b> 款<div><b style="font-size:16px;color:var(--fb-ink)">'+c[0]+'</b></div><div class="note">NT$'+Math.min.apply(null,ps).toLocaleString()+'–'+Math.max.apply(null,ps).toLocaleString()+'</div><div class="stbar"><i class="ok" style="width:'+o/n*100+'%"></i><i class="part" style="width:'+pa/n*100+'%"></i><i class="miss" style="width:'+m/n*100+'%"></i></div><div class="note" style="font-size:12.5px">還 OK '+o+'｜部分 '+pa+'｜不足 '+m+'</div></div>';}).join('');
+ var tbl=CAT.map(function(c,i){return '<details class="fold"'+(i===1?' open':'')+'><summary>'+c[0]+'（'+c[3].length+' 款）<span class="note">　'+c[1]+'</span></summary><div class="tblwrap"><table class="t"><thead><tr><th>商品</th><th class="c">價格</th><th>現在的說法</th><th class="c">商品化</th><th>缺什麼</th></tr></thead><tbody>'+c[3].map(function(p){return '<tr><td><b>'+p[0]+'</b></td><td class="c">'+p[1].toLocaleString()+'</td><td>'+p[2]+'</td><td class="c"><span class="pl '+p[3]+'">'+({ok:'還 OK',part:'部分',miss:'不足'})[p[3]]+'</span></td><td>'+p[4]+'</td></tr>';}).join('')+'</tbody></table></div></details>';}).join('');
+ var maxb=Math.max.apply(null,PSTAT.bands.map(function(b){return b[1]}));
+ return sec('s4-prod','電商上架的商品全覽：數量、內容、說法、商品化','我們讀了商品目錄與各通路上架：有幾款、價格怎麼分、現在的說法是什麼、哪些商品化到位、哪些還不足。「商品化」＝每個商品有沒有被整理成「客人能一句話講清楚、敢下單」的產品：來歷、適合誰、價格理由、可轉述的一句話、證據。',
+ rv('<div class="card focus"><b>一句話總結：</b>全站 '+PSTAT.n+' 款、中價位；商品化到位只有 <b>'+PSTAT.ok+'</b> 款，部分 <b>'+PSTAT.part+'</b> 款，不足 <b>'+PSTAT.miss+'</b> 款。主力在 6 入與 12 入禮盒，最弱的是企業禮盒與低糖系列。</div>')+
+ rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>價格帶</b>　NT$'+PSTAT.min+'–'+PSTAT.max.toLocaleString()+'，中位數 NT$'+PSTAT.median+PSTAT.bands.map(function(b){return hb(b[0],b[1]/maxb*100,false,b[1]+' 款');}).join('')+'</div><div class="card white"><b>商品給人的感覺</b><div class="note" style="font-size:14.5px;margin-top:4px">以 NT$500–1,500 的日常禮盒為主，少量企業禮盒拉高價位。選品風格統一，說法也很統一，統一到「每一款都像同一款」。</div><b style="display:block;margin-top:8px">現在的促銷</b><div class="note" style="font-size:14.5px">滿 1,500 免運、會員首購 9 折、新品、限量、禮盒</div></div></div>')+
+ '<h3 style="font-size:18px;margin-top:22px">六個系列一覽</h3>'+rv('<div class="catsum">'+cs+'</div>')+
+ '<h3 style="font-size:18px;margin-top:22px">每個系列的說法與建議方向</h3>'+rv('<div class="tblwrap"><table class="t"><thead><tr><th>系列</th><th>現在的說法狀況</th><th>建議方向</th></tr></thead><tbody>'+CAT.map(function(c){return '<tr><td><b>'+c[0]+'</b></td><td>'+c[1]+'</td><td>'+c[2]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+ '<h3 style="font-size:18px;margin-top:22px">全部 38 款（點開看每一款）</h3>'+rv(tbl)+
+ '<h3 style="font-size:18px;margin-top:22px">各通路上架（數量、標題說法、價格）</h3>'+rv('<div class="tblwrap"><table class="t"><thead><tr><th>通路</th><th class="c">上架數</th><th>標題說法</th><th>價格</th><th>建議</th></tr></thead><tbody>'+CHPROD.map(function(c){return '<tr><td><b>'+c[0]+'</b></td><td class="c">'+c[1]+'</td><td>'+c[2]+'</td><td>'+c[3]+'</td><td>'+c[4]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+ '<h3 style="font-size:18px;margin-top:22px">商品樣本</h3>'+rv('<div class="samples">'+SAMP.map(function(s){return '<div><div class="im" style="background:linear-gradient(135deg,'+s[2][0]+','+s[2][1]+')"></div>'+s[0]+'<br><b>NT$'+s[1].toLocaleString()+'</b></div>';}).join('')+'</div><p class="note">縮圖為示意色塊。</p>')+
+ '<h3 style="font-size:18px;margin-top:22px">對你有用的觀察</h3>'+rv('<div class="card white"><ul style="margin:0;padding-left:20px"><li>38 款裡商品化到位只有 '+PSTAT.ok+' 款（經典綜合 6 入、烘焙日限定 6 入、手提袋組）。</li><li>6 入與 12 入禮盒共 16 款，是主力；企業禮盒與低糖系列共 12 款，卻是官網上最弱的兩個系列。</li><li>「不太甜」是客人最常提的特色，卻沒有任何一款商品標題帶到。</li><li>烘焙日限定款與經典款的說法幾乎相同，最有差異的款式沒被突顯。</li><li>冷凍保存是客人反覆問的問題，保存相關商品的說明卻很少。</li><li>蝦皮 22 款、momo 12 款與官網的標題說法各不相同（見上表）。</li></ul></div>'));}
+function peerAdsSec(){return sec('s4-peerads','同行的廣告素材與導外連結長什麼樣','把四家對手在 Meta 廣告檔案庫的廣告，用同一種框法擺出來：素材、主文、按鈕、落地頁線框圖，並與禾穗並排。對手判斷來源見上一段。',
+ PEERADS.map(function(p){return rv('<div class="adrow"><div>'+adMock(p.ad,p.n+'（'+p.pos+'）','同')+'</div><div><b>'+p.n+'｜Google '+p.r+'｜刊登 '+p.ad.days+' 天</b>'+notesOf(p.ad)+'<div class="card white" style="margin-top:8px"><b>他們做對的、或值得看的</b><ul style="margin:4px 0 0;padding-left:20px;font-size:14.5px">'+p.take.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ul></div></div><div class="lpw"><p class="lpcap">'+p.n+' 的落地頁線框圖</p>'+wire('peer.example/…',p.lp)+'</div></div>');}).join('')+
+ '<h3 style="font-size:18px;margin-top:22px">並排比較：禾穗 vs 四家</h3>'+rv('<div class="tblwrap"><table class="t mtx"><thead><tr><th></th><th>禾穗</th><th>同行 A</th><th>同行 B</th><th>同行 C</th><th>同行 D</th></tr></thead><tbody>'+MTX.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td class="me" style="background:var(--fb-focus)">'+r[1].replace(/^禾穗：/,'')+'</td>'+r.slice(2).map(function(x){return '<td>'+x.replace(/^[ABCD]：/,'')+'</td>';}).join('')+'</tr>';}).join('')+'</tbody></table></div>')+
+ rv('<div class="card focus" style="margin-top:12px"><b>差異的空間（觀察）</b><ul style="margin:6px 0 0;padding-left:20px"><li>A 把「資訊」放上素材；禾穗的素材多是單品圖，資訊沒進畫面。</li><li>B 用客人的疑慮當主文；禾穗還沒用客人最常提的「不太甜」。</li><li>C 拼價格與大字促銷；禾穗有 1 則也走通用促銷說法，與 C 重疊。</li><li>D 的企業頁有案例與報價表單；禾穗沒有企業頁，企業禮盒的廣告也沒導向企業內容。</li><li>四家的下一步都走得通；禾穗 4 則廣告有 2 則走不通。</li></ul></div><p class="note">只點觀察與差異空間；建議做出什麼差異、怎麼優化，在差異化優化。</p>'));}
+
+function newAds5(){return sec('s5-ads','廣告與落地頁重接：現在 vs 建議','每則廣告：左邊是現在的落地頁線框圖，右邊是建議的接法（綠色虛線是建議新增的區塊），下面是素材與主文的調整方向（只講結構，不替你寫文案）。',
+ ADS2.map(function(a,i){return rv('<div class="adrow" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)"><div><p class="lpcap">廣告 '+(i+1)+'｜'+a.f+'｜'+MATCHL[a.m[0]]+'</p><b>'+a.t+'</b><ul style="margin:6px 0 0;padding-left:20px;font-size:14.5px">'+a.sug.map(function(s){return '<li>'+s+'</li>';}).join('')+'</ul></div><div><p class="lpcap">現在</p>'+wire(a.land.split('（')[0],a.lp)+'</div><div><p class="lpcap">建議的接法</p>'+wire(a.land.split('（')[0].replace(/\/.*$/,'')+'/…',a.after)+'</div></div>');}).join('')+rv('<p class="note"><span class="pl ok">綠色虛線</span> 建議新增　<span class="pl part">粉紅實心</span> 現在還有空間　<span class="pl miss">粉紅虛線</span> 現在缺少</p>'));}
+function newLinks5(){return sec('s5-links','導外連結修正：現在 vs 建議','每一條導外連結：目的地現在長怎樣、建議改成怎樣。',
+ LINKS2.map(function(l){return rv('<div class="adrow" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)"><div><b>'+l.src+' → '+l.dst+'</b><br><span class="match '+l.st+'" style="display:inline-block;margin:6px 0">'+MATCHL[l.st]+'</span><p style="margin:4px 0 0"><b>修法：</b>'+l.fix+'</p></div><div><p class="lpcap">現在</p>'+wire(l.url,l.lp)+'</div><div><p class="lpcap">建議</p>'+wire(l.url.replace(/\/.*$/,'')+'/…',l.after)+'</div></div>');}).join(''));}
+function newProd5(){var pri=[['企業禮盒（6 款）','第一優先','建立企業專頁：案例、採購流程、發票與客製說明、詢價表單；把 Sales KIT 的說法同步上官網'],['低糖系列（6 款）','第二優先','補糖度數字、與一般款的差異、適合誰；等基本盤補齊後再主推'],['6 入禮盒（8 款）','維持並強化','烘焙日標示擴到全部款；經典款補「適合／不適合」；季節款補一句可轉述的話'],['12 入禮盒（8 款）','第三優先','補「幾人分享」情境；婚禮與滿月款補客製說明'],['單顆口味（6 款）','持續補','補成分、甜度、過敏原；每款加搭配建議'],['保存與配件（4 款）','順手補','把冷凍保存寫成可買的組合＋常見問題，附實測紀錄']];
+ return sec('s5-prod','商品化補法：系列優先順序與商品頁擺放位置','每個系列補什麼、先補哪個；以及一個商品頁應該放什麼、放在哪裡（示意）。',
+ rv('<div class="tblwrap"><table class="t"><thead><tr><th>系列</th><th>優先順序</th><th>要補的</th></tr></thead><tbody>'+pri.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+ rv('<div class="ba2" style="margin-top:14px"><div><p class="lpcap">商品頁現在</p>'+prodWire('now')+'</div><div><p class="lpcap">商品頁建議的擺放位置</p>'+prodWire('add')+'</div></div><p class="note" style="margin-top:6px">每個商品補五件事：來歷、適合誰、價格理由、一句可轉述的話、證據。通路（蝦皮、momo）標題與價格要與官網對齊。</p>'));}
+function peerOpt5(){var rows=[['同行 A：素材放「資訊」（糖度、保存）','單品圖，資訊沒進畫面','不比資訊量；用「烘焙日＋製作畫面」拉開（A 講的是數字，禾穗講的是新鮮與過程）','素材加烘焙日徽章與製作畫面；落地頁第一屏放烘焙日說明'],['同行 B：用客人的疑慮當主文','主文用通用說法','用客人最常提的「不太甜」當主文切入','主文方向改寫；商品頁加常見問題；素材放「真實試吃」畫面'],['同行 C：大字促銷','1 則走通用促銷說法','不拼價格；促銷降為次要資訊','停掉通用說法素材；免運放腳註'],['同行 D：企業 Logo 牆＋報價時限','沒有企業頁','用 BNI 網絡與 Sales KIT 的案例，把企業頁做起來','官網企業專頁＋案例＋採購流程＋詢價表單；企業禮盒廣告導向企業頁']];
+ var now=lay([[3,3,26,9,'ok','品牌標'],[6,18,88,60,'cur','商品單品圖（佔滿，沒有說法位置）'],[6,84,88,10,'cur','按鈕']]);
+ var rec=lay([[3,3,22,8,'ok','品牌標'],[6,12,88,18,'add','一句主軸（短、放最上方）'],[6,33,56,46,'add','製作過程／烘焙日標示照'],[65,33,29,22,'add','烘焙日徽章'],[65,58,29,21,'add','「不太甜」小標'],[6,84,88,10,'ok','按鈕文字＝落地頁第一屏的文字']]);
+ var ent=wire('hesui-tart.example.tw/enterprise',[['品牌列','ok'],['第一屏：企業禮盒標題＋詢價表單（欄位少、註明回覆時限）','add',56],['__fold'],['案例與客戶 Logo（取得同意）','add'],['採購流程：下單、發票、客製、運送','add'],['常見問題','add'],['商品入口（10 盒起／30 盒起）','add']]);
+ return sec('s5-peerads','針對同行：廣告素材與導外連結，建議做出的差異與優化','不跟同行比同一件事。每一家的做法，禾穗現在在哪裡、建議做出什麼差異、要做哪些優化（示意，只講結構）。',
+ rv('<div class="tblwrap"><table class="t"><thead><tr><th>同行的做法</th><th>禾穗現在</th><th>建議做出的差異</th><th>優化動作</th></tr></thead><tbody>'+rows.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+ '<h3 style="font-size:18px;margin-top:22px">廣告素材的擺放位置示意（1:1）</h3>'+rv('<div class="ba2"><div><p class="lpcap">現在：素材被單品圖佔滿</p>'+now+'</div><div><p class="lpcap">建議：各元素的位置</p>'+rec+'</div></div><p class="note" style="margin-top:6px">框裡的字是「該放什麼」，不是文案。主標盡量短；按鈕文字要與落地頁第一屏一致。實際尺寸依投放版位調整。</p>')+
+ '<h3 style="font-size:18px;margin-top:22px">企業禮盒落地頁的擺放位置示意</h3>'+rv('<div class="ba2"><div><p class="lpcap">現在：沒有企業頁</p>'+wire('（沒有企業專頁）',[['企業禮盒只在 Sales KIT 與 LINE 詢價','gap',70]])+'</div><div><p class="lpcap">建議：企業專頁</p>'+ent+'</div></div>'));}
+
+/* ============ v6：基本盤補強（人在乎／AI 在乎／SEO／AIO／關鍵字）與 30 天運作方式 ============ */
+var PEOPLE=[['品牌故事','ok','官網「關於我們」有創辦動機與選料堅持','把故事放到首頁與商品頁第一屏下方，不只在「關於我們」'],['情緒價值','part','有「送禮心意」，缺送禮場景的畫面','每個系列補一個「送給誰、什麼場合」的情境畫面與一句話'],['使用情境','ok','送禮、下午茶、企業禮盒','補「怎麼吃、搭配什麼、保存多久」的情境'],['真實經驗','part','蝦皮與嘖嘖有留言；官網沒放','整理 3–5 則具體見證（誰、情況、為何適合、用後差異、誰不適合、可公開的名稱），放商品頁與首頁'],['信任感','ok','Google 4.7 星 212 則、蝦皮 4.9、嘖嘖 1,056 位','把這些數字與來源放到首頁，附連結可查'],['清楚的差異化','part','各處第一句話不同','交給「差異化診斷與優化」；基本盤先把資料與信任補齊']];
+var AIP=[['結構化商品資料','miss','商品頁沒有統一欄位','每款用同一個欄位模板（名稱、系列、成分、容量、糖度、保存、適合／不適合、價格、庫存、出貨）＋商品結構化標記'],['即時庫存與價格','miss','沒有庫存狀態；三通路價格不一','決定主價與更新規則；商品頁顯示現貨／預購／缺貨；通路價格對齊'],['成分、材質與完整規格','part','12 款有文字，26 款只在圖片','26 款改寫成文字與表格；過敏原獨立一行'],['適用與不適用條件','miss','38 款都沒有','每款寫「適合誰、不建議誰」（過敏、低糖需求、送禮對象）'],['交期與配送範圍','ok','有獨立配送頁','商品頁摘要一行；寫明離島、冷藏冷凍規則'],['退換貨規則','ok','有獨立頁面','商品頁摘要一行並連到規則頁'],['可被驗證的履約能力','ok','蝦皮 4.9、出貨紀錄可讀','有數據再公開出貨時效；評價連回官網']];
+var STEP1=[['這個商品解決什麼問題',22,'每款第一句寫「解決什麼」'],['適合與不適合哪些人',0,'每款補「適合／不建議」'],['成分、材質、容量與尺寸',12,'26 款改寫成文字與表格'],['怎麼使用、多久用一次',9,'補食用建議與保存'],['現在有沒有庫存',0,'商品頁顯示庫存狀態'],['現貨還是預購',0,'標示現貨／預購與出貨日'],['幾天可以送達',38,'已統一寫在配送頁；摘要放商品頁'],['單次使用成本',0,'每入、每份價格'],['與替代商品的具體差異',0,'每個系列補一段比較（只講事實）'],['退換貨與售後規則',38,'已有；摘要放商品頁']];
+var STEP2=[['讓客人連結品牌會員帳號','ok','有會員頁','訂單來源標記（官網／蝦皮／AI 助理），讓同一個人對得上'],['保留清楚的售後管道','ok','有 LINE 與退換貨頁','售後管道寫進每個出貨包裹與商品頁'],['提供會員專屬內容與權益','part','只有首購 9 折','加「保存小冊」「送禮提醒」等會員內容'],['用耗材補充、訂閱與使用提醒建立回購','miss','沒有','冷凍保存組、季節送禮提醒（中秋前 2 個月）'],['鼓勵客人留下偏好與使用回饋','miss','沒有','購後 7 天一則 LINE 問卷：送給誰、吃的感覺（取得同意）'],['建立品牌自己的社群與內容管道','part','LINE 約 1,200 好友','包裹附 QR，把官網、蝦皮、momo 客人導到 LINE']];
+var STEP3=[['公開的使用經驗','part','蝦皮、嘖嘖有，官網沒放','整理成「誰、什麼情況、為何適合」的格式放上官網'],['專業評測','miss','沒有','爭取 3–5 篇可公開的評測或 BNI 夥伴文章，連回商品頁'],['常見問題','miss','只有 2 題','整理成 8–12 題，每題第一句直接給答案'],['退貨政策','ok','有，清楚','商品頁摘要連到政策頁'],['售後紀錄（公開的處理案例）','miss','沒有','整理 2–3 則去識別的售後處理案例'],['一致的商品資訊','part','規格大致一致，價格有落差','三通路對齊；資料更新日期寫在頁面']];
+var SEOFIX=[['頁面標題與摘要','part','每頁標題改成「商品或主題＋品類字＋品牌」；摘要寫給人看的一句','高','每頁標題不再只是品牌名'],['canonical','miss','每頁加 canonical，避免參數頁重複','中','原始碼偵測到'],['H1 與標題層級','part','每頁一個 H1 帶品類字；H2 分成分、保存、適合','中','每頁只有一個 H1'],['圖片 alt 與檔名','miss','重要商品圖補描述性 alt；檔名不用亂碼','中','38 款主圖都有 alt'],['圖片大小與速度','miss','轉 WebP、每張 300 KB 以下、開延遲載入','高','首頁圖片總量明顯下降'],['內部連結','part','系列頁、商品頁、企業專頁、指南頁互連','中','每個商品頁有上下層連結'],['分享預覽圖（og）','miss','每頁補 og:title、og:image；LINE 預覽測一次','中','貼進 LINE 預覽正確'],['Google 商家完整度','part','類別改「堅果塔專賣」，簡介放主軸，回覆評論，補商品','高','類別與簡介更新、評論有回覆'],['結構化標記','part','商品、常見問題、組織（含 sameAs）','高','標記測試工具無錯誤'],['sitemap 與 robots','ok','維持；新頁上線後更新','低','新頁在 sitemap 內']];
+var AIOFIX=[['問答式內容（FAQ）','miss','把客人真實問句整理成 8–12 題（不太甜、保存、過敏、送禮、企業採購、配送），每題第一句直接給答案','高','常見問題從 2 題到 8 題以上'],['規格用表格呈現','miss','每款用表格寫成分、容量、糖度、保存、適合與不適合','高','先完成 12 款主力，再擴到 38 款'],['品牌實體一致與 sameAs','part','名稱、地址、電話、官網、社群在所有地方一致；官網加關聯連結到 FB、IG、LINE、蝦皮、Google 商家','中','各處名稱一致'],['第三方引用與評測','miss','爭取 3–5 篇可公開的評測、媒體或夥伴文章，連回商品頁','中','有 3 篇以上可查的引用'],['評價可驗證且有摘要','part','公開評價摘要（誰、情況、適合與否）；蝦皮、Google 評價連到官網','中','官網有評價摘要區'],['商品資料 feed','miss','建立商品資料來源（例如 Google Merchant Center），價格庫存與官網一致且即時','高','feed 與官網價格一致'],['爬蟲可讀','ok','維持不擋；重要資料不放圖片','低','—'],['每頁更新日期','miss','每頁加「最後更新」；價格庫存規則寫明更新頻率','低','每頁有日期'],['定期追蹤 AI 回答','miss','每月固定 3 題 × 5 家 AI 記錄一次：有沒有提到、說得對不對','中','有連續 3 個月紀錄']];
+var KW=[['品牌字','禾穗堅果塔','找品牌','top','第 1','首頁','維持；Google 商家名稱與官網一致'],['品牌字','禾穗手作','找品牌','top','第 1','首頁','維持'],['品類字','手作堅果塔','找商品','none','前 20 沒出現','首頁（說法不足）','商品列表與首頁標題帶品類字'],['品類字','堅果塔推薦','比較','none','前 20 沒出現','（沒有）','做「怎麼挑堅果塔」指南頁'],['情境字','送禮堅果塔','購買','none','前 20 沒出現','6 入禮盒頁','禮盒頁標題與內文補送禮情境'],['情境字','中秋堅果塔禮盒','購買（季節）','mid','第 14','中秋限定 6 入','檔期前 2–3 個月補內容與評價'],['企業字','企業禮盒 堅果塔','購買（企業）','na','資料不足','（沒有企業頁）','建立企業專頁'],['企業字','會議茶點 甜點','購買（企業）','none','前 20 沒出現','會議茶點盒','補採購說明與詢價表單'],['疑慮字','堅果塔 會太甜嗎','資訊','none','前 20 沒出現','（沒有）','FAQ：不太甜怎麼做到、糖度數字'],['疑慮字','堅果塔 可以冷凍嗎','資訊','none','前 20 沒出現','（沒有）','FAQ＋保存商品頁，附實測'],['疑慮字','堅果塔 過敏原','資訊','none','前 20 沒出現','（沒有）','成分與過敏原文字化'],['比較字','低糖堅果塔推薦','比較','none','前 20 沒出現','低糖系列（頁面薄）','補低糖專頁與糖度比較'],['地區字','台北 堅果塔','本地','mid','地圖第 6','Google 商家','商家類別與簡介改成堅果塔專賣'],['AI 對話長句','適合送長輩、不太甜的手作堅果塔','AI 問句','none','5 家 AI 中 0 家提到','（沒有）','問答式內容＋規格表格＋評價摘要']];
+var KWPILL={top:'ok',mid:'part',none:'miss',na:'na'};
+function kwCover(){var c={top:0,mid:0,none:0,na:0};KW.forEach(function(k){c[k[3]]++;});var n=KW.length;return '<div class="card white"><b>關鍵字覆蓋（'+n+' 組，示意）</b>'+[['top','前 10'],['mid','11–20／地圖前 10'],['none','前 20 沒出現'],['na','資料不足']].map(function(x){return hb(x[1],c[x[0]]/n*100,x[0]!=='none',c[x[0]]+' 組');}).join('')+'<div class="note" style="margin-top:6px">只有「品牌字」是強的；客人真正會搜的品類字、情境字、疑慮字，幾乎都沒出現。</div></div>';}
+function kwDiag(){return sec('s2-kw','關鍵字現況（SEO 與 AI 問句）','客人會用哪些詞找你：品牌字、品類字、情境字、企業字、疑慮字、地區字，以及對 AI 問的長句；你現在出現在哪裡。排名每天會變，這是某一天的觀察（示意；真實報告用關鍵字工具與實測）。',
+ rv(kwCover())+rv('<div class="tblwrap" style="margin-top:12px"><table class="t"><thead><tr><th>類型</th><th>關鍵字</th><th>客人想做什麼</th><th class="c">現況</th><th>對應頁面</th></tr></thead><tbody>'+KW.map(function(k){return '<tr><td>'+k[0]+'</td><td><b>'+k[1]+'</b></td><td>'+k[2]+'</td><td class="c"><span class="pl '+KWPILL[k[3]]+'">'+k[4]+'</span></td><td>'+k[5]+'</td></tr>';}).join('')+'</tbody></table></div>'));}
+function kwFix(){return sec('s3-kw','關鍵字補強：每個詞對應到哪一頁、要補什麼','關鍵字不是塞字，是「客人問的問題，你有沒有一頁在回答」。每個詞先找對應頁面，沒有就補一頁；再用主題群集把頁面互連。',
+ rv('<div class="tblwrap"><table class="t"><thead><tr><th>類型</th><th>關鍵字</th><th class="c">現況</th><th>對應頁面</th><th>要補什麼</th></tr></thead><tbody>'+KW.map(function(k){return '<tr><td>'+k[0]+'</td><td><b>'+k[1]+'</b></td><td class="c"><span class="pl '+KWPILL[k[3]]+'">'+k[4]+'</span></td><td>'+k[5]+'</td><td>'+k[6]+'</td></tr>';}).join('')+'</tbody></table></div>')+
+ rv('<div class="card white" style="margin-top:12px"><b>主題群集（頁面怎麼互連）</b><div class="chips" style="margin-top:8px"><div class="chip main"><b>主頁：怎麼挑送禮堅果塔（指南）</b>回答「送誰、什麼場合、怎麼挑、多甜、怎麼保存」，連到下面每一頁</div></div><div class="chips" style="margin-top:8px"><div class="chip"><b>6 入禮盒／12 入禮盒</b>送禮情境與烘焙日</div><div class="chip"><b>企業禮盒專頁</b>案例、採購流程、詢價</div><div class="chip"><b>低糖專頁</b>糖度與比較</div><div class="chip"><b>常見問題</b>太甜嗎、保存、過敏、配送</div></div></div><p class="note" style="margin-top:6px">這是補強方向，不保證排名；排名會隨搜尋引擎與同行變動。</p>'));}
+function fixTable(rows){return '<div class="tblwrap"><table class="t"><thead><tr><th>項目</th><th class="c">現況</th><th>補什麼、怎麼補</th><th class="c">優先</th><th>怎麼算補好</th></tr></thead><tbody>'+rows.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td class="c">'+pill(r[1])+'</td><td>'+r[2]+'</td><td class="c">'+r[3]+'</td><td>'+r[4]+'</td></tr>';}).join('')+'</tbody></table></div>';}
+function pairTable(rows){return '<div class="tblwrap"><table class="t"><thead><tr><th>項目</th><th class="c">現況</th><th>現在的狀況</th><th>補什麼、怎麼補</th></tr></thead><tbody>'+rows.map(function(r){return '<tr><td><b>'+r[0]+'</b></td><td class="c">'+pill(r[1])+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>';}).join('')+'</tbody></table></div>';}
+function runExplainer(){return rv('<div class="card focus" style="margin-top:14px"><h4>這 30 天怎麼運作？（方案設計中）</h4><p class="note" style="margin:2px 0 8px">目前正式交付只確定到「報告」。陪跑、複測、訂閱都還在設計，尚未定價；下面是三種可能的運作方式。</p><div class="grid3"><div class="card white"><b>A　自己照著做</b><br><span class="note">報告交付後由你或同仁自己做；30 天是建議節奏，我們不陪跑。</span></div><div class="card white"><b>B　做完再驗收（複測）</b><br><span class="note">做完後重新掃描，出前後分數對照一頁與剩餘缺口；不含再改版。</span></div><div class="card white"><b>C　陪跑訂閱</b><br><span class="note">每週提醒本週 2 件事、每月自動複測與分數曲線、固定時段答疑。不含實作：我們給建議與驗收，不替你落地。</span></div></div></div>');}
+function prioQuad(){return rv('<div class="grid2"><div class="card focus"><b>先做（影響大、容易）</b><ul style="margin:6px 0 0;padding-left:20px"><li>26 款規格改成文字</li><li>三通路價格統一</li><li>補追蹤碼、清舊 UA</li><li>Google 商家類別與簡介</li><li>圖片壓縮</li></ul></div><div class="card white"><b>排程做（影響大、較費工）</b><ul style="margin:6px 0 0;padding-left:20px"><li>FAQ 8–12 題</li><li>企業專頁</li><li>商品資料 feed</li><li>關鍵字指南頁</li></ul></div><div class="card white"><b>順手做（影響小、容易）</b><ul style="margin:6px 0 0;padding-left:20px"><li>圖片 alt 與檔名</li><li>分享預覽圖（og）</li><li>每頁更新日期</li><li>canonical</li></ul></div><div class="card white"><b>之後再說</b><ul style="margin:6px 0 0;padding-left:20px"><li>第三方評測與媒體</li><li>部落格</li><li>回購訂閱機制</li><li>llms.txt（非必要）</li></ul></div></div>');}
+function P3b(){var old=document.createElement('div');old.innerHTML=P3();var keep=function(id){var e=old.querySelector('#'+id);return e?e.outerHTML:'';};
+ var goal=AREAS.map(function(a){return Math.min(100,a.score+({h:12,a:34,t:46,d:30,e:20,c:22,s:34,g:40})[a.k]);});
+ var h='<nav class="sub" aria-label="目錄"><div id="sub3"></div></nav>';
+ h+=sec('s3-goal','補完之後，基本盤會長這樣（示意目標）','每一個面向補完後的完整度目標。目標是資料與設定的完整度，不是業績、排名或被推薦，我們不保證成效。',
+  rv('<span class="ribbon">地基・再補強</span><h2 style="font-size:clamp(20px,2.8vw,28px)">人在乎的、AI 在乎的、搜尋在乎的，各補到位。</h2><p class="lead">故事讓人記得你，資料讓 AI 讀得懂你，關鍵字讓客人找得到你。這三件事不是三選一，品牌要都做。</p>')+
+  '<div class="radarwrap rv"><div>'+radar(AREAS.map(function(a){return a.short||a.name}),AREAS.map(function(a){return a.score}),goal)+'</div><div><div class="legendrow"><span><i class="sw" style="background:#D6336C"></i>目前</span><span><i class="sw" style="background:#B2489E"></i>補完後目標（虛線）</span></div>'+AREAS.map(function(a,i){return hb(a.name+'：'+a.score+' → '+goal[i],goal[i],false,goal[i]);}).join('')+'</div></div>');
+ h+=sec('s3-dual','人在乎什麼、AI 在乎什麼：各要補什麼','品牌要同時經營兩套內容：給人看的（有感），給 AI 讀的（清楚）。',
+  rv('<h4 style="margin-top:6px">給人：對人有感</h4>'+pairTable(PEOPLE))+rv('<h4 style="margin-top:18px">給 AI：對 AI 清楚</h4>'+pairTable(AIP))+rv('<p class="note" style="margin-top:8px">只有故事，AI 不一定能準確理解；只有資料，人不一定會有感覺。「對人有感，對 AI 清楚」兩邊都要。</p>'));
+ h+=sec('s3-steps','補強三步：整理商品、留住顧客關係、讓口碑可被驗證','第一步補資料，第二步在 AI 帶來訂單之後仍保留與顧客的關係，第三步把口碑整理成人與 AI 都能引用的公開訊號。',
+  rv('<h4 style="margin-top:6px">① 把商品整理到 AI 看得懂（38 款中有幾款做到）</h4><div class="card white">'+STEP1.map(function(s){return hb(s[0],s[1]/38*100,s[1]===38,s[1]+'／38');}).join('')+'<ul style="margin:8px 0 0;padding-left:20px;font-size:14.5px">'+STEP1.filter(function(s){return s[1]<38;}).map(function(s){return '<li><b>'+s[0]+'：</b>'+s[2]+'</li>';}).join('')+'</ul><p class="note" style="margin-top:6px">資料要正確、一致、可被搜尋，並隨價格、庫存、交期更新；重要資料不要只放在圖片裡。</p></div>')+
+  rv('<h4 style="margin-top:18px">② 接受 AI 帶來的訂單，但顧客關係要留在手上</h4>'+pairTable(STEP2)+'<p class="note" style="margin-top:6px">重點不是阻止 AI 帶來交易，而是交易完成之後，你還知不知道這位顧客是誰、還能不能繼續服務他。</p>')+
+  rv('<h4 style="margin-top:18px">③ 重新理解口碑：變成可被驗證的公開訊號</h4>'+pairTable(STEP3)+'<div class="card white" style="margin-top:10px"><b>一則好見證要有這六件事</b><div class="chips" style="margin-top:6px"><span class="pl part">誰在什麼情況使用</span><span class="pl part">原本遇到什麼問題</span><span class="pl part">為什麼這個商品適合他</span><span class="pl part">用後感受到什麼差異</span><span class="pl part">哪些人不適合</span><span class="pl part">可公開的名稱（取得同意）</span></div><p class="note" style="margin-top:6px">這些具體情境不只說服人，也幫助 AI 更準確地理解商品。實際權重會因模型與平台而不同。</p></div>'));
+ h+=sec('s3-seo','SEO 補強：讓客人在 Google 找得到、找得準','搜尋引擎基本功：標題、摘要、速度、圖片、連結、商家資料、結構化標記。',rv(fixTable(SEOFIX)));
+ h+=sec('s3-aio','AIO／GEO 補強：讓 AI 搜尋與 AI 助理抓得到、引用得了','AI 在回答與推薦前，會先讀你的資料：有沒有問答、規格是不是表格、各處名稱是否一致、有沒有第三方引用、價格庫存是否即時。',
+  rv(fixTable(AIOFIX))+rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>結構化標記長相（示意）</b><div class="code">{"@type":"Product","name":"綜合堅果塔 6 入",\n"description":"…適合與不適合…",\n"offers":{"price":"680","availability":"InStock"}}\n\n{"@type":"FAQPage","mainEntity":[{"@type":"Question",\n"name":"堅果塔會太甜嗎？","acceptedAnswer":{…}}]}</div></div><div class="card white"><b>要老實說的事</b><ul style="margin:6px 0 0;padding-left:20px"><li>結構化資料是加分項，不是門票；不同搜尋引擎與 AI 的看法不同</li><li>我們只能讓資料更完整、更容易被正確理解，不保證被 AI 推薦</li><li>每月用同樣 3 題問 5 家 AI 做追蹤，才看得出變化</li></ul></div></div>'));
+ h+=kwFix();
+ h+=keep('s3-fix')+keep('s3-ba')+keep('s3-chan');
+ h+=sec('s3-prior','先補哪個：優先順序','依影響大小與費工程度排序；先做第一格。',prioQuad());
+ h+=sec('s3-plan','30 天行動規劃與驗收','每週做什麼、誰做、怎麼算補好；以及這 30 天到底怎麼運作。',
+  rv(wk([['第 1 週','規格改成文字（26 款）；三通路價格統一；補追蹤碼；修壞連結','誰：你或同仁　有效：26 → 0 款只在圖片；價格一致；追蹤碼偵測到'],['第 2 週','圖片壓縮；標題與摘要、canonical、og；Google 商家類別與簡介','誰：你或同仁　有效：首頁載入變快；LINE 預覽正確'],['第 3 週','FAQ 8–12 題上線；先把 12 款主力規格表格化；加結構化標記','誰：你或同仁　有效：FAQ ≥ 8 題；標記測試無錯誤'],['第 4 週','企業專頁；整理 3 則具體見證；做第一次 AI 問答追蹤並記錄基準','誰：你或同仁　有效：企業頁上線；見證含六件事；有基準紀錄']]))+
+  rv('<div class="card white" style="margin-top:12px"><b>30 天之後（持續）</b>：關鍵字指南頁、第三方評測與媒體、商品資料 feed、回購提醒、每月 AI 問答追蹤。</div>')+
+  rv('<div class="tblwrap" style="margin-top:12px"><table class="t"><thead><tr><th>驗收指標</th><th class="c">現在</th><th class="c">目標（完成度，非成效保證）</th><th>怎麼量</th></tr></thead><tbody><tr><td>只在圖片裡的商品規格</td><td class="c">26 款</td><td class="c">0 款</td><td>逐款檢查</td></tr><tr><td>三通路價格不一致</td><td class="c">7 款</td><td class="c">0 款</td><td>價格比對</td></tr><tr><td>追蹤碼到位</td><td class="c">4／9 項</td><td class="c">8／9 項以上</td><td>Tag Assistant</td></tr><tr><td>常見問題題數</td><td class="c">2 題</td><td class="c">8 題以上</td><td>頁面計數</td></tr><tr><td>表格化規格的商品</td><td class="c">0 款</td><td class="c">12 款（再擴到 38）</td><td>逐款檢查</td></tr><tr><td>AI 問答（3 題 × 5 家）提到你</td><td class="c">1／15</td><td class="c">持續追蹤，不保證</td><td>每月同樣問法</td></tr></tbody></table></div>')+runExplainer());
+ h+=keep('s3-gate');
+ return h;}
+function patch2(){insertAfter('s2-ai',kwDiag());}
+
+/* ============ v8：⑥ 訂閱與複測（方案細節＋報告範本預覽） ============ */
+function lineChart(labels,series){var W=320,H=176,L=34,R=14,T=16,B=30,pw=W-L-R,ph=H-T-B;
+ var x=function(i){return L+pw*i/(labels.length-1)},y=function(v){return T+ph*(1-v/100)};var g='';
+ [0,25,50,75,100].forEach(function(t){g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(t)+'" y2="'+y(t)+'" stroke="#E7C8DC" stroke-width="1"/><text x="'+(L-6)+'" y="'+(y(t)+4)+'" text-anchor="end" font-size="10" fill="#6F6169">'+t+'</text>';});
+ labels.forEach(function(l,i){g+='<text x="'+x(i)+'" y="'+(H-8)+'" text-anchor="middle" font-size="11" fill="#5C4F58" font-weight="700">'+l+'</text>';});
+ series.forEach(function(s,si){var pts=s.v.map(function(v,i){return x(i)+','+y(v);}).join(' ');g+='<polyline points="'+pts+'" fill="none" stroke="'+s.c+'" stroke-width="2.5" '+(s.dash?'stroke-dasharray="6 5" ':'')+'stroke-linejoin="round"/>';s.v.forEach(function(v,i){g+='<circle cx="'+x(i)+'" cy="'+y(v)+'" r="4" fill="'+s.c+'"/><text x="'+x(i)+'" y="'+(y(v)+(si?18:-9))+'" text-anchor="middle" font-size="11" font-weight="700" fill="'+s.c+'">'+v+'</text>';});});
+ return '<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="分數曲線（示意）" style="width:100%;height:auto;overflow:visible">'+g+'</svg>';}
+var DELTA={h:3,a:12,t:23,d:2,e:0,c:4,s:11,g:9};
+function afterOf(a){return Math.min(100,a.score+DELTA[a.k]);}
+function phone(msgs){return '<div class="phone"><div class="pht"><span class="av2">F</span><b>FireBirdUSP 官方帳號</b><small>示意</small></div>'+msgs.map(function(m){return '<div class="bb '+m[0]+'">'+m[1]+'</div>';}).join('')+'</div>';}
+function P6(){
+ var after=AREAS.map(afterOf),AFT=Math.round(after.reduce(function(a,b){return a+b},0)/after.length);
+ var h='<nav class="sub" aria-label="目錄"><div id="sub6"></div></nav>';
+ h+=sec('s6-ov','訂閱與複測：做完之後怎麼持續','客人買了補強或優化報告之後，最大的風險是「沒做完」。這一頁說明：怎麼驗收（複測）、怎麼持續（訂閱）、我們做什麼、不做什麼。所有優化都是「建議與驗收」，我們不替客人落地實作。',
+  rv('<span class="ribbon">追蹤</span><h2 style="font-size:clamp(20px,2.8vw,28px)">報告給方向，複測看有沒有變好，訂閱讓他持續做完。</h2><p class="lead">方案仍在設計與試辦，價格尚未公布；內部估算放在「價格與方案總表」。</p>')+
+  rv('<div class="grid2"><div class="card focus"><span class="ribbon">訂閱</span><h4>基本盤訂閱（含複測）</h4><ul style="margin:6px 0 0;padding-left:20px;font-size:14.5px"><li>每週一則提醒：本週 2 件事</li><li>每月自動複測 8 個面向＋分數曲線</li><li>每月 AI 問答追蹤（3 題 × 5 家）</li><li>每月 15 分鐘預約答疑</li></ul></div><div class="card focus"><span class="ribbon d">訂閱</span><h4>差異化訂閱（含複測）</h4><ul style="margin:6px 0 0;padding-left:20px;font-size:14.5px"><li>每月複測亮點完成度與五維</li><li>說法重疊度（13 個地方）</li><li>廣告承接與導外連結健康</li><li>對手變化、商品化狀態</li><li>每月 30 分鐘預約答疑</li></ul></div></div>')+
+  rv('<p class="note" style="margin-top:8px">訂閱依客人買過的層級加掛：只買基本盤補強，就訂基本盤追蹤；買了差異化優化，再加掛差異化追蹤。</p>'));
+ h+=sec('s6-flow','一個月怎麼運作','從開通到月報的固定節奏（示意）。',
+  rv(wk([['開通（第 0 週）','客人買補強或優化報告時加訂；我們記下基準分數與 30 天規劃','誰：我們　產出：基準日與基準分數'],['每週一','LINE 官方帳號傳一則提醒：本週 2 件事與預估時間','誰：我們（模板）　客人：做完回覆「完成」'],['第 4 週末','重新掃描並算分；AI 問答追蹤；人工複核','誰：我們　產出：複測資料'],['下月第 1 週','寄出月報（一頁或兩頁）；約答疑時段','誰：我們　客人：預約 15／30 分鐘答疑']]))+
+  rv('<div class="card white" style="margin-top:12px"><b>客人要做的事只有三件</b>：照每週提醒做、做完回覆「完成」、月報出來後看一眼並預約答疑。其他都由我們處理。</div>'));
+ h+=sec('s6-weekly','報告範本 ①：每週提醒（LINE 訊息）','每週一傳給客人的一則訊息。內容來自該客人的 30 天規劃，不是通用訊息（示意）。',
+  rv('<div class="grid2"><div>'+phone([['ai','禾穗你好，本週 2 件事（約 60–90 分鐘）：<br>① 把 6 款堅果塔的成分與容量，從圖片改成文字（還有 26 款只在圖片）<br>② 統一蝦皮價格，先改 3 款（目前有 7 款與官網不同）<br>做完回覆「完成」，月底複測會算進去。'],['me','① 完成了'],['ai','收到。成分文字化現在是 6／26 款。下週建議再改 6 款，或先處理②。有卡住的地方，月底答疑時間可以問。']])+'</div><div class="card white"><b>每則提醒的固定結構</b><ul style="margin:6px 0 0;padding-left:20px"><li>本週 2 件事（不超過 2 件，避免做不完）</li><li>預估時間</li><li>目前進度（從 N 款到 M 款）</li><li>怎麼回覆才算完成</li></ul><p class="note" style="margin-top:8px">每則約 5 分鐘（用模板，改幾個數字）。不做即時客服，問題集中在月度答疑。</p></div></div>'));
+ h+=sec('s6-monthly','報告範本 ②：每月複測報告（基本盤進度追蹤）','每月一頁：分數曲線、各面向前後、完成了什麼、下個月 2 件事、AI 問答追蹤（示意）。',
+  rv('<div class="rep"><div class="rep-h"><b>禾穗手作堅果塔｜第 1 個月複測</b><span class="note">基準日 → 第 4 週末（示意）</span></div>'+
+   '<div class="grid3" style="margin:10px 0"><div class="teaser"><div class="big">'+BASE+'→'+AFT+'<small> 基本盤</small></div><span class="note">+'+(AFT-BASE)+'</span></div><div class="teaser"><div class="big">5<small> ／ 8 項</small></div><span class="note">本月完成</span></div><div class="teaser"><div class="big">3<small> ／ 15</small></div><span class="note">AI 問答提到你（上月 1／15）</span></div></div>'+
+   '<div class="grid2"><div class="card white"><b>分數曲線</b>'+lineChart(['基準','第 1 月','第 2 月','第 3 月'],[{v:[BASE,AFT,BASE+14,BASE+19],c:'#D6336C'}])+'<div class="note">第 2、3 月為預計值（示意）</div></div>'+
+   '<div class="card white"><b>各面向前後</b><div class="tblwrap"><table class="t"><thead><tr><th>面向</th><th class="c">基準</th><th class="c">本月</th><th class="c">變化</th></tr></thead><tbody>'+AREAS.map(function(a,i){return '<tr><td>'+a.name+'</td><td class="c">'+a.score+'</td><td class="c"><b>'+after[i]+'</b></td><td class="c">'+(after[i]-a.score>0?'+'+(after[i]-a.score):'—')+'</td></tr>';}).join('')+'</tbody></table></div></div></div>'+
+   '<div class="grid2" style="margin-top:12px"><div class="card white"><b>本月完成</b><ul style="margin:6px 0 0;padding-left:20px"><li>6 款成分改成文字</li><li>補追蹤碼 3 項</li><li>圖片壓縮</li><li>Google 商家類別與簡介</li><li>FAQ 上線 6 題</li></ul></div><div class="card focus"><b>下個月 2 件事</b><ul style="margin:6px 0 0;padding-left:20px"><li>再改 10 款成分文字，並加表格</li><li>統一蝦皮、momo 價格（7 款）</li></ul></div></div>'+
+   '<p class="note" style="margin-top:8px">分數是「完成度」，不是排名、營收或被 AI 推薦的保證；AI 回答每次不同，只看趨勢。</p></div>')+
+  rv('<div class="rep" style="margin-top:14px"><div class="rep-h"><b>加掛：差異化追蹤（第二頁）</b><span class="note">示意</span></div><div class="grid2" style="margin-top:8px"><div class="card white"><b>差異化指標</b><div class="tblwrap"><table class="t"><thead><tr><th>指標</th><th class="c">基準</th><th class="c">本月</th></tr></thead><tbody><tr><td>亮點完成度</td><td class="c">'+TOTAL+'</td><td class="c"><b>'+(TOTAL+3)+'</b></td></tr><tr><td>說法重疊度（同行也能這樣說）</td><td class="c">78%</td><td class="c"><b>70%</b></td></tr><tr><td>廣告落地頁承接得好</td><td class="c">1／4</td><td class="c"><b>2／4</b></td></tr><tr><td>導外連結有問題</td><td class="c">4 條</td><td class="c"><b>2 條</b></td></tr><tr><td>商品化到位</td><td class="c">3／38</td><td class="c"><b>6／38</b></td></tr></tbody></table></div></div><div class="card white"><b>對手變化（本月）</b><ul style="margin:6px 0 0;padding-left:20px"><li>同行 B 新增 2 則廣告，主文改為「不太甜」相關說法</li><li>同行 D 企業頁新增案例 Logo 牆</li><li>同行 A 沒有新廣告</li></ul><p class="note" style="margin-top:6px">只講觀察；調整建議在月度答疑。</p></div></div></div>'));
+ h+=sec('s6-retest','報告範本 ③：複測前後對照一頁','訂閱每月已含複測：重新掃描，一頁看有沒有變好（示意）。',
+  rv('<div class="rep"><div class="rep-h"><b>禾穗｜複測：前後對照</b><span class="note">基準日 → 複測日（示意）</span></div><div class="grid3" style="margin:10px 0"><div class="teaser"><div class="big">'+BASE+'→'+(BASE+15)+'</div><span class="note">基本盤完整度</span></div><div class="teaser"><div class="big">'+TOTAL+'→'+(TOTAL+5)+'</div><span class="note">亮點完成度（若有差異化）</span></div><div class="teaser"><div class="big">12／16</div><span class="note">計畫項目完成</span></div></div><div class="tblwrap"><table class="t"><thead><tr><th>項目</th><th class="c">之前</th><th class="c">現在</th><th class="c">狀態</th></tr></thead><tbody><tr><td>只在圖片裡的商品規格</td><td class="c">26 款</td><td class="c">8 款</td><td class="c"><span class="pl part">部分補完</span></td></tr><tr><td>三通路價格不一致</td><td class="c">7 款</td><td class="c">0 款</td><td class="c"><span class="pl ok">已補</span></td></tr><tr><td>追蹤碼到位</td><td class="c">4／9</td><td class="c">8／9</td><td class="c"><span class="pl ok">已補</span></td></tr><tr><td>常見問題題數</td><td class="c">2</td><td class="c">9</td><td class="c"><span class="pl ok">已補</span></td></tr><tr><td>企業專頁</td><td class="c">沒有</td><td class="c">沒有</td><td class="c"><span class="pl miss">未補</span></td></tr></tbody></table></div><div class="card focus" style="margin-top:10px"><b>剩餘缺口與下一步</b>：企業專頁、剩餘 8 款規格文字化、商品資料 feed。要持續追蹤，可加訂進度追蹤。</div></div>'));
+ h+=sec('s6-scope','邊界：含什麼、不含什麼、不保證什麼','寫清楚，避免客人與同仁誤解。',
+  rv('<div class="grid3"><div class="card white"><b>含</b><ul style="margin:6px 0 0;padding-left:20px;font-size:14.5px"><li>每週提醒（模板）</li><li>每月複測與月報</li><li>分數曲線與前後對照</li><li>AI 問答追蹤</li><li>預約制答疑（15／30 分鐘）</li></ul></div><div class="card white"><b>不含</b><ul style="margin:6px 0 0;padding-left:20px;font-size:14.5px"><li>實作：改頁面、寫文案、做素材、設追蹤碼</li><li>即時客服式回覆</li><li>再出一份新的完整報告</li></ul></div><div class="card focus"><b>不保證</b><ul style="margin:6px 0 0;padding-left:20px;font-size:14.5px"><li>搜尋排名</li><li>營收或詢問量</li><li>被 AI 推薦</li></ul><p class="note" style="margin-top:6px">分數是完整度。</p></div></div>'));
+ h+=sec('s6-pilot','試辦與我們的成本','先試辦 3–5 位、3 個月，記錄實際花多少時間，再定價（以下為估算，需用實際紀錄校準）。',
+  rv('<div class="tblwrap"><table class="t"><thead><tr><th>工作</th><th class="c">基本盤追蹤（每月）</th><th class="c">差異化追蹤加掛（每月）</th></tr></thead><tbody><tr><td>週提醒（模板）</td><td class="c">約 20 分鐘（4 則）</td><td class="c">約 +10 分鐘</td></tr><tr><td>複測（掃描＋人工複核）</td><td class="c">約 20 分鐘</td><td class="c">約 +30 分鐘（廣告逐則、對手、評論）</td></tr><tr><td>月報</td><td class="c">約 10 分鐘</td><td class="c">約 +10 分鐘</td></tr><tr><td>答疑</td><td class="c">15 分鐘</td><td class="c">+15 分鐘</td></tr><tr><td><b>合計</b></td><td class="c"><b>約 65 分鐘</b></td><td class="c"><b>約 +65 分鐘</b></td></tr></tbody></table></div>')+
+  rv('<div class="grid2" style="margin-top:12px"><div class="card white"><b>試辦要記錄</b><ul style="margin:6px 0 0;padding-left:20px"><li>每月實際花的分鐘數（我們）</li><li>每週提醒的完成率（客人）</li><li>每月分數變化</li><li>客人的回饋：哪一段有用、哪一段多餘</li></ul></div><div class="card white"><b>⏳ 還沒定的規則</b><ul style="margin:6px 0 0;padding-left:20px"><li>退訂：隨時可停，當月不退？</li><li>暫停：客人忙時可暫停幾個月？</li><li>答疑沒用完是否累積？</li><li>價格與試辦價</li></ul></div></div>'));
+ return h;}
+
+function nextSteps(){var low=BASE<60;
+ var st=function(n,t,d,on){return '<div class="card '+(on?'focus':'white')+'"><span class="ribbon" style="background:'+(on?'var(--fb-rose)':'#8f8189')+'">'+n+'</span><h4>'+t+'</h4><div class="note" style="font-size:14.5px">'+d+'</div></div>';};
+ var rows=[['想知道全部缺口與依據','基本盤診斷'],['已經知道要補，想直接拿補法與優先順序','基本盤補強'],['基本盤補到約 60，想讓人記得你、說得出你不一樣','差異化診斷'],['想知道廣告、導外連結、同行的差異','差異化診斷'],['做完想看有沒有變好','訂閱（每月含複測）'],['想要有人每週提醒、每月看分數曲線','訂閱'],['你是 BNI 會員，想被介紹得更準','商會引薦力打造'],['想投廣告','先補追蹤碼與商品資料，再談精準廣告投放']];
+ var h='<h3 id="s1-next" style="margin-top:40px">看完之後，建議你這樣走</h3><p class="what"><b>這一段在看：</b>依這次掃描的結果，我們建議你先做什麼、再買什麼、哪些先不用。</p>';
+ h+=rv('<div class="card focus"><b>這次的建議</b>：基本盤完整度 '+BASE+'（建議補到約 60，再做差異化）。<ul style="margin:6px 0 0;padding-left:20px"><li><b>先買：基本盤診斷。</b>看全部 '+GAPS+' 個缺口的依據與優先順序。</li><li><b>想直接拿補法：基本盤補強。</b>14 天內由診斷升級，診斷費全額抵扣。</li><li><b>你是 BNI 會員：</b>可以同時考慮商會引薦力打造，讓夥伴一句話說得出你。</li><li><b>先不用：差異化診斷、精準廣告。</b>地基還沒補好就放大，放大的是還沒補好的東西。</li></ul></div>');
+ h+=rv('<div class="grid4" style="margin-top:12px">'+st('第 1 步','基本盤診斷','缺什麼、依據是什麼',low)+st('第 2 步','基本盤補強','怎麼補、先補哪個、30 天規劃',false)+st('第 3 步','差異化診斷','基本盤補到約 60 再做：說不說得出你不一樣',!low)+st('第 4 步','差異化優化','說法統一、廣告與導外重接、商品化',false)+'</div><p class="note" style="margin-top:6px">每一步做完，都可以訂閱：每月複測看有沒有變好，每週有人提醒。</p>');
+ h+=rv('<div class="card white" style="margin-top:12px"><b>這週先做 1 件事（不用花錢）</b><p style="margin:4px 0 0">挑 3 款主力商品，把成分與容量用文字寫在商品頁，不要只放在圖片裡。這是最大的缺口，也是最容易動手的一件。</p></div>');
+ h+=rv('<div class="tblwrap" style="margin-top:12px"><table class="t"><thead><tr><th>你的情況</th><th>建議的下一步</th></tr></thead><tbody>'+rows.map(function(r){return '<tr><td>'+r[0]+'</td><td><b>'+r[1]+'</b></td></tr>';}).join('')+'</tbody></table></div><p class="note" style="margin-top:6px">所有優化都是「建議與驗收」，我們不替你落地實作。「約 60」是我們的建議門檻。</p>');
+ return h;}
+/* ============ 互動、動畫、導覽 ============ */
+function countUp(el){var end=parseInt(el.getAttribute('data-count'),10);if(reduce){el.textContent=end;return;}var t0=null;el.textContent='0';requestAnimationFrame(function s(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/1000,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(s);});}
+function triggerIn(el){$$('[data-count]',el).forEach(countUp);}
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){countUp(e.target);io.unobserve(e.target);}});},{threshold:.1}):null;
+function observe(root){$$('.rv',root).forEach(function(el,i){el.style.animationDelay=(Math.min(i%5,4)*45)+'ms';});if(!reduce&&io)$$('[data-count]',root).forEach(function(el){io.observe(el);});}
+function typeLines(box,lines,done){box.innerHTML='';var i=0;if(reduce){box.innerHTML=lines.map(function(l){return '<span class="ln">'+l[0]+'<small>'+l[1]+'</small></span>'}).join('');done&&done();return;}
+ (function next(){if(i>=lines.length){done&&done();return;}var l=lines[i++],sp=document.createElement('span');sp.className='ln';box.appendChild(sp);var k=0;(function tick(){if(k<=l[0].length){sp.innerHTML=l[0].slice(0,k)+'<span class="caret"></span>';k++;setTimeout(tick,24);}else{sp.innerHTML=l[0]+'<small>'+l[1]+'</small>';setTimeout(next,220);}})();})();}
+var LINES=[['hesui-tart.example.tw','官網'],['facebook.com/hesuitart.example','粉專'],['maps.example/hesui-tart','Google 商家（選填）']];
+function restart(el){el.style.animation='none';void el.getBoundingClientRect();el.style.animation='';}
+function runScan(){var items=$$('#scanList li'),prog=$('#scanProg'),after=$('#afterScan');
+ items.forEach(function(li){li.classList.remove('run','done');});prog.style.width='0';after.classList.add('hide');
+ function reveal(){after.classList.remove('hide');$$('[data-count]',after).forEach(countUp);$$('.ring .fg',after).forEach(restart);}
+ if(reduce){items.forEach(function(li){li.classList.add('done');});prog.style.width='100%';reveal();return;}
+ var i=0;(function step(){if(i>0)items[i-1].classList.replace('run','done');if(i>=items.length){prog.style.width='100%';setTimeout(reveal,350);return;}items[i].classList.add('run');prog.style.width=((i+1)/items.length*100)+'%';i++;setTimeout(step,520);})();}
+function subnav(id,list){var box=$('#'+id);var pn=box.closest('section.pane');if(pn)pn.classList.add('hasnav');box.innerHTML=list.map(function(n,i){return '<a href="#'+n[0]+'" data-id="'+n[0]+'" class="'+(i===0?'on':'')+'">'+n[1]+'</a>';}).join('');
+ box.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;e.preventDefault();document.getElementById(a.getAttribute('data-id')).scrollIntoView({behavior:reduce?'auto':'smooth'});});
+ if('IntersectionObserver' in window){var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){$$('a',box).forEach(function(a){a.classList.toggle('on',a.getAttribute('data-id')===e.target.id);});var on=$('a.on',box);if(on&&window.innerWidth<960&&box.scrollTo){box.scrollTo({left:Math.max(0,on.offsetLeft-box.clientWidth/2+on.offsetWidth/2)});}}});},{rootMargin:'-120px 0px -65% 0px'});list.forEach(function(n){var el=document.getElementById(n[0]);if(el)so.observe(el);});}}
+function patch4(){replaceSec('s4-ads',newAds());replaceSec('s4-links',newLinks());replaceSec('s4-prod',newProd());insertAfter('s4-peer',peerAdsSec());}
+function patch5(){replaceSec('s5-ads',newAds5());replaceSec('s5-links',newLinks5());replaceSec('s5-prod',newProd5());insertAfter('s5-peer',peerOpt5());var pl=document.getElementById('s5-plan');if(pl)pl.insertAdjacentHTML('beforeend',runExplainer());}
+function bindFix(){var f=$('#fixList');if(f)f.addEventListener('click',function(e){var li=e.target.closest('li');if(!li)return;li.classList.toggle('done');$('.box',li).textContent=li.classList.contains('done')?'✓':'';});}
+function bindFilter(){var f=$('#layerF');if(!f)return;f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var l=b.getAttribute('data-l');$$('#layerF button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});$$('#checks .item').forEach(function(it){it.classList.toggle('hide',l!=='all'&&it.getAttribute('data-l')!==l);});});}
+function bindSwap(){var b=$('#swapBtn');if(!b)return;var sw=false;b.addEventListener('click',function(){sw=!sw;$('#swapBox').innerHTML=sw?'「<mark>同行 A</mark>：用心手作，每一口都是幸福」<br><span class="note">這句話一樣成立。</span>':'「<mark>禾穗</mark>：用心手作，每一口都是幸福」';this.textContent=sw?'換回「禾穗」':'換人測試：把「禾穗」換成同行 →';});}
+function bindBA(){var r=$('#baRange');if(!r)return;var ba=$('#ba');r.addEventListener('input',function(){ba.style.setProperty('--p',this.value+'%');});}
+var NAVS={p1:['sub1',[['s1-top','快篩前言'],['s1-a','快篩 A：基本盤'],['s1-b','快篩 B：差異化'],['s1-next','看完之後怎麼走'],['s1-c','完整報告多了什麼']]],
+ p2:['sub2',[['s2-ov','總覽'],['s2-scope','讀到什麼'],['s2-four','行銷基礎四項'],['s2-site','官網七類燈號'],['s2-check',NCHK+' 項檢查'],['s2-ai','AI 可見度'],['s2-kw','關鍵字現況'],['s2-chan','通路與公司'],['s2-prod','商品資料'],['s2-find','發現與先修'],['s2-evid','依據'],['s2-next','下一步']]],
+ p3:['sub3',[['s3-goal','目標'],['s3-dual','人與 AI 各補什麼'],['s3-steps','補強三步'],['s3-seo','SEO'],['s3-aio','AIO／GEO'],['s3-kw','關鍵字'],['s3-fix','四面向補法'],['s3-ba','規格前後'],['s3-chan','通路與名單'],['s3-prior','優先順序'],['s3-plan','30 天與驗收'],['s3-gate','何時做差異化']]],
+ p4:['sub4',[['s4-ready','準備度'],['s4-five','亮點五維'],['s4-voice','說法對照'],['s4-files','檔案'],['s4-src','來源'],['s4-ads','廣告'],['s4-links','導外與落地頁'],['s4-peer','與同行差異'],['s4-peerads','同行廣告與導外'],['s4-prod','商品全覽與商品化'],['s4-voc','客人語言'],['s4-org','104 與組織'],['s4-cand','候選亮點'],['s4-find','發現與服務'],['s4-evid','依據']]],
+ p5:['sub5',[['s5-unify','說法統一'],['s5-lines','換人測試'],['s5-ads','廣告重接'],['s5-links','導外連結'],['s5-prod','商品化補法'],['s5-peer','拉開同行'],['s5-peerads','同行廣告與導外'],['s5-voc','客人的話'],['s5-cand','候選亮點'],['s5-plan','30 天']]],
+ p6:['sub6',[['s6-ov','訂閱總覽'],['s6-flow','一個月怎麼運作'],['s6-weekly','範本：每週提醒'],['s6-monthly','範本：每月複測'],['s6-retest','範本：複測前後對照'],['s6-scope','邊界'],['s6-pilot','試辦與成本']]]};
+function initPane(id){var p=$('#'+id);
+ if(!ran[id]){ran[id]=1;
+  if(id==='p1'){p.innerHTML=P1();subnav(NAVS.p1[0],NAVS.p1[1]);bindSwap1();$('#scanBtn').addEventListener('click',function(){typeLines($('#freeLines'),[LINES[0]],function(){setTimeout(runScan,200);});});}
+  if(id==='p2'){p.innerHTML=P2();patch2();subnav(NAVS.p2[0],NAVS.p2[1]);bindFix();bindFilter();
+    }
+  if(id==='p3'){p.innerHTML=P3b();subnav(NAVS.p3[0],NAVS.p3[1]);bindBA();}
+  if(id==='p4'){p.innerHTML=P4();patch4();subnav(NAVS.p4[0],NAVS.p4[1]);bindSwap();}
+  if(id==='p5'){p.innerHTML=P5();patch5();subnav(NAVS.p5[0],NAVS.p5[1]);}
+  if(id==='p6'){p.innerHTML=P6();subnav(NAVS.p6[0],NAVS.p6[1]);}
+ }
+ observe(p);}
+var tabs=$$('[role=tab]');
+function show(i){tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===i?'true':'false');});$$('.pane').forEach(function(p,k){p.classList.toggle('on',k===i);});try{if(history.replaceState)history.replaceState(null,'','#p'+(i+1));}catch(e){}window.scrollTo({top:0});initPane('p'+(i+1));}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i);});});
+var h=location.hash.match(/^#p([1-6])$/);show(h?parseInt(h[1],10)-1:0);
+window.fbFinish=function(){$$('[data-count]').forEach(function(e){e.textContent=e.getAttribute('data-count');});document.documentElement.style.scrollBehavior='auto';};
+window.fbInitAll=function(){for(var i=1;i<=6;i++)initPane('p'+i);};
+})();
+</script>
+</body>
+</html>
