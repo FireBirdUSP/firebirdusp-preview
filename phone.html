@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-Hant-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
 <title>手機預覽框｜FireBirdUSP</title>
 <style>
@@ -22,7 +22,7 @@ iframe{border:0;width:375px;height:812px;transform:scale(var(--s,1));transform-o
 <div class="wrap"><div class="phone"><div class="screen"><iframe id="f" title="手機預覽"></iframe></div></div></div>
 <script>
 /* 之後有新版，只要在這裡加一行 */
-var VERS=[['v52','v52（最新・光之藝廊）'],['v51','v51（已退回）'],['v50','v50（多色，已退回）'],['v49','v49'],['v48','v48（白方塊，已退回）'],['v47','v47'],['v34','v34（改版前）']];
+var VERS=[['v53','v53（最新・LINE 視窗）'],['v52','v52（光之藝廊）'],['v51','v51（已退回）'],['v50','v50（多色，已退回）'],['v49','v49'],['v48','v48（白方塊，已退回）'],['v47','v47'],['v34','v34（改版前）']];
 var bar=document.getElementById('bar'),f=document.getElementById('f');
 var q=new URLSearchParams(location.search).get('v')||VERS[0][0];
 function go(v){q=v;f.src=v+'/index.html';[].forEach.call(bar.querySelectorAll('button[data-v]'),function(b){b.classList.toggle('on',b.dataset.v===v)});history.replaceState(null,'','?v='+v)}
@@ -31,3 +31,4 @@ var r=document.createElement('button');r.textContent='↻ 重新載入';r.onclic
 function fit(){var s=Math.min(1,(innerHeight-190)/840,(innerWidth-30)/403);document.documentElement.style.setProperty('--s',Math.max(.5,s).toFixed(3))}
 addEventListener('resize',fit);fit();go(q);
 </script></body></html>
+
