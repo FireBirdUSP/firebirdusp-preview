@@ -22,7 +22,7 @@ iframe{border:0;width:375px;height:812px;transform:scale(var(--s,1));transform-o
 <div class="wrap"><div class="phone"><div class="screen"><iframe id="f" title="手機預覽"></iframe></div></div></div>
 <script>
 /* 之後有新版，只要在這裡加一行 */
-var VERS=[['v51','v51（最新）'],['v50','v50（多色，已退回）'],['v49','v49'],['v48','v48（白方塊，已退回）'],['v47','v47'],['v34','v34（改版前）']];
+var VERS=[['v52','v52（最新・光之藝廊）'],['v51','v51（已退回）'],['v50','v50（多色，已退回）'],['v49','v49'],['v48','v48（白方塊，已退回）'],['v47','v47'],['v34','v34（改版前）']];
 var bar=document.getElementById('bar'),f=document.getElementById('f');
 var q=new URLSearchParams(location.search).get('v')||VERS[0][0];
 function go(v){q=v;f.src=v+'/index.html';[].forEach.call(bar.querySelectorAll('button[data-v]'),function(b){b.classList.toggle('on',b.dataset.v===v)});history.replaceState(null,'','?v='+v)}
