@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>手機預覽框｜FireBirdUSP</title>
+<style>
+:root{--g:linear-gradient(135deg,#B2489E,#D6336C 55%,#E3496F)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#FBF3F8;color:#2B1024;display:flex;flex-direction:column;align-items:center}
+header{width:100%;background:var(--g);color:#fff;padding:12px 16px;text-align:center}
+header b{font-size:18px}header small{display:block;opacity:.9;margin-top:2px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:14px 12px 6px}
+.bar button{font:inherit;font-size:15px;font-weight:700;min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #D6336C;background:#fff;color:#B3265F;cursor:pointer}
+.bar button:hover{background:#FFE6F2}.bar button:active{background:#FFD0E6}
+.bar button.on{background:var(--g);color:#fff;border-color:transparent}
+.bar .tag{align-self:center;font-size:13px;color:#7a6571}
+.wrap{padding:12px 0 28px;display:flex;justify-content:center}
+.phone{width:calc(375px*var(--s,1) + 28px);height:calc(812px*var(--s,1) + 28px);border-radius:46px;background:#1b1018;padding:14px;box-shadow:0 30px 60px -24px rgba(70,8,50,.55)}
+.screen{width:calc(375px*var(--s,1));height:calc(812px*var(--s,1));border-radius:34px;overflow:hidden;background:#fff;position:relative}
+iframe{border:0;width:375px;height:812px;transform:scale(var(--s,1));transform-origin:0 0;display:block}
+</style></head><body>
+<header><b>手機預覽框（375×812）</b><small>在電腦上就能照手機寬度操作，滑鼠點擊＝手指點擊。內部預覽，全頁 noindex。</small></header>
+<div class="bar" id="bar"></div>
+<div class="wrap"><div class="phone"><div class="screen"><iframe id="f" title="手機預覽"></iframe></div></div></div>
+<script>
+/* 之後有新版，只要在這裡加一行 */
+var VERS=[['v49','v49（最新）'],['v48','v48（白方塊，已退回）'],['v47','v47'],['v34','v34（改版前）']];
+var bar=document.getElementById('bar'),f=document.getElementById('f');
+var q=new URLSearchParams(location.search).get('v')||VERS[0][0];
+function go(v){q=v;f.src=v+'/index.html';[].forEach.call(bar.querySelectorAll('button[data-v]'),function(b){b.classList.toggle('on',b.dataset.v===v)});history.replaceState(null,'','?v='+v)}
+VERS.forEach(function(x){var b=document.createElement('button');b.textContent=x[1];b.dataset.v=x[0];b.onclick=function(){go(x[0])};bar.appendChild(b)});
+var r=document.createElement('button');r.textContent='↻ 重新載入';r.onclick=function(){f.src=f.src};bar.appendChild(r);
+function fit(){var s=Math.min(1,(innerHeight-190)/840,(innerWidth-30)/403);document.documentElement.style.setProperty('--s',Math.max(.5,s).toFixed(3))}
+addEventListener('resize',fit);fit();go(q);
+</script></body></html>
