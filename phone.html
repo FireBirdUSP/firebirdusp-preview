@@ -22,7 +22,7 @@ iframe{border:0;width:375px;height:812px;transform:scale(var(--s,1));transform-o
 <div class="wrap"><div class="phone"><div class="screen"><iframe id="f" title="手機預覽"></iframe></div></div></div>
 <script>
 /* 之後有新版，只要在這裡加一行 */
-var VERS=[['v61','v61（最新・彩色漂浮框）'],['v60','v60（首屏四大塊 A/B/C）'],['v59','v59（膠囊與定調台）'],['v58','v58（立體色塊，已退回）'],['v57','v57（收斂亮度）'],['v56','v56（光暈色塊）'],['v55','v55（四色塊）'],['v54','v54（故事與按鈕）'],['v53','v53（LINE 視窗）'],['v52','v52（光之藝廊）'],['v51','v51（已退回）'],['v50','v50（多色，已退回）'],['v49','v49'],['v48','v48（白方塊，已退回）'],['v47','v47'],['v34','v34（改版前）']];
+var VERS=[['v62','v62（最新・圖示跨右上角）'],['v61','v61（彩色漂浮框）'],['v60','v60（首屏四大塊 A/B/C）'],['v59','v59（膠囊與定調台）'],['v58','v58（立體色塊，已退回）'],['v57','v57（收斂亮度）'],['v56','v56（光暈色塊）'],['v55','v55（四色塊）'],['v54','v54（故事與按鈕）'],['v53','v53（LINE 視窗）'],['v52','v52（光之藝廊）'],['v51','v51（已退回）'],['v50','v50（多色，已退回）'],['v49','v49'],['v48','v48（白方塊，已退回）'],['v47','v47'],['v34','v34（改版前）']];
 var bar=document.getElementById('bar'),f=document.getElementById('f');
 var q=new URLSearchParams(location.search).get('v')||VERS[0][0];
 function go(v){q=v;f.src=v+'/index.html';[].forEach.call(bar.querySelectorAll('button[data-v]'),function(b){b.classList.toggle('on',b.dataset.v===v)});history.replaceState(null,'','?v='+v)}
