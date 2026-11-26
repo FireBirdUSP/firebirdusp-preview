@@ -1,0 +1,136 @@
+/* v61｜首屏四個產品大塊：彩色漂浮框＋超出框外、滑過會動的立體圖塊 */
+body .stage .hero h1 span:nth-child(2){color:#FFE24A}
+body .stage .c-diag{--k:#2F7BF5;--k1:#7FBBFF;--k2:#1B4BC0;--kd:#1B4BC0;--ink:#fff}
+body .stage .c-meet{--k:#F0284A;--k1:#FF8795;--k2:#BF0A34;--kd:#C00C35;--ink:#fff}
+body .stage .c-light{--k:#FFB300;--k1:#FFE36E;--k2:#F28C00;--kd:#8A5200;--ink:#2A1B2D}
+body .stage .c-ad{--k:#0FADC4;--k1:#6BEBF0;--k2:#05708A;--kd:#05708A;--ink:#fff}
+
+/* ── 共用骨架 ── */
+body .stage .controller{width:min(1100px,100%);height:334px}
+body .stage .slot .hint{display:none}
+body .stage .controller .cells button.cell .lbl,body .stage .controller .cells button.cell .one,body .stage .controller .cells button.cell .go{text-shadow:none}
+body .stage .controller .glass{display:none}
+body .stage .controller .cells{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:46px minmax(0,1fr);align-items:stretch;column-gap:18px;row-gap:46px;padding:0;background:none!important;border:0!important;border-radius:0;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+body .stage .controller .cells::before,body .stage .controller .cells::after,body .stage .controller::before,body .stage .controller::after{content:none!important}
+body .stage .controller .cells .lead{grid-column:1/-1;justify-self:center;align-self:start;display:flex;align-items:center;height:44px;padding:0 28px;border-radius:999px;background:linear-gradient(115deg,rgba(255,255,255,.36),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.75);box-shadow:inset 0 1px 0 #fff,0 0 28px -6px rgba(255,255,255,.55);font-size:17px;font-weight:900;letter-spacing:.08em;color:#fff;opacity:1}
+body .stage .controller .cells button.cell{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;width:auto;height:100%;min-height:0;margin:0;padding:0 14px 20px;border:0;border-radius:32px;text-align:center;white-space:normal;font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s,opacity .6s,filter .6s}
+body .stage .controller .cells button.cell .dot,body .stage .controller .cells button.cell .rst{display:none}
+body .stage .controller .cells button.cell .ico{display:grid;place-items:center;position:relative;flex:none;width:98px;height:98px;margin:-38px 0 6px;border-radius:32px;color:var(--ink);background:radial-gradient(80% 60% at 28% 14%,rgba(255,255,255,.75),rgba(255,255,255,0) 62%),linear-gradient(150deg,var(--k1),var(--k) 52%,var(--k2));box-shadow:inset 0 2px 1px rgba(255,255,255,.75),inset 0 -8px 16px rgba(0,0,0,.14),0 18px 26px -10px var(--k2);transform:rotate(-7deg);transition:transform .45s cubic-bezier(.34,1.56,.64,1)}
+body .stage .controller .cells button.cell .ico::after{content:none}
+body .stage .controller .cells button.cell .ico svg{width:64px;height:64px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;overflow:visible;filter:drop-shadow(0 2px 2px rgba(0,0,0,.18))}
+body .stage .controller .cells button.cell .ico svg [fill="#fff"]{fill:currentColor}
+body .stage .controller .cells button.cell .lbl{display:block;font-size:27px;font-weight:900;line-height:1.28;letter-spacing:.03em}
+body .stage .controller .cells button.cell .one{display:block;font-size:15.5px;font-weight:700;line-height:1.55}
+body .stage .controller .cells button.cell .go{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:none;height:44px;min-width:138px;margin-top:auto;padding:0 22px;border-radius:999px;font-size:16.5px;font-weight:900}
+body .stage .controller .cells button.cell .go b{font-size:22px;line-height:1;margin-top:-3px;transition:transform .25s}
+@media (hover:hover){
+  body .stage .controller .cells button.cell:hover{transform:translateY(-10px)}
+  body .stage .controller .cells button.cell:hover .ico{transform:rotate(3deg) scale(1.08)}
+  body .stage .controller .cells button.cell:hover .go b{transform:translateX(5px)}
+}
+body .stage .controller .cells button.cell:active{transform:scale(.97)}
+body .stage .controller .cells button.cell:active .ico{transform:rotate(3deg) scale(1.1)}
+body .stage .controller .cells button.cell:focus-visible{outline:3px solid #FFE24A;outline-offset:4px}
+
+/* ── 彩色漂浮框 ── */
+body .stage .controller .cells button.cell{color:var(--ink);isolation:isolate;border:1.5px solid rgba(255,255,255,.9);background:radial-gradient(120% 70% at 18% 0%,rgba(255,255,255,.34),rgba(255,255,255,0) 58%),linear-gradient(165deg,var(--k1) 0%,var(--k) 46%,var(--k2) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 0 30px -6px var(--k1),0 30px 40px -22px rgba(50,5,35,.7);animation:h4float 5.6s ease-in-out infinite}
+body .stage .controller .cells button.c-meet{animation-delay:-1.4s}
+body .stage .controller .cells button.c-light{animation-delay:-2.8s}
+body .stage .controller .cells button.c-ad{animation-delay:-4.2s}
+@keyframes h4float{0%,100%{translate:0 0}50%{translate:0 -8px}}
+/* 外圈玻璃框：跟著卡片一起浮，滑過時張開發亮 */
+body .stage .controller .cells button.cell::after{content:""!important;display:block!important;position:absolute!important;z-index:-1;inset:-8px!important;width:auto!important;height:auto!important;margin:0!important;padding:0!important;border:1px solid rgba(255,255,255,.6)!important;border-radius:39px!important;background:linear-gradient(160deg,rgba(255,255,255,.30),rgba(255,255,255,.05) 50%,rgba(255,255,255,.18))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.7);opacity:.65!important;animation:none!important;transition:inset .35s cubic-bezier(.22,1,.36,1),opacity .35s,box-shadow .35s,border-radius .35s}
+body .stage .controller .cells button.cell::before{content:""!important;display:block!important;position:absolute;left:20px;top:14px;font-size:44px;font-weight:900;line-height:1;letter-spacing:-.02em;opacity:.36;animation:none}
+body .stage .controller .cells button.c-diag::before{content:"01"!important}
+body .stage .controller .cells button.c-meet::before{content:"02"!important}
+body .stage .controller .cells button.c-light::before{content:"03"!important}
+body .stage .controller .cells button.c-ad::before{content:"04"!important}
+/* 超出框外的立體圖塊 */
+body .stage .controller .cells button.cell .ico{border:3px solid rgba(255,255,255,.95);background:radial-gradient(80% 60% at 28% 14%,rgba(255,255,255,.85),rgba(255,255,255,0) 62%),linear-gradient(150deg,var(--k1),var(--k) 55%,var(--k2));box-shadow:inset 0 -8px 16px rgba(0,0,0,.14),0 0 0 6px rgba(255,255,255,.2),0 20px 26px -10px rgba(50,5,35,.6)}
+body .stage .controller .cells button.cell .lbl,body .stage .controller .cells button.cell .one{text-shadow:0 1px 8px rgba(0,20,50,.34)}
+body .stage .controller .cells button.c-light .lbl,body .stage .controller .cells button.c-light .one{text-shadow:none}
+body .stage .controller .cells button.cell .go{background:#fff;color:var(--kd);box-shadow:0 10px 18px -8px rgba(40,0,30,.55)}
+body .stage .controller .cells button.c-light .go{background:#2A1B2D;color:#fff}
+@media (hover:hover){
+  body .stage .controller .cells button.cell:hover{animation-play-state:paused;box-shadow:inset 0 1px 0 #fff,0 0 46px 2px var(--k1),0 36px 46px -22px rgba(50,5,35,.7)}
+  body .stage .controller .cells button.cell:hover::after{inset:-14px!important;border-radius:45px!important;opacity:1!important;box-shadow:inset 0 1px 0 #fff,0 0 34px 2px rgba(255,255,255,.45)}
+  body .stage .controller .cells button.cell:hover .ico{transform:translateY(-10px) rotate(5deg) scale(1.13)}
+}
+body .stage .controller .cells button.cell:active::after{opacity:1!important;box-shadow:inset 0 1px 0 #fff,0 0 30px 4px rgba(255,255,255,.55)}
+body .stage .controller .cells button.cell:active .ico{transform:translateY(-8px) rotate(5deg) scale(1.13)}
+
+/* ── 點選後：其他退場，選到的收成上方膠囊 ── */
+body .stage .controller.collapsed{height:60px}
+body .stage .controller.collapsed .cells .lead{opacity:0}
+body .stage .controller.collapsed .cells button.cell:not(.chosen){opacity:0;filter:blur(10px);pointer-events:none}
+html body .stage .controller.collapsed .cells button.cell.chosen{position:absolute;left:50%;top:0;width:250px;height:56px;margin:0 0 0 -125px;padding:0 18px;flex-direction:row;align-items:center;justify-content:center;border-radius:999px;border:1.5px solid rgba(255,255,255,.9);background:linear-gradient(135deg,var(--k),var(--k2));color:var(--ink);transform:none;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 14px 28px -12px rgba(50,5,35,.6);animation:h4pill .5s ease .35s backwards}
+@keyframes h4pill{from{opacity:0;transform:scale(.86)}}
+html body .stage .controller.collapsed .cells button.cell.chosen .ico,html body .stage .controller.collapsed .cells button.cell.chosen .one,html body .stage .controller.collapsed .cells button.cell.chosen .go{display:none}
+html body .stage .controller.collapsed .cells button.cell.chosen .lbl{font-size:18px;white-space:nowrap;padding:0;text-shadow:none;color:inherit}
+html body .stage .controller.collapsed .cells button.cell.chosen .lbl::before{content:"← "}
+html body .stage .controller.collapsed .cells button.cell.chosen .lbl br{display:none}
+
+html body .stage .controller.collapsed .cells button.cell.chosen::before,html body .stage .controller.collapsed .cells button.cell.chosen::after{display:none!important}
+html body .stage .controller.collapsed .cells button.cell.chosen{translate:none}
+
+/* ── 手機：2×2，一屏看完 ── */
+@media (max-width:700px){
+  body .stage{min-height:100svh}
+  body .stage .hero{box-sizing:border-box;height:100svh;min-height:580px;padding:92px 12px 14px}
+  body:has(.st-ck:not([hidden])) .stage:not(.detail) .hero{padding-bottom:calc(var(--ckh,128px) + 14px)}
+  body .stage.detail .hero{height:auto;min-height:0;padding-bottom:40px}
+  body .stage .hero .eyebrow{display:none}
+  body .stage .hero h1{font-size:clamp(34px,11vw,48px);line-height:1.15;margin:0 0 4px}
+  body .stage .hero .sub{font-size:15px;line-height:1.5;margin:0 0 10px}
+  body .stage .hero .controller{flex:1 1 0;align-self:stretch;width:100%;height:auto;min-height:0;margin:0}
+  body .stage .controller .cells{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:30px minmax(0,1fr) minmax(0,1fr);column-gap:10px;row-gap:24px}
+  body .stage .controller .cells .lead{height:30px;padding:0 18px;font-size:14.5px}
+  body .stage .controller .cells button.cell{justify-content:center;gap:6px;padding:0 6px 8px;border-radius:24px}
+  body .stage .controller .cells button.cell .lbl br{display:inline}
+  body .stage .controller .cells button.cell .ico{width:78px;height:78px;margin:-14px 0 2px;border-radius:26px}
+  body .stage .controller .cells button.cell .ico svg{width:52px;height:52px;stroke-width:3}
+  body .stage .controller .cells button.cell .lbl{font-size:clamp(21px,6.4vw,26px);line-height:1.22;letter-spacing:.04em}
+  body .stage .controller .cells button.cell .one{font-size:13px;line-height:1.35}
+  body .stage .controller .cells button.cell .go{height:34px;min-width:104px;margin-top:6px;padding:0 14px;font-size:14.5px}
+  body .stage .controller.collapsed{flex:0 0 60px}
+  body .stage .controller.collapsed .cells{grid-template-rows:56px;row-gap:0}
+  body .stage:not(.detail) .slot{display:none}
+  body .stage .slot{margin-top:10px}
+}
+@media (max-width:700px) and (max-height:740px){
+  body .stage .hero{padding-top:84px}
+  body .stage .hero .sub{display:none}
+  body .stage .controller .cells{grid-template-rows:minmax(0,1fr) minmax(0,1fr);row-gap:20px;padding-top:20px}
+  body .stage .controller .cells .lead{display:none}
+  body .stage .controller .cells button.cell .ico{width:48px;height:48px;margin-top:-14px;border-radius:16px}
+  body .stage .controller .cells button.cell{gap:2px}
+  body .stage .controller .cells button.cell .lbl{font-size:19px;line-height:1.18}
+  body .stage .controller .cells button.cell .ico svg{width:32px;height:32px}
+  body .stage .controller .cells button.cell .go{height:28px}
+  body:has(.st-ck:not([hidden])) .stage:not(.detail) .cells button.cell .one{display:none}
+}
+@media (prefers-reduced-motion:reduce){body .stage .controller .cells button.cell,body .stage .controller .cells button.cell .ico{transition:none;animation:none}}
+@media (max-width:700px){
+  body .stage .controller .cells{column-gap:14px}
+  body .stage .controller .cells button.cell::before{display:none!important}
+  body .stage .controller .cells button.cell::after{inset:-4px!important;border-radius:28px!important}
+  body .stage .controller .cells button.cell:active::after{inset:-6px!important;border-radius:30px!important}
+  body .stage .controller .cells button.cell .ico{box-shadow:inset 0 -6px 12px rgba(0,0,0,.14),0 0 0 4px rgba(255,255,255,.2),0 14px 18px -8px rgba(50,5,35,.6)}
+}
+@media (prefers-reduced-motion:reduce){body .stage .controller .cells button.cell,body .stage .controller .cells button.cell::after{animation:none!important;transition:none}}
+/* 手機：圖塊固定頂在框上緣外，文字與按鈕置中分配 */
+@media (max-width:700px){
+  body .stage .controller .cells{row-gap:42px;grid-template-rows:30px minmax(0,1fr) minmax(0,1fr)}
+  body .stage .controller .cells .lead{align-self:start;margin-top:-2px}
+  body .stage .controller .cells button.cell{justify-content:flex-start}
+  body .stage .controller .cells button.cell .ico{margin:-32px 0 0}
+  body .stage .controller .cells button.cell .lbl{margin-top:auto}
+  body .stage .controller .cells button.cell .go{margin-bottom:auto}
+}
+@media (max-width:700px) and (max-height:740px){
+  body .stage .controller .cells{grid-template-rows:minmax(0,1fr) minmax(0,1fr);row-gap:34px;padding-top:30px}
+  body .stage .controller .cells button.cell .ico{margin:-26px 0 0}
+}
+@media (max-width:700px){
+  body .stage .controller.collapsed .cells{grid-template-rows:56px;row-gap:0;padding-top:0}
+}
