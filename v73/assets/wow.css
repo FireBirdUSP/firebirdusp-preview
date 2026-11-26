@@ -1,0 +1,212 @@
+/* v68｜光點聚名首屏：舞台深莓紫、中央最亮；四項服務收成下方精簡色塊 */
+body .stage.wow{background:radial-gradient(80% 60% at 50% 32%,#9C1D6E 0%,#641058 40%,#2C0637 100%)}
+body .stage.wow .light,body .stage.wow .walls,body .stage.wow .orn,body .stage.wow .motes,body .stage.wow .scroll-cue{display:none}
+#wow{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;transition:opacity .6s}
+body .stage.wow.detail #wow{opacity:0}
+body .stage.wow .hero{z-index:2;box-sizing:border-box;min-height:100svh;padding:92px 20px 22px}
+body .stage.wow .hero .eyebrow{display:none}
+body .stage.wow .hero h1{display:flex;flex-direction:column;align-items:center;width:100%;margin:0;line-height:1.2}
+body .stage.wow .hero h1 span{display:block;margin:0;transform:none;animation:none;filter:none}
+body .stage.wow .hero h1 .w-l1{font-size:clamp(24px,3vw,40px);font-weight:900;letter-spacing:.14em;color:#fff;opacity:.96;text-shadow:0 2px 14px rgba(30,0,40,.7)}
+body .stage.wow .hero h1 .w-box{width:min(1080px,100%);height:clamp(150px,27svh,250px)}
+body .stage.wow .hero h1 .w-l3{font-size:clamp(17px,1.9vw,24px);font-weight:900;letter-spacing:.12em;color:#FFE24A;min-height:1.6em;text-shadow:0 2px 12px rgba(30,0,40,.8)}
+body .stage.wow.named .hero h1 .w-l3{font-size:clamp(28px,3.4vw,46px);animation:wowin .7s cubic-bezier(.22,1.3,.4,1) .55s both}
+@keyframes wowin{from{opacity:0;transform:translateY(14px) scale(.9)}to{opacity:1;transform:none}}
+.w-form{display:flex;gap:8px;width:min(540px,100%);margin:14px auto 0;padding:6px;border-radius:14px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.5);box-shadow:0 0 34px -6px rgba(255,150,200,.75);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.w-form input{flex:1;min-width:0;height:50px;border:0;border-radius:9px;background:#fff;color:#2C0637;padding:0 16px;font:inherit;font-size:18px;font-weight:700}
+.w-form input::placeholder{color:#8A7283;font-weight:500}
+.w-form button{flex:none;height:50px;border:0;border-radius:9px;padding:0 22px;background:linear-gradient(180deg,#FFF07A,#FFC414);color:#2C0637;font:inherit;font-size:17px;font-weight:900;letter-spacing:.06em;cursor:pointer;box-shadow:0 0 20px -2px rgba(255,214,60,.85);transition:transform .2s,box-shadow .2s}
+.w-form button:hover{transform:translateY(-2px);box-shadow:0 0 30px 2px rgba(255,214,60,.95)}
+.w-form button:active{transform:scale(.96)}
+.w-form input:focus-visible,.w-form button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.w-note{margin:6px 0 0;font-size:12.5px;color:rgba(255,255,255,.72);text-align:center}
+body .stage.wow .hero .sub{margin:auto 0 12px;padding-top:10px;font-size:16px;opacity:1}
+body .stage.wow.title-hidden .hero h1,body .stage.wow.title-hidden .w-form,body .stage.wow.title-hidden .w-note,body .stage.wow.title-hidden .hero .sub{display:none}
+
+/* 四項服務：精簡色塊 */
+body .stage.wow .controller:not(.collapsed){flex:none;width:min(1060px,100%);height:128px}
+body .stage.wow .controller:not(.collapsed) .cells{grid-template-rows:minmax(0,1fr);column-gap:22px;row-gap:0}
+body .stage.wow .controller .cells .lead{display:none}
+body .stage.wow .controller:not(.collapsed) .cells button.cell{justify-content:flex-end;gap:2px;padding:12px 52px 13px 16px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell::after{inset:-7px!important;border-radius:15px!important}
+body .stage.wow .controller:not(.collapsed) .cells button.cell.lit{transform:translateY(-8px) scale(1.035)}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{left:auto;right:6px;top:6px;width:104px;height:66px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .lbl{font-size:19px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .one{font-size:12.5px;white-space:nowrap}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .go{position:absolute;right:11px;bottom:13px;width:32px;height:32px;margin:0;padding:0;justify-content:center;font-size:0;letter-spacing:0}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .go b{font-size:17px;transform:none}
+body .stage.wow.detail .hero{justify-content:flex-start}
+
+@media (max-width:700px){
+  body .stage.wow .hero{height:100svh;min-height:580px;padding:98px 14px 14px}
+  body .stage.wow.detail .hero{height:auto;min-height:0;padding-bottom:40px}
+  body .stage.wow .hero h1 .w-l1{font-size:22px}
+  body .stage.wow .hero h1 .w-box{height:clamp(104px,24svh,210px);flex:0 0 auto}
+  body .stage.wow .hero h1 .w-l3{font-size:16px;letter-spacing:.08em}
+  body .stage.wow.named .hero h1 .w-l3{font-size:32px}
+  .w-form{margin-top:10px;padding:5px;gap:6px}
+  .w-form input{height:46px;font-size:16px;padding:0 12px}
+  .w-form button{height:46px;padding:0 14px;font-size:15.5px}
+  body .stage.wow .hero .sub{display:none}
+  body .stage.wow .controller:not(.collapsed){flex:0 0 auto;width:100%;height:clamp(150px,25svh,200px);margin-top:auto}
+  body .stage.wow .controller:not(.collapsed) .cells{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:14px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;padding:6px 8px 9px 11px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell::after{inset:-4px!important;border-radius:13px!important}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell.lit{transform:scale(1.03)}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{right:4px;top:3px;margin:0;width:72px;height:46px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .lbl{font-size:clamp(14.5px,4.2vw,17px);letter-spacing:0}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .one{display:none}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .go{display:flex;align-items:center;left:11px;right:auto;bottom:auto;top:9px;width:24px;height:24px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .go b{font-size:14px}
+}
+@media (max-width:700px) and (max-height:700px){
+  body .stage.wow .hero{padding-top:90px}
+  .w-note{display:none}
+  body .stage.wow .hero h1 .w-box{height:106px}
+  body .stage.wow .controller:not(.collapsed){height:142px}
+}
+@media (max-width:700px){
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .hero{padding-bottom:calc(var(--ckh,128px) + 10px)}
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .w-note{display:none}
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .hero h1 .w-box{height:clamp(70px,13svh,120px)}
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .controller:not(.collapsed){height:118px}
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .controller:not(.collapsed) .cells button.cell .ico,body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .controller:not(.collapsed) .cells button.cell .go{display:none}
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail).named .hero h1 .w-l3{font-size:24px}
+}
+
+/* ═════ v69：服務色塊放大，三排之間留出呼吸 ═════ */
+body .stage.wow .hero .w-note{margin-top:8px}
+body .stage.wow .hero .sub{margin:24px 0 0;padding-top:0;font-size:17px}
+body .stage.wow .controller:not(.collapsed){width:min(1140px,100%);height:170px;margin-top:44px}
+body .stage.wow .controller:not(.collapsed) .cells{column-gap:26px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell{gap:4px;padding:16px 60px 17px 19px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{right:8px;top:6px;width:132px;height:84px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .lbl{font-size:23px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .one{font-size:14px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .go{right:13px;bottom:17px;width:38px;height:38px}
+body .stage.wow .controller:not(.collapsed) .cells button.cell .go b{font-size:20px}
+@media (min-width:701px) and (max-width:1040px){
+  body .stage.wow .controller:not(.collapsed) .cells{column-gap:18px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell{padding:14px 12px 15px 14px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{width:112px;height:76px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .lbl{font-size:18px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .go{display:none}
+}
+/* 矮一點的電腦螢幕：先縮名字區，四塊維持夠大，一屏看完 */
+@media (min-width:701px) and (max-height:800px){
+  body .stage.wow .hero{padding-top:86px;padding-bottom:18px}
+  body .stage.wow .hero h1 .w-box{height:clamp(120px,22svh,190px)}
+  body .stage.wow .hero h1 .w-l1{font-size:clamp(22px,2.4vw,32px)}
+  .w-form{margin-top:8px}
+  body .stage.wow .hero .sub{margin-top:22px;font-size:16px}
+  body .stage.wow .controller:not(.collapsed){height:150px;margin-top:46px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{top:5px;width:104px;height:66px}
+}
+@media (min-width:701px) and (max-height:680px){
+  body .stage.wow .hero .w-note{display:none}
+  body .stage.wow .controller:not(.collapsed){height:136px;margin-top:44px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{top:4px;width:84px;height:52px}
+}
+@media (max-width:700px){
+  body .stage.wow .controller:not(.collapsed){width:100%;height:clamp(188px,30svh,250px);margin-top:auto}
+  body .stage.wow .controller:not(.collapsed) .cells{column-gap:15px;row-gap:15px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell{padding:6px 8px 11px 12px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{right:3px;top:4px;width:96px;height:62px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .lbl{font-size:clamp(15.5px,4.6vw,19px)}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .go{top:10px;left:11px;right:auto;bottom:auto;width:26px;height:26px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .go b{font-size:15px}
+}
+@media (max-width:700px) and (max-height:700px){
+  body .stage.wow .hero h1 .w-box{height:92px}
+  body .stage.wow .controller:not(.collapsed){height:172px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{width:72px;height:46px}
+}
+@media (max-width:700px){
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .controller:not(.collapsed){height:124px}
+}
+
+/* ═════ v71：存成圖片分享 ═════ */
+.w-share{display:none;align-items:center;gap:8px;min-height:42px;margin-top:10px;padding:0 20px;border-radius:10px;border:1.5px solid rgba(255,255,255,.85);background:rgba(255,255,255,.16);color:#fff;font:inherit;font-size:16px;font-weight:900;letter-spacing:.06em;cursor:pointer;box-shadow:0 0 22px -6px rgba(255,190,225,.9);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .2s,color .2s,transform .2s}
+.w-share svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.w-share:hover{background:#fff;color:#641058;transform:translateY(-2px)}
+.w-share:active{transform:scale(.96)}
+.w-share:focus-visible{outline:3px solid #FFE24A;outline-offset:2px}
+.w-share[aria-busy="true"]{opacity:.6;cursor:progress}
+body .stage.wow.named .w-share{display:inline-flex}
+body .stage.wow.named .hero .w-note{display:none}
+body .stage.wow.title-hidden .w-share{display:none}
+.w-modal{position:fixed;inset:0;z-index:400;display:grid;place-items:center;padding:16px;background:rgba(25,3,32,.82);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.w-modal[hidden]{display:none}
+.w-card{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;width:min(420px,100%);max-height:100%;overflow:auto;padding:18px;border-radius:18px;background:#fff;color:#2C0637;box-shadow:0 30px 70px -20px rgba(0,0,0,.7)}
+.w-card img{display:block;width:auto;max-width:100%;max-height:min(58vh,520px);border-radius:12px;-webkit-touch-callout:default}
+.w-tip{margin:0;font-size:13px;line-height:1.6;color:#6B5567;text-align:center}
+.w-acts{display:flex;gap:10px;width:100%}
+.w-acts>*{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:10px;font:inherit;font-size:16px;font-weight:900;text-decoration:none;cursor:pointer}
+.w-acts>[hidden]{display:none}
+.w-send{border:0;background:linear-gradient(135deg,#B2489E,#D6336C 55%,#E3496F);color:#fff}
+.w-dl{border:2px solid #D6336C;background:#fff;color:#B01E5A}
+.w-x{position:absolute;top:8px;right:8px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(44,6,55,.78);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+html.w-lock,html.w-lock body{overflow:hidden}
+@media (max-width:700px){.w-share{margin-top:8px;min-height:40px;font-size:15px}}
+/* 出現分享鈕後收緊下方間距，仍一屏看完 */
+@media (min-width:701px){body .stage.wow.named .hero .sub{margin-top:16px}body .stage.wow.named .controller:not(.collapsed){margin-top:30px}}
+@media (min-width:701px) and (max-height:860px){body .stage.wow.named .hero{padding-bottom:12px}body .stage.wow.named .hero .sub{margin-top:12px}body .stage.wow.named .controller:not(.collapsed){margin-top:28px}}
+@media (min-width:701px) and (max-height:800px){.w-share{margin-top:6px;min-height:36px;font-size:15px}body .stage.wow.named .hero .sub{margin-top:10px}body .stage.wow.named .controller:not(.collapsed){margin-top:26px}}
+@media (min-width:701px) and (max-height:720px){body .stage.wow.named .hero{padding-top:78px;padding-bottom:8px}body .stage.wow.named .hero h1 .w-box{height:clamp(110px,19svh,170px)}body .stage.wow.named .controller:not(.collapsed){height:128px}}
+
+/* ═════ v72：手機四塊往上接、吃滿剩下的高度；存圖失敗提示 ═════ */
+.w-err{margin:8px 0 0;max-width:340px;padding:8px 12px;border-radius:10px;background:#fff;color:#B01E5A;font-size:14px;font-weight:700;line-height:1.5;text-align:center}
+.w-err[hidden]{display:none}
+body .stage.wow.title-hidden .w-err{display:none}
+@media (max-width:700px){
+  body .stage.wow .hero h1 .w-box{height:clamp(110px,27svh,270px)}
+  body .stage.wow .controller:not(.collapsed){flex:1 1 0;height:auto;min-height:150px;max-height:340px;margin-top:22px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{width:clamp(82px,29vw,128px);height:clamp(48px,10.5svh,92px)}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .lbl{font-size:clamp(15.5px,4.7vw,20px)}
+}
+@media (max-width:700px) and (max-height:700px){
+  body .stage.wow .hero h1 .w-box{height:96px}
+  body .stage.wow .controller:not(.collapsed){height:auto;margin-top:16px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{width:76px;height:46px}
+}
+@media (max-width:700px){
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .hero h1 .w-box{height:clamp(70px,13svh,120px)}
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .controller:not(.collapsed){height:auto;min-height:112px;margin-top:14px}
+}
+
+/* ═════ v73：分享鈕與免費測驗並排、分享彈窗、手機四塊補回副標 ═════ */
+.w-cta{display:none;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:10px}
+body .stage.wow.named .w-cta{display:flex}
+body .stage.wow.title-hidden .w-cta{display:none}
+body .stage.wow .w-cta .w-share{margin-top:0}
+.w-test{display:inline-flex;align-items:center;min-height:42px;padding:0 20px;border-radius:10px;border:1.5px solid #FFE24A;background:#FFE24A;color:#3A0640;font-size:16px;font-weight:900;letter-spacing:.04em;text-decoration:none;box-shadow:0 0 22px -6px rgba(255,214,60,.9);transition:transform .2s}
+.w-test:hover{transform:translateY(-2px)}
+.w-test:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.w-card{width:min(440px,100%);gap:10px}
+.w-card img{max-height:min(40vh,430px)}
+.w-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.w-acts>*{min-height:46px;padding:4px 8px;border:2px solid #D6336C;border-radius:10px;background:#fff;color:#B01E5A;font-size:15px;line-height:1.3;text-align:center}
+.w-acts>.main{border-color:transparent;background:linear-gradient(135deg,#B2489E,#D6336C 55%,#E3496F);color:#fff}
+.w-acts>.line{border-color:#06C755;background:#06C755;color:#fff}
+.w-status{margin:0;width:100%;padding:8px 10px;border-radius:8px;background:#FFF0F6;color:#8F0F45;font-size:14px;font-weight:700;line-height:1.5;text-align:center}
+.w-status[hidden]{display:none}
+.w-msg{display:grid;gap:4px;width:100%;font-size:13px;font-weight:700;color:#6B5567}
+.w-msg textarea{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid #E7C8DC;border-radius:8px;background:#FFF8FB;color:#2C0637;font:inherit;font-size:13px;font-weight:500;line-height:1.55;resize:vertical}
+.w-card>*{flex:none}
+@media (max-width:700px){
+  .w-test{min-height:40px;padding:0 14px;font-size:14.5px}
+  body .stage.wow .w-cta{gap:8px;margin-top:8px}
+  body .stage.wow .w-cta .w-share{padding:0 14px;font-size:14.5px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell{justify-content:flex-end;gap:2px;padding-bottom:10px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .one{display:block;font-size:12.5px;line-height:1.35;white-space:nowrap}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{height:min(clamp(48px,10.5svh,92px),calc(100% - 56px))}
+  .w-card{padding:14px}
+  .w-card img{max-height:36vh}
+}
+@media (max-width:700px) and (max-height:700px){
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .one{font-size:11.5px}
+  body .stage.wow .controller:not(.collapsed) .cells button.cell .ico{height:min(46px,calc(100% - 50px))}
+}
+@media (max-width:700px){
+  body:has(.st-ck:not([hidden])) .stage.wow:not(.detail) .controller:not(.collapsed) .cells button.cell .one{display:none}
+}
