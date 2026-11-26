@@ -1,0 +1,191 @@
+/* FireBirdUSP v55｜照現行 Sales KIT：四個產品四個實色大色塊、大編號、大字
+   藍＝品牌診斷與優化　紅＝商會引薦力打造　黃＝差異化介面設計　青＝精準廣告投放 */
+body{--b:#2C6CD8;--g:#C71E33;--y:#FFC21A;--o:#0E8C9A}
+.c-diag{--k:#2C6CD8;--kd:#1C4EA6;--kt:#fff}
+.c-meet{--k:#C71E33;--kd:#9C1527;--kt:#fff}
+.c-light{--k:#FFC21A;--kd:#6E4D00;--kt:#2A1B2D}
+.c-ad{--k:#0E8C9A;--kd:#0A6570;--kt:#fff}
+
+/* ═════ 首頁第一屏：四色塊 ═════ */
+body .stage .hero h1 span:nth-child(2){color:#FFE24A}
+body .stage .controller{width:min(1120px,100%);height:290px}
+body .stage .controller .glass{display:none}
+body .stage .cells{height:100%;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:34px minmax(0,1fr);align-items:stretch;gap:12px;padding:0}
+body .stage .cells .lead{grid-column:1/-1;height:auto;align-self:center;opacity:1;font-size:18px;font-weight:900;letter-spacing:.08em}
+body .stage .cells button.cell{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:6px;height:100%;min-height:0;padding:16px 18px;border:2px solid rgba(255,255,255,.9);border-radius:22px;background:var(--k);color:var(--kt);text-align:left;white-space:normal;text-shadow:none;box-shadow:0 18px 34px -12px rgba(50,5,35,.55);transition:opacity .42s,filter .42s,transform .22s,box-shadow .22s;animation:v55in .6s cubic-bezier(.22,1,.36,1) var(--d,.5s) backwards}
+body .stage .cells button.c-diag{--d:.55s}
+body .stage .cells button.c-meet{--d:.65s}
+body .stage .cells button.c-light{--d:.75s}
+body .stage .cells button.c-ad{--d:.85s}
+body .stage .cells button.cell::before{position:absolute;top:8px;left:18px;font-size:58px;font-weight:900;line-height:1;opacity:.38;letter-spacing:-.02em}
+body .stage .cells button.c-diag::before{content:"01"}
+body .stage .cells button.c-meet::before{content:"02"}
+body .stage .cells button.c-light::before{content:"03"}
+body .stage .cells button.c-ad::before{content:"04"}
+body .stage .cells button.cell .dot{display:none}
+body .stage .cells button.cell .ico{display:block;position:absolute;top:14px;right:14px;width:54px;height:54px}
+body .stage .cells button.cell .ico svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+body .stage .cells button.cell .ico svg [fill="#fff"]{fill:currentColor}
+body .stage .cells button.cell .lbl{font-size:27px;font-weight:900;line-height:1.22;letter-spacing:.02em}
+body .stage .cells button.cell .one{display:block;font-size:15px;font-weight:700;line-height:1.5}
+body .stage .cells button.cell .go{display:inline-flex;align-items:center;gap:6px;height:36px;margin-top:4px;padding:0 16px;border-radius:999px;background:#fff;color:var(--kd);font-size:15px;font-weight:900;box-shadow:0 6px 14px rgba(0,0,0,.2)}
+body .stage .cells button.cell .go b{font-size:20px;line-height:1;margin-top:-2px}
+body .stage .cells button.c-light .go{background:#2A1B2D;color:#fff}
+body .stage .cells button.cell:hover{transform:translateY(-6px);box-shadow:0 26px 40px -12px rgba(50,5,35,.65)}
+body .stage .cells button.cell:active{transform:scale(.97);filter:brightness(1.12)}
+/* 點開後：選中的色塊收成上方一顆膠囊 */
+body .stage .controller.collapsed{height:60px}
+body .stage .controller.collapsed .cells button.cell:not(.chosen){opacity:0;pointer-events:none}
+body .stage .cells button.cell.chosen{position:absolute;left:50%;top:0;width:250px;height:56px;margin-left:-125px;padding:0 16px;flex-direction:row;align-items:center;justify-content:center;border-radius:999px;transform:none!important;animation:v55pill .5s ease .35s backwards}
+body .stage .cells button.cell.chosen::before,body .stage .cells button.cell.chosen .ico,body .stage .cells button.cell.chosen .one,body .stage .cells button.cell.chosen .go{display:none}
+body .stage .cells button.cell.chosen .lbl{font-size:18px;white-space:nowrap}
+body .stage .cells button.cell.chosen .lbl br{display:none}
+body .stage .cells button.cell.chosen.reset .lbl{display:none}
+@keyframes v55in{from{opacity:0;transform:translateY(24px)}}
+@keyframes v55pill{from{opacity:0}}
+
+/* ═════ 首頁「四項服務」：整張實色 ═════ */
+body .deal .svc{background:var(--k);border:0;color:var(--kt);box-shadow:0 22px 40px -18px rgba(50,5,35,.45)}
+body .deal .svc:active,body .deal .svc:hover{background:var(--k);border-color:transparent}
+body .deal .svc h3{color:var(--kt);font-size:clamp(24px,2.2vw,29px);line-height:1.3;white-space:nowrap}
+body .deal .svc p,body .deal .svc .en{color:var(--kt)}
+body .deal .svc .en{opacity:.85;font-weight:900}
+body .deal .svc .fit{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.5);border-radius:14px;padding:10px 14px;color:var(--kt)}
+body .deal .svc .fit b{background:#fff;color:var(--kd);border:0}
+body .deal .svc .badge{background:#FFE24A;color:#2A1B2D;border:0;font-weight:900}
+body .deal .svc.c-light .badge{background:#2A1B2D;color:#fff}
+body .deal .svc .ic{border:2px solid #fff}
+body .deal .svc .more{display:flex;width:100%;box-sizing:border-box;padding:0 20px;align-items:center;justify-content:center;min-height:52px;border:0;border-radius:999px;background:#fff;color:var(--kd);font-size:17px;font-weight:900;text-decoration:none}
+body .deal .svc.c-light .more{background:#2A1B2D;color:#fff}
+
+/* ═════ 各服務頁標題區：用自己的產品色 ═════ */
+body .ph.c-diag,body .ph.c-meet,body .ph.c-light,body .ph.c-ad{background:var(--k)}
+body .ph.c-light,body .ph.c-light .wrap *:not(a):not(a *){color:#2A1B2D;text-shadow:none}
+body .ph.c-light::before{opacity:.5}
+body .ph.c-diag .line-btn,body .ph.c-meet .line-btn,body .ph.c-ad .line-btn{border:2px solid #fff!important}
+
+/* ═════ 兩個訂閱、四個戰場 ═════ */
+.k55-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+.k55-card{border-radius:24px;padding:24px 24px 22px;color:#fff}
+.k55-card.blue{background:#2C6CD8}
+.k55-card.pink{background:#D6336C}
+.k55-card h3{margin:0;font-size:clamp(24px,2.8vw,30px);font-weight:900;line-height:1.3;color:#fff}
+.k55-card .say{margin:8px 0 16px;display:inline-block;background:#FFE24A;color:#2A1B2D;border-radius:10px;padding:6px 12px;font-size:18px;font-weight:900;line-height:1.5}
+.k55-card dl{margin:0;display:grid;gap:10px}
+.k55-card dl div{background:rgba(255,255,255,.15);border-radius:14px;padding:10px 14px}
+.k55-card dt{font-size:14px;font-weight:900;color:#FFE24A;letter-spacing:.06em}
+.k55-card dd{margin:2px 0 0;font-size:16.5px;line-height:1.7}
+.k55-pick{margin-top:26px}
+.k55-pick h3{margin:0 0 12px;font-size:22px;color:var(--head,#3B2035)}
+.k55-pick ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.k55-pick li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:center;background:#fff;border:1px solid #E7C8DC;border-radius:14px;padding:12px 16px;font-size:16.5px;line-height:1.7}
+.k55-pick li b{justify-self:end;white-space:nowrap;border-radius:8px;padding:5px 12px;font-size:15px;color:#fff;background:#5C4F58}
+.k55-pick li b.blue{background:#2C6CD8}
+.k55-pick li b.pink{background:#D6336C}
+.k55-pick li b.both{background:linear-gradient(90deg,#2C6CD8 50%,#D6336C 50%)}
+.k55-four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
+.k55-four li{list-style:none;display:flex;flex-direction:column;gap:8px;border-radius:22px;background:#fff;border:3px solid #D6336C;overflow:hidden;padding:0 0 16px}
+.k55-four .k55-top{background:#D6336C;color:#fff;padding:14px 16px}
+.k55-four .k55-top em{display:block;font-style:normal;font-size:38px;font-weight:900;line-height:1;opacity:.55}
+.k55-four .k55-top b{display:block;margin-top:4px;font-size:20px;font-weight:900;line-height:1.35;word-break:keep-all;overflow-wrap:anywhere}
+.k55-four p{margin:0;padding:0 16px;font-size:16px;line-height:1.75}
+.k55-four p span{display:block;font-size:13.5px;font-weight:900;color:#D6336C;letter-spacing:.06em}
+ul.k55-four{padding:0}
+.k55-eg{margin-top:22px;border-radius:18px;background:#FFF6CC;border:2px solid #FFC21A;padding:16px 20px;font-size:16.5px;line-height:1.85;color:#2A1B2D}
+@media (max-width:1000px){.k55-four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ═════ 手機 ═════ */
+@media (max-width:700px){
+  /* 第一屏：一個畫面裝完標題＋四色塊 */
+  body .stage{min-height:100svh}
+  body .stage .hero{box-sizing:border-box;height:100svh;min-height:580px;padding:92px 10px 12px}
+  body:has(.st-ck:not([hidden])) .stage:not(.detail) .hero{padding-bottom:calc(var(--ckh,128px) + 14px)}
+  body .stage.detail .hero{height:auto;min-height:0;padding-bottom:40px}
+  body .stage .hero .eyebrow{display:none}
+  body .stage .hero h1{font-size:clamp(34px,11vw,48px);line-height:1.15;margin:0 0 4px}
+  body .stage .hero .sub{font-size:15px;line-height:1.5;margin:0 0 6px}
+  body .stage .controller{flex:1 1 0;align-self:stretch;width:100%;height:auto;min-height:0;margin:0}
+  body .stage .controller.collapsed{flex:0 0 60px}
+  body .stage .cells{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:26px minmax(0,1fr) minmax(0,1fr);gap:8px}
+  body .stage .cells .lead{font-size:15px}
+  body .stage .cells button.cell{gap:4px;padding:10px 11px 11px;border-radius:18px}
+  body .stage .cells button.cell::before{top:8px;left:11px;font-size:34px}
+  body .stage .cells button.cell .ico{top:9px;right:9px;width:38px;height:38px}
+  body .stage .cells button.cell .lbl{font-size:clamp(20px,6.1vw,25px);line-height:1.2}
+  body .stage .cells button.cell .one{font-size:14px;line-height:1.4}
+  body .stage .cells button.cell .go{height:32px;margin-top:3px;padding:0 14px;font-size:14px}
+  body .stage .cells button.cell.chosen{padding:0 16px}
+  body .stage:not(.detail) .slot{display:none}
+  body .stage .slot{margin-top:10px}
+
+  /* Cookie 提示縮小，不蓋掉第一屏 */
+  body .st-ck{bottom:6px;width:calc(100% - 16px);gap:6px;font-size:12px;line-height:1.45;padding:9px 12px;border-radius:16px;max-height:60svh;overflow:auto}
+  body .st-ck p{margin:0;font-size:12px;line-height:1.45}
+  body .st-ck .row{flex-wrap:nowrap;gap:6px}
+  body .st-ck .row .st-btn{flex:1;min-height:36px;padding:0 6px;font-size:13px;white-space:nowrap}
+
+  /* 內文看得清楚 */
+  body .p,body .lede,body .card p,body .checks li,body .ix-persp-list li{font-size:17px;line-height:1.85}
+  body .note{font-size:15px;line-height:1.8}
+  body .deal .svc p{font-size:17px;line-height:1.8}
+  body .deal .svc .fit{font-size:15.5px}
+  .k55-two,.k55-four{grid-template-columns:1fr}
+  .k55-card dd,.k55-four p,.k55-pick li,.k55-eg{font-size:17px}
+  .k55-pick li{grid-template-columns:1fr;gap:8px}
+  .k55-pick li b{justify-self:start}
+}
+@media (prefers-reduced-motion:reduce){body .stage .cells button.cell{animation:none!important}}
+
+/* 矮螢幕手機：拿掉副標與大編號，色塊才不擠 */
+@media (max-width:700px) and (max-height:700px){
+  body .stage .hero .sub{display:none}
+  body .stage .cells button.cell::before{display:none}
+  body .stage .cells button.cell{gap:2px;padding-bottom:9px}
+  body .stage .cells button.cell .ico{width:30px;height:30px}
+  body:has(.st-ck:not([hidden])) .stage:not(.detail) .cells button.cell .ico{display:none}
+  body .stage .cells button.cell .go{height:28px;flex:none}
+}
+
+/* 服務頁標題區：實色，不再疊彩色光斑 */
+body .ph.c-diag::after,body .ph.c-meet::after,body .ph.c-light::after,body .ph.c-ad::after{display:none}
+
+/* ═════ v56｜色塊提亮＋玻璃光暈互動 ═════ */
+body{--b:#2F7BFF;--g:#F0243F;--y:#FFC21F;--o:#12BCD2}
+.c-diag{--k:#2F7BFF;--k1:#55B4FF;--k2:#1457F0;--kd:#1248BC}
+.c-meet{--k:#F0243F;--k1:#FF6178;--k2:#E40028;--kd:#B3001F}
+.c-light{--k:#FFC21F;--k1:#FFEC55;--k2:#FFAE00;--kd:#6E4D00}
+.c-ad{--k:#12BCD2;--k1:#35E6EE;--k2:#0097BF;--kd:#006B88}
+body .stage .cells button.cell,body .deal .svc{background:radial-gradient(120% 75% at 20% 0%,rgba(255,255,255,.62),rgba(255,255,255,0) 55%),linear-gradient(165deg,var(--k1) 0%,var(--k) 48%,var(--k2) 100%)}
+body .deal .svc:hover,body .deal .svc:active{background:radial-gradient(120% 75% at 20% 0%,rgba(255,255,255,.75),rgba(255,255,255,0) 60%),linear-gradient(165deg,var(--k1) 0%,var(--k) 48%,var(--k2) 100%)}
+body .stage .cells button.c-diag,body .stage .cells button.c-meet,body .stage .cells button.c-ad{text-shadow:0 1px 8px rgba(0,20,60,.32)}
+body .stage .cells button.cell .go{text-shadow:none}
+body .stage .cells button.cell{border:1.5px solid rgba(255,255,255,.95);box-shadow:inset 0 2px 0 rgba(255,255,255,.75),inset 0 0 22px rgba(255,255,255,.28),0 0 30px -2px var(--k1),0 18px 32px -16px rgba(50,5,35,.5)}
+body .stage .cells button.cell:hover,body .stage .cells button.cell.touch{transform:translateY(-8px);box-shadow:inset 0 2px 0 #fff,inset 0 0 34px rgba(255,255,255,.5),0 0 58px 6px var(--k1),0 24px 40px -16px rgba(50,5,35,.55)}
+body .stage .cells button.cell.touch{transform:scale(.975)}
+/* 卡面上跟著游標／手指走的光點 */
+body .stage .cells button.cell::after{content:""!important;display:block;position:absolute!important;inset:0!important;width:auto!important;height:auto!important;margin:0!important;border:0!important;border-radius:inherit!important;background:radial-gradient(170px circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.7),rgba(255,255,255,0) 68%)!important;opacity:0!important;pointer-events:none;animation:none!important;transform:none!important;transition:opacity .25s}
+body .stage .cells button.cell:hover::after,body .stage .cells button.cell.touch::after{opacity:.85!important}
+body .stage .cells button.cell>*{position:relative;z-index:1}
+body .stage .cells button.cell>.ico{position:absolute}
+body .stage .cells button.cell.chosen::after{display:none}
+/* 滑動的玻璃光暈（原本那顆玻璃膠囊的手感） */
+body .stage .controller .halo{position:absolute;left:0;top:0;width:0;height:0;border-radius:32px;pointer-events:none;opacity:0;background:rgba(255,255,255,.24);border:1.5px solid rgba(255,255,255,.9);-webkit-backdrop-filter:blur(10px) saturate(140%);backdrop-filter:blur(10px) saturate(140%);box-shadow:inset 0 1px 0 #fff,0 0 40px 8px rgba(255,255,255,.55),0 0 90px 20px var(--hc,#fff);transition:left .45s cubic-bezier(.22,1,.36,1),top .45s cubic-bezier(.22,1,.36,1),width .45s cubic-bezier(.22,1,.36,1),height .45s cubic-bezier(.22,1,.36,1),opacity .3s}
+body .stage .controller .halo.on{opacity:1}
+body .stage .controller.collapsed .halo{display:none}
+body .stage .cells{z-index:1}
+/* 「你想先突破哪裡」改回玻璃膠囊 */
+body .stage .controller{height:318px}
+body .stage .controller.collapsed{height:60px}
+body .stage .cells{grid-template-rows:52px minmax(0,1fr)}
+body .stage .cells .lead{justify-self:center;height:46px;display:flex;align-items:center;padding:0 28px;border-radius:999px;background:linear-gradient(115deg,rgba(255,255,255,.38),rgba(255,255,255,.12));border:1px solid rgba(255,255,255,.75);box-shadow:inset 0 1px 0 #fff,0 0 30px -4px rgba(255,255,255,.6)}
+body .stage .controller.collapsed .cells .lead{opacity:0}
+@media (max-width:700px){
+  body .stage .controller{height:auto}
+  body .stage .controller.collapsed{height:60px}
+  body .stage .cells{grid-template-rows:34px minmax(0,1fr) minmax(0,1fr)}
+  body .stage .cells .lead{height:30px;padding:0 18px}
+  body .stage .controller .halo{border-radius:22px}
+}
+@media (prefers-reduced-motion:reduce){body .stage .controller .halo{transition:opacity .2s}}
+@media (max-width:700px){body .stage .hero .controller{margin-top:10px}}
+@media (max-width:700px) and (max-height:700px){body .stage .controller{margin-top:6px}body .stage .cells{grid-template-rows:minmax(0,1fr) minmax(0,1fr)}body .stage .cells .lead{display:none}}
