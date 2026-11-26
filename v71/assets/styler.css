@@ -1,0 +1,92 @@
+/* FireBirdUSP v59｜差異化介面設計：風格定調台（示意） */
+.sty59{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:22px;align-items:start;margin-top:26px}
+.sty-ctl{display:grid;gap:16px}
+.sty-ctl fieldset{border:0;margin:0;padding:14px 16px 16px;border-radius:18px;background:#fff;box-shadow:0 12px 28px -18px rgba(80,20,60,.5)}
+.sty-ctl legend{float:left;width:100%;margin:0 0 10px;padding:0;font-size:15px;font-weight:900;color:#3B2035}
+.sty-ctl legend em{display:inline-grid;place-items:center;width:22px;height:22px;margin-right:8px;border-radius:50%;background:#D6336C;color:#fff;font-style:normal;font-size:12px}
+.sty-ctl .row{clear:both;display:flex;flex-wrap:wrap;gap:8px}
+.sty-ctl button{font:inherit;font-size:14px;font-weight:700;cursor:pointer;min-height:44px;padding:6px 14px;border-radius:999px;border:2px solid #E7C8DC;background:#fff;color:#3B2035;transition:transform .15s,border-color .15s}
+.sty-ctl button:hover{border-color:#D6336C;transform:translateY(-2px)}
+.sty-ctl button[aria-pressed="true"]{border-color:#D6336C;background:#D6336C;color:#fff}
+.sty-ctl .sw{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%}
+.sty-ctl .sw button{display:grid;justify-items:center;gap:4px;border-radius:14px;padding:8px 4px;font-size:12px}
+.sty-ctl .sw button i{width:100%;height:30px;border-radius:9px;background:var(--s);box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 12px -6px var(--s)}
+.sty-ctl .sw button[aria-pressed="true"]{background:#fff;color:#3B2035;box-shadow:0 0 0 3px #D6336C}
+.sty-ctl .own{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:14px;font-weight:700;color:#3B2035}
+.sty-ctl .own input{width:52px;height:40px;border:0;padding:0;background:none;cursor:pointer}
+/* ── 預覽畫面 ── */
+.sp{position:sticky;top:96px;display:grid;gap:14px}
+.mock{--c:#FF355E;--on:#fff;--rad:18px;--gap:14px;border-radius:calc(var(--rad) + 8px);overflow:hidden;display:grid;grid-template-columns:92px minmax(0,1fr);min-height:430px;box-shadow:0 34px 60px -26px rgba(40,10,40,.6);transition:background .4s,color .4s;font-size:14px;line-height:1.4}
+.mock .side{display:flex;flex-direction:column;gap:10px;padding:18px 14px}
+.mock .logo{width:40px;height:40px;border-radius:calc(var(--rad)*.6);background:var(--c);margin:0 auto 8px}
+.mock .side i{height:10px;border-radius:99px;background:currentColor;opacity:.22}
+.mock .side i.on{height:30px;border-radius:calc(var(--rad)*.55);background:var(--c);opacity:1}
+.mock .main{display:grid;gap:var(--gap);padding:calc(var(--gap) + 6px);align-content:start;min-width:0}
+.mock .hd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.mock .hd b{font-size:22px;font-weight:900}
+.mock .hd span{padding:9px 18px;border-radius:var(--rad);background:var(--c);color:var(--on);font-weight:900;white-space:nowrap}
+.mock .kpi{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--gap)}
+.mock .k{border-radius:var(--rad);padding:var(--gap);display:grid;gap:4px;transition:transform .25s,box-shadow .25s}
+.mock .k small{opacity:.75;font-size:12px;font-weight:700}
+.mock .k strong{font-size:30px;font-weight:900;line-height:1.1}
+.mock .chart{display:flex;align-items:flex-end;gap:calc(var(--gap)*.7);height:150px;border-radius:var(--rad);padding:var(--gap)}
+.mock .chart i{flex:1;height:var(--h);border-radius:calc(var(--rad)*.5) calc(var(--rad)*.5) 0 0;background:var(--c);transform-origin:bottom}
+.mock .list{display:grid;gap:calc(var(--gap)*.6)}
+.mock .list div{display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;border-radius:calc(var(--rad)*.8);padding:calc(var(--gap)*.6) var(--gap)}
+.mock .list u{width:28px;height:28px;border-radius:50%;background:var(--c);opacity:.85;text-decoration:none}
+.mock .list em{font-style:normal;font-weight:900;font-size:12px;padding:4px 10px;border-radius:99px;background:var(--c);color:var(--on)}
+.mock.d-tight{--gap:8px}.mock.d-air{--gap:18px}
+.mock.r-sharp{--rad:2px}.mock.r-round{--rad:16px}.mock.r-pill{--rad:30px}
+.mock.m-live .k:hover{transform:translateY(-6px) scale(1.02)}
+.mock.m-live .chart i{animation:sgrow .9s cubic-bezier(.22,1,.36,1) both;animation-delay:var(--d)}
+@keyframes sgrow{from{transform:scaleY(0)}}
+/* 氣質一：發光玻璃 */
+.mock.t-glass{color:#fff;background:radial-gradient(60% 80% at 90% 0%,color-mix(in srgb,var(--c) 40%,#fff),transparent 60%),radial-gradient(70% 90% at 0% 100%,color-mix(in srgb,var(--c) 70%,#6a00ff),transparent 65%),linear-gradient(150deg,var(--c),color-mix(in srgb,var(--c) 45%,#14062a))}
+.mock.t-glass .side{background:rgba(255,255,255,.1);border-right:1px solid rgba(255,255,255,.35)}
+.mock.t-glass .k,.mock.t-glass .chart,.mock.t-glass .list div{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 0 34px -10px rgba(255,255,255,.65);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.mock.t-glass .chart i{background:linear-gradient(180deg,#fff,rgba(255,255,255,.25));box-shadow:0 0 18px rgba(255,255,255,.7)}
+.mock.t-glass .logo,.mock.t-glass .side i.on,.mock.t-glass .hd span,.mock.t-glass .list u,.mock.t-glass .list em{background:#fff;color:var(--c)}
+/* 氣質二：雜誌大字 */
+.mock.t-mag{color:#17110f;background:#FBF7F1;grid-template-columns:76px minmax(0,1fr)}
+.mock.t-mag .side{background:var(--c);color:var(--on)}
+.mock.t-mag .logo{background:var(--on)}
+.mock.t-mag .side i.on{background:var(--on)}
+.mock.t-mag .hd{border-bottom:5px solid #17110f;padding-bottom:10px}
+.mock.t-mag .hd b{font-size:34px;letter-spacing:-.02em;font-family:"Noto Serif TC","PMingLiU",serif}
+.mock.t-mag .kpi{grid-template-columns:2fr 1fr 1fr}
+.mock.t-mag .k{border-radius:0;border-top:2px solid #17110f;padding-inline:0}
+.mock.t-mag .k:first-child{background:var(--c);color:var(--on);border:0;padding:var(--gap);border-radius:var(--rad)}
+.mock.t-mag .k:first-child strong{font-size:62px;font-family:"Noto Serif TC",serif}
+.mock.t-mag .chart{padding-inline:0;border-bottom:2px solid #17110f;border-radius:0}
+.mock.t-mag .chart i{background:#17110f}.mock.t-mag .chart i:nth-child(6){background:var(--c)}
+.mock.t-mag .list div{border-radius:0;border-bottom:1px solid #d9cfc3;padding-inline:0}
+/* 氣質三：深色指揮艙 */
+.mock.t-dark{color:#E8F1FF;background:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px) 0 0/100% 28px,linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px) 0 0/28px 100%,#0A0F1F}
+.mock.t-dark .side{background:#0F1730;border-right:1px solid color-mix(in srgb,var(--c) 60%,transparent)}
+.mock.t-dark .k,.mock.t-dark .chart,.mock.t-dark .list div{background:rgba(16,26,54,.85);border:1px solid color-mix(in srgb,var(--c) 70%,transparent);box-shadow:0 0 22px -10px var(--c),inset 0 0 24px -18px var(--c);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.mock.t-dark .k strong{color:color-mix(in srgb,var(--c) 45%,#fff);font-family:Consolas,monospace;text-shadow:0 0 16px var(--c)}
+.mock.t-dark .chart i{background:linear-gradient(180deg,var(--c),transparent);border-top:3px solid #fff;box-shadow:0 -4px 16px -4px var(--c)}
+/* 氣質四：柔霧圓卡 */
+.mock.t-soft{color:#3A2F3A;background:color-mix(in srgb,var(--c) 14%,#fff)}
+.mock.t-soft .side{background:#fff;margin:14px 0 14px 14px;border-radius:var(--rad);box-shadow:0 18px 30px -20px var(--c)}
+.mock.t-soft .k,.mock.t-soft .chart,.mock.t-soft .list div{background:#fff;box-shadow:0 18px 30px -20px color-mix(in srgb,var(--c) 80%,#40203a)}
+.mock.t-soft .k:first-child{background:linear-gradient(135deg,var(--c),color-mix(in srgb,var(--c) 55%,#fff));color:var(--on)}
+.mock.t-soft .chart i{background:linear-gradient(180deg,var(--c),color-mix(in srgb,var(--c) 30%,#fff));border-radius:99px}
+/* 定調單 */
+.ssum{border-radius:18px;background:#2A1B2D;color:#fff;padding:16px 18px;display:grid;gap:10px}
+.ssum h3{margin:0;font-size:17px;color:#FFE24A}
+.ssum ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.ssum li{background:rgba(255,255,255,.12);border-radius:10px;padding:6px 12px;font-size:14px}
+.ssum li b{color:#FFB3D1;margin-right:6px}
+.ssum button{justify-self:start;font:inherit;font-weight:900;font-size:15px;min-height:44px;padding:0 20px;border:0;border-radius:999px;background:#FF3399;color:#fff;cursor:pointer}
+@media (max-width:900px){.sty59{grid-template-columns:1fr}.sp{position:static;order:-1}}
+@media (max-width:600px){.mock{grid-template-columns:56px minmax(0,1fr);min-height:0}.mock.t-mag{grid-template-columns:48px minmax(0,1fr)}.mock .side{padding:12px 8px}.mock .logo{width:30px;height:30px}.mock .kpi,.mock.t-mag .kpi{grid-template-columns:1fr 1fr}.mock .k:first-child{grid-column:1/-1}.mock .hd b,.mock.t-mag .hd b{font-size:19px}.mock .chart{height:100px}.sty-ctl .sw{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){.mock.m-live .chart i{animation:none}}
+
+/* 手機：畫面固定在上方，邊點邊看；定調單排在選項後面 */
+@media (max-width:900px){
+  .sp{display:contents}
+  .sty59 .mock{order:1;position:sticky;top:78px;z-index:6}
+  .sty59 .sty-ctl{order:2}.sty59 .ssum{order:3}
+}
+@media (max-width:600px){.mock .main{padding:10px;gap:8px}.mock.d-air{--gap:10px}.mock.d-tight{--gap:6px}.mock .list{display:none}.mock .chart{height:58px;padding:8px}.mock .kpi,.mock.t-mag .kpi{grid-template-columns:1.2fr 1fr 1fr}.mock .k:first-child{grid-column:auto}.mock .k{padding:8px}.mock .k strong,.mock.t-mag .k:first-child strong{font-size:22px}.mock .k small{font-size:10.5px}.mock .hd b,.mock.t-mag .hd b{font-size:16px}.mock .hd span{padding:6px 10px;font-size:12px}}
