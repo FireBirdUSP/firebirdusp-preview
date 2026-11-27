@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>分享小卡｜FireBirdUSP</title>
+<meta name="robots" content="noindex">
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script>
+/* ===================== 設定區（部署前只要改這裡） =====================
+   測試帳號（火鳥日報 @831ifmiz）與正式帳號（@firebirdusp）各自一個 LIFF。
+   LIFF 後台的 Endpoint URL：
+     正式：https://你的網站/share/
+     測試：https://你的網站/share/?oa=test      ← 網址多帶 ?oa=test 就會用 test 那組
+=========================================================================== */
+const PROFILES = {
+  prod: {
+    LIFF_ID: "請填入正式帳號的LIFF_ID",
+    ADD_FRIEND_URL: "https://lin.ee/PGDHKW0",
+    QUIZ_URL: ""            // 選填：測驗 LIFF 網址，例如 https://liff.line.me/xxxx?src=friend（有填才會多一顆「直接開始測驗」）
+  },
+  test: {
+    LIFF_ID: "2012818038-AABM48eH",
+    ADD_FRIEND_URL: "https://line.me/R/ti/p/@831ifmiz",
+    QUIZ_URL: ""
+  }
+};
+
+/* 小卡文字（草稿，可直接改） */
+const CARD = {
+  altText: "FireBirdUSP 官網AI點名測驗｜3分鐘看見客人眼中的你",
+  brand: "FireBirdUSP",
+  title: "官網AI點名測驗",
+  badge: "免費",
+  headline: "3分鐘看見客人眼中的你",
+  body: "不是幫你挑毛病，是先看見客人眼中的你。加入好友就能免費測，報告直接傳到 LINE。",
+  addFriendLabel: "加好友・免費測驗",
+  quizLabel: "直接開始測驗",
+  shareLabel: "分享小卡",
+  colorFrom: "#EC3665",
+  colorTo: "#A51052"
+};
+</script>
+<style>
+  :root{--from:#EC3665;--to:#A51052;--ink:#2b1630;--muted:#7a6470;--bg:#fff7fa}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased;min-height:100%}
+  main{max-width:420px;margin:0 auto;padding:28px 16px 40px;text-align:center}
+  .card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 12px 36px rgba(165,16,82,.16);text-align:left}
+  .hero{background:linear-gradient(135deg,var(--from),var(--to));color:#fff;padding:22px 20px 20px}
+  .hero small{font-size:12px;font-weight:700;letter-spacing:1px;opacity:.85}
+  .hero h1{font-size:26px;font-weight:900;margin-top:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .hero h1 span{font-size:13px;background:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.6);border-radius:99px;padding:2px 10px}
+  .hero p{font-size:16px;font-weight:700;margin-top:10px}
+  .body{padding:16px 20px 20px;font-size:14px;line-height:1.7;color:var(--muted)}
+  .status{margin:22px 0 14px;font-size:15px;line-height:1.7;min-height:26px}
+  button,.btn{display:block;width:100%;border:0;border-radius:99px;padding:15px;font:inherit;font-size:17px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--from),var(--to));box-shadow:0 8px 20px rgba(236,54,101,.3);cursor:pointer;text-decoration:none;margin-top:10px}
+  .btn.ghost{background:#fff;color:var(--to);box-shadow:none;border:1.5px solid #f0c6d6}
+  .hide{display:none}
+  .spinner{display:inline-block;width:16px;height:16px;border:3px solid #f0c6d6;border-top-color:var(--from);border-radius:50%;animation:spin .8s linear infinite;vertical-align:-3px;margin-right:8px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <div class="hero">
+      <small id="pBrand"></small>
+      <h1><b id="pTitle"></b><span id="pBadge"></span></h1>
+      <p id="pHead"></p>
+    </div>
+    <div class="body" id="pBody"></div>
+  </div>
+
+  <div class="status" id="status"><span class="spinner"></span>正在打開 LINE 好友清單…</div>
+  <button id="shareBtn" class="hide" type="button">選擇好友分享</button>
+  <a id="friendBtn" class="btn ghost hide" target="_blank" rel="noopener"></a>
+</main>
+
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  // LIFF 第一次開啟時，?oa=test 可能被包在 liff.state 裡
+  const st = params.get("liff.state");
+  if (st){ try{ new URLSearchParams(decodeURIComponent(st).split("?")[1] || "").forEach((v,k)=>{ if(!params.has(k)) params.set(k,v); }); }catch(e){} }
+  const ENV = params.get("oa") === "test" ? "test" : "prod";
+  const P = PROFILES[ENV];
+  const DEMO = params.has("demo");
+  const SHARE_URL = "https://liff.line.me/" + P.LIFF_ID;  // ?oa=test 已寫在測試 LIFF 的 Endpoint URL，不用另外加
+
+  const $ = id => document.getElementById(id);
+  $("pBrand").textContent = CARD.brand;
+  $("pTitle").textContent = CARD.title;
+  $("pBadge").textContent = CARD.badge;
+  $("pHead").textContent = CARD.headline;
+  $("pBody").textContent = CARD.body;
+  $("friendBtn").textContent = CARD.addFriendLabel;
+  $("friendBtn").href = P.ADD_FRIEND_URL;
+
+  function flexCard(){
+    const footer = [
+      { type:"button", style:"primary", color:CARD.colorFrom, height:"sm",
+        action:{ type:"uri", label:CARD.addFriendLabel, uri:P.ADD_FRIEND_URL } }
+    ];
+    if (P.QUIZ_URL){
+      footer.push({ type:"button", style:"secondary", height:"sm",
+        action:{ type:"uri", label:CARD.quizLabel, uri:P.QUIZ_URL } });
+    }
+    footer.push({ type:"button", style:"link", color:CARD.colorTo, height:"sm",
+      action:{ type:"uri", label:"➦ " + CARD.shareLabel, uri:SHARE_URL } });
+
+    return {
+      type:"flex",
+      altText:CARD.altText,
+      contents:{
+        type:"bubble", size:"mega",
+        header:{
+          type:"box", layout:"vertical", paddingAll:"20px", spacing:"sm",
+          background:{ type:"linearGradient", angle:"135deg", startColor:CARD.colorFrom, endColor:CARD.colorTo },
+          contents:[
+            { type:"text", text:CARD.brand, size:"xs", weight:"bold", color:"#FFFFFFCC" },
+            { type:"box", layout:"horizontal", spacing:"md", alignItems:"center", contents:[
+              { type:"text", text:CARD.title, size:"xl", weight:"bold", color:"#FFFFFF", flex:0, wrap:true },
+              { type:"box", layout:"vertical", flex:0, cornerRadius:"xxl", backgroundColor:"#FFFFFF40",
+                borderColor:"#FFFFFF99", borderWidth:"1px", paddingStart:"8px", paddingEnd:"8px", paddingTop:"2px", paddingBottom:"2px",
+                contents:[{ type:"text", text:CARD.badge, size:"xs", color:"#FFFFFF", weight:"bold" }] }
+            ]},
+            { type:"text", text:CARD.headline, size:"md", weight:"bold", color:"#FFFFFF", margin:"md", wrap:true }
+          ]
+        },
+        body:{
+          type:"box", layout:"vertical", paddingAll:"20px",
+          contents:[{ type:"text", text:CARD.body, size:"sm", color:"#7A6470", wrap:true, lineSpacing:"6px" }]
+        },
+        footer:{ type:"box", layout:"vertical", spacing:"sm", paddingAll:"16px", contents:footer }
+      }
+    };
+  }
+  window.__flexCard = flexCard; // 方便在瀏覽器 console 看 JSON
+
+  function setStatus(html){ $("status").innerHTML = html; }
+
+  async function share(){
+    $("shareBtn").disabled = true;
+    try{
+      const res = await liff.shareTargetPicker([flexCard()], { isMultiple:true });
+      if (res){
+        setStatus("已分享，謝謝你！");
+        if (liff.isInClient()) setTimeout(()=>liff.closeWindow(), 1200);
+      } else {
+        setStatus("沒有選好友也沒關係，想分享時再按一次。");
+      }
+    }catch(e){
+      console.error(e);
+      setStatus("分享沒有成功（" + (e.code || e.message || "未知錯誤") + "），請再試一次。");
+    }finally{
+      $("shareBtn").disabled = false;
+      $("shareBtn").classList.remove("hide");
+      $("friendBtn").classList.remove("hide");
+    }
+  }
+
+  async function start(){
+    if (DEMO){
+      setStatus("預覽模式：在 LINE 裡打開才會跳出好友清單。");
+      $("shareBtn").classList.remove("hide"); $("friendBtn").classList.remove("hide");
+      $("shareBtn").onclick = () => { console.log(JSON.stringify(flexCard(), null, 2)); alert("預覽模式不會送出，小卡 JSON 已印在 console"); };
+      return;
+    }
+    $("shareBtn").addEventListener("click", share);
+    try{
+      await liff.init({ liffId: P.LIFF_ID });
+      if (!liff.isLoggedIn()){ liff.login({ redirectUri: location.href }); return; }
+      if (!liff.isApiAvailable("shareTargetPicker")){
+        setStatus("這裡無法打開好友清單。請用手機 LINE 開啟，或到 LINE Developers 的 LIFF 設定打開 shareTargetPicker。");
+        $("friendBtn").classList.remove("hide");
+        return;
+      }
+      await share();
+    }catch(e){
+      console.error(e);
+      setStatus("連接 LINE 失敗（" + (e.code || e.message) + "）。請確認是從 LINE 裡打開。");
+      $("friendBtn").classList.remove("hide");
+    }
+  }
+  start();
+})();
+</script>
+</body>
+</html>
