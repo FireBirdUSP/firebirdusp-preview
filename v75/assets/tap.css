@@ -1,0 +1,99 @@
+/* FireBirdUSP v54｜全站「可以點的東西」同一套長相
+   規則：桃紅 2px 外框＋白底＋右邊實心小圓「›」＝可以點；整顆桃紅漸層＋「✓」＝目前選中。
+   每一組上方有一句白話提示。⛔ 不能點的內容（說明卡、標籤）不套這套。
+   分頁鈕 .ix-tab 同款樣式寫在 interactive.css。 */
+
+/* ── 提示句 ── */
+body .ix-ask-chips::before,body .ix-colpick::before,body .qw-pick::before,body .gx-legend::before{
+  flex-basis:100%;grid-column:1/-1;display:block;margin:0 0 2px;font-size:15px;font-weight:900;letter-spacing:.04em;line-height:1.6;color:#C02A66}
+body .ix-ask-chips::before{content:"點一個產業，下面的例子會跟著換 ↓"}
+body .ix-colpick::before{content:"點 A 或 B，切換要看的做法 ↓"}
+body .qw-pick::before{content:"點一家範例店家看看 ↓"}
+body .gx-legend::before{content:"點服務名稱，只看它的星 ↓";color:#fff}
+
+/* ── 單選按鈕群：產業、A／B、報告分頁 ── */
+body .ix-ask-chips{gap:10px}
+body .ix-ask-chips button,body .ix-colpick button,body .frt button{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:8px 12px 8px 18px;background:#fff;border:2px solid #D6336C;border-radius:999px;color:#C02A66;font-weight:900;cursor:pointer;
+  box-shadow:0 8px 18px -8px rgba(214,51,108,.45);transition:background .18s,color .18s,transform .18s,box-shadow .18s}
+body .ix-ask-chips button::after,body .ix-colpick button::after,body .frt button::after{
+  content:"›";flex:none;display:grid;place-items:center;width:24px;height:24px;padding-bottom:2px;box-sizing:border-box;border-radius:50%;background:#D6336C;color:#fff;font-size:18px;font-weight:700;line-height:1}
+body .ix-ask-chips button:hover,body .ix-colpick button:hover,body .frt button:hover:not(.on){background:#FFF0F6;transform:translateY(-2px);box-shadow:0 12px 22px -8px rgba(214,51,108,.55)}
+body .ix-ask-chips button:active,body .ix-colpick button:active,body .frt button:active{background:#FFD9EA;transform:scale(.97)}
+body .ix-ask-chips button[aria-pressed="true"],body .ix-colpick button[aria-pressed="true"],body .frt button.on{
+  background:linear-gradient(135deg,#B2489E,#D6336C 55%,#E3496F);border-color:transparent;color:#fff}
+body .ix-ask-chips button[aria-pressed="true"]::after,body .ix-colpick button[aria-pressed="true"]::after,body .frt button.on::after{content:"✓";padding:0;background:#fff;color:#C02A66;font-size:14px}
+
+/* ── 範例店家卡 ── */
+body .qw-pick .qw-chip{position:relative;background:#fff;border:2px solid #D6336C;border-radius:16px;padding:14px 16px;box-shadow:0 8px 18px -10px rgba(214,51,108,.45);transition:background .18s,transform .18s}
+body .qw-pick .qw-chip::after{content:"點我看看 ›";align-self:flex-start;margin-top:8px;padding:4px 14px;border-radius:999px;background:#D6336C;color:#fff;font-size:13px;font-weight:900}
+body .qw-pick .qw-chip:hover{background:#FFF0F6;transform:translateY(-2px)}
+body .qw-pick .qw-chip:active{background:#FFD9EA;transform:scale(.98)}
+body .qw-pick .qw-chip.on{background:#FFF0F6;border-color:#D6336C;box-shadow:0 0 0 4px rgba(214,51,108,.18)}
+body .qw-pick .qw-chip.on::after{content:"✓ 目前顯示";background:#fff;color:#C02A66;box-shadow:inset 0 0 0 1.5px #D6336C}
+
+/* ── 問答題的選項 ── */
+body .ix-pick-opts::before{content:"點選你的答案 ↓";font-size:14px;font-weight:900;color:#C02A66}
+body .ix-pick-opts label{border:2px solid #D6336C;background:#fff;font-weight:700;box-shadow:0 8px 18px -10px rgba(214,51,108,.45);transition:background .18s,transform .18s}
+body .ix-pick-opts label:hover{background:#FFF0F6;transform:translateY(-1px)}
+body .ix-pick-opts label:active{background:#FFD9EA;transform:scale(.98)}
+body .ix-pick-opts label:has(input:checked){background:#FFE3F0;box-shadow:0 0 0 4px rgba(214,51,108,.18)}
+
+/* ── 表單的選項膠囊與排序 ── */
+body .fm .chip{min-height:46px;border:2px solid #E58AB0;color:#C02A66;font-weight:700;padding:8px 16px 8px 12px;box-shadow:0 6px 14px -9px rgba(214,51,108,.5)}
+body .fm .chip::before{content:"＋";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#FFE3F0;font-size:14px;line-height:1}
+body .fm .chip:hover{border-color:#D6336C;background:#FFF0F6}
+body .fm .chip:has(input:checked){border-color:transparent;background:linear-gradient(135deg,#B2489E,#D6336C 55%,#E3496F);color:#fff}
+body .fm .chip:has(input:checked)::before{content:"✓";background:#fff;color:#C02A66;font-size:12px}
+body .fm .rk{grid-template-columns:auto 1fr auto;border:2px solid #E58AB0;box-shadow:0 6px 14px -9px rgba(214,51,108,.5)}
+body .fm .rk::after{content:"點選";padding:4px 12px;border-radius:999px;background:#D6336C;color:#fff;font-size:12.5px;font-weight:900;white-space:nowrap}
+body .fm .rk:hover{border-color:#D6336C;background:#FFF0F6}
+body .fm .rk[aria-pressed=true]::after{content:"已選";background:#fff;color:#C02A66;box-shadow:inset 0 0 0 1.5px #D6336C}
+
+/* ── 打勾清單 ── */
+body .fr-check label{align-items:center;min-height:48px;padding:8px 14px;border:2px solid #E58AB0;border-radius:14px;background:#fff}
+body .fr-check label:hover{border-color:#D6336C;background:#FFF0F6}
+body .fr-check label input{width:20px;height:20px;flex:none;accent-color:#D6336C}
+body .fr-check label:has(input:checked){background:#FFE3F0;border-color:#D6336C}
+
+/* ── 展開收合 ── */
+body .ix-acc summary::after{content:"＋ 展開";display:inline-flex;align-items:center;min-height:34px;padding:0 14px;border-radius:999px;background:#D6336C;color:#fff;font-size:14px;font-weight:900;white-space:nowrap}
+body .ix-acc details[open] summary::after{content:"－ 收合";background:#fff;color:#C02A66;box-shadow:inset 0 0 0 1.5px #D6336C}
+body .ix-acc summary:hover{background:#FFF0F6}
+
+/* ── 首頁銀河的服務名稱（深色底） ── */
+body .gx-legend button{display:inline-flex;align-items:center;justify-content:flex-start;min-height:50px;border:2px solid rgba(255,255,255,.8);border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-weight:900}
+body .gx-legend button::after{content:"›";flex:none;display:grid;place-items:center;width:22px;height:22px;margin-left:auto;padding-bottom:2px;box-sizing:border-box;border-radius:50%;background:#fff;color:#C02A66;font-size:17px;font-weight:700;line-height:1}
+body .gx-legend button:hover,body .gx-legend button:active{background:rgba(255,255,255,.28)}
+body .gx-legend button[aria-pressed="true"]{background:#fff;color:#3B2035;border-color:#fff}
+body .gx-legend button[aria-pressed="true"]::after{content:"✓";padding:0;background:#D6336C;color:#fff;font-size:13px}
+
+/* ── 不能按的說明框：拿掉外框，避免看起來像按鈕 ── */
+body .ix-note-box{border:0;box-shadow:none;background:#F7F2F5;border-radius:10px;color:#5C4F58}
+
+/* ── 前後對照拖拉 ── */
+body .ix-cmp::before{content:"按住畫面左右拖拉，比較改版前後 ⇆";display:block;margin:0 0 10px;font-size:15px;font-weight:900;color:#C02A66}
+
+@media (max-width:700px){
+  body .ix-ask-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  body .ix-colpick{flex-wrap:wrap}
+  body .frt{display:grid;grid-template-columns:1fr 1fr}
+  body .ix-ask-chips button,body .ix-colpick button,body .frt button{justify-content:space-between;border-radius:16px;font-size:15px;line-height:1.4;padding:8px 10px 8px 12px}
+  body .gx-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%}
+  body .gx-legend button{width:100%;gap:7px;padding:6px 8px 6px 10px;font-size:14px;line-height:1.35;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){body .ix-ask-chips button,body .ix-colpick button,body .frt button,body .qw-pick .qw-chip{transition:none}}
+
+/* LINE 按鈕上的 @帳號：不拆字；手機放不下就整個換到第二行 */
+body .line-id{white-space:nowrap}
+@media (max-width:700px){body a.line-btn{flex-wrap:wrap;justify-content:center;row-gap:4px;height:auto;padding-block:10px;line-height:1.4}}
+
+/* v59｜完整報告分頁：固定兩排（上排基本盤藍、下排差異化桃紅），不再掉一顆到下一行 */
+body .frt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+body .frt button{width:100%;justify-content:space-between}
+body .frt button:nth-child(-n+3){border-color:#2C6CD8;color:#1C4EA6;box-shadow:0 8px 18px -8px rgba(44,108,216,.45)}
+body .frt button:nth-child(-n+3)::after{background:#2C6CD8}
+body .frt button:nth-child(-n+3):hover:not(.on){background:#EEF4FF}
+body .frt button:nth-child(-n+3).on{background:linear-gradient(135deg,#4E93F2,#1C58D4);color:#fff;border-color:transparent}
+body .frt button:nth-child(-n+3).on::after{background:#fff;color:#1C4EA6}
+@media (max-width:700px){body .frt{gap:7px}body .frt button{flex-direction:column;justify-content:center;gap:4px;padding:8px 4px;font-size:14px;text-align:center}body .frt button::after{display:none}}
